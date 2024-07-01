@@ -19,3 +19,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.active-sidebar-menu {
+  background: #001c4e1f;
+  color: #001c4e;
+}

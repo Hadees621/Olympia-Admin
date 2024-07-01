@@ -1,0 +1,16 @@
+export const menuItems = [
+  { href: "/", label: "Home" },
+  { href: "/", label: "Contract" },
+  { href: "/", label: "Author" },
+  { href: "/", label: "Book" },
+  { href: "/", label: "Editorial" },
+  { href: "/", label: "Publicity" },
+  { href: "/", label: "Book Invoices" },
+  { href: "/", label: "Purchases" },
+  { href: "/", label: "Delivery Notes" },
+  { href: "/", label: "Book Orders" },
+  { href: "/", label: "Bumblebee" },
+  { href: "/", label: "Production" },
+  { href: "/", label: "Final Check" },
+  { href: "/", label: "Others" },
+];
