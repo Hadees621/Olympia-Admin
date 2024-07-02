@@ -114,7 +114,7 @@ const Table = () => {
   ];
 
   return (
-    <div className="overflow-x-auto mt-10">
+    <div className="overflow-x-auto mt-10 mx-3">
       <table className="min-w-full divide-y divide-gray-200">
         <thead className="bg-gray-50">
           <tr className="text-[10px] border w-full font-medium text-gray-500 uppercase">

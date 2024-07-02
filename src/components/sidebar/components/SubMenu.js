@@ -8,7 +8,7 @@ const SubMenu = ({ items, isOpen }) => {
         <NavLink
           key={index}
           to={item.to}
-          className="flex items-center cursor-pointer font-normal text-[16px] p-3 hover:text-[#001C4E] hover:bg-[#001C4E1F]"
+          className="flex items-center cursor-pointer font-normal text-[14px] p-2.5 hover:text-[#001C4E] hover:bg-[#001C4E1F]"
           activeClassName="active-sidebarmenu"
         >
           {item.label}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import SubMenu from "./SubMenu";
+import SidebarDropdown from "../../../utils/icons/SidebarDropdown";
 
 const SidebarMenuItem = ({ to, label, submenuItems }) => {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
@@ -12,31 +13,16 @@ const SidebarMenuItem = ({ to, label, submenuItems }) => {
   return (
     <div>
       <div
-        className="flex items-center justify-between cursor-pointer font-normal text-[16px] p-3 hover:text-[#001C4E] hover:bg-[#001C4E1F]"
+        className="flex items-center justify-between cursor-pointer font-normal text-[14px] p-2.5 hover:text-[#001C4E] hover:bg-[#001C4E1F]"
         onClick={toggleSubmenu}
       >
         {submenuItems ? (
           <>
             <span className="flex-grow">{label}</span>
             {isSubmenuOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-                className="rotate-180"
-              >
-                <path fill="black" d="m7 10l5 5l5-5z" />
-              </svg>
+              <SidebarDropdown classes={"rotate-180"} />
             ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-              >
-                <path fill="black" d="m7 10l5 5l5-5z" />
-              </svg>
+              <SidebarDropdown />
             )}
           </>
         ) : (
