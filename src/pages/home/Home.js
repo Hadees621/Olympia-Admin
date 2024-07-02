@@ -22,7 +22,7 @@ const Home = () => {
   const placeholders = ["All", "All", "Select Genre", "All Countries"];
 
   return (
-    <div className="w-[85%] text-center items-center">
+    <div className="w-full text-center items-center">
       <p className="text-3xl font-semibold mt-16">
         Welcome to Olympia Portal (olympia admin)
       </p>
