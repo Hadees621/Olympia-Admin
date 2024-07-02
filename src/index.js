@@ -9,8 +9,10 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
-      <Sidebar />
-      <App />
+      <div className="flex">
+        <Sidebar />
+        <App />
+      </div>
     </Router>
   </React.StrictMode>
 );

@@ -24,3 +24,33 @@ code {
   background: #001c4e1f;
   color: #001c4e;
 }
+
+.status-button {
+  padding: 0.6em 1.5em;
+  border-radius: 9999px;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.status-pending {
+  background-color: orange;
+}
+
+.status-paid {
+  background-color: green;
+}
+
+.status-hardback {
+  background-color: #778899;
+}
+
+.status-traditional {
+  background-color: #662c91;
+}
+
+.status-paying {
+  background-color: #29abe1;
+}
