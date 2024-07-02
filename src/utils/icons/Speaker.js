@@ -4,8 +4,8 @@ const Speaker = ({ color = "white" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="2rem"
-      height="2rem"
+      width="1.5rem"
+      height="1.5rem"
       viewBox="0 0 26 26"
     >
       <path
