@@ -19,7 +19,7 @@ const Home = () => {
     { value: "option4", label: "Option 4" },
   ];
 
-  const placeholders = ["All", "All", "Select Genre", "All Countries"];
+  const placeholders = ["All", "All", "All Countries", "Select Genre"];
 
   return (
     <div className="w-full text-start items-center">
