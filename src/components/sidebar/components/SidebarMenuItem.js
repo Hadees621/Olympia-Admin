@@ -12,14 +12,13 @@ const SidebarMenuItem = ({ to, label, submenuItems }) => {
 
   return (
     <div>
-    
       <div
-        className="flex items-center justify-between cursor-pointer font-normal text-[14px] p-2.5 hover:text-[#001C4E] hover:bg-[#001C4E1F]"
+        className="flex items-center justify-between cursor-pointer font-semibold text-[14px] p-2.5 hover:text-[#001C4E] hover:bg-[#001C4E1F]"
         onClick={toggleSubmenu}
       >
         {submenuItems ? (
           <>
-            <span className="flex-grow">{label}</span>
+            <span className="flex-growW">{label}</span>
             {isSubmenuOpen ? (
               <SidebarDropdown classes={"rotate-180"} />
             ) : (

@@ -6,7 +6,7 @@ const Logo = () => {
       <img
         src="/assets/logo.png"
         alt="logo"
-        className="w-[80%] align-middle p-5"
+        className="w-[90%] align-middle p-5"
       />
     </a>
   );
