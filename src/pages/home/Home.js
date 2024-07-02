@@ -22,13 +22,13 @@ const Home = () => {
   const placeholders = ["All", "All", "Select Genre", "All Countries"];
 
   return (
-    <div className="w-full text-center items-center">
-      <p className="text-3xl font-semibold mt-16">
+    <div className="w-full text-start items-center ">
+      <p className="text-3xl font-semibold mt-16 ml-8">
         Welcome to Olympia Portal (olympia admin)
       </p>
 
       <div className="flex items-center mt-16">
-        <div className="flex gap-2 justify-center items-center w-[85%]">
+        <div className="flex gap-2 justify-start items-center w-[85%] ml-5">
           <SearchField placeholder="Book Title" width="200px" />
           <SearchField placeholder="Pen name/Author name" width="200px" />
           <Button title="Search" text="text-[12px]" />
@@ -39,7 +39,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="flex gap-2 justify-center mt-6 items-center">
+      <div className="flex gap-2 justify-start mt-6 items-center ml-5">
         {placeholders.map((placeholder, index) => (
           <SelectField
             key={index}
