@@ -6,7 +6,7 @@ import LogoutButton from "./components/LogoutButton";
 
 const Sidebar = () => {
   return (
-    <div className="w-[18%]">
+    <div className="w-[20%]">
       <div className="bg-[#EEEEEE] shadow text-xl rounded-b-2xl grid p-3">
         <Logo />
         {menuItems.map((item, index) => (
