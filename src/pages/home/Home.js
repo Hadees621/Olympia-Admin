@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SearchField from "./components/SearchField";
 import Button from "../../components/Button";
 import SelectField from "../../components/SelectField";
+import Table from "./components/Table";
 const Home = () => {
   const [selectedValues, setSelectedValues] = useState(["", "", "", ""]);
 
@@ -52,6 +53,8 @@ const Home = () => {
         <Button title="Filter" text="text-[12px]" />
         <Button title="Clear" text="text-[12px]" />
       </div>
+
+      <Table />
     </div>
   );
 };
