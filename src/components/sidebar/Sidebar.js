@@ -19,7 +19,11 @@ const Sidebar = () => {
           />
         ))}
         <div className="mt-4 grid">
-          <Button title={"ISBN Search"} text={"rounded-2xl m-2"} />
+          <button
+            className={`border bg-[#001C4E1F] rounded-3xl text-[#001C4E] font-bold px-8 py-2 m-2`}
+          >
+            ISBN Search
+          </button>
           <LogoutButton />
         </div>
       </div>
