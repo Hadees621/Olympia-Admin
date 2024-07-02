@@ -22,24 +22,21 @@ const Home = () => {
   const placeholders = ["All", "All", "Select Genre", "All Countries"];
 
   return (
-    <div className="w-[85%] text-center items-center">
-      <p className="text-3xl font-semibold mt-16">
+    <div className="w-full text-start items-center ">
+      <p className="text-3xl font-semibold mt-16 ml-8">
         Welcome to Olympia Portal (olympia admin)
       </p>
 
-      <div className="flex items-center mt-16">
-        <div className="flex gap-2 justify-center items-center w-[85%]">
-          <SearchField placeholder="Book Title" width="200px" />
-          <SearchField placeholder="Pen name/Author name" width="200px" />
-          <Button title="Search" text="text-[12px]" />
-          <Button title="Clear" text="text-[12px]" />
-        </div>
-        <div className="flex justify-start">
-          <Button title="Add New Record" text="text-[12px]" />
-        </div>
+      <div className="flex items-center mt-16 gap-3 ml-5 pr-10">
+        <SearchField placeholder="Book Title" />
+        <SearchField placeholder="Pen name/Author name" />
+        <Button title="Search" text="text-[12px]" />
+        <Button title="Clear" text="text-[12px]" />
+        <Button title="Add New Record" text="text-[12px]" />
+        <Button title="ISBN Search" text="text-[12px]" />
       </div>
 
-      <div className="flex gap-2 justify-center mt-6 items-center">
+      <div className="flex gap-2 justify-start mt-6 items-center ml-5 w-full pr-10">
         {placeholders.map((placeholder, index) => (
           <SelectField
             key={index}
@@ -47,7 +44,6 @@ const Home = () => {
             value={selectedValues[index]}
             onChange={(e) => handleSelectChange(index, e)}
             options={options}
-            width="160px"
           />
         ))}
         <Button title="Filter" text="text-[12px]" />

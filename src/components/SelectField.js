@@ -5,17 +5,15 @@ const SelectField = ({
   placeholder,
   value,
   onChange,
-  width = "100%",
   options = [],
   ...props
 }) => {
   return (
-    <div className="relative">
+    <div className="relative flex-grow">
       <select
         value={value}
         onChange={onChange}
         className="shadow appearance-none border bg-[#F7F7F7] rounded w-full p-2.5 text-gray-400 leading-tight focus:outline-none"
-        style={{ width }}
         {...props}
       >
         <option value="" disabled>
