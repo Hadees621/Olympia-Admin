@@ -10,7 +10,12 @@ const Sidebar = () => {
       <div className="bg-[#EEEEEE] shadow text-xl rounded-b-2xl grid p-3">
         <Logo />
         {menuItems.map((item, index) => (
-          <SidebarMenuItem key={index} href={item.href} label={item.label} />
+          <SidebarMenuItem
+            key={index}
+            to={item.to}
+            label={item.label}
+            submenuItems={item.submenuItems}
+          />
         ))}
         <LogoutButton />
       </div>

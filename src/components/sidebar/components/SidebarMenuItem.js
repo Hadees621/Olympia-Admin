@@ -1,23 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import SubMenu from "./SubMenu";
 
-const SidebarMenuItem = ({ href, label }) => {
+const SidebarMenuItem = ({ to, label, submenuItems }) => {
+  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
+
+  const toggleSubmenu = () => {
+    setIsSubmenuOpen(!isSubmenuOpen);
+  };
+
   return (
-    <a
-      href={href}
-      className="cursor-pointer flex font-normal text-[13px] items-center gap-3 p-2 hover:text-[#001C4E] hover:bg-[#001C4E1F] rounded"
-    >
-      <svg
-        width="7"
-        height="7"
-        viewBox="0 0 5 5"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
+    <div>
+      <div
+        className="flex items-center justify-between cursor-pointer font-normal text-[16px] p-3 hover:text-[#001C4E] hover:bg-[#001C4E1F]"
+        onClick={toggleSubmenu}
       >
-        <path d="M2.5 0 L5 2.5 L2.5 5 L0 2.5 Z" />
-      </svg>
-
-      <div>{label}</div>
-    </a>
+        {submenuItems ? (
+          <>
+            <span className="flex-grow">{label}</span>
+            {isSubmenuOpen ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+                className="rotate-180"
+              >
+                <path fill="black" d="m7 10l5 5l5-5z" />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+              >
+                <path fill="black" d="m7 10l5 5l5-5z" />
+              </svg>
+            )}
+          </>
+        ) : (
+          <NavLink
+            to={to}
+            className="flex-grow"
+            activeClassName="active-sidebarmenu"
+          >
+            {label}
+          </NavLink>
+        )}
+      </div>
+      {submenuItems && <SubMenu items={submenuItems} isOpen={isSubmenuOpen} />}
+    </div>
   );
 };
 
