@@ -26,11 +26,16 @@ const Home = () => {
         Welcome to Olympia Portal (olympia admin)
       </p>
 
-      <div className="flex gap-2 justify-center mt-16 items-center">
-        <SearchField placeholder="Book Title" width="200px" />
-        <SearchField placeholder="Pen name/Author name" width="200px" />
-        <Button title="Search" text="text-[12px]" />
-        <Button title="Clear" text="text-[12px]" />
+      <div className="flex items-center mt-16">
+        <div className="flex gap-2 justify-center items-center w-[85%]">
+          <SearchField placeholder="Book Title" width="200px" />
+          <SearchField placeholder="Pen name/Author name" width="200px" />
+          <Button title="Search" text="text-[12px]" />
+          <Button title="Clear" text="text-[12px]" />
+        </div>
+        <div className="flex justify-start">
+          <Button title="Add New Record" text="text-[12px]" />
+        </div>
       </div>
 
       <div className="flex gap-2 justify-center mt-6 items-center">

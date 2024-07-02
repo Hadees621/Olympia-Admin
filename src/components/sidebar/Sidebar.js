@@ -3,6 +3,7 @@ import SidebarMenuItem from "./components/SidebarMenuItem";
 import { menuItems } from "./utils/utils";
 import Logo from "../Logo";
 import LogoutButton from "./components/LogoutButton";
+import Button from "../Button";
 
 const Sidebar = () => {
   return (
@@ -17,7 +18,10 @@ const Sidebar = () => {
             submenuItems={item.submenuItems}
           />
         ))}
-        <LogoutButton />
+        <div className="mt-4 grid">
+          <Button title={"ISBN Search"} text={"rounded-2xl m-2"} />
+          <LogoutButton />
+        </div>
       </div>
     </div>
   );
