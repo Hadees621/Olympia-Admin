@@ -22,12 +22,12 @@ const Home = () => {
   const placeholders = ["All", "All", "Select Genre", "All Countries"];
 
   return (
-    <div className="w-full text-start items-center ">
-      <p className="text-3xl font-semibold mt-16 ml-8">
+    <div className="w-full text-start items-center">
+      <p className="text-3xl font-semibold mt-8 ml-8">
         Welcome to Olympia Portal (olympia admin)
       </p>
 
-      <div className="flex items-center mt-16 gap-3 ml-5 pr-10">
+      <div className="flex items-center mt-8 gap-3 ml-5 pr-10">
         <SearchField placeholder="Book Title" />
         <SearchField placeholder="Pen name/Author name" />
         <Button title="Search" text="text-[12px]" />
@@ -36,7 +36,7 @@ const Home = () => {
         <Button title="ISBN Search" text="text-[12px]" />
       </div>
 
-      <div className="flex gap-2 justify-start mt-6 items-center ml-5 w-full pr-10">
+      <div className="flex gap-2 justify-start mt-3 items-center ml-5 w-full pr-10">
         {placeholders.map((placeholder, index) => (
           <SelectField
             key={index}
