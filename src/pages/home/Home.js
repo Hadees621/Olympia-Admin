@@ -3,10 +3,12 @@ import SearchField from "./components/SearchField";
 import Button from "../../components/Button";
 import SelectField from "../../components/SelectField";
 const Home = () => {
-  const [selectedValue, setSelectedValue] = useState("");
+  const [selectedValues, setSelectedValues] = useState(["", "", "", ""]);
 
-  const handleSelectChange = (e) => {
-    setSelectedValue(e.target.value);
+  const handleSelectChange = (index, e) => {
+    const newSelectedValues = [...selectedValues];
+    newSelectedValues[index] = e.target.value;
+    setSelectedValues(newSelectedValues);
   };
 
   const options = [
@@ -15,6 +17,9 @@ const Home = () => {
     { value: "option3", label: "Option 3" },
     { value: "option4", label: "Option 4" },
   ];
+
+  const placeholders = ["All", "All", "Select Genre", "All Countries"];
+
   return (
     <div className="w-[85%] text-center items-center">
       <p className="text-3xl font-semibold mt-16">
@@ -29,20 +34,17 @@ const Home = () => {
       </div>
 
       <div className="flex gap-2 justify-center mt-6 items-center">
-        <SearchField placeholder="Book Title" width="160px" />
-        {Array(3)
-          .fill()
-          .map((_, index) => (
-            <SelectField
-              key={index}
-              placeholder="All"
-              value={selectedValue}
-              onChange={handleSelectChange}
-              options={options}
-              width="160px"
-            />
-          ))}
-        <Button title="Search" text="text-[12px]" />
+        {placeholders.map((placeholder, index) => (
+          <SelectField
+            key={index}
+            placeholder={placeholder}
+            value={selectedValues[index]}
+            onChange={(e) => handleSelectChange(index, e)}
+            options={options}
+            width="160px"
+          />
+        ))}
+        <Button title="Filter" text="text-[12px]" />
         <Button title="Clear" text="text-[12px]" />
       </div>
     </div>

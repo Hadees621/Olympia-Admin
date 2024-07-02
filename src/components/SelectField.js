@@ -1,5 +1,5 @@
 import React from "react";
-import Dropdown from "../icons/Dropdown";
+import Dropdown from "../utils/icons/Dropdown";
 
 const SelectField = ({
   placeholder,
