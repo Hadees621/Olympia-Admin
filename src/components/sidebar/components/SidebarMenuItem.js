@@ -18,7 +18,7 @@ const SidebarMenuItem = ({ to, label, submenuItems }) => {
       >
         {submenuItems ? (
           <>
-            <span className="flex-growW">{label}</span>
+            <span className="flex-grow">{label}</span>
             {isSubmenuOpen ? (
               <SidebarDropdown classes={"rotate-180"} />
             ) : (

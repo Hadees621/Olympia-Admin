@@ -5,7 +5,7 @@ const Plus = ({ classes }) => {
     <img
       src="/assets/logomark.png"
       alt="logo"
-      className="w-[200px] align-middle p-"
+      className={`w-[200px] align-middle ${classes}`}
     />
   );
 };
