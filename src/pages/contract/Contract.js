@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import SearchField from "../home/components/SearchField";
-import Button from "../../components/Button";
-import SelectField from "../../components/SelectField";
-import Plus from "../../utils/icons/Plus";
+import Plus from "utils/icons/Plus";
+import Button from "components/Button";
+import SelectField from "components/SelectField";
+import SearchField from "pages/home/components/SearchField";
 
 const Contract = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
@@ -54,15 +54,17 @@ const Contract = () => {
         <Button title="Author Data Sheet" text="text-[12px]" />
       </div>
 
-      <div className="shadow mt-4 bg-[#F7F7F7] p-2 flex justify-between m-4 items-center px-4">
+      <div className="shadow mt-4 bg-[#F7F7F7] p-3 flex justify-between m-4 items-center px-">
         <p className="text-md font-semibold text-gray-500">
           Aine By Yugtha YJ <span className="text-black"> Book No. </span> 1
         </p>
-
         <p className="text-md font-normal text-gray-500">Remaindered</p>
-
-        <Plus classes={"w-16 h-16"} />
+        <div className="w-16">
+          <Plus classes={"h-full w-full"} />
+        </div>
       </div>
+
+      <div></div>
     </div>
   );
 };
