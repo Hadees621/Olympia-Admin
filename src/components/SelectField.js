@@ -13,7 +13,7 @@ const SelectField = ({
       <select
         value={value}
         onChange={onChange}
-        className="shadow appearance-none border bg-[#F7F7F7] rounded w-full p-2.5 text-gray-400 leading-tight focus:outline-none"
+        className="shadow appearance-none bg-[#F7F7F7] rounded w-full p-2.5 text-gray-400 leading-tight focus:outline-none"
         {...props}
       >
         <option value="" disabled>
