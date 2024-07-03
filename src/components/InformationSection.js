@@ -1,4 +1,4 @@
-export const InformationSection = ({ title, info, imageUrl }) => (
+export const InformationSection = ({ title, info, imageUrl, bookFlag }) => (
   <div className="w-full shadow-lg">
     <div className="border-b pb-3 mb-3 mx-4">
       <p className="text-xl font-bold mx-5 mt-4">{title}</p>
@@ -11,6 +11,11 @@ export const InformationSection = ({ title, info, imageUrl }) => (
             <p className="text-lg font-semibold text-black">{item.value}</p>
           </div>
         ))}
+        {bookFlag && (
+          <button className="shadow bg-[#D3D3D4] text-sm p-1 font-semibold">
+            Download Cover
+          </button>
+        )}
       </div>
       {imageUrl && (
         <div>
