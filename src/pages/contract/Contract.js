@@ -74,6 +74,14 @@ const Contract = () => {
               <p className="text-md font-semibold text-black">{item.value}</p>
             </div>
           ))}
+          <div className="max-w-md">
+            <button
+              className="bg-green-600 p-3 text-white rounded-md
+          "
+            >
+              Send Remainder Email
+            </button>
+          </div>
         </div>
       </div>
     </div>

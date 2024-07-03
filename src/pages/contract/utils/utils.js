@@ -18,6 +18,8 @@ export const contractInfoLeft = [
 
 export const contractInfoRight = [
   { label: "Contract Date:", value: "03-04-2017" },
-  { label: "Pen Name:", value: "Yugtha YJ" },
-  { label: "Date of Birth:", value: "NA" },
+  { label: "Publication Date:", value: "22-02-2018" },
+  { label: "Remainder Date:", value: "18-03-2021" },
+  { label: "Fast Track:", value: "No" },
+  { label: "Situation:", value: "Remaindered" },
 ];
