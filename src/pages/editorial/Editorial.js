@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Plus from "utils/icons/Plus";
 import Button from "components/Button";
-import { bookInfo } from "./utils/utils";
+import { bookInfo, editableNotesData, noteCardsData } from "./utils/utils";
 import SelectField from "components/SelectField";
 import NoteCard from "../author/components/NoteCard";
 import SearchField from "pages/home/components/SearchField";
@@ -75,12 +75,18 @@ const Editorial = () => {
 
       <div className="flex my-4 gap-4">
         <div className="w-full space-y-3">
-          <EditableNoteCard title="Important note" content="NA" />
-          <EditableNoteCard title="Author notes" content="NA" />
+          {editableNotesData.map((note, index) => (
+            <EditableNoteCard
+              key={index}
+              title={note.title}
+              initialContent={note.initialContent}
+            />
+          ))}
         </div>
         <div className="w-full space-y-3">
-          <NoteCard title="Important note" content="NA" />
-          <NoteCard title="Author notes" content="NA" />
+          {noteCardsData.map((note, index) => (
+            <NoteCard key={index} title={note.title} content={note.content} />
+          ))}
         </div>
       </div>
     </div>

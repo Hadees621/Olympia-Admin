@@ -6,7 +6,7 @@ const NoteCard = ({ title, content }) => (
       <h2 className="text-lg font-semibold p-3">{title}</h2>
     </div>
     <div className="p-5">
-      <p className="text-lg">{content}</p>
+      <p className="text-md">{content}</p>
     </div>
   </div>
 );

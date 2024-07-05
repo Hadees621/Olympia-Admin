@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const EditableNoteCard = ({ title, initialContent }) => {
+const EditableNoteCard = ({ title, initialContent  }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [content, setContent] = useState(initialContent);
 
@@ -66,7 +66,7 @@ const EditableNoteCard = ({ title, initialContent }) => {
         ) : content ? (
           <p className="text-lg">{content}</p>
         ) : (
-          <h1 className="text-lg">NA</h1>
+          <h1 className="text-lg">{initialContent}</h1>
         )}
       </div>
     </div>

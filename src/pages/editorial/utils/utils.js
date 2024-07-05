@@ -22,7 +22,6 @@ export const editorialBookDetails = [
   { label: "Audio book ISBN:", value: "No" },
 ];
 
-
 export const pricing = [
   { label: "Price £ (GBP):", value: "£ 7.99" },
   { label: "Price $ (USD):", value: "$ 9.99" },
@@ -116,4 +115,54 @@ export const editorialBookDetails6 = [
 export const editorialBookDetails66 = [
   { label: "Copyrights Credit Inners:", value: "" },
   { label: "Copyrights Credit Covers:", value: "" },
+];
+
+export const editableNotesData = [
+  {
+    title: "Book notes",
+    initialContent: "Here are some notes and thing's Hello",
+  },
+  { title: "Cover blurb", initialContent: "NA" },
+  { title: "Author blurb", initialContent: "NA" },
+  { title: "Press release", initialContent: "NA" },
+  { title: "AIS Cover Blurb", initialContent: "NA" },
+  { title: "Reviews", initialContent: "NA" },
+];
+
+export const noteCardsData = [
+  {
+    title: "Cover idea (Author)",
+    content:
+      "Compose a brief synopsis of your book – without giving the plot away. The purpose is to give the reader intriguing and tantalising hints as to what the book is about, but not too much information (no more than 150 words)Compose a brief synopsis of your book – without giving the plot away. The purpose is to give the reader intriguing and tantalising hints as to what the book is about, but not too much information (no more than 150 words)",
+  },
+  {
+    title: "Back Cover Blurb (Author)",
+    content:
+      "Compose a brief synopsis of your book – without giving the plot away. The purpose is to give the reader intriguing and tantalising hints as to what the book is about, but not too much information (no more than 150 words)Compose a brief synopsis of your book – without giving the plot away. The purpose is to give the reader intriguing and tantalising hints as to what the book is about, but not too much information (no more than 150 words)",
+  },
+  {
+    title: "Author Blurb (Author)",
+    content:
+      "Compose a brief synopsis of your book – without giving the plot away. The purpose is to give the reader intriguing and tantalising hints as to what the book is about, but not too much information (no more than 150 words)Compose a brief synopsis of your book – without giving the plot away. The purpose is to give the reader intriguing and tantalising hints as to what the book is about, but not too much information (no more than 150 words)",
+  },
+  {
+    title: "Acknowledgements (Author)",
+    content:
+      "Compose a brief synopsis of your book – without giving the plot away. The purpose is to give the reader intriguing and tantalising hints as to what the book is about, but not too much information (no more than 150 words)Compose a brief synopsis of your book – without giving the plot away. The purpose is to give the reader intriguing and tantalising hints as to what the book is about, but not too much information (no more than 150 words)",
+  },
+  {
+    title: "Dedication (Author)",
+    content:
+      "Compose a brief synopsis of your book – without giving the plot away. The purpose is to give the reader intriguing and tantalising hints as to what the book is about, but not too much information (no more than 150 words)Compose a brief synopsis of your book – without giving the plot away. The purpose is to give the reader intriguing and tantalising hints as to what the book is about, but not too much information (no more than 150 words)",
+  },
+  {
+    title: "Disclaimer (Author)",
+    content:
+      "Compose a brief synopsis of your book – without giving the plot away. The purpose is to give the reader intriguing and tantalising hints as to what the book is about, but not too much information (no more than 150 words)Compose a brief synopsis of your book – without giving the plot away. The purpose is to give the reader intriguing and tantalising hints as to what the book is about, but not too much information (no more than 150 words)",
+  },
+  {
+    title: "Additional notes (Author)",
+    content:
+      "Compose a brief synopsis of your book – without giving the plot away. The purpose is to give the reader intriguing and tantalising hints as to what the book is about, but not too much information (no more than 150 words)Compose a brief synopsis of your book – without giving the plot away. The purpose is to give the reader intriguing and tantalising hints as to what the book is about, but not too much information (no more than 150 words)",
+  },
 ];
