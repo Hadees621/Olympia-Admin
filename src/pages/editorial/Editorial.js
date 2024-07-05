@@ -3,7 +3,6 @@ import Button from "components/Button";
 import {
   bookInfo,
   editableNotesData,
-  filesData,
   noteCardsData,
 } from "./utils/utils";
 import SelectField from "components/SelectField";
