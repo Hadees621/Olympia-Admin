@@ -74,7 +74,7 @@ const Book = () => {
           imageUrl="https://picsum.photos/200/300?grayscale"
           bookFlag={true}
         />
-        <div className="gap-3 w-full">
+        <div className="space-y-3 w-full">
           <NoteCard title="Important note" content="NA" />
           <NoteCard title="Author notes" content="NA" />
         </div>

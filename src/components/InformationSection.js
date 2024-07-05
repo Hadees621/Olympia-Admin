@@ -1,5 +1,5 @@
 export const InformationSection = ({ title, info, imageUrl, bookFlag }) => (
-  <div className="w-full shadow-lg">
+  <div className="w-full shadow-md bg-[#F7F7F7]">
     <div className="border-b pb-3 mb-3 mx-4">
       <p className="text-xl font-bold mx-5 mt-4">{title}</p>
     </div>
