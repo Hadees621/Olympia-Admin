@@ -30,7 +30,7 @@ const EditorialBookInformation = ({ title, info, bookFlag }) => {
 
   const placeholders = ["Please Select Author"];
   return (
-    <div className="">
+    <div className="w-full shadow-md bg-[#F7F7F7]">
       <div className="pb-3 mb-3 mx-4 border-b">
         <p className="text-xl font-bold mx-5 pt-8 mt-4">{title}</p>
       </div>

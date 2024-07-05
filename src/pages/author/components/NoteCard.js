@@ -2,7 +2,7 @@ import React from "react";
 
 const NoteCard = ({ title, content }) => (
   <div className="w-full shadow-md bg-[#F7F7F7]">
-    <div className="border-b">
+    <div className="border-b mx-4">
       <h2 className="text-lg font-semibold p-3">{title}</h2>
     </div>
     <div className="p-5">

@@ -43,8 +43,8 @@ const EditableNoteCard = ({ title, initialContent  }) => {
 
   return (
     <div className="w-full shadow-md bg-[#F7F7F7]">
-      <div className="border-b flex items-center justify-between">
-        <h2 className="text-lg font-semibold p-3 ">{title}</h2>
+      <div className="border-b flex items-center mx-4 justify-between">
+        <h2 className="text-lg font-semibold p-3">{title}</h2>
         <PenIcon />
       </div>
       <div className="p-5">

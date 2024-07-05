@@ -7,6 +7,7 @@ import NoteCard from "../author/components/NoteCard";
 import SearchField from "pages/home/components/SearchField";
 import EditorialBookInformation from "./components/EditorialBookInformation";
 import EditableNoteCard from "components/EditableNoteCard";
+import EditorialNotes from "./components/EditorialNotes";
 
 const Editorial = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
@@ -56,7 +57,6 @@ const Editorial = () => {
           <Button title="Edit Information" text="text-[12px]" />
         </div>
       </>
-      {/* header */}
 
       <div className="shadow mt-4 bg-[#F7F7F7] p-3 flex justify-between items-center">
         <p className="text-md font-semibold text-gray-500">
@@ -69,10 +69,18 @@ const Editorial = () => {
         </div>
       </div>
 
-      <div className="w-full shadow-md bg-[#F7F7F7]">
-        <EditorialBookInformation title="About book" info={bookInfo} />
-      </div>
+      <EditorialBookInformation title="About book" info={bookInfo} />
 
+      <div className="flex my-4 gap-4">
+        <div className="w-full shadow-md bg-[#F7F7F7]">
+          <EditorialNotes />
+        </div>
+        <div className="w-full shadow-md bg-[#F7F7F7]">
+          <div className="p-5 mx-4 border-b">
+            <p className="text-xl font-bold">Uploaded files</p>
+          </div>
+        </div>
+      </div>
       <div className="flex my-4 gap-4">
         <div className="w-full space-y-3">
           {editableNotesData.map((note, index) => (
