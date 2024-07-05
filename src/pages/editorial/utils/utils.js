@@ -166,3 +166,26 @@ export const noteCardsData = [
       "Compose a brief synopsis of your book – without giving the plot away. The purpose is to give the reader intriguing and tantalising hints as to what the book is about, but not too much information (no more than 150 words)Compose a brief synopsis of your book – without giving the plot away. The purpose is to give the reader intriguing and tantalising hints as to what the book is about, but not too much information (no more than 150 words)",
   },
 ];
+
+export const filesData = [
+  {
+    category: "Uploaded Contract",
+    files: ["1607001253(708158).pdf", "1607001253(708158).pdf"],
+  },
+  {
+    category: "Uploaded manuscript",
+    files: ["1607001253(708158).pdf", "1607001253(708158).pdf"],
+  },
+  {
+    category: "Uploaded illustrations (Author)",
+    files: ["1607001253(708158).pdf", "1607001253(708158).pdf"],
+  },
+  {
+    category: "Final manuscript uploaded by author",
+    files: ["1607001253(708158).pdf", "1607001253(708158).pdf"],
+  },
+  {
+    category: "Uploaded illustrations (Publisher)",
+    files: ["1607001253(708158).pdf", "1607001253(708158).pdf"],
+  },
+];

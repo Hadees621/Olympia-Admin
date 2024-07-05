@@ -1,13 +1,19 @@
 import React, { useState } from "react";
-import Plus from "utils/icons/Plus";
 import Button from "components/Button";
-import { bookInfo, editableNotesData, noteCardsData } from "./utils/utils";
+import {
+  bookInfo,
+  editableNotesData,
+  filesData,
+  noteCardsData,
+} from "./utils/utils";
 import SelectField from "components/SelectField";
 import NoteCard from "../author/components/NoteCard";
 import SearchField from "pages/home/components/SearchField";
 import EditorialBookInformation from "./components/EditorialBookInformation";
 import EditableNoteCard from "components/EditableNoteCard";
 import EditorialNotes from "./components/EditorialNotes";
+import UploadedFiles from "./components/UploadedFiles";
+import Remaindered from "./components/Remaindered";
 
 const Editorial = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
@@ -58,29 +64,15 @@ const Editorial = () => {
         </div>
       </>
 
-      <div className="shadow mt-4 bg-[#F7F7F7] p-3 flex justify-between items-center">
-        <p className="text-md font-semibold text-gray-500">
-          Aine By Yugtha YJ <span className="text-black"> Book No. </span> 1
-        </p>
-        <p className="text-md font-normal text-gray-500">Remaindered</p>
-        <button className="status-button status-paid"> £ Paid in full</button>
-        <div className="w-16">
-          <Plus classes={"h-full w-full"} />
-        </div>
-      </div>
+      <Remaindered />
 
       <EditorialBookInformation title="About book" info={bookInfo} />
 
-      <div className="flex my-4 gap-4">
-        <div className="w-full shadow-md bg-[#F7F7F7]">
-          <EditorialNotes />
-        </div>
-        <div className="w-full shadow-md bg-[#F7F7F7]">
-          <div className="p-5 mx-4 border-b">
-            <p className="text-xl font-bold">Uploaded files</p>
-          </div>
-        </div>
+      <div className="my-4 space-y-5">
+        <EditorialNotes />
+        <UploadedFiles />
       </div>
+
       <div className="flex my-4 gap-4">
         <div className="w-full space-y-3">
           {editableNotesData.map((note, index) => (
