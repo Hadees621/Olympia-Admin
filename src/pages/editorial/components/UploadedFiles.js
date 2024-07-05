@@ -21,7 +21,7 @@ const UploadedFiles = () => {
       <div className="p-5 mx-4 border-b">
         <p className="text-xl font-bold">Uploaded files</p>
       </div>
-      <div className="mt-4 grid grid-cols-2 gap-4 p-3">
+      <div className="mt-4 grid grid-cols-3 gap-4 p-3">
         {filesData.map((item, index) => (
           <FileCategory
             key={index}
