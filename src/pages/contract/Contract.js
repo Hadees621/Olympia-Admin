@@ -24,8 +24,10 @@ const Contract = () => {
   const placeholders = ["Please Select Author", "Select Book"];
 
   const InformationSection = ({ title, info, imageUrl }) => (
-    <div className="w-full shadow-lg">
-      <p className="text-xl font-bold mx-5 mt-4">{title}</p>
+    <div className="w-full shadow-md bg-[#F7F7F7]">
+      <div className="p-5 mx-4 border-b">
+        <p className="text-xl font-bold">{title}</p>
+      </div>
       <div className="flex justify-between p-8">
         <div className="my-4 gap-4 grid">
           {info.map((item, index) => (
@@ -50,8 +52,10 @@ const Contract = () => {
   );
 
   const ContractInformation = ({ infoLeft, infoRight }) => (
-    <div className="w-full shadow-lg">
-      <p className="text-xl font-bold m-3">Contract Information</p>
+    <div className="w-full shadow-md bg-[#F7F7F7]">
+      <div className="p-5 mx-4 border-b">
+        <p className="text-xl font-bold">Contract Information</p>
+      </div>
       <div className="flex justify-between gap-14 p-8">
         <div className="w-full grid gap-4">
           {infoLeft.map((item, index) => (
@@ -88,7 +92,7 @@ const Contract = () => {
   );
 
   return (
-    <div className="w-full text-start items-center">
+    <div className="w-full text-start items-center ">
       <p className="text-3xl font-semibold mt-8 ml-8">
         Welcome to Olympia Portal (olympia admin)
       </p>
@@ -129,7 +133,7 @@ const Contract = () => {
         </div>
       </div>
 
-      <div className="m-4 flex gap-3 mt-8">
+      <div className="m-4 flex gap-3 mt-8 ">
         <InformationSection
           title="Author Information"
           info={authorInfo}

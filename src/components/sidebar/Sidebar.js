@@ -15,7 +15,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`transition-all duration-300 ${isOpen ? "w-[20%]" : "w-[3.5%]"}`}
+      className={`transition-all duration-300 ${isOpen ? "w-[22%]" : "w-[4%]"}`}
     >
       <div
         className={`bg-[#EEEEEE] shadow text-[11px] rounded-b-2xl grid ${
