@@ -3,8 +3,8 @@ import SidebarMenuItem from "./components/SidebarMenuItem";
 import { menuItems } from "./utils/utils";
 import Logo from "../Logo";
 import LogoutButton from "./components/LogoutButton";
-import Plus from "../../utils/icons/Plus";
-import Minus from "../../utils/icons/Minus";
+import Plus from "utils/icons/Plus";
+import Minus from "utils/icons/Minus";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
