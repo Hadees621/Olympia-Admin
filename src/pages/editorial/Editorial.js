@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Plus from "utils/icons/Plus";
 import Button from "components/Button";
+import { bookInfo } from "./utils/utils";
 import SelectField from "components/SelectField";
-import SearchField from "pages/home/components/SearchField";
 import NoteCard from "../author/components/NoteCard";
-import { bookInfo } from "../book/utils/utils";
+import SearchField from "pages/home/components/SearchField";
 import EditorialBookInformation from "./components/EditorialBookInformation";
 
 const Editorial = () => {
@@ -68,11 +68,20 @@ const Editorial = () => {
         </div>
       </div>
 
-      <div className="m-4 gap-3 mt-8 flex">
-        <EditorialBookInformation title="About book" info={bookInfo} />
+      <div className="shadow-lg mt-4 bg-[#F7F7F7] p-3 flex justify-between m-4 items-center">
         <div className="gap-3 w-full">
-          <NoteCard title="Important note" content="NA" />
-          <NoteCard title="Author notes" content="NA" />
+          <EditorialBookInformation title="About book" info={bookInfo} />
+
+          <div className="gap-3 w-full flex m-4 border border-black">
+            <div>
+              <NoteCard title="Important note" content="NA" />
+              <NoteCard title="Author notes" content="NA" />
+            </div>
+            <div>
+              <NoteCard title="Important note" content="NA" />
+              <NoteCard title="Author notes" content="NA" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

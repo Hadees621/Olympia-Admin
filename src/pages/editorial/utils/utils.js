@@ -1,9 +1,17 @@
 export const bookInfo = [
-  { label: "Book Name:", value: "Janus" },
-  { label: "Publishing Date:", value: "27-08-2020" },
-  { label: "Situation:", value: "Remaindered" },
-  { label: "Imprint:", value: "Olympia Publishers" },
-  { label: "Book Cover:", value: "Cover Not Available" },
+  { label: "Book title:", value: "Living Makes You Run Longer" },
+  { label: "Pen name:", value: "Martin Bulger" },
+  { label: "Author name:", value: "Mr. Bulger Martin" },
+  { label: "Imprint:", value: "Bumblebee Books" },
+  {
+    label: "Production questionnaire status:",
+    value: "Completed - 02-11-2022",
+  },
+  {
+    label: "Production questionnaire details:",
+    value:
+      "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ",
+  },
 ];
 
 export const editorialBookDetails = [
@@ -12,6 +20,16 @@ export const editorialBookDetails = [
   { label: "Hardback ISBN:", value: "No" },
   { label: "eBook ISBN:", value: "Yes" },
   { label: "Audio book ISBN:", value: "No" },
+];
+
+
+export const pricing = [
+  { label: "Price £ (GBP):", value: "£ 7.99" },
+  { label: "Price $ (USD):", value: "$ 9.99" },
+  { label: "Price € (EU):", value: "€ 0" },
+  { label: "Price $ (CAD):", value: "$ 0" },
+  { label: "Price $ (AUD):", value: "$ 0" },
+  { label: "Price ₹(INR):", value: "₹ 0" },
 ];
 
 export const editorialBookDetails2 = [
