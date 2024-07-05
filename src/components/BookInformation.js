@@ -3,8 +3,8 @@ import { bookDetails, bookDetails2 } from "pages/book/utils/utils";
 
 export const BookInformation = ({ title, info, imageUrl, bookFlag }) => (
   <div className="w-full shadow-md bg-[#F7F7F7]">
-    <div className="border-b pb-3 mb-3 mx-4">
-      <p className="text-xl font-bold mx-5 mt-4">{title}</p>
+    <div className="p-5 mx-4 border-b">
+      <p className="text-xl font-bold">{title}</p>
     </div>
     <div className="flex justify-between p-8">
       <div className="my-4 gap-4 grid">
