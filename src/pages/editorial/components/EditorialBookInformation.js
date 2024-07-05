@@ -30,9 +30,9 @@ const EditorialBookInformation = ({ title, info, bookFlag }) => {
 
   const placeholders = ["Please Select Author"];
   return (
-    <div className="w-full ">
-      <div className="-b pb-3 mb-3 mx-4 border-b">
-        <p className="text-xl font-bold mx-5 mt-4">{title}</p>
+    <div className="">
+      <div className="pb-3 mb-3 mx-4 border-b">
+        <p className="text-xl font-bold mx-5 pt-8 mt-4">{title}</p>
       </div>
       <div className="flex justify-between px-8 pb-5">
         <div className="gap-4 grid w-full">

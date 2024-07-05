@@ -6,6 +6,7 @@ import SelectField from "components/SelectField";
 import NoteCard from "../author/components/NoteCard";
 import SearchField from "pages/home/components/SearchField";
 import EditorialBookInformation from "./components/EditorialBookInformation";
+import EditableNoteCard from "components/EditableNoteCard";
 
 const Editorial = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
@@ -26,20 +27,20 @@ const Editorial = () => {
   const placeholders = ["Please Select Author", "Select Book"];
 
   return (
-    <div className="w-full text-start items-center">
+    <div className="w-full text-start items-center m-4">
       {/* header */}
       <>
         <p className="text-3xl font-semibold mt-8 ml-8">
           Welcome to Olympia Portal (olympia admin)
         </p>
-        <div className="flex items-center mt-8 gap-3 m-4">
+        <div className="flex items-center mt-8 gap-3">
           <SearchField placeholder="Book Title" />
           <SearchField placeholder="Pen name/Author name" />
           <Button title="Search" text="text-[12px]" />
           <Button title="Clear" text="text-[12px]" />
           <Button title="ISBN Search" text="text-[12px]" />
         </div>
-        <div className="flex gap-2 justify-start mt-3 items-center w-full px-4">
+        <div className="flex gap-2 justify-start mt-3 items-center w-full">
           <p className="text-md font-semibold text-gray-500">Pen Name:</p>
           {placeholders.map((placeholder, index) => (
             <SelectField
@@ -57,7 +58,7 @@ const Editorial = () => {
       </>
       {/* header */}
 
-      <div className="shadow mt-4 bg-[#F7F7F7] p-3 flex justify-between m-4 items-center">
+      <div className="shadow mt-4 bg-[#F7F7F7] p-3 flex justify-between items-center">
         <p className="text-md font-semibold text-gray-500">
           Aine By Yugtha YJ <span className="text-black"> Book No. </span> 1
         </p>
@@ -68,20 +69,18 @@ const Editorial = () => {
         </div>
       </div>
 
-      <div className="shadow-lg mt-4 bg-[#F7F7F7] p-3 flex justify-between m-4 items-center">
-        <div className="gap-3 w-full">
-          <EditorialBookInformation title="About book" info={bookInfo} />
+      <div className="w-full shadow-md bg-[#F7F7F7]">
+        <EditorialBookInformation title="About book" info={bookInfo} />
+      </div>
 
-          <div className="gap-3 w-full flex m-4 border border-black">
-            <div>
-              <NoteCard title="Important note" content="NA" />
-              <NoteCard title="Author notes" content="NA" />
-            </div>
-            <div>
-              <NoteCard title="Important note" content="NA" />
-              <NoteCard title="Author notes" content="NA" />
-            </div>
-          </div>
+      <div className="flex my-4 gap-4">
+        <div className="w-full space-y-3">
+          <EditableNoteCard title="Important note" content="NA" />
+          <EditableNoteCard title="Author notes" content="NA" />
+        </div>
+        <div className="w-full space-y-3">
+          <NoteCard title="Important note" content="NA" />
+          <NoteCard title="Author notes" content="NA" />
         </div>
       </div>
     </div>
