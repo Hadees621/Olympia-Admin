@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import Button from "components/Button";
-import {
-  bookInfo,
-  editableNotesData,
-  noteCardsData,
-} from "./utils/utils";
+import { bookInfo, editableNotesData, noteCardsData } from "./utils/utils";
 import SelectField from "components/SelectField";
 import NoteCard from "../author/components/NoteCard";
 import SearchField from "pages/home/components/SearchField";
@@ -63,7 +59,7 @@ const Editorial = () => {
         </div>
       </>
 
-      <Remaindered />
+      <Remaindered status={"£ Paid in full"} />
 
       <EditorialBookInformation title="About book" info={bookInfo} />
 
