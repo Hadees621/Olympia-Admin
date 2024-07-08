@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "components/Button";
 import SelectField from "components/SelectField";
 import SearchField from "pages/home/components/SearchField";
 import Remaindered from "../editorial/components/Remaindered";
 import DatePickerField from "components/DatePickerField";
+import Row from "./components/Row";
 
 const DeliveryNotes = () => {
   return (
@@ -31,6 +32,32 @@ const DeliveryNotes = () => {
       </>
 
       <Remaindered />
+
+      <div className="overflow-x-auto mt-5 text-center shadow">
+        <table className="min-w-full table-fixed divide-y divide-gray-200">
+          <thead className="bg-gray-50">
+            <tr className="text-[10px] w-full font-medium text-gray-500 uppercase">
+              <th className="p-3 w-1/6">Date</th>
+              <th className="p-3 w-1/6">Reference</th>
+              <th className="p-3 w-1/6">Company</th>
+              <th className="p-3 w-1/6">DN / RN</th>
+              <th className="p-3 w-1/6"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <Row />
+            <Row />
+            <Row />
+            <Row />
+            <Row />
+            <Row />
+            <Row />
+            <Row />
+            <Row />
+            <Row />
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
