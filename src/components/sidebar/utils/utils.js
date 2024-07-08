@@ -7,7 +7,7 @@ export const menuItems = [
   { to: "/publicity", label: "Publicity" },
   { to: "/invoices", label: "Book Invoices" },
   { to: "/purchases", label: "Purchases" },
-  { to: "/delivery", label: "Delivery Notes" },
+  { to: "/delivery-notes", label: "Delivery Notes" },
   { to: "/orders", label: "Book Orders" },
   { to: "/bumblebee", label: "Bumblebee" },
   { to: "/production", label: "Production" },
