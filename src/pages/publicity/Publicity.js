@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import Button from "components/Button";
-import { bookInfo, editableNotesData, noteCardsData } from "./utils/utils";
 import SelectField from "components/SelectField";
-import NoteCard from "../author/components/NoteCard";
 import SearchField from "pages/home/components/SearchField";
-import EditorialBookInformation from "./components/EditorialBookInformation";
-import EditableNoteCard from "components/EditableNoteCard";
-import EditorialNotes from "./components/EditorialNotes";
-import UploadedFiles from "./components/UploadedFiles";
-import Remaindered from "./components/Remaindered";
+import Remaindered from "../editorial/components/Remaindered";
+import EditorialNotes from "../editorial/components/EditorialNotes";
+import EditableForm from "./components/EditableForm.js/EditableForm";
+import {
+  authorFormData,
+  authorFormFields,
+  bookFormData,
+  bookFormFields,
+  buyLinksFormData,
+  buyLinksFormFields,
+  promotionsFormData,
+  promotionsFormFields,
+} from "./utils/utils";
 
-const Editorial = () => {
+const Publicity = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
 
   const handleSelectChange = (index, e) => {
@@ -27,6 +33,10 @@ const Editorial = () => {
   ];
 
   const placeholders = ["Please Select Author", "Select Book"];
+
+  const handleSave = (formData) => {
+    console.log("Saved data:", formData);
+  };
 
   return (
     <div className="w-full text-start items-center m-4">
@@ -54,38 +64,51 @@ const Editorial = () => {
             />
           ))}
           <Button title="Clear" text="text-[12px]" />
-          <Button title="Normal view" text="text-[12px]" />
-          <Button title="Edit Information" text="text-[12px]" />
         </div>
       </>
 
-      <Remaindered status={"£ Paid in full"} />
+      <Remaindered />
 
-      <EditorialBookInformation title="About book" info={bookInfo} />
-
-      <div className="my-4 space-y-5">
-        <EditorialNotes title={"Editorial notes"} />
-        <UploadedFiles />
-      </div>
-
-      <div className="flex my-4 gap-4">
-        <div className="w-full space-y-3">
-          {editableNotesData.map((note, index) => (
-            <EditableNoteCard
-              key={index}
-              title={note.title}
-              initialContent={note.initialContent}
-            />
-          ))}
+      <div className="gap-4 my-4 flex">
+        <div className="space-y-5 w-full">
+          <EditableForm
+            title="About Author"
+            fields={authorFormFields}
+            initialData={authorFormData}
+            onSave={handleSave}
+          />
+          <EditableForm
+            title="About Book"
+            fields={bookFormFields}
+            initialData={bookFormData}
+            onSave={handleSave}
+          />
+          <EditableForm
+            title="Book Buy Links"
+            fields={buyLinksFormFields}
+            initialData={buyLinksFormData}
+            onSave={handleSave}
+          />
         </div>
-        <div className="w-full space-y-3">
-          {noteCardsData.map((note, index) => (
-            <NoteCard key={index} title={note.title} content={note.content} />
-          ))}
+
+        <div className="space-y-5 w-full">
+          <EditorialNotes title={"Marketing/Publicity notes"} />
+          <EditableForm
+            title="About Book"
+            fields={bookFormFields}
+            initialData={bookFormData}
+            onSave={handleSave}
+          />
+          <EditableForm
+            title="Promotions"
+            fields={promotionsFormFields}
+            initialData={promotionsFormData}
+            onSave={handleSave}
+          />
         </div>
       </div>
     </div>
   );
 };
 
-export default Editorial;
+export default Publicity;

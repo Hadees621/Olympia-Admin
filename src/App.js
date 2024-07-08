@@ -5,6 +5,7 @@ import Contract from "./pages/contract/Contract";
 import Author from "./pages/author/Author";
 import Book from "./pages/book/Book";
 import Editorial from "./pages/editorial/Editorial";
+import Publicity from "./pages/publicity/Publicity";
 
 const App = () => (
   <Routes>
@@ -13,6 +14,7 @@ const App = () => (
     <Route path="/author" element={<Author />} />
     <Route path="/book" element={<Book />} />
     <Route path="/editorial" element={<Editorial />} />
+    <Route path="/publicity" element={<Publicity />} />
   </Routes>
 );
 
