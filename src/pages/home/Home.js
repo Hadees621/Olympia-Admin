@@ -30,10 +30,10 @@ const Home = () => {
       <div className="flex items-center mt-8 gap-3 ml-5 pr-10">
         <SearchField placeholder="Book Title" />
         <SearchField placeholder="Pen name/Author name" />
-        <Button title="Search" text="text-[12px]" />
-        <Button title="Clear" text="text-[12px]" />
-        <Button title="Add New Record" text="text-[12px]" />
-        <Button title="ISBN Search" text="text-[12px]" />
+        <Button title="Search" />
+        <Button title="Clear" />
+        <Button title="Add New Record" />
+        <Button title="ISBN Search" />
       </div>
 
       <div className="flex gap-2 justify-start mt-3 items-center ml-5 w-full pr-10">
@@ -46,8 +46,8 @@ const Home = () => {
             options={options}
           />
         ))}
-        <Button title="Filter" text="text-[12px]" />
-        <Button title="Clear" text="text-[12px]" />
+        <Button title="Filter" />
+        <Button title="Clear" />
       </div>
 
       <Table />
