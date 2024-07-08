@@ -4,9 +4,17 @@ import SelectField from "components/SelectField";
 import SearchField from "pages/home/components/SearchField";
 import Remaindered from "../editorial/components/Remaindered";
 import EditorialNotes from "../editorial/components/EditorialNotes";
-import EditorialBookInformation from "../editorial/components/EditorialBookInformation";
-import { bookInfo } from "../editorial/utils/utils";
 import EditableForm from "./components/EditableForm.js/EditableForm";
+import {
+  authorFormData,
+  authorFormFields,
+  bookFormData,
+  bookFormFields,
+  buyLinksFormData,
+  buyLinksFormFields,
+  promotionsFormData,
+  promotionsFormFields,
+} from "./utils/utils";
 
 const Publicity = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
@@ -28,7 +36,6 @@ const Publicity = () => {
 
   const handleSave = (formData) => {
     console.log("Saved data:", formData);
-    // Implement save logic here (e.g., API call)
   };
 
   return (
@@ -62,128 +69,43 @@ const Publicity = () => {
 
       <Remaindered />
 
-      {/* <div className="flex gap-4 border border-black">
-        <div className="w-full">
-          <EditorialBookInformation title="About book" info={bookInfo} />
-        </div>
-        <div className="w-full">
-          <EditorialNotes />
-        </div>
-      </div> */}
-
-      <div className="flex gap-4 pt-4">
-        <div className="w-full">
+      <div className="gap-4 my-4 flex">
+        <div className="space-y-5 w-full">
           <EditableForm
             title="About Author"
-            fields={[
-              { name: "dateCompleted", label: "Date Completed" },
-              { name: "placeOfBirth", label: "Place of Birth" },
-              { name: "nationality", label: "Nationality" },
-              { name: "occupation", label: "Occupation" },
-              {
-                name: "yearsAtAddress",
-                label: "How long have you lived at your current address?",
-              },
-              { name: "previousAddress", label: "Previous Address" },
-              { name: "hobbies", label: "Hobbies" },
-              { name: "autobiography", label: "Autobiography" },
-              {
-                name: "whyWriting",
-                label: "Why did you choose to start writing?",
-              },
-              {
-                name: "publishingGoal",
-                label: "What do you hope to achieve from publishing this book?",
-              },
-            ]}
-            initialData={{
-              dateCompleted: "08-06-2022",
-              placeOfBirth: "Test222",
-              nationality: "Test222",
-              occupation: "Test222",
-              yearsAtAddress: "20 years",
-              previousAddress: "test",
-              hobbies: "test",
-              autobiography: "test",
-              whyWriting: "test",
-              publishingGoal: "test",
-            }}
+            fields={authorFormFields}
+            initialData={authorFormData}
             onSave={handleSave}
           />
-        </div>
-        <div className="w-full">
           <EditableForm
             title="About Book"
-            fields={[
-              { name: "targetAudience", label: "Target Audience" },
-              {
-                name: "describeAudience",
-                label: "Describe your target audience",
-              },
-              { name: "bookDescription", label: "Book Description" },
-              {
-                name: "similarBooks",
-                label: "Are there any books that are similar to yours?",
-              },
-            ]}
-            initialData={{
-              targetAudience: "20-40 years",
-              describeAudience: "asd",
-              bookDescription: "test disable",
-              similarBooks: "asd",
-            }}
+            fields={bookFormFields}
+            initialData={bookFormData}
+            onSave={handleSave}
+          />
+          <EditableForm
+            title="Book Buy Links"
+            fields={buyLinksFormFields}
+            initialData={buyLinksFormData}
             onSave={handleSave}
           />
         </div>
 
-        {/* <div className="w-full">
+        <div className="space-y-5 w-full">
+          <EditorialNotes title={"Marketing/Publicity notes"} />
           <EditableForm
             title="About Book"
-            fields={[
-              { name: "targetAudience", label: "Target Audience" },
-              {
-                name: "describeAudience",
-                label: "Describe your target audience",
-              },
-              { name: "bookDescription", label: "Book Description" },
-              {
-                name: "similarBooks",
-                label: "Are there any books that are similar to yours?",
-              },
-            ]}
-            initialData={{
-              targetAudience: "20-40 years",
-              describeAudience: "asd",
-              bookDescription: "test disable",
-              similarBooks: "asd",
-            }}
+            fields={bookFormFields}
+            initialData={bookFormData}
+            onSave={handleSave}
+          />
+          <EditableForm
+            title="Promotions"
+            fields={promotionsFormFields}
+            initialData={promotionsFormData}
             onSave={handleSave}
           />
         </div>
-        <div className="w-full">
-          <EditableForm
-            title="About Book"
-            fields={[
-              { name: "targetAudience", label: "Target Audience" },
-              {
-                name: "describeAudience",
-                label: "Describe your target audience",
-              },
-              { name: "bookDescription", label: "Book Description" },
-              {
-                name: "similarBooks",
-                label: "Are there any books that are similar to yours?",
-              },
-            ]}
-            initialData={{
-              targetAudience: "20-40 years",
-              describeAudience: "asd",
-              bookDescription: "test disable",
-              similarBooks: "asd",
-            }}
-            onSave={handleSave}
-          />
-        </div> */}
       </div>
     </div>
   );

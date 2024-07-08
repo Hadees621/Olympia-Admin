@@ -64,7 +64,7 @@ const Editorial = () => {
       <EditorialBookInformation title="About book" info={bookInfo} />
 
       <div className="my-4 space-y-5">
-        <EditorialNotes />
+        <EditorialNotes title={"Editorial notes"} />
         <UploadedFiles />
       </div>
 

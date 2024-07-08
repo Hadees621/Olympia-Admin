@@ -27,7 +27,7 @@ const EditableForm = ({ title, fields, initialData, onSave }) => {
 
       <form className="pt-4 space-y-3 p-5">
         {fields.map((field) => (
-          <div key={field.name} className="flex flex-col">
+          <div key={field.name} className="flex flex-col ">
             <div className="">
               <label className="text-lg font-semibold px-">{field.label}</label>
               {isEditing ? (
@@ -39,7 +39,7 @@ const EditableForm = ({ title, fields, initialData, onSave }) => {
                   className="text-lg border w-full"
                 />
               ) : (
-                <p className="text-lg p-1">{formData[field.name]}</p>
+                <p className="text-lg p-2">{formData[field.name]}</p>
               )}
             </div>
           </div>

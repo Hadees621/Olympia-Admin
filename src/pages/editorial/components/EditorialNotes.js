@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const EditorialNotes = () => {
+const EditorialNotes = ({ title }) => {
   const [activeTab, setActiveTab] = useState("overview");
   const [notes, setNotes] = useState([
     {
@@ -158,7 +158,7 @@ const EditorialNotes = () => {
   return (
     <div className="w-full shadow-md bg-[#F7F7F7]">
       <div className="p-5 mx-4 border-b">
-        <p className="text-xl font-bold">Editorial notes</p>
+        <p className="text-xl font-bold">{title}</p>
       </div>
       <div className="flex p-4">
         {renderTabButton("overview", "Overview")}
