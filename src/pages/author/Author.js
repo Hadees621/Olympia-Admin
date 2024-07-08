@@ -18,13 +18,6 @@ const Author = () => {
     setSelectedValues(newSelectedValues);
   };
 
-  const options = [
-    { value: "option1", label: "Option 1" },
-    { value: "option2", label: "Option 2" },
-    { value: "option3", label: "Option 3" },
-    { value: "option4", label: "Option 4" },
-  ];
-
   const placeholders = ["Please Select Author", "Select Book"];
 
   return (
@@ -37,9 +30,9 @@ const Author = () => {
         <div className="flex items-center mt-8 gap-3 m-4">
           <SearchField placeholder="Book Title" />
           <SearchField placeholder="Pen name/Author name" />
-          <Button title="Search" text="text-[12px]" />
-          <Button title="Clear" text="text-[12px]" />
-          <Button title="ISBN Search" text="text-[12px]" />
+          <Button title="Search" />
+          <Button title="Clear" />
+          <Button title="ISBN Search" />
         </div>
         <div className="flex gap-2 justify-start mt-3 items-center w-full px-4">
           <p className="text-md font-semibold text-gray-500">Pen Name:</p>
@@ -49,12 +42,11 @@ const Author = () => {
               placeholder={placeholder}
               value={selectedValues[index]}
               onChange={(e) => handleSelectChange(index, e)}
-              options={options}
             />
           ))}
-          <Button title="Clear" text="text-[12px]" />
-          <Button title="Normal view" text="text-[12px]" />
-          <Button title="Edit" text="text-[12px]" />
+          <Button title="Clear" />
+          <Button title="Normal view" />
+          <Button title="Edit" />
         </div>
       </>
       {/* header */}

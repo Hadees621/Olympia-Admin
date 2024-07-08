@@ -25,13 +25,6 @@ const Publicity = () => {
     setSelectedValues(newSelectedValues);
   };
 
-  const options = [
-    { value: "option1", label: "Option 1" },
-    { value: "option2", label: "Option 2" },
-    { value: "option3", label: "Option 3" },
-    { value: "option4", label: "Option 4" },
-  ];
-
   const placeholders = ["Please Select Author", "Select Book"];
 
   const handleSave = (formData) => {
@@ -48,9 +41,9 @@ const Publicity = () => {
         <div className="flex items-center mt-8 gap-3">
           <SearchField placeholder="Book Title" />
           <SearchField placeholder="Pen name/Author name" />
-          <Button title="Search" text="text-[12px]" />
-          <Button title="Clear" text="text-[12px]" />
-          <Button title="ISBN Search" text="text-[12px]" />
+          <Button title="Search" />
+          <Button title="Clear" />
+          <Button title="ISBN Search" />
         </div>
         <div className="flex gap-2 justify-start mt-3 items-center w-full">
           <p className="text-md font-semibold text-gray-500">Pen Name:</p>
@@ -60,10 +53,9 @@ const Publicity = () => {
               placeholder={placeholder}
               value={selectedValues[index]}
               onChange={(e) => handleSelectChange(index, e)}
-              options={options}
             />
           ))}
-          <Button title="Clear" text="text-[12px]" />
+          <Button title="Clear" />
         </div>
       </>
 

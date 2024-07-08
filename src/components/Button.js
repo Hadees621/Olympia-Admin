@@ -1,10 +1,11 @@
 import React from "react";
 
-const Button = ({ title, text }) => {
+const Button = ({ title, text, bg = "bg-[#001C4E1F]" }) => {
   const textClass = text;
+  const backgroundColor = bg;
   return (
     <button
-      className={` bg-[#001C4E1F] rounded-md ${textClass} text-[#001C4E] font-bold px-8 py-2`}
+      className={` ${backgroundColor} ${textClass} rounded-md text-[#001C4E] font-bold px-8 py-2 text-[12px]`}
     >
       {title}
     </button>
