@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "components/Button";
 import Row from "pages/book-invoices/components/Row";
+import TotalRevenue from "./TotalRevenue";
 
 const IngramTab = () => {
   return (
@@ -42,6 +43,13 @@ const IngramTab = () => {
             <Row />
           </tbody>
         </table>
+      </div>
+
+      <div className="flex justify-between">
+        <p className="p-4 text-xl font-bold"> Total invoices: 12 </p>
+        <div>
+          <TotalRevenue />
+        </div>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import Row from "pages/book-invoices/components/Row";
 import DatePickerField from "components/DatePickerField";
 import SelectField from "components/SelectField";
 import Button from "components/Button";
+import TotalRevenue from "./TotalRevenue";
 
 const PreOrdersTab = () => {
   return (
@@ -49,6 +50,13 @@ const PreOrdersTab = () => {
             <Row />
           </tbody>
         </table>
+      </div>
+
+      <div className="flex justify-between">
+        <p className="p-4 text-xl font-bold"> Total invoices: 12 </p>
+        <div>
+          <TotalRevenue />
+        </div>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import Button from "components/Button";
 import SelectField from "components/SelectField";
 import Row from "pages/book-orders/components/Row";
 import DatePickerField from "components/DatePickerField";
+import TotalRevenue from "./TotalRevenue";
 
 const ProcessingTab = () => {
   const [selectedRows, setSelectedRows] = useState([]);
@@ -78,6 +79,13 @@ const ProcessingTab = () => {
             )}
           </tbody>
         </table>
+      </div>
+
+      <div className="flex justify-between">
+        <p className="p-4 text-xl font-bold"> Total invoices: 12 </p>
+        <div>
+          <TotalRevenue />
+        </div>
       </div>
     </div>
   );
