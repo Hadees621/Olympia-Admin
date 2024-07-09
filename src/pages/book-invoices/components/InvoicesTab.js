@@ -2,6 +2,7 @@ import React from "react";
 import Button from "components/Button";
 import SelectField from "components/SelectField";
 import Row from "./Row";
+import BookInvoicesRow from "./BookInvoicesRow";
 
 const InvoicesTab = () => {
   return (
@@ -21,6 +22,7 @@ const InvoicesTab = () => {
               <th className="p-3 "> Credit No. </th>
               <th className="p-3 "> C/N Date</th>
               <th className="p-3 "> Client</th>
+              <th className="p-3 "> Quantity</th>
               <th className="p-3 "> Total Amount </th>
               <th className="p-3 ">C/N Amount </th>
               <th className="p-3 ">Amount Due</th>
@@ -31,16 +33,16 @@ const InvoicesTab = () => {
             </tr>
           </thead>
           <tbody>
-            <Row />
-            <Row />
-            <Row />
-            <Row />
-            <Row />
-            <Row />
-            <Row />
-            <Row />
-            <Row />
-            <Row />
+            <BookInvoicesRow />
+            <BookInvoicesRow />
+            <BookInvoicesRow />
+            <BookInvoicesRow />
+            <BookInvoicesRow />
+            <BookInvoicesRow />
+            <BookInvoicesRow />
+            <BookInvoicesRow />
+            <BookInvoicesRow />
+            <BookInvoicesRow />
           </tbody>
         </table>
       </div>
