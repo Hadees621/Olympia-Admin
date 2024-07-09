@@ -6,6 +6,9 @@ import Remaindered from "../editorial/components/Remaindered";
 import ProcessingTab from "./components/ProcessingTab";
 import PreOrdersTab from "./components/PreOrdersTab";
 import ShippedTab from "./components/ShipedTab";
+import IngramTab from "./components/IngramTab";
+import ReportsTab from "./components/ReportsTab";
+import ArchiveTab from "./components/ArchiveTab";
 
 const BookOrders = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
@@ -199,7 +202,7 @@ const BookOrders = () => {
           role="tabpanel"
           aria-labelledby="ingram-tab"
         >
-          {/* Add your Ingram content here */}
+          <IngramTab />
         </div>
         <div
           className={`p-4 dark:bg-gray-800 ${
@@ -209,7 +212,7 @@ const BookOrders = () => {
           role="tabpanel"
           aria-labelledby="reports-tab"
         >
-          {/* Add your Reports content here */}
+          <ReportsTab />
         </div>
         <div
           className={`p-4 dark:bg-gray-800 ${
@@ -219,7 +222,7 @@ const BookOrders = () => {
           role="tabpanel"
           aria-labelledby="archive-tab"
         >
-          {/* Add your Archive content here */}
+          <ArchiveTab />
         </div>
       </div>
     </div>
