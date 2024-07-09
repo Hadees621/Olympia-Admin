@@ -53,7 +53,9 @@ const Editorial = () => {
 
       <Remaindered status={"£ Paid in full"} />
 
-      <EditorialBookInformation title="About book" info={bookInfo} />
+      <div className="pt-4">
+        <EditorialBookInformation title="About book" info={bookInfo} />
+      </div>
 
       <div className="my-4 space-y-5">
         <EditorialNotes title={"Editorial notes"} />
