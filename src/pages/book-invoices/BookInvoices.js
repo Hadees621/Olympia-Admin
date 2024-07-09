@@ -3,7 +3,6 @@ import SearchField from "../home/components/SearchField";
 import SelectField from "components/SelectField";
 import Button from "components/Button";
 import Remaindered from "../editorial/components/Remaindered";
-import Row from "../book-invoices/components/Row";
 import StackTab from "./components/StackTab";
 import InvoicesTab from "./components/InvoicesTab";
 
@@ -50,7 +49,7 @@ const BookInvoices = () => {
 
       <Remaindered />
 
-      <div className="mb-4 dark:border-gray-700 justify-center flex pt-3">
+      <div className="mb-4 justify-center flex pt-3">
         <ul
           className="flex flex-wrap -mb-px text-sm font-medium text-center"
           id="default-styled-tab"
