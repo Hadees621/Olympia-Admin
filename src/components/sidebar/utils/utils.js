@@ -5,7 +5,7 @@ export const menuItems = [
   { to: "/book", label: "Book" },
   { to: "/editorial", label: "Editorial" },
   { to: "/publicity", label: "Publicity" },
-  { to: "/invoices", label: "Book Invoices" },
+  { to: "/book-invoices", label: "Book Invoices" },
   { to: "/purchases", label: "Purchases" },
   { to: "/delivery-notes", label: "Delivery Notes" },
   { to: "/orders", label: "Book Orders" },
