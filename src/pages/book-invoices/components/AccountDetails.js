@@ -46,7 +46,7 @@ const AccountDetails = () => {
                 name={key}
                 value={accountDetails[key]}
                 onChange={handleChange}
-                className="border p-2"
+                className="shadow appearance-none rounded w-full p-2.5 text-gray-700 leading-tight focus:outline-none bg-white"
               />
             </div>
           ) : (

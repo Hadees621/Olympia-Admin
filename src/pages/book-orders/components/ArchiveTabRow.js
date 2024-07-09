@@ -1,7 +1,7 @@
-import TableButton from "components/TableButton";
 import React from "react";
+import TableButton from "components/TableButton";
 
-const Row = () => {
+const ArchiveTabRow = () => {
   return (
     <tr className="text-[11px] border-b text-center">
       <td className="p-3">08-06-2010</td>
@@ -16,11 +16,11 @@ const Row = () => {
         <div className="flex justify-center items-center space-x-2">
           <TableButton title={"View"} />
           <TableButton title={"Edit"} bg="bg-green-500" text={"text-white"} />
-          <TableButton title={"Archive"} bg="bg-red-500" text={"text-white"} />
+          <TableButton title={"UnArchive"} bg="bg-red-500" text={"text-white"} />
         </div>
       </td>
     </tr>
   );
 };
 
-export default Row;
+export default ArchiveTabRow;
