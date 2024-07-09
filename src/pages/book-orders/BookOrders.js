@@ -5,6 +5,7 @@ import Button from "components/Button";
 import Remaindered from "../editorial/components/Remaindered";
 import ProcessingTab from "./components/ProcessingTab";
 import PreOrdersTab from "./components/PreOrdersTab";
+import ShippedTab from "./components/ShipedTab";
 
 const BookOrders = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
@@ -188,7 +189,7 @@ const BookOrders = () => {
           role="tabpanel"
           aria-labelledby="shipped-tab"
         >
-          {/* Add your Shipped content here */}
+          <ShippedTab />
         </div>
         <div
           className={`p-4 dark:bg-gray-800 ${

@@ -4,14 +4,14 @@ import SelectField from "components/SelectField";
 import Row from "pages/book-orders/components/Row";
 import DatePickerField from "components/DatePickerField";
 
-const ProcessingTab = () => {
+const ShippedTab = () => {
   const [selectedRows, setSelectedRows] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
 
   const handleSelectAll = () => {
     setSelectAll(!selectAll);
     if (!selectAll) {
-      setSelectedRows([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]);
+      setSelectedRows([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
     } else {
       setSelectedRows([]);
     }
@@ -37,7 +37,6 @@ const ProcessingTab = () => {
           <Button title="All Processing Invoices" />
         </div>
         <div className="flex items-center justify-end mt-3 gap-3 my-4">
-          <Button title="Shipped" />
           <Button title="Print" />
           <Button title="Shopping label" />
           <Button title="Send via Ingram" />
@@ -45,7 +44,7 @@ const ProcessingTab = () => {
       </div>
 
       <div className="overflow-x-auto text-center shadow max-h-[600px]">
-        <table className="min-w-full table-fixed divide-y divide-gray-200">
+        <table className="min-w-full divide-y divide-gray-200 ">
           <thead className="bg-gray-50 whitespace-nowrap sticky top-0 z-10">
             <tr className="text-[10px] w-full font-medium text-gray-500 uppercase">
               <th className="p-3">
@@ -83,4 +82,4 @@ const ProcessingTab = () => {
   );
 };
 
-export default ProcessingTab;
+export default ShippedTab;
