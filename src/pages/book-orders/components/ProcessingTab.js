@@ -11,7 +11,7 @@ const ProcessingTab = () => {
   const handleSelectAll = () => {
     setSelectAll(!selectAll);
     if (!selectAll) {
-      setSelectedRows([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); // Example row IDs
+      setSelectedRows([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
     } else {
       setSelectedRows([]);
     }

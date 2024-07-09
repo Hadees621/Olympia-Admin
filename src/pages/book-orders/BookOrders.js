@@ -3,13 +3,12 @@ import SearchField from "../home/components/SearchField";
 import SelectField from "components/SelectField";
 import Button from "components/Button";
 import Remaindered from "../editorial/components/Remaindered";
-import StackTab from "../book-invoices/components/StackTab";
-import InvoicesTab from "../book-invoices/components/InvoicesTab";
 import ProcessingTab from "./components/ProcessingTab";
+import PreOrdersTab from "./components/PreOrdersTab";
 
 const BookOrders = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
-  const [activeTab, setActiveTab] = useState("profile");
+  const [activeTab, setActiveTab] = useState("processing");
 
   const handleSelectChange = (index, e) => {
     const newSelectedValues = [...selectedValues];
@@ -179,7 +178,7 @@ const BookOrders = () => {
           role="tabpanel"
           aria-labelledby="pre-orders-tab"
         >
-          <InvoicesTab />
+          <PreOrdersTab />
         </div>
         <div
           className={`p-4 dark:bg-gray-800 ${

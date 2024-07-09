@@ -3,7 +3,7 @@ import React from "react";
 
 const Row = () => {
   return (
-    <tr className="text-[11px] border-b">
+    <tr className="text-[11px] border-b text-center">
       <td className="p-3">08-06-2010</td>
       <td className="p-3">2107</td>
       <td className="p-3">0000-00-00</td>
