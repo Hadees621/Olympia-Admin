@@ -36,7 +36,6 @@ const Home = () => {
             placeholder={placeholder}
             value={selectedValues[index]}
             onChange={(e) => handleSelectChange(index, e)}
-            
           />
         ))}
         <Button title="Filter" />

@@ -61,7 +61,7 @@ const Author = () => {
         </div>
       </div>
 
-      <div className="m-4 gap-3 mt-8 flex">
+      <div className="m-4 gap-3 flex">
         <InformationSection
           title="Author Information"
           info={authorInfo}
