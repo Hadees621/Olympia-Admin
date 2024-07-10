@@ -9,6 +9,7 @@ import Publicity from "./pages/publicity/Publicity";
 import BookInvoices from "./pages/book-invoices/BookInvoices";
 import DeliveryNotes from "./pages/delivery-notes/Delivery-Notes";
 import BookOrders from "./pages/book-orders/BookOrders";
+import Purchases from "./pages/purchases/Purchases";
 
 const App = () => (
   <Routes>
@@ -21,6 +22,7 @@ const App = () => (
     <Route path="/delivery-notes" element={<DeliveryNotes />} />
     <Route path="/book-invoices" element={<BookInvoices />} />
     <Route path="/book-orders" element={<BookOrders />} />
+    <Route path="/purchases" element={<Purchases />} />
   </Routes>
 );
 
