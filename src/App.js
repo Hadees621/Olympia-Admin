@@ -10,6 +10,7 @@ import BookInvoices from "./pages/book-invoices/BookInvoices";
 import DeliveryNotes from "./pages/delivery-notes/Delivery-Notes";
 import BookOrders from "./pages/book-orders/BookOrders";
 import Purchases from "./pages/purchases/Purchases";
+import Bumblebee from "./pages/bumblebee/Bumblebee";
 
 const App = () => (
   <Routes>
@@ -23,6 +24,7 @@ const App = () => (
     <Route path="/book-invoices" element={<BookInvoices />} />
     <Route path="/book-orders" element={<BookOrders />} />
     <Route path="/purchases" element={<Purchases />} />
+    <Route path="/bumblebee" element={<Bumblebee />} />
   </Routes>
 );
 
