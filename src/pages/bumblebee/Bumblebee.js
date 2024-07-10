@@ -4,125 +4,12 @@ import useSidebarStore from "stores/States";
 import SearchField from "../home/components/SearchField";
 import BumblebeeTable from "./components/BumblebeeTable";
 import SelectField from "components/SelectField";
+import FinalCheck from "./components/FinalCheck";
+import { data } from "./utils/utils";
 
 const Bumblebee = () => {
   const { isOpen } = useSidebarStore();
   const [activeTab, setActiveTab] = useState("processing");
-
-  const data = [
-    {
-      status: "Under Production",
-      penName: "Barbara Harrison",
-      bookTitle: "Count on the Animals (Hardback)",
-      illustratedBy: "Olympia",
-      contractDate: "07-11-2020",
-      remainingDays: "0",
-      daysActivated: "31-12-2021",
-      authorForms: { form1: true, form2: false, form3: true },
-      jobStarted: "03-05-2023",
-      sampleApproved: "03-05-2023",
-      outlinesApproved: "03-05-2023",
-      colouredApproved: "03-05-2023",
-      coverDesignToAuthor: "03-05-2023",
-      innersToAuthor: "03-05-2023",
-      firstProofsReader: "03-05-2023",
-      firstProofsAuthor: "03-05-2023",
-      firstProofsAmender: "03-05-2023",
-      secondProofsAuthor: "03-05-2023",
-      thirdProofsAuthor: "03-05-2023",
-      coverCertificateReceived: "03-05-2023",
-      proofsCertificateReceived: "03-05-2023",
-      finalisedForPrint: "03-05-2023",
-      sendForFinalCheck: "Send",
-      publicationDate: "03-05-2023",
-      contractPaymentStatus: "Pending",
-      notes: "",
-    },
-    {
-      status: "Under Production",
-      penName: "Barbara Harrison",
-      bookTitle: "Count on the Animals (Hardback)",
-      illustratedBy: "Olympia",
-      contractDate: "07-11-2020",
-      remainingDays: "0",
-      daysActivated: "31-12-2021",
-      authorForms: { form1: true, form2: false, form3: true },
-      jobStarted: "03-05-2023",
-      sampleApproved: "03-05-2023",
-      outlinesApproved: "03-05-2023",
-      colouredApproved: "03-05-2023",
-      coverDesignToAuthor: "03-05-2023",
-      innersToAuthor: "03-05-2023",
-      firstProofsReader: "03-05-2023",
-      firstProofsAuthor: "03-05-2023",
-      firstProofsAmender: "03-05-2023",
-      secondProofsAuthor: "03-05-2023",
-      thirdProofsAuthor: "03-05-2023",
-      coverCertificateReceived: "03-05-2023",
-      proofsCertificateReceived: "03-05-2023",
-      finalisedForPrint: "03-05-2023",
-      sendForFinalCheck: "Send",
-      publicationDate: "03-05-2023",
-      contractPaymentStatus: "Pending",
-      notes: "",
-    },
-    {
-      status: "Under Production",
-      penName: "Barbara Harrison",
-      bookTitle: "Count on the Animals (Hardback)",
-      illustratedBy: "Olympia",
-      contractDate: "07-11-2020",
-      remainingDays: "0",
-      daysActivated: "31-12-2021",
-      authorForms: { form1: true, form2: false, form3: true },
-      jobStarted: "03-05-2023",
-      sampleApproved: "03-05-2023",
-      outlinesApproved: "03-05-2023",
-      colouredApproved: "03-05-2023",
-      coverDesignToAuthor: "03-05-2023",
-      innersToAuthor: "03-05-2023",
-      firstProofsReader: "03-05-2023",
-      firstProofsAuthor: "03-05-2023",
-      firstProofsAmender: "03-05-2023",
-      secondProofsAuthor: "03-05-2023",
-      thirdProofsAuthor: "03-05-2023",
-      coverCertificateReceived: "03-05-2023",
-      proofsCertificateReceived: "03-05-2023",
-      finalisedForPrint: "03-05-2023",
-      sendForFinalCheck: "Send",
-      publicationDate: "03-05-2023",
-      contractPaymentStatus: "Pending",
-      notes: "",
-    },
-    {
-      status: "Under Production",
-      penName: "Barbara Harrison",
-      bookTitle: "Count on the Animals (Hardback)",
-      illustratedBy: "Olympia",
-      contractDate: "07-11-2020",
-      remainingDays: "0",
-      daysActivated: "31-12-2021",
-      authorForms: { form1: true, form2: false, form3: true },
-      jobStarted: "03-05-2023",
-      sampleApproved: "03-05-2023",
-      outlinesApproved: "03-05-2023",
-      colouredApproved: "03-05-2023",
-      coverDesignToAuthor: "03-05-2023",
-      innersToAuthor: "03-05-2023",
-      firstProofsReader: "03-05-2023",
-      firstProofsAuthor: "03-05-2023",
-      firstProofsAmender: "03-05-2023",
-      secondProofsAuthor: "03-05-2023",
-      thirdProofsAuthor: "03-05-2023",
-      coverCertificateReceived: "03-05-2023",
-      proofsCertificateReceived: "03-05-2023",
-      finalisedForPrint: "03-05-2023",
-      sendForFinalCheck: "Send",
-      publicationDate: "03-05-2023",
-      contractPaymentStatus: "Pending",
-      notes: "",
-    },
-  ];
 
   return (
     <div
@@ -131,11 +18,9 @@ const Bumblebee = () => {
       }`}
     >
       {/* header */}
-      <>
-        <p className="text-3xl font-semibold mt-8 ml-8">
-          Books ( Imprint: BumbleBee )
-        </p>
-      </>
+      <p className="text-3xl font-semibold mt-8 ml-8">
+        Books ( Imprint: Bumblebee )
+      </p>
 
       <div className="mb-4 justify-center flex pt-3">
         <ul
@@ -174,7 +59,7 @@ const Bumblebee = () => {
               aria-selected={activeTab === "pre-orders"}
               onClick={() => setActiveTab("pre-orders")}
             >
-              Final Check
+              Final Check (0)
             </button>
           </li>
         </ul>
@@ -188,7 +73,7 @@ const Bumblebee = () => {
           role="tabpanel"
           aria-labelledby="processing-tab"
         >
-          <>
+          <div>
             <div className="flex items-center mt-3 gap-3 m-4">
               <SearchField placeholder="Book Title" />
               <SearchField placeholder="Pen Name/Author Name" />
@@ -196,7 +81,15 @@ const Bumblebee = () => {
               <Button title="Clear" />
               <SelectField placeholder={"Select Filter"} />
             </div>
-            <div className="flex items-center justify-center gap-3 my-8">
+
+            <div className="mt-3 w-full mx-4 font-semibold text-lg">
+              <p>Olympia illustrations: 113</p>
+              <p>Author illustrations: 137</p>
+              <p>No illustrations: 10</p>
+              <p>Total Records: 260</p>
+            </div>
+
+            <div className="flex items-center h-full justify-center gap-3 w-full">
               {[...Array(17)].map((_, index) => (
                 <li role="presentation" key={index} className="list-none">
                   <button
@@ -210,6 +103,7 @@ const Bumblebee = () => {
                 </li>
               ))}
             </div>
+
             <div
               className={`m-4 transition-all duration-300 ${
                 isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
@@ -217,7 +111,7 @@ const Bumblebee = () => {
             >
               <BumblebeeTable data={data} />
             </div>
-          </>
+          </div>
         </div>
         <div
           className={`p-4 dark:bg-gray-800 ${
@@ -226,7 +120,9 @@ const Bumblebee = () => {
           id="final-check-tab"
           role="tabpanel"
           aria-labelledby="pre-orders-tab"
-        ></div>
+        >
+          <FinalCheck />
+        </div>
       </div>
     </div>
   );
