@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import SidebarMenuItem from "./components/SidebarMenuItem";
 import { menuItems } from "./utils/utils";
 import Logo from "../Logo";
 import LogoutButton from "./components/LogoutButton";
 import Plus from "utils/icons/Plus";
 import Minus from "utils/icons/Minus";
+import useSidebarStore from "stores/States";
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true);
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
+  const { isOpen, toggleSidebar } = useSidebarStore();
 
   return (
     <div
