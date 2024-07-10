@@ -7,7 +7,7 @@ const Table = () => {
     <div className="overflow-x-auto mt-5 mx-3 text-center shadow">
       <table className="min-w-full divide-y divide-gray-200">
         <thead className="bg-gray-50 ">
-          <tr className="text-[10px] w-full font-medium text-gray-500 uppercase">
+          <tr className="text-sm w-full font-bold  uppercase">
             <th className="p-3 ">Status</th>
             <th className="p-3">Imprint</th>
             <th className="p-3">Author</th>
