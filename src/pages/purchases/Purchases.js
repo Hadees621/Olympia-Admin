@@ -101,7 +101,11 @@ const Purchases = () => {
         </div>
       </>
 
-      <div className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-full"}`}>
+      <div
+        className={`m-4 transition-all duration-300 ${
+          isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
+        }`}
+      >
         <ScrollableTable data={data} />
       </div>
     </div>

@@ -22,7 +22,7 @@ const TableRow = ({ data }) => {
   };
 
   return (
-    <tr className="text-[10px]">
+    <tr className="text-sm font-medium">
       <td className="p-3 text-orange-400">{data.status}</td>
       <td className="p-3">{data.imprint}</td>
       <td className="p-3">{data.author}</td>
