@@ -1,7 +1,7 @@
 import React from "react";
-import Calculator from "../../../utils/icons/Calculator";
-import Notepad from "../../../utils/icons/Notepad";
-import Speaker from "../../../utils/icons/Speaker";
+import Calculator from "utils/icons/Calculator";
+import Notepad from "utils/icons/Notepad";
+import Speaker from "utils/icons/Speaker";
 
 const TableRow = ({ data }) => {
   const getStatusClass = (status) => {
