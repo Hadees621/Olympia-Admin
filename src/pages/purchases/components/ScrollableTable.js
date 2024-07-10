@@ -5,8 +5,8 @@ const ScrollableTable = ({ data }) => {
   return (
     <div class="overflow-x-auto shadow-md transition-all duration-300">
       <table class="w-full text-sm text-left rtl:text-right text-blue-100 dark:text-blue-100 max-h-[500px] ">
-        <thead class="text-xs text-white uppercase  dark:text-white">
-          <tr className="text-xs font-medium text-gray-500 uppercase text-center">
+        <thead class="text-sm text-white uppercase font-bold">
+          <tr className="text-sm font-medium text-gray-500 uppercase text-center">
             <th className="px-6 py-3 border">Name</th>
             <th className="px-6 py-3 border">Last Name</th>
             <th className="px-6 py-3 border">Company</th>
@@ -26,7 +26,7 @@ const ScrollableTable = ({ data }) => {
           {data.map((row, index) => (
             <tr
               key={index}
-              className="text-xs text-gray-700 text-center border"
+              className="text-sm text-gray-700 text-center border"
             >
               <td className="px-6 py-4 border">{row.name}</td>
               <td className="px-6 py-4 border">{row.lastName}</td>
