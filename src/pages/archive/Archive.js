@@ -46,7 +46,7 @@ const Archive = () => {
         <SearchField placeholder="Pen name/Author name" />
         <Button title="Search" />
         <Button title="Clear" />
-        <Button title="Add New Record" />
+        <Button title="Add New Record" bg="bg-green-500" text={"text-white"} />
 
         <Button title="ISBN Search" />
       </div>
