@@ -12,6 +12,7 @@ import BookOrders from "./pages/book-orders/BookOrders";
 import Purchases from "./pages/purchases/Purchases";
 import Bumblebee from "./pages/bumblebee/Bumblebee";
 import FinalCheck from "./pages/final-check/FinalCheck";
+import Production from "./pages/production/Production";
 
 const App = () => (
   <Routes>
@@ -26,6 +27,7 @@ const App = () => (
     <Route path="/book-orders" element={<BookOrders />} />
     <Route path="/purchases" element={<Purchases />} />
     <Route path="/bumblebee" element={<Bumblebee />} />
+    <Route path="/production" element={<Production />} />
     <Route path="/final-check" element={<FinalCheck />} />
   </Routes>
 );

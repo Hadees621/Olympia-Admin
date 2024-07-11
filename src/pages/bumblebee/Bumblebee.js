@@ -20,6 +20,7 @@ const tabs = [
     label: "Final Check (0)",
     totalRecords: 0,
     component: FinalCheckTab,
+    data,
   },
 ];
 

@@ -28,7 +28,6 @@ const Home = () => {
         <Button title="Add New Record" />
         <Button title="ISBN Search" />
       </div>
-
       <div className="flex gap-2 justify-start mt-3 items-center ml-5 w-full pr-10">
         {placeholders.map((placeholder, index) => (
           <SelectField
@@ -41,7 +40,6 @@ const Home = () => {
         <Button title="Filter" />
         <Button title="Clear" />
       </div>
-
       <Table />
     </div>
   );
