@@ -6,6 +6,7 @@ import SelectField from "components/SelectField";
 import FinalCheckTab from "../bumblebee/components/FinalCheckTab";
 import { data } from "../bumblebee/utils/utils";
 import FinalCheckTable from "../final-check/components/FinalCheckTable";
+import Pagination from "components/Pagination";
 
 const tabs = [
   { id: "ks-tab", label: "KS", totalRecords: 205 },
@@ -22,19 +23,9 @@ const TabContent = ({ activeTab, isOpen }) => {
       <div className="mt-3 w-full mx-4 font-semibold text-lg">
         <p>Total Records: {tabData.totalRecords}</p>
       </div>
-      <div className="flex items-center h-full justify-center gap-3 w-full">
-        {[...Array(7)].map((_, index) => (
-          <li role="presentation" key={index} className="list-none">
-            <button
-              className="border-b-2 rounded-t-lg text-md font-bold"
-              type="button"
-              role="tab"
-            >
-              {index + 1}
-            </button>
-          </li>
-        ))}
-      </div>
+
+      <Pagination num={7} />
+
       <div
         className={`m-4 transition-all duration-300 ${
           isOpen ? "max-w-[1050px]" : "max-w-[1250px]"

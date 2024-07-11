@@ -6,6 +6,7 @@ import BumblebeeTable from "./components/BumblebeeTable";
 import SelectField from "components/SelectField";
 import { data } from "./utils/utils";
 import FinalCheckTab from "./components/FinalCheckTab";
+import Pagination from "components/Pagination";
 
 const tabs = [
   {
@@ -47,21 +48,8 @@ const TabContent = ({ activeTab, isOpen }) => {
         </div>
       )}
 
-      {tabData.totalRecords > 0 && (
-        <div className="flex items-center h-full justify-center gap-3 w-full">
-          {[...Array(17)].map((_, index) => (
-            <li role="presentation" key={index} className="list-none">
-              <button
-                className="border-b-2 rounded-t-lg text-md font-bold"
-                type="button"
-                role="tab"
-              >
-                {index + 1}
-              </button>
-            </li>
-          ))}
-        </div>
-      )}
+      <Pagination num={7} />
+
       <div
         className={`m-4 transition-all duration-300 ${
           isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
