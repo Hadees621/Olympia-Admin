@@ -41,10 +41,13 @@ const Archive = () => {
         <Button title="Clear" />
       </div>
       <div className="flex items-center mt-3 gap-3 px-6">
+        <SelectField placeholder={"All"} />
         <SearchField placeholder="Book Title" />
         <SearchField placeholder="Pen name/Author name" />
         <Button title="Search" />
         <Button title="Clear" />
+        <Button title="Add New Record" />
+
         <Button title="ISBN Search" />
       </div>
 
