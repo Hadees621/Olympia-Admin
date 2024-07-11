@@ -1,6 +1,6 @@
 import React from "react";
 
-const FinalCheck = () => {
+const FinalCheckTab = () => {
   return (
     <table className="min-w-full divide-y divide-gray-200">
       <thead className="bg-gray-50 ">
@@ -16,7 +16,7 @@ const FinalCheck = () => {
         </tr>
       </thead>
       <tbody className="bg-white divide-y divide-gray-200">
-        <tr className="text-sm text-center">
+        <tr className="text-sm text-center font-medium">
           <td className="p-3 text-orange-400">data.status</td>
           <td className="p-3">data.imprint</td>
           <td className="p-3">data.author</td>
@@ -31,4 +31,4 @@ const FinalCheck = () => {
   );
 };
 
-export default FinalCheck;
+export default FinalCheckTab;
