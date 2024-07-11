@@ -3,9 +3,9 @@ import Button from "components/Button";
 import useSidebarStore from "stores/States";
 import SearchField from "../home/components/SearchField";
 import SelectField from "components/SelectField";
-import FinalCheckTable from "./components/FinalCheckTable";
 import { data } from "./utils/utils";
 import FinalCheckTab from "../bumblebee/components/FinalCheckTab";
+import Pagination from "components/Pagination";
 
 const tabs = [
   {
@@ -25,7 +25,6 @@ const tabs = [
 ];
 
 const TabContent = ({ activeTab, isOpen }) => {
-
   const tabData = tabs.find((tab) => tab.id === activeTab);
 
   return (
@@ -35,19 +34,7 @@ const TabContent = ({ activeTab, isOpen }) => {
         <p>Bumblebee: {tabData.Bumblebee}</p>
         <p>Total Records: {tabData.totalRecords}</p>
       </div>
-      <div className="flex items-center h-full justify-center gap-3 w-full">
-        {[...Array(7)].map((_, index) => (
-          <li role="presentation" key={index} className="list-none">
-            <button
-              className="border-b-2 rounded-t-lg text-md font-bold"
-              type="button"
-              role="tab"
-            >
-              {index + 1}
-            </button>
-          </li>
-        ))}
-      </div>
+      <Pagination num={7} />
       <div
         className={`m-4 transition-all duration-300 ${
           isOpen ? "max-w-[1050px]" : "max-w-[1250px]"

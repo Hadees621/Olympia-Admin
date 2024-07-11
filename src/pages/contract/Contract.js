@@ -85,7 +85,7 @@ const Contract = () => {
   );
 
   return (
-    <div className="w-full text-start items-center ">
+    <div className="w-full text-start items-center">
       <p className="text-3xl font-semibold mt-8 ml-8">
         Welcome to Olympia Portal (olympia admin)
       </p>

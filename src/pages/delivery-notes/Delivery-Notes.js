@@ -35,7 +35,7 @@ const DeliveryNotes = () => {
 
       <div className="overflow-x-auto mt-5 text-center shadow">
         <table className="min-w-full table-fixed divide-y divide-gray-200">
-          <thead className="bg-gray-50">
+          <thead className="bg-gray-50 sticky top-0 z-10">
             <tr className="text-[11px] w-full font-medium text-gray-500 uppercase">
               <th className="p-3 w-1/6">Date</th>
               <th className="p-3 w-1/6">Reference</th>

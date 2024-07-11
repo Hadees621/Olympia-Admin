@@ -22,7 +22,7 @@ export const menuItems = [
       { to: "#", label: "Bookshops" },
       { to: "#", label: "Printers" },
       { to: "#", label: "Other Clients" },
-      { to: "#", label: "Archive" },
+      { to: "/archive", label: "Archive" },
       { to: "#", label: "Outworkers" },
       { to: "#", label: "Posts" },
       { to: "#", label: "Reports" },
