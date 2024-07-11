@@ -41,7 +41,6 @@ const Home = () => {
         <Button title="Filter" />
         <Button title="Clear" />
       </div>
-
       <Table />
     </div>
   );
