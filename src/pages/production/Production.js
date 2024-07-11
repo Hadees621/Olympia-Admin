@@ -3,36 +3,23 @@ import Button from "components/Button";
 import useSidebarStore from "stores/States";
 import SearchField from "../home/components/SearchField";
 import SelectField from "components/SelectField";
-import FinalCheckTable from "./components/FinalCheckTable";
-import { data } from "./utils/utils";
 import FinalCheckTab from "../bumblebee/components/FinalCheckTab";
+import { data } from "../bumblebee/utils/utils";
+import FinalCheckTable from "../final-check/components/FinalCheckTable";
 
 const tabs = [
-  {
-    id: "todo-tab",
-    label: "To Do",
-    Olympia: 113,
-    Bumblebee: 92,
-    totalRecords: 205,
-  },
-  {
-    id: "archive-tab",
-    label: "Archive",
-    Olympia: 15,
-    Bumblebee: 10,
-    totalRecords: 25,
-  },
+  { id: "ks-tab", label: "KS", totalRecords: 205 },
+  { id: "ia-tab", label: "IA", totalRecords: 25 },
+  { id: "rr-tab", label: "RR", totalRecords: 2015 },
+  { id: "final-check-tab", label: "Final Check (0)", totalRecords: 205 },
 ];
 
 const TabContent = ({ activeTab, isOpen }) => {
-
   const tabData = tabs.find((tab) => tab.id === activeTab);
 
   return (
     <div className={`p-4 dark:bg-gray-800 ${activeTab ? "block" : "hidden"}`}>
       <div className="mt-3 w-full mx-4 font-semibold text-lg">
-        {tabData.Olympia !== undefined && <p>Olympia: {tabData.Olympia}</p>}
-        <p>Bumblebee: {tabData.Bumblebee}</p>
         <p>Total Records: {tabData.totalRecords}</p>
       </div>
       <div className="flex items-center h-full justify-center gap-3 w-full">
@@ -53,19 +40,19 @@ const TabContent = ({ activeTab, isOpen }) => {
           isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
         }`}
       >
-        {activeTab === "archive-tab" ? (
+        {activeTab === "final-check-tab" ? (
           <FinalCheckTab data={data} />
         ) : (
-          <FinalCheckTab data={data} />
+          <FinalCheckTable data={data} />
         )}
       </div>
     </div>
   );
 };
 
-const FinalCheck = () => {
+const Production = () => {
   const { isOpen } = useSidebarStore();
-  const [activeTab, setActiveTab] = useState("todo-tab");
+  const [activeTab, setActiveTab] = useState("ks-tab");
 
   return (
     <div
@@ -73,7 +60,9 @@ const FinalCheck = () => {
         !isOpen && "max-w-[1250px]"
       }`}
     >
-      <p className="text-3xl font-semibold mt-8 ml-8">Books (Final Check)</p>
+      <p className="text-3xl font-semibold mt-8 ml-8">
+        Books (Imprint: Olympia/Ebooks)
+      </p>
       <div className="flex items-center mt-3 gap-3 m-4">
         <SearchField placeholder="Book Title" />
         <SearchField placeholder="Pen Name/Author Name" />
@@ -81,7 +70,6 @@ const FinalCheck = () => {
         <Button title="Clear" />
         <SelectField placeholder="Select Filter" />
       </div>
-
       <div className="mb-4 justify-center flex pt-3">
         <ul
           className="flex flex-wrap -mb-px gap-3 text-sm font-medium text-center"
@@ -108,7 +96,6 @@ const FinalCheck = () => {
           ))}
         </ul>
       </div>
-
       <div id="default-styled-tab-content" className="w-full">
         <TabContent activeTab={activeTab} isOpen={isOpen} />
       </div>
@@ -116,4 +103,4 @@ const FinalCheck = () => {
   );
 };
 
-export default FinalCheck;
+export default Production;
