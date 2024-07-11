@@ -125,7 +125,7 @@ const Contract = () => {
         </div>
       </div>
 
-      <div className="m-4 flex gap-3 mt-8 ">
+      <div className="m-4 flex gap-3">
         <InformationSection
           title="Author Information"
           info={authorInfo}
