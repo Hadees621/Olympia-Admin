@@ -23,9 +23,9 @@ const Archive = () => {
 
       <div className="mt-3 w-full m-6 font-semibold text-lg">
         <p>Total Records Found: 0</p>
-        <p>Fully paid: 113</p>
-        <p>Over due: 137</p>
-        <p>Remaining: 10</p>
+        <p className="text-green-600">Fully paid: 113</p>
+        <p className="text-red-600">Over due: 137</p>
+        <p className="text-orange-600">Remaining: 10</p>
       </div>
 
       <div className="flex gap-2 justify-start mt-8 items-center w-full px-6">
