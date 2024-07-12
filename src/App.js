@@ -16,6 +16,7 @@ import Production from "./pages/production/Production";
 import Archive from "./pages/archive/Archive";
 import Royalties from "./pages/royalties/Royalties";
 import CardPayments from "./pages/card-payments/CardPayments";
+import Outworkers from "./pages/out-workers/Outworkers";
 
 const App = () => (
   <Routes>
@@ -35,6 +36,7 @@ const App = () => (
     <Route path="/archive" element={<Archive />} />
     <Route path="/royalties" element={<Royalties />} />
     <Route path="/card-payments" element={<CardPayments />} />
+    <Route path="/outworkers" element={<Outworkers />} />
   </Routes>
 );
 
