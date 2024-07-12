@@ -99,7 +99,7 @@ const RoyaltiesTable = () => {
                 <td className="px-6 py-4 border">{row.broughtforwardAmount}</td>
                 <td className="px-6 py-4 border">{row.totalAmount}</td>
                 <td className="px-6 py-4 border">
-                  <SelectField width="w-[120px]" />
+                  <SelectField width="w-[150px]" />
                 </td>
                 <td className="px-6 py-4 border">{row.status}</td>
 
