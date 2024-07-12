@@ -15,6 +15,7 @@ import FinalCheck from "./pages/final-check/FinalCheck";
 import Production from "./pages/production/Production";
 import Archive from "./pages/archive/Archive";
 import Royalties from "./pages/royalties/Royalties";
+import CardPayments from "./pages/card-payments/CardPayments";
 
 const App = () => (
   <Routes>
@@ -33,6 +34,7 @@ const App = () => (
     <Route path="/final-check" element={<FinalCheck />} />
     <Route path="/archive" element={<Archive />} />
     <Route path="/royalties" element={<Royalties />} />
+    <Route path="/card-payments" element={<CardPayments />} />
   </Routes>
 );
 
