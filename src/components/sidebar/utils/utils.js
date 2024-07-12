@@ -16,7 +16,7 @@ export const menuItems = [
     to: "/others",
     label: "Others",
     submenuItems: [
-      { to: "#", label: "Royalties" },
+      { to: "/royalties", label: "Royalties" },
       { to: "#", label: "Graphics" },
       { to: "#", label: "Card Payments" },
       { to: "#", label: "Bookshops" },
