@@ -18,7 +18,8 @@ const PaymentTable = () => {
         <div className="flex items-center justify-between mt-10 mb-4 gap-3">
           <div className="w-[30%] gap-5 flex items-center">
             <p className="text-lg font-semibold"> Show:</p>
-            <SelectField placeholder="Show " /> <p> Entries </p>
+            <SelectField placeholder="Show " />{" "}
+            <p className="text-lg font-semibold"> Entries </p>
           </div>
           <div className="w-[30%] gap-5 flex items-center justify-end">
             <p className="text-lg font-semibold"> Search: </p>
