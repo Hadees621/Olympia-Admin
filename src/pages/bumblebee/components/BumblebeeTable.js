@@ -24,9 +24,9 @@ const BumblebeeTable = ({ data }) => {
   };
   return (
     <div className="overflow-x-auto shadow-md transition-all duration-300">
-      <table className="w-full text-sm text-left rtl:text-right text-blue-100 dark:text-blue-100 max-h-[500px]">
-        <thead className="text-xs text-white uppercase dark:text-white">
-          <tr className="text-xs font-medium text-gray-500 uppercase text-center">
+      <table className="w-full text-sm text-left max-h-[500px]">
+        <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
+          <tr className="text-sm font-medium text-gray-500 uppercase text-center">
             <th className="px-6 py-3 border">Status</th>
             <th className="px-6 py-3 border">Pen Name</th>
             <th className="px-6 py-3 border">Book Title</th>

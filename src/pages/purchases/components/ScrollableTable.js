@@ -5,7 +5,7 @@ const ScrollableTable = ({ data }) => {
   return (
     <div class="overflow-x-auto shadow-md transition-all duration-300">
       <table class="w-full text-sm text-left rtl:text-right text-blue-100 dark:text-blue-100 max-h-[500px] ">
-        <thead class="text-sm text-white uppercase font-bold">
+        <thead class="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
           <tr className="text-sm font-medium text-gray-500 uppercase text-center">
             <th className="px-6 py-3 border">Name</th>
             <th className="px-6 py-3 border whitespace-nowrap">Last Name</th>
@@ -20,7 +20,7 @@ const ScrollableTable = ({ data }) => {
               1st Address
             </th>
             <th className="px-32 py-3 border whitespace-nowrap">2nd Address</th>
-            <th className="px-6 py-3 border whitespace-nowrap" >Signup Date</th>
+            <th className="px-6 py-3 border whitespace-nowrap">Signup Date</th>
             <th className="px-6 py-3 border">Actions</th>
           </tr>
         </thead>
