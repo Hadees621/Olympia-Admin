@@ -21,10 +21,18 @@ const BookOrders = () => {
   };
 
   const placeholders = ["Please Select Author", "Select Book"];
+  const tabs = [
+    { id: "processing", label: "Processing", component: ProcessingTab },
+    { id: "pre-orders", label: "Pre-Orders", component: PreOrdersTab },
+    { id: "shipped", label: "Shipped", component: ShippedTab },
+    { id: "ingram", label: "Ingram", component: IngramTab },
+    { id: "reports", label: "Reports", component: ReportsTab },
+    { id: "archive", label: "Archive", component: ArchiveTab },
+  ];
 
   return (
     <div className="w-full text-start items-center m-4">
-      {/* header */}
+      {/* Header */}
       <>
         <p className="text-3xl font-semibold mt-8 ml-8">
           Welcome to Olympia Portal (olympia admin)
@@ -59,171 +67,41 @@ const BookOrders = () => {
           id="default-styled-tab"
           role="tablist"
         >
-          <li className="me-2" role="presentation">
-            <button
-              className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${
-                activeTab === "processing"
-                  ? "text-red-600 border-red-600"
-                  : "text-black hover:text-black border-black"
-              }`}
-              id="processing-tab"
-              type="button"
-              role="tab"
-              aria-controls="processing"
-              aria-selected={activeTab === "processing"}
-              onClick={() => setActiveTab("processing")}
-            >
-              Processing
-            </button>
-          </li>
-          <li className="me-2" role="presentation">
-            <button
-              className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${
-                activeTab === "pre-orders"
-                  ? "text-red-600 border-red-600"
-                  : "text-black hover:text-black border-black"
-              }`}
-              id="pre-orders-tab"
-              type="button"
-              role="tab"
-              aria-controls="pre-orders"
-              aria-selected={activeTab === "pre-orders"}
-              onClick={() => setActiveTab("pre-orders")}
-            >
-              Pre-Orders
-            </button>
-          </li>
-          <li className="me-2" role="presentation">
-            <button
-              className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${
-                activeTab === "shipped"
-                  ? "text-red-600 border-red-600"
-                  : "text-black hover:text-black border-black"
-              }`}
-              id="shipped-tab"
-              type="button"
-              role="tab"
-              aria-controls="shipped"
-              aria-selected={activeTab === "shipped"}
-              onClick={() => setActiveTab("shipped")}
-            >
-              Shipped
-            </button>
-          </li>
-          <li className="me-2" role="presentation">
-            <button
-              className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${
-                activeTab === "ingram"
-                  ? "text-red-600 border-red-600"
-                  : "text-black hover:text-black border-black"
-              }`}
-              id="ingram-tab"
-              type="button"
-              role="tab"
-              aria-controls="ingram"
-              aria-selected={activeTab === "ingram"}
-              onClick={() => setActiveTab("ingram")}
-            >
-              Ingram
-            </button>
-          </li>
-          <li className="me-2" role="presentation">
-            <button
-              className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${
-                activeTab === "reports"
-                  ? "text-red-600 border-red-600"
-                  : "text-black hover:text-black border-black"
-              }`}
-              id="reports-tab"
-              type="button"
-              role="tab"
-              aria-controls="reports"
-              aria-selected={activeTab === "reports"}
-              onClick={() => setActiveTab("reports")}
-            >
-              Reports
-            </button>
-          </li>
-          <li className="me-2" role="presentation">
-            <button
-              className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${
-                activeTab === "archive"
-                  ? "text-red-600 border-red-600"
-                  : "text-black hover:text-black border-black"
-              }`}
-              id="archive-tab"
-              type="button"
-              role="tab"
-              aria-controls="archive"
-              aria-selected={activeTab === "archive"}
-              onClick={() => setActiveTab("archive")}
-            >
-              Archive
-            </button>
-          </li>
+          {tabs.map((tab) => (
+            <li key={tab.id} className="me-2" role="presentation">
+              <button
+                className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${
+                  activeTab === tab.id
+                    ? "text-red-600 border-red-600"
+                    : "text-black hover:text-black border-black"
+                }`}
+                id={`${tab.id}-tab`}
+                type="button"
+                role="tab"
+                aria-controls={tab.id}
+                aria-selected={activeTab === tab.id}
+                onClick={() => setActiveTab(tab.id)}
+              >
+                {tab.label}
+              </button>
+            </li>
+          ))}
         </ul>
       </div>
       <div id="default-styled-tab-content" className="w-full">
-        <div
-          className={`p-4 dark:bg-gray-800 ${
-            activeTab === "processing" ? "block" : "hidden"
-          }`}
-          id="processing"
-          role="tabpanel"
-          aria-labelledby="processing-tab"
-        >
-          <ProcessingTab />
-        </div>
-        <div
-          className={`p-4 dark:bg-gray-800 ${
-            activeTab === "pre-orders" ? "block" : "hidden"
-          }`}
-          id="pre-orders"
-          role="tabpanel"
-          aria-labelledby="pre-orders-tab"
-        >
-          <PreOrdersTab />
-        </div>
-        <div
-          className={`p-4 dark:bg-gray-800 ${
-            activeTab === "shipped" ? "block" : "hidden"
-          }`}
-          id="shipped"
-          role="tabpanel"
-          aria-labelledby="shipped-tab"
-        >
-          <ShippedTab />
-        </div>
-        <div
-          className={`p-4 dark:bg-gray-800 ${
-            activeTab === "ingram" ? "block" : "hidden"
-          }`}
-          id="ingram"
-          role="tabpanel"
-          aria-labelledby="ingram-tab"
-        >
-          <IngramTab />
-        </div>
-        <div
-          className={`p-4 dark:bg-gray-800 ${
-            activeTab === "reports" ? "block" : "hidden"
-          }`}
-          id="reports"
-          role="tabpanel"
-          aria-labelledby="reports-tab"
-        >
-          <ReportsTab />
-        </div>
-        <div
-          className={`p-4 dark:bg-gray-800 ${
-            activeTab === "archive" ? "block" : "hidden"
-          }`}
-          id="archive"
-          role="tabpanel"
-          aria-labelledby="archive-tab"
-        >
-          <ArchiveTab />
-        </div>
+        {tabs.map((tab) => (
+          <div
+            key={tab.id}
+            className={`p-4 dark:bg-gray-800 ${
+              activeTab === tab.id ? "block" : "hidden"
+            }`}
+            id={tab.id}
+            role="tabpanel"
+            aria-labelledby={`${tab.id}-tab`}
+          >
+            <tab.component />
+          </div>
+        ))}
       </div>
     </div>
   );
