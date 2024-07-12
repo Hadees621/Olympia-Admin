@@ -29,7 +29,7 @@ const PaymentTable = () => {
 
         <div className="overflow-x-auto shadow-md transition-all duration-300">
           <table className="w-full text-sm text-left">
-            <thead className="text-sm text-white uppercase dark:text-white">
+            <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
               <tr className="text-sm font-medium text-gray-500 uppercase text-center whitespace-nowrap">
                 <th className="px-6 py-3 border">Invoice Type</th>
                 <th className="px-6 py-3 border">Date</th>

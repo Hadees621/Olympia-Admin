@@ -46,7 +46,7 @@ const RoyaltiesTable = () => {
       </div>
       <div className="overflow-x-auto shadow-md transition-all duration-300">
         <table className="w-full text-sm text-left">
-          <thead className="text-xs text-white uppercase dark:text-white">
+          <thead className="text-xs text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
             <tr className="text-xs font-medium text-gray-500 uppercase text-center whitespace-nowrap">
               <th className="px-6 py-3 border space-x-4 flex items-center gap-3">
                 <input
