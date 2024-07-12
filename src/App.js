@@ -14,6 +14,7 @@ import Bumblebee from "./pages/bumblebee/Bumblebee";
 import FinalCheck from "./pages/final-check/FinalCheck";
 import Production from "./pages/production/Production";
 import Archive from "./pages/archive/Archive";
+import Royalties from "./pages/royalties/Royalties";
 
 const App = () => (
   <Routes>
@@ -31,6 +32,7 @@ const App = () => (
     <Route path="/production" element={<Production />} />
     <Route path="/final-check" element={<FinalCheck />} />
     <Route path="/archive" element={<Archive />} />
+    <Route path="/royalties" element={<Royalties />} />
   </Routes>
 );
 
