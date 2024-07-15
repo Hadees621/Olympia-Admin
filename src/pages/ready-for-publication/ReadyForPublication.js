@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import ReadyForPublicationTable from "./components/ReadyForPublicationTable";
-import SearchField from "../home/components/SearchField";
-import Button from "components/Button";
 
 const ReadyForPublication = () => {
   const [activeTab, setActiveTab] = useState("All");
