@@ -18,6 +18,7 @@ import Royalties from "./pages/royalties/Royalties";
 import CardPayments from "./pages/card-payments/CardPayments";
 import Outworkers from "./pages/out-workers/Outworkers";
 import Graphics from "./pages/graphics/Graphics";
+import Bookshops from "./pages/bookshops/Bookshops";
 
 const App = () => (
   <Routes>
@@ -39,6 +40,7 @@ const App = () => (
     <Route path="/card-payments" element={<CardPayments />} />
     <Route path="/outworkers" element={<Outworkers />} />
     <Route path="/graphics" element={<Graphics />} />
+    <Route path="/bookshops" element={<Bookshops />} />
   </Routes>
 );
 
