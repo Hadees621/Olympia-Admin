@@ -1,7 +1,14 @@
 import { PenIcon } from "utils/icons/PenIcon";
 import React, { useState } from "react";
 
-const EditableForm = ({ title, fields, initialData, onSave }) => {
+const EditableForm = ({
+  title,
+  fields,
+  initialData,
+  onSave,
+  additionalbutton,
+  textAreaRows = 2,
+}) => {
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState(initialData);
 
@@ -35,7 +42,7 @@ const EditableForm = ({ title, fields, initialData, onSave }) => {
                   name={field.name}
                   value={formData[field.name]}
                   onChange={handleInputChange}
-                  rows={2}
+                  rows={textAreaRows}
                   className="text-lg border w-full"
                 />
               ) : (
@@ -45,14 +52,22 @@ const EditableForm = ({ title, fields, initialData, onSave }) => {
           </div>
         ))}
       </form>
-      {isEditing && (
-        <button
-          onClick={handleSave}
-          className="bg-[#001C4E1F] text-[#001C4E] font-bold px-8 py-2 rounded-md mx-4 mb-4"
-        >
-          Save
-        </button>
-      )}
+      <div className="mx-6 space-x-2">
+        {isEditing && (
+          <button
+            onClick={handleSave}
+            className="bg-[#001C4E1F] text-[#001C4E] font-bold px-8 py-2 rounded-md mx- mb-4"
+          >
+            Save
+          </button>
+        )}
+
+        {additionalbutton && (
+          <button className="bg-[#001C4E1F] text-[#001C4E] font-bold px-4 py-2 rounded-md mx- mb-4">
+            {additionalbutton}
+          </button>
+        )}
+      </div>
     </div>
   );
 };

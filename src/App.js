@@ -17,6 +17,7 @@ import Archive from "./pages/archive/Archive";
 import Royalties from "./pages/royalties/Royalties";
 import CardPayments from "./pages/card-payments/CardPayments";
 import Outworkers from "./pages/out-workers/Outworkers";
+import Graphics from "./pages/graphics/Graphics";
 
 const App = () => (
   <Routes>
@@ -37,6 +38,7 @@ const App = () => (
     <Route path="/royalties" element={<Royalties />} />
     <Route path="/card-payments" element={<CardPayments />} />
     <Route path="/outworkers" element={<Outworkers />} />
+    <Route path="/graphics" element={<Graphics />} />
   </Routes>
 );
 
