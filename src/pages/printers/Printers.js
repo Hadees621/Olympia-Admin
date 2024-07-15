@@ -84,9 +84,9 @@ const Printers = () => {
                 <th className="px-6 py-3 border">VAT</th>
                 <th className="px-6 py-3 border">Total</th>
                 <th className="px-6 py-3 border">Date Payment</th>
-                <th className="px-6 py-3 border">Paid</th>
-                <th className="px-6 py-3 border">Payment Detail</th>
-                <th className="px-6 py-3 border">Sale Type</th>
+                <th className="px-6 py-3 border w-[160px]">Paid</th>
+                <th className="px-6 py-3 border w-[160px]">Payment Detail</th>
+                <th className="px-6 py-3 border w-[160px]   ">Sale Type</th>
                 <th className="px-6 py-3 border">H-F/Sale</th>
                 <th className="px-6 py-3 border">Royalties</th>
                 <th className="px-6 py-3 border">Status</th>
