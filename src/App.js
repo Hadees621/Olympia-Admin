@@ -19,6 +19,7 @@ import CardPayments from "./pages/card-payments/CardPayments";
 import Outworkers from "./pages/out-workers/Outworkers";
 import Graphics from "./pages/graphics/Graphics";
 import Bookshops from "./pages/bookshops/Bookshops";
+import Printers from "./pages/printers/Printers";
 
 const App = () => (
   <Routes>
@@ -41,6 +42,7 @@ const App = () => (
     <Route path="/outworkers" element={<Outworkers />} />
     <Route path="/graphics" element={<Graphics />} />
     <Route path="/bookshops" element={<Bookshops />} />
+    <Route path="/printers" element={<Printers />} />
   </Routes>
 );
 
