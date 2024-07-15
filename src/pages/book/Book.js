@@ -6,6 +6,7 @@ import SearchField from "pages/home/components/SearchField";
 import NoteCard from "../author/components/NoteCard";
 import { bookInfo } from "./utils/utils";
 import { BookInformation } from "components/BookInformation";
+import Remaindered from "../editorial/components/Remaindered";
 
 const Book = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
@@ -48,14 +49,8 @@ const Book = () => {
       </>
       {/* header */}
 
-      <div className="shadow mt-4 bg-[#F7F7F7] p-3 flex justify-between m-4 items-center">
-        <p className="text-md font-semibold text-gray-500">
-          Aine By Yugtha YJ <span className="text-black"> Book No. </span> 1
-        </p>
-        <p className="text-md font-normal text-gray-500">Remaindered</p>
-        <div className="w-16">
-          <Plus classes={"h-full w-full"} />
-        </div>
+      <div className="mt-4 m-4">
+        <Remaindered />
       </div>
 
       <div className="m-4 gap-3 flex">
