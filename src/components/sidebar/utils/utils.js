@@ -26,7 +26,7 @@ export const menuItems = [
       { to: "/outworkers", label: "Outworkers" },
       { to: "/posts", label: "Posts" },
       { to: "/reports", label: "Reports" },
-      { to: "/ready-for-publications", label: "Ready for Publications" },
+      { to: "/ready-for-publication", label: "Ready for Publications" },
       { to: "/published-books", label: "Published Books" },
       {
         to: "/olympia-websites-control-panel",

@@ -20,6 +20,7 @@ import Outworkers from "./pages/out-workers/Outworkers";
 import Graphics from "./pages/graphics/Graphics";
 import Bookshops from "./pages/bookshops/Bookshops";
 import Printers from "./pages/printers/Printers";
+import ReadyForPublication from "./pages/ready-for-publication/ReadyForPublication";
 
 const App = () => (
   <Routes>
@@ -43,6 +44,7 @@ const App = () => (
     <Route path="/graphics" element={<Graphics />} />
     <Route path="/bookshops" element={<Bookshops />} />
     <Route path="/printers" element={<Printers />} />
+    <Route path="/ready-for-publication" element={<ReadyForPublication />} />
   </Routes>
 );
 
