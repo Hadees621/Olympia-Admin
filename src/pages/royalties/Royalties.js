@@ -37,7 +37,7 @@ const Royalties = () => {
   return (
     <div className="w-full text-start items-center m-4">
       {/* header */}
-      <p className="text-3xl font-semibold mt-8 ml-8">Royalties</p>
+      <p className="text-3xl font-semibold mt-8 ml-8">Book Invoices</p>
 
       <div className="mb-4 justify-center flex pt-10">
         <ul
