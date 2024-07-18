@@ -10,10 +10,6 @@ const PostLog = () => {
     setSelectedItem(item);
   };
 
-  const handleClose = () => {
-    setSelectedItem(null);
-  };
-
   const handleRemoveDetail = (detailIndex) => {
     setSelectedItem((prevItem) => {
       const updatedDetails = prevItem.details.filter(
