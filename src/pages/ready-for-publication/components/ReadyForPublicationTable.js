@@ -35,14 +35,12 @@ const ReadyForPublicationTable = () => {
         isOpen ? "max-w-[1030px]" : "max-w-[1200px]"
       }`}
     >
-    <div className="flex gap-3">
-
-          <p className="text-lg font-bold">Total Records:</p>
-          <p className="text-lg font-bold">1</p>
-    </div>
+      <div className="flex gap-3">
+        <p className="text-lg font-bold">Total Records:</p>
+        <p className="text-lg font-bold">1</p>
+      </div>
       <div className=" my-3 w-full justify-center flex">
         <div className="w-[70%] flex items-center justify-center gap-3">
-
           <SearchField placeholder="Book Title" />
           <SearchField placeholder="Pen name/Author name" />
           <Button title="Search" />
