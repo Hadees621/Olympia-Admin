@@ -23,6 +23,7 @@ import Outworkers from "./pages/out-workers/Outworkers";
 import CardPayments from "./pages/card-payments/CardPayments";
 import OtherClients from "./pages/other-clients/OtherClients";
 import ReadyForPublication from "./pages/ready-for-publication/ReadyForPublication";
+import Reports from "./pages/reports/Reports";
 
 const App = () => (
   <Routes>
@@ -49,6 +50,7 @@ const App = () => (
     <Route path="/posts" element={<Posts />} />
     <Route path="/ready-for-publication" element={<ReadyForPublication />} />
     <Route path="/other-clients" element={<OtherClients />} />
+    <Route path="/reports" element={<Reports />} />
   </Routes>
 );
 
