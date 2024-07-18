@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Book from "./pages/book/Book";
+import Posts from "./pages/posts/Posts";
 import Author from "./pages/author/Author";
 import Contract from "./pages/contract/Contract";
 import Editorial from "./pages/editorial/Editorial";
@@ -15,13 +16,13 @@ import FinalCheck from "./pages/final-check/FinalCheck";
 import Production from "./pages/production/Production";
 import Archive from "./pages/archive/Archive";
 import Royalties from "./pages/royalties/Royalties";
-import CardPayments from "./pages/card-payments/CardPayments";
-import Outworkers from "./pages/out-workers/Outworkers";
 import Graphics from "./pages/graphics/Graphics";
 import Bookshops from "./pages/bookshops/Bookshops";
 import Printers from "./pages/printers/Printers";
+import Outworkers from "./pages/out-workers/Outworkers";
+import CardPayments from "./pages/card-payments/CardPayments";
+import OtherClients from "./pages/other-clients/OtherClients";
 import ReadyForPublication from "./pages/ready-for-publication/ReadyForPublication";
-import Posts from "./pages/posts/Posts";
 
 const App = () => (
   <Routes>
@@ -47,6 +48,7 @@ const App = () => (
     <Route path="/printers" element={<Printers />} />
     <Route path="/posts" element={<Posts />} />
     <Route path="/ready-for-publication" element={<ReadyForPublication />} />
+    <Route path="/other-clients" element={<OtherClients />} />
   </Routes>
 );
 
