@@ -50,7 +50,6 @@ const Author = () => {
           <Button title="Edit" />
         </div>
       </>
-      {/* header */}
 
       <div className="mt-4 m-4">
         <Remaindered />
