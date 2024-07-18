@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Plus from "utils/icons/Plus";
 import Button from "components/Button";
 import NoteCard from "./components/NoteCard";
 import { contactDetails } from "./utils/utils";
