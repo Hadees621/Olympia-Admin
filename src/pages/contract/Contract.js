@@ -93,9 +93,9 @@ const Contract = () => {
       <div className="flex items-center mt-8 gap-3 m-4">
         <SearchField placeholder="Book Title" />
         <SearchField placeholder="Pen name/Author name" />
-        <Button title="Search" text="text-[12px]" />
-        <Button title="Clear" text="text-[12px]" />
-        <Button title="ISBN Search" text="text-[12px]" />
+        <Button title="Search" />
+        <Button title="Clear" />
+        <Button title="ISBN Search" href="/isbn-search" />
       </div>
 
       <div className="flex gap-2 justify-start mt-3 items-center w-full px-4">

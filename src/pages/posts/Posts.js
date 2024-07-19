@@ -21,7 +21,7 @@ const Posts = () => {
       <p className="text-3xl font-semibold mt-8 ml-8">Post</p>
 
       <div className="my-3 w-full justify-end flex mr-8">
-        <Button title="ISBN Search" />
+      <Button title="ISBN Search" href="/isbn-search" />
       </div>
       <div className="mb-4 justify-center flex pt-3">
         <ul

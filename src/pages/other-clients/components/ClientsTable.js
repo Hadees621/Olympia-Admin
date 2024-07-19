@@ -18,7 +18,7 @@ const ClientsTable = () => {
         <SearchField placeholder="Book Title" />
         <SearchField placeholder="Pen name/Author name" />
         <Button title="Search" />
-        <Button title="ISBN Search" />
+        <Button title="ISBN Search" href="/isbn-search" />
         <Button title={"New Invoice"} bg="bg-green-500" text={"text-white"} />
       </div>
       <div className="overflow-x-auto shadow-md transition-all duration-300 max-h-[400px]">
