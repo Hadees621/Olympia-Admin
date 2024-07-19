@@ -26,6 +26,7 @@ import ReadyForPublication from "./pages/ready-for-publication/ReadyForPublicati
 import Reports from "./pages/reports/Reports";
 import PublishedBooks from "./pages/published-books/PublishedBooks";
 import OlympiaWebsitesPortal from "./pages/olympia-websites-portal/OlympiaWebsitesPortal";
+import IsbnSearch from "./pages/isbn-search/IsbnSearch";
 
 const App = () => (
   <Routes>
@@ -58,6 +59,7 @@ const App = () => (
       path="/olympia-websites-portal"
       element={<OlympiaWebsitesPortal />}
     />
+    <Route path="/isbn-search" element={<IsbnSearch />} />
   </Routes>
 );
 
