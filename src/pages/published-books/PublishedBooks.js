@@ -1,30 +1,28 @@
 import React, { useState } from "react";
-import ReadyForPublicationTable from "./components/ReadyForPublicationTable";
+import PublishedTable from "./components/PublishedTable";
 
-const ReadyForPublication = () => {
+const PublishedBooks = () => {
   const [activeTab, setActiveTab] = useState("All");
 
   const tabs = [
-    { id: "All", label: "All", component: ReadyForPublicationTable },
+    { id: "All", label: "All", component: PublishedTable },
     {
       id: "bumblebee",
       label: "Bumblebee",
-      component: ReadyForPublicationTable,
+      component: PublishedTable,
     },
     {
       id: "olympiaPublishers",
       label: "Olympia Publishers",
-      component: ReadyForPublicationTable,
+      component: PublishedTable,
     },
-    { id: "ebooks", label: "Ebooks", component: ReadyForPublicationTable },
+    { id: "ebooks", label: "Ebooks", component: PublishedTable },
   ];
 
   return (
     <div className="w-full text-start items-center m-4">
       {/* Header */}
-      <p className="text-3xl font-semibold mt-8 ml-8">
-        Ready for Publication Books
-      </p>
+      <p className="text-3xl font-semibold mt-8 ml-8">Published Books</p>
 
       <div className="mb-4 justify-center flex pt-3">
         <ul
@@ -72,4 +70,4 @@ const ReadyForPublication = () => {
   );
 };
 
-export default ReadyForPublication;
+export default PublishedBooks;
