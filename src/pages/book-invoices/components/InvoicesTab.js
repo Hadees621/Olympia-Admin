@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "components/Button";
 import SelectField from "components/SelectField";
-import Row from "./Row";
 import BookInvoicesRow from "./BookInvoicesRow";
 
 const InvoicesTab = () => {

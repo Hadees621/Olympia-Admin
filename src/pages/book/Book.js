@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Plus from "utils/icons/Plus";
 import Button from "components/Button";
 import SelectField from "components/SelectField";
 import SearchField from "pages/home/components/SearchField";
