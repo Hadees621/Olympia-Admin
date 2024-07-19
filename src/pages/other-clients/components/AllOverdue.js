@@ -14,7 +14,7 @@ const AllOverdue = () => {
       }`}
     >
       <div className="flex items-center mt-8 gap-3 m-4 justify-end">
-        <Button title="ISBN Search" />
+      <Button title="ISBN Search" href="/isbn-search" />
         <Button
           title={"Add New Client"}
           bg="bg-green-500"

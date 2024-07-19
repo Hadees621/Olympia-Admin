@@ -31,9 +31,8 @@ const SubTabsTable = () => {
 
   return (
     <div
-      className={`m-4 transition-all duration-300 ${
-        isOpen ? "max-w-[1030px]" : "max-w-[1200px]"
-      }`}
+      className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1030px]" : "max-w-[1200px]"
+        }`}
     >
       <div className="w-[30%]">
         <div className="flex gap-3">
@@ -46,7 +45,7 @@ const SubTabsTable = () => {
         <SearchField placeholder="Pen name/Author name" />
         <Button title="Search" />
         <Button title="Clear" />
-        <Button title="ISBN Search" />
+        <Button title="ISBN Search" href="/isbn-search" />
       </div>
 
       <Pagination num={34} />
@@ -111,11 +110,11 @@ const SubTabsTable = () => {
                 </td>
 
                 <td className="px-6 py-4 border">
-                  <TableButton title={"Add to Main Website"} bg="bg-green-700" text={"text-white"}/>
+                  <TableButton title={"Add to Main Website"} bg="bg-green-700" text={"text-white"} />
                 </td>
 
                 <td className="px-6 py-4 border">
-                  <TableButton title={"Add to USA Website"} bg="bg-green-700" text={"text-white"}/>
+                  <TableButton title={"Add to USA Website"} bg="bg-green-700" text={"text-white"} />
                 </td>
               </tr>
             ))}

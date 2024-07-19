@@ -44,7 +44,7 @@ const ReadyForPublicationTable = () => {
         <SearchField placeholder="Pen name/Author name" />
         <Button title="Search" />
         <Button title="Clear" />
-        <Button title="ISBN Search" />
+        <Button title="ISBN Search" href="/isbn-search" />
       </div>
 
       <Pagination num={4} />
