@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import SentTab from "./components/SentTab";
-import ClientsTable from "../other-clients/components/ClientsTable";
 import ToBeSent from "./components/ToBeSent";
 import TopSold from "./components/TopSold";
 

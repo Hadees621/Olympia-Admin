@@ -24,6 +24,7 @@ import CardPayments from "./pages/card-payments/CardPayments";
 import OtherClients from "./pages/other-clients/OtherClients";
 import ReadyForPublication from "./pages/ready-for-publication/ReadyForPublication";
 import Reports from "./pages/reports/Reports";
+import PublishedBooks from "./pages/published-books/PublishedBooks";
 
 const App = () => (
   <Routes>
@@ -51,6 +52,7 @@ const App = () => (
     <Route path="/ready-for-publication" element={<ReadyForPublication />} />
     <Route path="/other-clients" element={<OtherClients />} />
     <Route path="/reports" element={<Reports />} />
+    <Route path="/published-books" element={<PublishedBooks />} />
   </Routes>
 );
 
