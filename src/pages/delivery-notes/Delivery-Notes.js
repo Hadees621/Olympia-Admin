@@ -19,7 +19,7 @@ const DeliveryNotes = () => {
           <SelectField placeholder={"Select Author"} />
           <DatePickerField />
           <Button title="Search" />
-          <Button title="ISBN Search" />
+          <Button title="ISBN Search" href="/isbn-search" />
         </div>
 
         <div className="flex items-center mt-3 gap-3">

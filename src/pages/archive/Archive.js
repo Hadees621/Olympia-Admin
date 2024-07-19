@@ -48,7 +48,7 @@ const Archive = () => {
         <Button title="Clear" />
         <Button title="Add New Record" bg="bg-green-500" text={"text-white"} />
 
-        <Button title="ISBN Search" />
+        <Button title="ISBN Search" href="/isbn-search" />
       </div>
 
       <Pagination num={12} />

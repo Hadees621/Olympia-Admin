@@ -87,7 +87,7 @@ const Purchases = () => {
           <Button title="Search" />
           <SearchField placeholder="Company Name" />
           <Button title="Search" />
-          <Button title="ISBN Search" />
+          <Button title="ISBN Search" href="/isbn-search" />
         </div>
         <div className="flex items-center justify-end mt-3 gap-3 my-4">
           <Button title="Unpaid Invoices" />

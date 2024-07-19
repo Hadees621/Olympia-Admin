@@ -43,7 +43,7 @@ const Printers = () => {
           <p className="text-lg font-semibold"> Name # </p>
           <SelectField />
           <Button title={"Search"} />
-          <Button title={"ISBN Search"} />
+          <Button title="ISBN Search" href="/isbn-search" />
         </div>
         <div className="flex items-center mt-3 gap-3 px-5">
           <p className="text-lg font-semibold"> Date : From </p>

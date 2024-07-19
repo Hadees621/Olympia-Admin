@@ -30,7 +30,7 @@ const Book = () => {
           <SearchField placeholder="Pen name/Author name" />
           <Button title="Search" />
           <Button title="Clear" />
-          <Button title="ISBN Search" />
+          <Button title="ISBN Search" href="/isbn-search" />
         </div>
         <div className="flex gap-2 justify-start mt-3 items-center w-full px-4">
           <p className="text-md font-semibold text-gray-500">Pen Name:</p>

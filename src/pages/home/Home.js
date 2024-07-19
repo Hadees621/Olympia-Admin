@@ -26,7 +26,7 @@ const Home = () => {
         <Button title="Search" />
         <Button title="Clear" />
         <Button title="Add New Record" />
-        <Button title="ISBN Search" />
+        <Button title="ISBN Search" href="/isbn-search" />
       </div>
       <div className="flex gap-2 justify-start mt-3 items-center ml-5 w-full pr-10">
         {placeholders.map((placeholder, index) => (
