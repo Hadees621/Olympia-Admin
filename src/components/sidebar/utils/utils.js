@@ -29,7 +29,7 @@ export const menuItems = [
       { to: "/ready-for-publication", label: "Ready for Publications" },
       { to: "/published-books", label: "Published Books" },
       {
-        to: "/olympia-websites-control-panel",
+        to: "/olympia-websites-portal",
         label: "Olympia Websites Control Panel",
       },
     ],
