@@ -26,7 +26,8 @@ import ReadyForPublication from "./pages/ready-for-publication/ReadyForPublicati
 import Reports from "./pages/reports/Reports";
 import PublishedBooks from "./pages/published-books/PublishedBooks";
 import OlympiaWebsitesPortal from "./pages/olympia-websites-portal/OlympiaWebsitesPortal";
-import IsbnSearch from "./pages/isbn-search/IsbnSearch";
+import IsbnSearch from "./pages/nested-pages/isbn-search/IsbnSearch";
+import AddRecord from "./pages/nested-pages/add-record-home/AddRecord";
 
 const App = () => (
   <Routes>
@@ -60,6 +61,8 @@ const App = () => (
       element={<OlympiaWebsitesPortal />}
     />
     <Route path="/isbn-search" element={<IsbnSearch />} />
+    <Route path="/add-record-home" element={<AddRecord />} />
+
   </Routes>
 );
 

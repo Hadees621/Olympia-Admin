@@ -2,7 +2,7 @@ import React from "react";
 import Button from "components/Button";
 import SummaryTable from "./components/SummaryTable";
 import DetailedTable from "./components/DetailedTable";
-import SearchField from "../home/components/SearchField";
+import SearchField from "../../home/components/SearchField";
 import {
   availableISBNData,
   totalAvailableISBN,
