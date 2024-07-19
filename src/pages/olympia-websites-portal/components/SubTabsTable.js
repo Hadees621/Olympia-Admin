@@ -5,12 +5,11 @@ import Notepad from "utils/icons/Notepad";
 import useSidebarStore from "stores/States";
 import Pagination from "components/Pagination";
 import Calculator from "utils/icons/Calculator";
-import SelectField from "components/SelectField";
-import DatePickerField from "components/DatePickerField";
 import SearchField from "pages/home/components/SearchField";
 import { data } from "pages/ready-for-publication/utils/utils";
+import TableButton from "components/TableButton";
 
-const PublishedTable = () => {
+const SubTabsTable = () => {
   const { isOpen } = useSidebarStore();
 
   const getStatusClass = (status) => {
@@ -36,34 +35,21 @@ const PublishedTable = () => {
         isOpen ? "max-w-[1030px]" : "max-w-[1200px]"
       }`}
     >
-      <div className="flex justify-between">
-        <div className="w-[25%]">
-          <div className="flex gap-3">
-            <p className="text-lg font-bold">Total Records:</p>
-            <p className="text-lg font-bold">1</p>
-          </div>
-          <div className="flex gap-3">
-            <p className="text-lg font-bold">Month:</p>
-            <p className="text-lg font-bold">July</p>
-          </div>
-        </div>
-        <div className="flex items-center justify-center gap-3 w-full">
-          <SearchField placeholder="Book Title" />
-          <SearchField placeholder="Pen name/Author name" />
-          <Button title="Search" />
-          <Button title="Clear" />
-          <Button title="ISBN Search" />
+      <div className="w-[30%]">
+        <div className="flex gap-3">
+          <p className="text-lg font-bold">Total Records:</p>
+          <p className="text-lg font-bold">1</p>
         </div>
       </div>
-
       <div className="w-[70%] flex items-center justify-center gap-3 mx-auto my-5">
-        <DatePickerField />
-        <DatePickerField />
-        <Button title="Search Date Range" />
-        <SelectField />
+        <SearchField placeholder="Book Title" />
+        <SearchField placeholder="Pen name/Author name" />
+        <Button title="Search" />
+        <Button title="Clear" />
+        <Button title="ISBN Search" />
       </div>
 
-      <Pagination num={2} />
+      <Pagination num={34} />
       <div className="overflow-x-auto shadow-md transition-all duration-300">
         <table className="w-full text-sm text-left">
           <thead className="text-xs text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
@@ -76,6 +62,8 @@ const PublishedTable = () => {
               <th className="px-6 py-3 border">Publication Date</th>
               <th className="px-6 py-3 border">Author Forms</th>
               <th className="px-6 py-3 border">Contract Payment Status</th>
+              <th className="px-6 py-3 border">Olympia Main Website</th>
+              <th className="px-6 py-3 border">Olympia (USA) Website</th>
             </tr>
           </thead>
           <tbody>
@@ -94,6 +82,7 @@ const PublishedTable = () => {
                 <td className="px-6 py-4 border">
                   <div className="flex gap-2"></div>
                 </td>
+
                 <td className="px-6 py-4 border">
                   <div className="flex space-x-2 justify-center">
                     <div className="p-1.5 rounded-3xl bg-[#C3C4C5] cursor-pointer">
@@ -120,6 +109,14 @@ const PublishedTable = () => {
                     £ {row.paymentStatus}
                   </span>
                 </td>
+
+                <td className="px-6 py-4 border">
+                  <TableButton title={"Add to Main Website"} bg="bg-green-700" text={"text-white"}/>
+                </td>
+
+                <td className="px-6 py-4 border">
+                  <TableButton title={"Add to USA Website"} bg="bg-green-700" text={"text-white"}/>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -129,4 +126,4 @@ const PublishedTable = () => {
   );
 };
 
-export default PublishedTable;
+export default SubTabsTable;

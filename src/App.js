@@ -25,6 +25,7 @@ import OtherClients from "./pages/other-clients/OtherClients";
 import ReadyForPublication from "./pages/ready-for-publication/ReadyForPublication";
 import Reports from "./pages/reports/Reports";
 import PublishedBooks from "./pages/published-books/PublishedBooks";
+import OlympiaWebsitesPortal from "./pages/olympia-websites-portal/OlympiaWebsitesPortal";
 
 const App = () => (
   <Routes>
@@ -53,6 +54,10 @@ const App = () => (
     <Route path="/other-clients" element={<OtherClients />} />
     <Route path="/reports" element={<Reports />} />
     <Route path="/published-books" element={<PublishedBooks />} />
+    <Route
+      path="/olympia-websites-portal"
+      element={<OlympiaWebsitesPortal />}
+    />
   </Routes>
 );
 
