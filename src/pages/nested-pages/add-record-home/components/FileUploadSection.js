@@ -10,13 +10,9 @@ const FileUploadSection = () => {
       </div>
       <div className="grid grid-cols-1 gap-4">
 
-
         <FileUplaod title={"Upload contract"} />
-
         <FileUplaod title={"Upload Manuscript"} />
-
         <FileUplaod title={"Upload illustrations (Publisher)"} />
-
 
         <div className='m-5'>
           <Button title={"Add Record"} text={"text-white text-[14px]"} bg='bg-green-600 hover:bg-green-700' width={"w-[200px]"} />

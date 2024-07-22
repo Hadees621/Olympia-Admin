@@ -3,6 +3,7 @@ import SelectField from 'components/SelectField';
 import BookFormatSection from './BookFormatSection';
 import DatePickerField from 'components/DatePickerField';
 import SearchField from 'pages/home/components/SearchField';
+import { Field } from './Field';
 
 const BookSection = () => {
     return (
@@ -73,12 +74,6 @@ const BookSection = () => {
     );
 };
 
-const Field = ({ label, component }) => (
-    <div className="space-y-1">
-        <p className="text-lg font-semibold text-gray-600">{label}</p>
-        {component}
-    </div>
-);
 
 const Checkbox = ({ label }) => (
     <label className="inline-flex items-center font-bold">
