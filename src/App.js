@@ -31,6 +31,7 @@ import AddRecord from "./pages/nested-pages/add-record-home/AddRecord";
 
 const App = () => (
   <Routes>
+    {/* tabs */}
     <Route path="/" element={<Home />} />
     <Route path="/contract" element={<Contract />} />
     <Route path="/author" element={<Author />} />
@@ -60,6 +61,7 @@ const App = () => (
       path="/olympia-websites-portal"
       element={<OlympiaWebsitesPortal />}
     />
+    {/* nested pages */}
     <Route path="/isbn-search" element={<IsbnSearch />} />
     <Route path="/add-record-home" element={<AddRecord />} />
 
