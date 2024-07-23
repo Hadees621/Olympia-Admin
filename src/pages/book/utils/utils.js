@@ -3,7 +3,6 @@ export const bookInfo = [
   { label: "Publishing Date:", value: "27-08-2020" },
   { label: "Situation:", value: "Remaindered" },
   { label: "Imprint:", value: "Olympia Publishers" },
-  { label: "Book Cover:", value: "Cover Not Available" },
 ];
 
 export const bookDetails = [

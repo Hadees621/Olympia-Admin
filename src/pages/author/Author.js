@@ -26,6 +26,7 @@ const Author = () => {
   };
 
   const handleSaveChanges = () => {
+    console.log("Saving changes...");
     setIsEditMode(false); 
   };
 
