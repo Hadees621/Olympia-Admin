@@ -5,7 +5,7 @@ import SelectField from 'components/SelectField';
 import SearchField from 'pages/home/components/SearchField';
 import DatePickerField from 'components/DatePickerField';
 
-const AuthorModal = ({ isOpen, onClose, onSave, onblur }) => {
+const AuthorModal = ({ isOpen, onClose, onSave }) => {
     if (!isOpen) return null;
 
     const handleSave = () => {

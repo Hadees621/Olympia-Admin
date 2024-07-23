@@ -16,7 +16,7 @@ const AuthorSection = ({ onButtonClick }) => {
                 <div className="flex items-center">
                     <Button title={"SELECT AUTHOR"} />
                     <span className="m-5 font-extrabold text-lg">OR</span>
-                    <Button title={"ADD NEW AUTHOR"} bg='bg-green-600' text={"text-white"} onclick={onButtonClick} />
+                    <Button title={"ADD NEW AUTHOR"} bg='bg-green-600' text={"text-white"} onClick={onButtonClick} />
                 </div>
             </div>
             <div>

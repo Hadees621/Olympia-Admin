@@ -16,9 +16,6 @@ const AddRecord = () => {
     const handleSaveAuthor = () => {
         setModalOpen(false);
     };
-    const onblur = () => {
-        setModalOpen(false);
-    }
     return (
 
         <div className="w-full">
@@ -29,7 +26,7 @@ const AddRecord = () => {
                 <AuthorSection onButtonClick={handleAddAuthorClick} />
                 <BookSection />
                 <FileUploadSection />
-                <AuthorModal isOpen={isModalOpen} onClose={handleCloseModal} onSave={handleSaveAuthor} onblur={onblur} />
+                <AuthorModal isOpen={isModalOpen} onClose={handleCloseModal} onSave={handleSaveAuthor} />
             </div>
         </div>
 

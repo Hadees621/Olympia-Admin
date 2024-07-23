@@ -23,14 +23,10 @@ const Author = () => {
 
   const toggleEditMode = () => {
     setIsEditMode(!isEditMode);
-
-    console.log("EDITING changes...");
-
   };
 
   const handleSaveChanges = () => {
-    console.log("Saving changes...");
-    setIsEditMode(false); // Exit edit mode
+    setIsEditMode(false); 
   };
 
   return (

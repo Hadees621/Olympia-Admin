@@ -3,7 +3,7 @@ import React from "react";
 export const ContactInformation = ({ contactDetails, isEditable, onUpdateContactDetail }) => {
 
   return (
-    <div className={`w-full shadow-md bg-[#F7F7F7] py-5 ${isEditable && "p-5"}`}>
+    <div className={`w-full shadow-md bg-[#F7F7F7] pb-5 ${isEditable && "p-5"}`}>
       <div className="p-5 mx-4 border-b">
         <p className="text-xl font-bold">Contact details</p>
       </div>
