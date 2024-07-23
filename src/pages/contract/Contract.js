@@ -4,9 +4,16 @@ import Button from "components/Button";
 import SelectField from "components/SelectField";
 import SearchField from "pages/home/components/SearchField";
 import { authorInfo, contractInfoLeft, contractInfoRight } from "./utils/utils";
+import ContractInformation from "./components/ContactInformation";
 
 const Contract = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
+  const [isEditMode, setIsEditMode] = useState(false);
+
+  const toggleEditMode = () => {
+    setIsEditMode(!isEditMode);
+  };
+
 
   const handleSelectChange = (index, e) => {
     const newSelectedValues = [...selectedValues];
@@ -44,46 +51,6 @@ const Contract = () => {
     </div>
   );
 
-  const ContractInformation = ({ infoLeft, infoRight }) => (
-    <div className="w-full shadow-md bg-[#F7F7F7]">
-      <div className="p-5 mx-4 border-b">
-        <p className="text-xl font-bold">Contract Information</p>
-      </div>
-      <div className="flex justify-between gap-14 p-8">
-        <div className="w-full grid gap-4">
-          {infoLeft.map((item, index) => (
-            <div key={index}>
-              <p className="text-sm font-semibold text-gray-600">
-                {item.label}
-              </p>
-              <p className="text-md font-semibold text-black max-w-sm">
-                {item.value}
-              </p>
-            </div>
-          ))}
-        </div>
-        <div className="w-full grid gap-4">
-          {infoRight.map((item, index) => (
-            <div key={index}>
-              <p className="text-sm font-semibold text-gray-600">
-                {item.label}
-              </p>
-              <p className="text-md font-semibold text-black">{item.value}</p>
-            </div>
-          ))}
-          <div className="max-w-md">
-            <button
-              className="bg-green-600 p-3 text-white rounded-md
-          "
-            >
-              Send Remainder Email
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <div className="w-full text-start items-center">
       <p className="text-3xl font-semibold mt-8 ml-8">
@@ -108,11 +75,11 @@ const Contract = () => {
             onChange={(e) => handleSelectChange(index, e)}
           />
         ))}
-        <Button title="Search" text="text-[12px]" />
-        <Button title="Normal view" text="text-[12px]" />
-        <Button title="Edit" text="text-[12px]" />
-        <Button title="Contract Accounts" text="text-[12px]" />
-        <Button title="Author Data Sheet" text="text-[12px]" />
+        <Button title="Search" />
+        <Button title="Contract Accounts" />
+        <Button title="Author Data Sheet" />
+        <Button title="Edit" onClick={toggleEditMode} />
+        {isEditMode && (<Button title="Save Changes" onClick={toggleEditMode} />)}
       </div>
 
       <div className="shadow mt-4 bg-[#F7F7F7] p-3 flex justify-between m-4 items-center">
@@ -125,16 +92,21 @@ const Contract = () => {
         </div>
       </div>
 
-      <div className="m-4 flex gap-3">
-        <InformationSection
-          title="Author Information"
-          info={authorInfo}
-          imageUrl="https://picsum.photos/200/300?grayscale"
-        />
-        <ContractInformation
-          infoLeft={contractInfoLeft}
-          infoRight={contractInfoRight}
-        />
+      <div className="m-4 grid grid-cols-2 gap-3">
+        <div>
+          <InformationSection
+            title="Author Information"
+            info={authorInfo}
+            imageUrl="https://picsum.photos/200/300?grayscale"
+          />
+        </div>
+        <div>
+          <ContractInformation
+            infoLeft={contractInfoLeft}
+            infoRight={contractInfoRight}
+            isEditable={isEditMode}
+          />
+        </div>
       </div>
     </div>
   );

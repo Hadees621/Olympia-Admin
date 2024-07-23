@@ -11,6 +11,7 @@ import Remaindered from "../editorial/components/Remaindered";
 
 const Author = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
+  const [isEditMode, setIsEditMode] = useState(false);
 
   const handleSelectChange = (index, e) => {
     const newSelectedValues = [...selectedValues];
@@ -19,6 +20,18 @@ const Author = () => {
   };
 
   const placeholders = ["Please Select Author", "Select Book"];
+
+  const toggleEditMode = () => {
+    setIsEditMode(!isEditMode);
+
+    console.log("EDITING changes...");
+
+  };
+
+  const handleSaveChanges = () => {
+    console.log("Saving changes...");
+    setIsEditMode(false); // Exit edit mode
+  };
 
   return (
     <div className="w-full text-start items-center">
@@ -45,8 +58,8 @@ const Author = () => {
             />
           ))}
           <Button title="Clear" />
-          <Button title="Normal view" />
-          <Button title="Edit" />
+          <Button title="Edit" onClick={toggleEditMode} />
+          {isEditMode && <Button title="Save Changes" onClick={handleSaveChanges} />}
         </div>
       </>
 
@@ -59,16 +72,15 @@ const Author = () => {
           title="Author Information"
           info={authorInfo}
           imageUrl="https://picsum.photos/200/300?grayscale"
+          bookFlag={false}
+          isEditable={isEditMode}
         />
-        <ContactInformation contactDetails={contactDetails} />
+        <ContactInformation contactDetails={contactDetails} isEditable={isEditMode} />
       </div>
 
-      <div className="m-4 gap-3 mt-8 flex">
-        <NoteCard
-          title="Important note"
-          content="Wants it ready for the London marathon - early April"
-        />
-        <NoteCard title="Author notes" content="NA" />
+      <div className="m-4 gap-3 mt-3 flex">
+        <NoteCard title="Important note" content="Wants it ready for the London marathon - early April" isEditable={isEditMode} />
+        <NoteCard title="Author notes" content="NA" isEditable={isEditMode} />
       </div>
     </div>
   );
