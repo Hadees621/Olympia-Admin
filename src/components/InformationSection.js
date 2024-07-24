@@ -1,4 +1,4 @@
-export const InformationSection = ({ title, info, imageUrl, bookFlag, isEditable, onUpdate }) => (
+export const InformationSection = ({ title, info, imageUrl, bookFlag, isEditable, }) => (
   <div className="w-full shadow-md bg-[#F7F7F7]">
     <div className="p-5 mx-4 border-b">
       <p className="text-xl font-bold">{title}</p>

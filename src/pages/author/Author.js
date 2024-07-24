@@ -8,9 +8,11 @@ import SearchField from "pages/home/components/SearchField";
 import { ContactInformation } from "components/ContactInformation.";
 import { InformationSection } from "components/InformationSection";
 import Remaindered from "../editorial/components/Remaindered";
+import Modal from "components/modals/Modal";
 
 const Author = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [isEditMode, setIsEditMode] = useState(false);
 
   const handleSelectChange = (index, e) => {
@@ -21,13 +23,17 @@ const Author = () => {
 
   const placeholders = ["Please Select Author", "Select Book"];
 
-  const toggleEditMode = () => {
-    setIsEditMode(!isEditMode);
+  const handleSaveChanges = () => {
+    setIsEditMode(false);
+    setIsModalVisible(false)
   };
 
-  const handleSaveChanges = () => {
-    console.log("Saving changes...");
-    setIsEditMode(false); 
+  const openModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setIsModalVisible(false);
   };
 
   return (
@@ -55,8 +61,7 @@ const Author = () => {
             />
           ))}
           <Button title="Clear" />
-          <Button title="Edit" onClick={toggleEditMode} />
-          {isEditMode && <Button title="Save Changes" onClick={handleSaveChanges} />}
+          <Button title="Edit" onClick={openModal} />
         </div>
       </>
 
@@ -81,8 +86,25 @@ const Author = () => {
         </div>
       </div>
 
-      <div className="m-4 gap-3 mt-3 flex">
-      </div>
+      {/* Modal */}
+      <Modal isVisible={isModalVisible} onClose={closeModal} onSave={handleSaveChanges} title={""}>
+        <div className="m-4 gap-3 grid grid-cols-2">
+          <div className="space-y-4">
+            <InformationSection
+              title="Author Information"
+              info={authorInfo}
+              imageUrl="https://picsum.photos/200/300?grayscale"
+              bookFlag={false}
+              isEditable={true}
+            />
+            <NoteCard title="Important note" content="Wants it ready for the London marathon - early April" isEditable={true} />
+          </div>
+          <div className="space-y-4">
+            <ContactInformation contactDetails={contactDetails} isEditable={true} />
+            <NoteCard title="Author notes" content="NA" isEditable={true} />
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };
