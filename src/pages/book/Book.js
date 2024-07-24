@@ -1,20 +1,32 @@
+
+
 import React, { useState } from "react";
 import Button from "components/Button";
 import SelectField from "components/SelectField";
 import SearchField from "pages/home/components/SearchField";
 import NoteCard from "../author/components/NoteCard";
-import { bookInfo } from "./utils/utils";
-import { BookInformation } from "components/BookInformation";
 import Remaindered from "../editorial/components/Remaindered";
+import BookInformation from "components/BookInformation";
+import { bookInfo } from "./utils/utils";
 
 const Book = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
+  const [isEditable, setIsEditable] = useState(false);
+
+  const toggleEditMode = () => {
+    setIsEditable(!isEditable);
+  };
+
+  const handleSaveChanges = () => {
+    setIsEditable(false);
+  };
 
   const handleSelectChange = (index, e) => {
     const newSelectedValues = [...selectedValues];
     newSelectedValues[index] = e.target.value;
     setSelectedValues(newSelectedValues);
   };
+
   const placeholders = ["Please Select Author", "Select Book"];
 
   return (
@@ -42,11 +54,10 @@ const Book = () => {
             />
           ))}
           <Button title="Clear" />
-          <Button title="Normal view" />
-          <Button title="Edit Information" />
+          <Button title="Edit" onClick={toggleEditMode} />
+          {isEditable && <Button title="Save Changes" onClick={handleSaveChanges} />}
         </div>
       </>
-      {/* header */}
 
       <div className="mt-4 m-4">
         <Remaindered />
@@ -54,10 +65,11 @@ const Book = () => {
 
       <div className="m-4 gap-3 flex">
         <BookInformation
-          title="Book Information"
+          title="Edit Book Information"
           info={bookInfo}
-          imageUrl="https://picsum.photos/200/300?grayscale"
+          imageUrl="https://picsum.photos/200/300?random"
           bookFlag={true}
+          isEditable={isEditable}
         />
         <div className="space-y-3 w-full">
           <NoteCard title="Important note" content="NA" />
