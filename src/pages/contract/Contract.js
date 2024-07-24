@@ -3,9 +3,10 @@ import Plus from "utils/icons/Plus";
 import Button from "components/Button";
 import SelectField from "components/SelectField";
 import SearchField from "pages/home/components/SearchField";
-import { authorInfo, contractInfoLeft, contractInfoRight } from "./utils/utils";
-import ContractInformation from "./components/ContactInformation";
 import Modal from "components/modals/Modal";
+import ContractInformationDisplay from "./components/ContractInformationDisplay";
+import ContractInformationEditable from "./components/ContractInformationEditable";
+import { authorInfo, contractInfoLeft, contractInfoRight } from "./utils/utils";
 
 const Contract = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -100,19 +101,14 @@ const Contract = () => {
           />
         </div>
         <div>
-          <ContractInformation
-            infoLeft={contractInfoLeft}
-            infoRight={contractInfoRight}
-          />
+          <ContractInformationDisplay infoLeft={contractInfoLeft} infoRight={contractInfoRight} />
         </div>
       </div>
 
-      {/* Modal */}
       <Modal isVisible={isModalVisible} onClose={closeModal} onSave={closeModal} title="Edit Contract Information">
-        <ContractInformation
+        <ContractInformationEditable
           infoLeft={contractInfoLeft}
           infoRight={contractInfoRight}
-          isEditable={true}
         />
       </Modal>
     </div>
