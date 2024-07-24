@@ -6,7 +6,7 @@ const EditableDropdown = ({ label, name, value, onChange, options = [{ value: 'o
 { value: 'option3', label: 'Option 3' },] }) => (
     <div className='w-full'>
         <p className="text-md font-semibold text-gray-600">{label}</p>
-        <SelectField options={options} />
+        <SelectField options={options} value={value} />
     </div>
 );
 

@@ -7,9 +7,8 @@ const DatePickerField = ({ placeholder, name, value, onChange, ...props }) => {
         name={name}
         value={value}
         onChange={onChange}
-
         type="date"
-        placeholder="Select date"
+        placeholder={placeholder || "Select date"}
         className="shadow appearance-none bg-[#F7F7F7] rounded w-full p-2.5 text-gray-700 leading-tight focus:outline-none"
         {...props}
       />

@@ -10,7 +10,9 @@ const SearchField = ({
     <div className="flex-grow">
       <input
         type="text"
+        value={value}
         placeholder={placeholder}
+        onChange={onChange}
         className={`${background} shadow appearance-none rounded w-full p-2.5 text-gray-700 leading-tight focus:outline-none`}
         {...props}
       />

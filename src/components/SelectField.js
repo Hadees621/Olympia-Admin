@@ -12,6 +12,7 @@ const SelectField = ({
     { value: "option4", label: "Option 4" },
   ],
   width = "w-full",
+  name,
   ...props
 }) => {
   return (
