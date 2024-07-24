@@ -13,15 +13,7 @@ const BookInformation = ({ title, info, imageUrl, bookFlag, isEditable }) => (
         {info.map((item, index) => (
           <div key={index}>
             <p className="text-sm font-semibold text-gray-600">{item.label}</p>
-            {isEditable ? (
-              <input
-                type="text"
-                defaultValue={item.value}
-                className="border rounded p-1"
-              />
-            ) : (
-              <p className="text-lg font-semibold text-black">{item.value}</p>
-            )}
+            <p className="text-lg font-semibold text-black">{item.value}</p>
           </div>
         ))}
         {bookFlag && (
@@ -43,19 +35,13 @@ const BookInformation = ({ title, info, imageUrl, bookFlag, isEditable }) => (
         {bookDetails.map((item, index) => (
           <React.Fragment key={index}>
             <div className="text-left font-medium text-gray-600">
-              {item.label}
+              {item.type}
             </div>
-            <div className="text-left">
-              {isEditable ? (
-                <textarea
-                  type="text"
-                  defaultValue={item.value}
-                  className="border rounded p-1"
-                />
-              ) : (
-                <p className="text-lg font-semibold text-black">{item.value}</p>
-              )}
+            <p className="text-lg font-semibold text-black">{item.value}</p>
+            <div className="text-left font-medium text-gray-600">
+              ISBN
             </div>
+            <p className="text-lg font-semibold text-black">{item.isbn}</p>
           </React.Fragment>
         ))}
       </div>
@@ -66,15 +52,7 @@ const BookInformation = ({ title, info, imageUrl, bookFlag, isEditable }) => (
               {item.label}
             </div>
             <div className="text-left">
-              {isEditable ? (
-                <textarea
-                  type="text"
-                  defaultValue={item.value}
-                  className="border rounded p-1"
-                />
-              ) : (
-                <p className="text-lg font-semibold text-black">{item.value}</p>
-              )}
+              <p className="text-lg font-semibold text-black">{item.value}</p>
             </div>
           </React.Fragment>
         ))}
@@ -89,15 +67,7 @@ const BookInformation = ({ title, info, imageUrl, bookFlag, isEditable }) => (
               {item.label}
             </div>
             <div className="text-left">
-              {isEditable ? (
-                <textarea
-                  type="text"
-                  defaultValue={item.value}
-                  className="border rounded p-1"
-                />
-              ) : (
-                <p className="text-lg font-semibold text-black">{item.value}</p>
-              )}
+              <p className="text-lg font-semibold text-black">{item.value}</p>
             </div>
           </React.Fragment>
         ))}

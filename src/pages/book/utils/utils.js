@@ -6,11 +6,26 @@ export const bookInfo = [
 ];
 
 export const bookDetails = [
-  { label: "Paperback:", value: "Yes" },
-  { label: "ISBN:", value: "978-1-78830-606-5" },
-  { label: "Hardback ISBN:", value: "No" },
-  { label: "eBook ISBN:", value: "Yes" },
-  { label: "Audio book ISBN:", value: "No" },
+  {
+    type: "Paperback:",
+    value: "yes",
+    isbn: "978-1-78830-606-5"
+  },
+  {
+    type: "Hardback:",
+    value: "yes",
+    isbn: "978-1-78830-606-6"
+  },
+  {
+    type: "eBook:",
+    value: "no",
+    isbn: "978-1-78830-606-7"
+  },
+  {
+    type: "Audio book:",
+    value: "no",
+    isbn: "978-1-78830-606-8"
+  }
 ];
 
 export const bookDetails2 = [
