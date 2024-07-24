@@ -22,21 +22,6 @@ const Book = () => {
     setIsModalVisible(false);
   };
 
-
-  const [isEditable, setIsEditable] = useState(false);
-
-  const toggleEditMode = () => {
-    setIsEditable(!isEditable);
-  };
-
-
-
-
-
-  const handleSaveChanges = () => {
-    setIsEditable(false);
-  };
-
   const handleSelectChange = (index, e) => {
     const newSelectedValues = [...selectedValues];
     newSelectedValues[index] = e.target.value;
@@ -91,7 +76,6 @@ const Book = () => {
         </div>
       </div>
 
-
       <Modal isVisible={isModalVisible} onClose={closeModal} onSave={closeModal} title="Edit Book Information">
         <BookInformationEditable
           title="Book Information"
@@ -100,7 +84,6 @@ const Book = () => {
           bookFlag={true}
           isEditable={true}
         />
-
         <div className="space-y-3 w-full mt-4">
           <NoteCard title="Important note" content="NA" isEditable={true} />
           <NoteCard title="Author notes" content="NA" isEditable={true} />
