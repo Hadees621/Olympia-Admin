@@ -9,8 +9,8 @@ import ContractInformationEditable from "./components/ContractInformationEditabl
 import { authorInfo, contractInfoLeft, contractInfoRight } from "./utils/utils";
 
 const Contract = () => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedValues, setSelectedValues] = useState(["", ""]);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const openModal = () => {
     setIsModalVisible(true);

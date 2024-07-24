@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import Button from "components/Button";
 import SelectField from "components/SelectField";
@@ -8,14 +6,32 @@ import NoteCard from "../author/components/NoteCard";
 import Remaindered from "../editorial/components/Remaindered";
 import BookInformation from "components/BookInformation";
 import { bookInfo } from "./utils/utils";
+import Modal from "components/modals/Modal";
+import BookInformationEditable from "./components/BookInformationEditable";
 
 const Book = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const openModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setIsModalVisible(false);
+  };
+
+
   const [isEditable, setIsEditable] = useState(false);
 
   const toggleEditMode = () => {
     setIsEditable(!isEditable);
   };
+
+
+
+
 
   const handleSaveChanges = () => {
     setIsEditable(false);
@@ -54,8 +70,7 @@ const Book = () => {
             />
           ))}
           <Button title="Clear" />
-          <Button title="Edit" onClick={toggleEditMode} />
-          {isEditable && <Button title="Save Changes" onClick={handleSaveChanges} />}
+          <Button title="Edit" onClick={openModal} />
         </div>
       </>
 
@@ -69,13 +84,28 @@ const Book = () => {
           info={bookInfo}
           imageUrl="https://picsum.photos/200/300?random"
           bookFlag={true}
-          isEditable={isEditable}
         />
         <div className="space-y-3 w-full">
           <NoteCard title="Important note" content="NA" />
           <NoteCard title="Author notes" content="NA" />
         </div>
       </div>
+
+
+      <Modal isVisible={isModalVisible} onClose={closeModal} onSave={closeModal} title="Edit Book Information">
+        <BookInformationEditable
+          title="Book Information"
+          info={bookInfo}
+          imageUrl="https://picsum.photos/200/300?random"
+          bookFlag={true}
+          isEditable={true}
+        />
+
+        <div className="space-y-3 w-full mt-4">
+          <NoteCard title="Important note" content="NA" isEditable={true} />
+          <NoteCard title="Author notes" content="NA" isEditable={true} />
+        </div>
+      </Modal>
     </div>
   );
 };

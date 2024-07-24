@@ -99,7 +99,7 @@ const ContractInformationEditable = ({ infoLeft, infoRight, onSave }) => {
                                     onChange={handleChange}
                                 />
                             ) : item.type === 'textarea' ? (
-                                <EditableTextInput
+                                <EditableTextarea
                                     label={item.label}
                                     name={item.name}
                                     value={formState[item.name]}
