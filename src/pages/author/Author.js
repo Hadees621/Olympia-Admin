@@ -87,7 +87,7 @@ const Author = () => {
       </div>
 
       {/* Modal */}
-      <Modal isVisible={isModalVisible} onClose={closeModal} onSave={handleSaveChanges} title={""}>
+      <Modal isVisible={isModalVisible} onClose={closeModal} onSave={handleSaveChanges} title="Edit Author Information">
         <div className="m-4 gap-3 grid grid-cols-2">
           <div className="space-y-4">
             <InformationSection

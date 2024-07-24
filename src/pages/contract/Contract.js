@@ -5,15 +5,19 @@ import SelectField from "components/SelectField";
 import SearchField from "pages/home/components/SearchField";
 import { authorInfo, contractInfoLeft, contractInfoRight } from "./utils/utils";
 import ContractInformation from "./components/ContactInformation";
+import Modal from "components/modals/Modal";
 
 const Contract = () => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedValues, setSelectedValues] = useState(["", ""]);
-  const [isEditMode, setIsEditMode] = useState(false);
 
-  const toggleEditMode = () => {
-    setIsEditMode(!isEditMode);
+  const openModal = () => {
+    setIsModalVisible(true);
   };
 
+  const closeModal = () => {
+    setIsModalVisible(false);
+  };
 
   const handleSelectChange = (index, e) => {
     const newSelectedValues = [...selectedValues];
@@ -32,18 +36,14 @@ const Contract = () => {
         <div className="my-4 gap-4 grid">
           {info.map((item, index) => (
             <div key={index}>
-              <p className="text-sm font-semibold text-gray-600">
-                {item.label}
-              </p>
+              <p className="text-sm font-semibold text-gray-600">{item.label}</p>
               <p className="text-lg font-semibold text-black">{item.value}</p>
             </div>
           ))}
         </div>
         {imageUrl && (
           <div>
-            <p className="text-sm font-semibold text-gray-600">
-              Author Picture:
-            </p>
+            <p className="text-sm font-semibold text-gray-600">Author Picture:</p>
             <img src={imageUrl} alt="author" />
           </div>
         )}
@@ -78,8 +78,7 @@ const Contract = () => {
         <Button title="Search" />
         <Button title="Contract Accounts" />
         <Button title="Author Data Sheet" />
-        <Button title="Edit" onClick={toggleEditMode} />
-        {isEditMode && (<Button title="Save Changes" onClick={toggleEditMode} />)}
+        <Button title="Edit" onClick={openModal} />
       </div>
 
       <div className="shadow mt-4 bg-[#F7F7F7] p-3 flex justify-between m-4 items-center">
@@ -104,10 +103,18 @@ const Contract = () => {
           <ContractInformation
             infoLeft={contractInfoLeft}
             infoRight={contractInfoRight}
-            isEditable={isEditMode}
           />
         </div>
       </div>
+
+      {/* Modal */}
+      <Modal isVisible={isModalVisible} onClose={closeModal} onSave={closeModal} title="Edit Contract Information">
+        <ContractInformation
+          infoLeft={contractInfoLeft}
+          infoRight={contractInfoRight}
+          isEditable={true}
+        />
+      </Modal>
     </div>
   );
 };
