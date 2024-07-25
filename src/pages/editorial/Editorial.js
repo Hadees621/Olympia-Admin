@@ -90,6 +90,16 @@ const Editorial = () => {
 
       <Modal isVisible={isModalVisible} onClose={closeModal} onSave={closeModal} title="Edit Contract Information">
         <EditorialBookInformationEditable title="About book" info={bookInfo} />
+        <div className="grid space-y-4 mt-5">
+          <NoteCard title={"Poster quotes"} isEditable={true} />
+          <NoteCard title={"Book notes"} content={"Here are some notes and thing's Hello"} isEditable={true} />
+          <NoteCard title={"Cover blurb"} isEditable={true} />
+          <NoteCard title={"Author blurb"} isEditable={true} />
+          <NoteCard title={"Copyrights Issues Inners:"} isEditable={true} />
+          <NoteCard title={"Copyrights Issues Covers:"} isEditable={true} />
+          <NoteCard title={"Copyrights Credit Inners:"} isEditable={true} />
+          <NoteCard title={"Copyrights Credit Covers:"} isEditable={true} />
+        </div>
       </Modal>
     </div>
   );
