@@ -1,11 +1,35 @@
-import React from 'react'
-import Button from 'components/Button'
-import invoiceData from '../utils/utils'
-import Pagination from 'components/Pagination'
-import TableButton from 'components/TableButton'
-import SelectField from 'components/SelectField'
+import Modal from './Modal';
+import Button from 'components/Button';
+import React, { useState } from 'react';
+import invoiceData from '../utils/utils';
+import Pagination from 'components/Pagination';
+import TableButton from 'components/TableButton';
+import SelectField from 'components/SelectField';
+import EditModal from './EdItModal';
 
 const AllPurchasesTable = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedRow, setSelectedRow] = useState(null);
+    const [isEditModalOpen, setEditModalOpen] = useState(false);
+
+    const handleEditClick = (row) => {
+        setSelectedRow(row);
+        setEditModalOpen(true);
+    };
+
+    const handleSave = (updatedData) => {
+        console.log("Updated Data:", updatedData);
+    };
+    const handleViewClick = (row) => {
+        setSelectedRow(row);
+        setIsModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+        setSelectedRow(null);
+    };
+
     return (
         <div>
             <div className="flex items-center my-7 gap-3 px-5">
@@ -22,9 +46,9 @@ const AllPurchasesTable = () => {
 
             <Pagination num={32} />
 
-            <div class="overflow-x-auto shadow-md transition-all duration-300 max-h-[500px] ">
-                <table class="w-full text-sm text-left rtl:text-right text-blue-100 dark:text-blue-100 ">
-                    <thead class="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
+            <div className="overflow-x-auto shadow-md transition-all duration-300 max-h-[500px] custom-scrollbar">
+                <table className="w-full text-sm text-left">
+                    <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
                         <tr className="text-sm font-medium text-gray-500 uppercase text-center">
                             <th className="px-6 py-3 border">Invoice Date</th>
                             <th className="px-6 py-3 border">Due Date</th>
@@ -47,7 +71,7 @@ const AllPurchasesTable = () => {
                     </thead>
                     <tbody>
                         {invoiceData.map((row, index) => (
-                            < tr key={index} className="text-sm text-gray-700 text-center border" >
+                            <tr key={index} className="text-sm text-gray-700 text-center border">
                                 <td className="px-6 py-4 border whitespace-nowrap">{row.invoiceDate}</td>
                                 <td className="px-6 py-4 border whitespace-nowrap">{row.dueDate}</td>
                                 <td className="px-6 py-4 border whitespace-nowrap">{row.firstName}</td>
@@ -66,19 +90,26 @@ const AllPurchasesTable = () => {
                                 <td className="px-6 py-4 border whitespace-nowrap">{row.status}</td>
                                 <td className="px-6 py-4 border">
                                     <div className="flex justify-center items-center space-x-2">
-                                        <TableButton title={"View"} />
-                                        <TableButton title={"Edit"} bg="bg-green-500" text={"text-white"} />
+                                        <TableButton title={"View"} onClick={() => handleViewClick(row)} />
+                                        <TableButton
+                                            title={"Edit"}
+                                            bg="bg-green-500"
+                                            text="text-white"
+                                            onClick={() => handleEditClick(row)}
+                                        />
                                         <TableButton title={"X"} bg="bg-red-500" text={"text-white"} />
                                     </div>
                                 </td>
                             </tr>
-
                         ))}
                     </tbody>
                 </table>
             </div>
-        </div>
-    )
-}
 
-export default AllPurchasesTable
+            <Modal isOpen={isModalOpen} onClose={handleCloseModal} data={selectedRow} />
+            <EditModal isOpen={isEditModalOpen} onClose={() => setEditModalOpen(false)} data={selectedRow} onSave={handleSave} />
+        </div>
+    );
+};
+
+export default AllPurchasesTable;
