@@ -1,18 +1,28 @@
 import React, { useState } from "react";
 import Button from "components/Button";
-import { bookInfo, editableNotesData, noteCardsData } from "./utils/utils";
+import Modal from "components/modals/Modal";
 import SelectField from "components/SelectField";
-import NoteCard from "../author/components/NoteCard";
-import SearchField from "pages/home/components/SearchField";
-import EditorialBookInformation from "./components/EditorialBookInformation";
-import EditableNoteCard from "components/EditableNoteCard";
-import EditorialNotes from "./components/EditorialNotes";
-import UploadedFiles from "./components/UploadedFiles";
 import Remaindered from "./components/Remaindered";
+import NoteCard from "../author/components/NoteCard";
+import UploadedFiles from "./components/UploadedFiles";
+import EditorialNotes from "./components/EditorialNotes";
+import EditableNoteCard from "components/EditableNoteCard";
+import SearchField from "pages/home/components/SearchField";
+import { bookInfo, editableNotesData, noteCardsData } from "./utils/utils";
+import EditorialBookInformation from "./components/EditorialBookInformation";
+import EditorialBookInformationEditable from "./components/EditorialBookInformationEditable";
 
 const Editorial = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
+  const openModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setIsModalVisible(false);
+  };
   const handleSelectChange = (index, e) => {
     const newSelectedValues = [...selectedValues];
     newSelectedValues[index] = e.target.value;
@@ -46,8 +56,7 @@ const Editorial = () => {
             />
           ))}
           <Button title="Clear" />
-          <Button title="Normal view" />
-          <Button title="Edit Information" />
+          <Button title="Edit Information" onClick={openModal} />
         </div>
       </>
 
@@ -78,6 +87,10 @@ const Editorial = () => {
           ))}
         </div>
       </div>
+
+      <Modal isVisible={isModalVisible} onClose={closeModal} onSave={closeModal} title="Edit Contract Information">
+        <EditorialBookInformationEditable title="About book" info={bookInfo} />
+      </Modal>
     </div>
   );
 };
