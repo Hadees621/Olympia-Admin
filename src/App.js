@@ -28,6 +28,7 @@ import PublishedBooks from "./pages/published-books/PublishedBooks";
 import OlympiaWebsitesPortal from "./pages/olympia-websites-portal/OlympiaWebsitesPortal";
 import IsbnSearch from "./pages/nested-pages/isbn-search/IsbnSearch";
 import AddRecord from "./pages/nested-pages/add-record-home/AddRecord";
+import AllPurchases from "./pages/nested-pages/all-purchases/AllPurchases";
 
 const App = () => (
   <Routes>
@@ -64,6 +65,7 @@ const App = () => (
     {/* nested pages */}
     <Route path="/isbn-search" element={<IsbnSearch />} />
     <Route path="/add-record-home" element={<AddRecord />} />
+    <Route path="/all-purchases" element={<AllPurchases />} />
 
   </Routes>
 );

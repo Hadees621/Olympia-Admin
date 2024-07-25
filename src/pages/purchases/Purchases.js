@@ -3,77 +3,12 @@ import SearchField from "../home/components/SearchField";
 import Button from "components/Button";
 import ScrollableTable from "./components/ScrollableTable";
 import useSidebarStore from "stores/States";
+import { data } from "./utils/utils";
 
 const Purchases = () => {
   const { isOpen } = useSidebarStore();
 
-  const data = [
-    {
-      name: "John",
-      lastName: "Doe",
-      company: "Example Corp",
-      vat: "123456789",
-      tel: "123-456-7890",
-      mobile: "098-765-4321",
-      emails: "john@example.com",
-      skype: "john.doe",
-      website: "https://example.com",
-      address1:
-        "123 Example Street123 Example Street123 Examtreet123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street ",
-      address2:
-        "123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example23 Example Street123 Example Street123 Example Street ",
-      signupDate: "2022-01-01",
-    },
-    {
-      name: "John",
-      lastName: "Doe",
-      company: "Example Corp",
-      vat: "123456789",
-      tel: "123-456-7890",
-      mobile: "098-765-4321",
-      emails: "john@example.com",
-      skype: "john.doe",
-      website: "https://example.com",
-      address1:
-        "123 Example Street123 Example Street123 Examtreet123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street ",
-      address2:
-        "123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example23 Example Street123 Example Street123 Example Street ",
-      signupDate: "2022-01-01",
-    },
-    {
-      name: "John",
-      lastName: "Doe",
-      company: "Example Corp",
-      vat: "123456789",
-      tel: "123-456-7890",
-      mobile: "098-765-4321",
-      emails: "john@example.com",
-      skype: "john.doe",
-      website: "https://example.com",
-      address1:
-        "123 Example Street123 Example Street123 Examtreet123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street ",
-      address2:
-        "123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example23 Example Street123 Example Street123 Example Street ",
-      signupDate: "2022-01-01",
-    },
-    {
-      name: "John",
-      lastName: "Doe",
-      company: "Example Corp",
-      vat: "123456789",
-      tel: "123-456-7890",
-      mobile: "098-765-4321",
-      emails: "john@example.com",
-      skype: "john.doe",
-      website: "https://example.com",
-      address1:
-        "123 Example Street123 Example Street123 Examtreet123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street ",
-      address2:
-        "123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example Street123 Example23 Example Street123 Example Street123 Example Street ",
-      signupDate: "2022-01-01",
-    },
-    // Add more rows as needed
-  ];
+
   return (
     <div className="w-full text-start items-center m-4">
       {/* header */}
@@ -97,14 +32,13 @@ const Purchases = () => {
             bg="bg-green-600"
             text={"text-white"}
           />
-          <Button title="All purchases" />
+          <Button title="All purchases" href="/all-purchases" />
         </div>
       </>
 
       <div
-        className={`m-4 transition-all duration-300 ${
-          isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
-        }`}
+        className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
+          }`}
       >
         <ScrollableTable data={data} />
       </div>

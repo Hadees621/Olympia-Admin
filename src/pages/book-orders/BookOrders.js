@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import SearchField from "../home/components/SearchField";
-import SelectField from "components/SelectField";
 import Button from "components/Button";
-import Remaindered from "../editorial/components/Remaindered";
-import ProcessingTab from "./components/ProcessingTab";
-import PreOrdersTab from "./components/PreOrdersTab";
-import ShippedTab from "./components/ShipedTab";
+import React, { useState } from "react";
 import IngramTab from "./components/IngramTab";
+import ShippedTab from "./components/ShipedTab";
 import ReportsTab from "./components/ReportsTab";
 import ArchiveTab from "./components/ArchiveTab";
+import SelectField from "components/SelectField";
+import PreOrdersTab from "./components/PreOrdersTab";
+import ProcessingTab from "./components/ProcessingTab";
+import SearchField from "../home/components/SearchField";
+import Remaindered from "../editorial/components/Remaindered";
 
 const BookOrders = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
@@ -70,11 +70,10 @@ const BookOrders = () => {
           {tabs.map((tab) => (
             <li key={tab.id} className="me-2" role="presentation">
               <button
-                className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${
-                  activeTab === tab.id
+                className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${activeTab === tab.id
                     ? "text-red-600 border-red-600"
                     : "text-black hover:text-black border-black"
-                }`}
+                  }`}
                 id={`${tab.id}-tab`}
                 type="button"
                 role="tab"
@@ -92,9 +91,8 @@ const BookOrders = () => {
         {tabs.map((tab) => (
           <div
             key={tab.id}
-            className={`p-4 dark:bg-gray-800 ${
-              activeTab === tab.id ? "block" : "hidden"
-            }`}
+            className={`p-4 dark:bg-gray-800 ${activeTab === tab.id ? "block" : "hidden"
+              }`}
             id={tab.id}
             role="tabpanel"
             aria-labelledby={`${tab.id}-tab`}

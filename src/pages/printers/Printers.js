@@ -9,8 +9,8 @@ import { invoiceData } from "./utils/utils";
 import SearchField from "../home/components/SearchField";
 
 const Printers = () => {
-  const { isOpen } = useSidebarStore();
   const [selectedRows, setSelectedRows] = useState([]);
+  const { isOpen } = useSidebarStore();
 
   const handleSelectAll = () => {
     if (selectedRows.length === data.length) {
@@ -19,7 +19,6 @@ const Printers = () => {
       setSelectedRows(data.map((_, index) => index));
     }
   };
-
   const handleSelectRow = (index) => {
     if (selectedRows.includes(index)) {
       setSelectedRows(selectedRows.filter((i) => i !== index));
@@ -27,7 +26,6 @@ const Printers = () => {
       setSelectedRows([...selectedRows, index]);
     }
   };
-
   const isRowSelected = (index) => selectedRows.includes(index);
 
   return (
@@ -54,9 +52,8 @@ const Printers = () => {
         </div>
       </>
       <div
-        className={`m-4 transition-all duration-300 ${
-          isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
-        }`}
+        className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
+          }`}
       >
         <div className="flex items-center mt-10 mb-4 gap-3">
           <Button title={"Send Via Email"} />
@@ -96,9 +93,8 @@ const Printers = () => {
               {invoiceData.map((row, index) => (
                 <tr
                   key={index}
-                  className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap ${
-                    isRowSelected(index) ? "bg-gray-100" : ""
-                  }`}
+                  className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap ${isRowSelected(index) ? "bg-gray-100" : ""
+                    }`}
                 >
                   <td className="px-6 py-4 border">
                     <input
