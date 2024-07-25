@@ -52,7 +52,6 @@ const Graphics = () => {
             />
           ))}
           <Button title="Clear" />
-          <Button title="Edit" />
         </div>
       </header>
 

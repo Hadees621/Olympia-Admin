@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Plus from "utils/icons/Plus";
 import Button from "components/Button";
+import Modal from "components/modals/Modal";
 import SelectField from "components/SelectField";
 import SearchField from "pages/home/components/SearchField";
-import Modal from "components/modals/Modal";
+import BookDetailsTable from "./components/BookDetailsTable";
 import ContractInformationDisplay from "./components/ContractInformationDisplay";
 import ContractInformationEditable from "./components/ContractInformationEditable";
 import { authorInfo, contractInfoLeft, contractInfoRight } from "./utils/utils";
+import ReactDOM from 'react-dom/client';
 
 const Contract = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
@@ -52,6 +54,27 @@ const Contract = () => {
     </div>
   );
 
+  const openWindow = () => {
+    const newWindow = window.open('', '_blank', 'width=800,height=600');
+    newWindow.document.write('<html><head><title>Book Details</title>');
+    newWindow.document.write('<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">');
+    newWindow.document.write('<style>');
+    newWindow.document.write('body { font-family: "Lato", sans-serif; margin: 20px; }');
+    newWindow.document.write('td { padding: 10px; border: 1px solid #ddd; text-align: center; }');
+    newWindow.document.write('table { width: 100%; border-collapse: collapse; margin-top: 20px; }');
+    newWindow.document.write('button { font-size: 12px; padding: 10px 20px; margin-top: 20px; }');
+    newWindow.document.write('</style>');
+    newWindow.document.write('</head><body>');
+    newWindow.document.write('<div id="book-details"></div>');
+    newWindow.document.write('<button onclick="window.print()" class="rounded-md text-[#001C4E] bg-red-600 font-bold px-8 py-2 text-[12px]">Print</button>');
+    newWindow.document.write('</body></html>');
+    newWindow.document.close();
+
+    const container = newWindow.document.getElementById('book-details');
+    const root = ReactDOM.createRoot(container);
+    root.render(<BookDetailsTable />);
+  };
+
   return (
     <div className="w-full text-start items-center">
       <p className="text-3xl font-semibold mt-8 ml-8">
@@ -78,7 +101,8 @@ const Contract = () => {
         ))}
         <Button title="Search" />
         <Button title="Contract Accounts" />
-        <Button title="Author Data Sheet" />
+        <Button title="Author Data Sheet" onClick={openWindow} />
+
         <Button title="Edit" onClick={openModal} />
       </div>
 
