@@ -1,11 +1,11 @@
 import Modal from './Modal';
+import EditModal from './EdItModal';
 import Button from 'components/Button';
 import React, { useState } from 'react';
 import invoiceData from '../utils/utils';
 import Pagination from 'components/Pagination';
 import TableButton from 'components/TableButton';
 import SelectField from 'components/SelectField';
-import EditModal from './EdItModal';
 
 const AllPurchasesTable = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -16,7 +16,6 @@ const AllPurchasesTable = () => {
         setSelectedRow(row);
         setEditModalOpen(true);
     };
-
     const handleSave = (updatedData) => {
         console.log("Updated Data:", updatedData);
     };
@@ -24,7 +23,6 @@ const AllPurchasesTable = () => {
         setSelectedRow(row);
         setIsModalOpen(true);
     };
-
     const handleCloseModal = () => {
         setIsModalOpen(false);
         setSelectedRow(null);
@@ -104,10 +102,43 @@ const AllPurchasesTable = () => {
                         ))}
                     </tbody>
                 </table>
+
+                <Modal isOpen={isModalOpen} onClose={handleCloseModal} data={selectedRow} />
+                <EditModal isOpen={isEditModalOpen} onClose={() => setEditModalOpen(false)} data={selectedRow} onSave={handleSave} />
             </div>
 
-            <Modal isOpen={isModalOpen} onClose={handleCloseModal} data={selectedRow} />
-            <EditModal isOpen={isEditModalOpen} onClose={() => setEditModalOpen(false)} data={selectedRow} onSave={handleSave} />
+            <div className="mt-6 pt-4 w-full items-end flex justify-end">
+                <div className='p-5'>
+                    <h3 className="text-lg font-semibold">Summary</h3>
+                    <div className="mt-4 space-y-2 w-[200px] mb-5">
+                        <div className="flex justify-between">
+                            <span>Total Purchases:</span>
+                            <span>100</span>
+                        </div>
+                        <div className="flex justify-between">
+                            <span>Total NET:</span>
+                            <span>£ 7786.64</span>
+                        </div>
+                        <div className="flex justify-between">
+                            <span>Total VAT:</span>
+                            <span>£ 988.79</span>
+                        </div>
+                        <div className="flex justify-between">
+                            <span>Total Amount:</span>
+                            <span>£ 8775.43</span>
+                        </div>
+                        <div className="flex justify-between">
+                            <span>Total Paid:</span>
+                            <span>£ 8395.03</span>
+                        </div>
+                        <div className="flex justify-between">
+                            <span>Total Unpaid:</span>
+                            <span>£ 380.4</span>
+                        </div>
+                    </div>
+                    <Button title={"Print"} />
+                </div>
+            </div>
         </div>
     );
 };
