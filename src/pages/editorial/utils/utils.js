@@ -35,6 +35,7 @@ export const editorialBookDetails2 = [
   { label: "Category:", value: "Biography / Memoirs" },
   { label: "Word Count:", value: "60000 / 115 pgs" },
 ];
+
 export const editorialBookDetails22 = [
   { label: "Target audience age:", value: "csasc" },
   { label: "Age group (Olympia Publishers):", value: "csacasc" },
@@ -48,73 +49,69 @@ export const editorialBookDetails3 = [
 ];
 
 export const editorialBookDetails4 = [
-  { label: "Format:", value: "PAPERBACK EDITION" },
-  { label: "No. of pages:", value: "196" },
-  { label: "Size:", value: "205X140MM" },
-  { label: "Book require illustrations:", value: "No" },
-  { label: "Illustrations provided by:", value: "" },
-  { label: "Agreed number of illustrations:", value: "0" },
-  { label: "No. of comp copies:", value: "25" },
-  { label: "Author copy discount (%):", value: "30%" },
-  { label: "Does the book contain photographs?:", value: "" },
+  { label: "Format:", value: "PAPERBACK EDITION", type: "dropdown", name: "format", edit: true },
+  { label: "No. of pages:", value: "196", type: "text", name: "pages" },
+  { label: "Size:", value: "205X140MM", type: "dropdown", name: "size", edit: true },
+  { label: "Book require illustrations:", value: "No", type: "dropdown", name: "requireIllustrations", edit: false },
+  { label: "Illustrations provided by:", value: "", type: "dropdown", name: "illustrationsProvidedBy" },
+  { label: "Agreed number of illustrations:", value: "0", type: "text", name: "agreedIllustrations" },
+  { label: "No. of comp copies:", value: "25", type: "text", name: "compCopies", },
+  { label: "Author copy discount (%):", value: "30%", type: "text", name: "authorDiscount", },
+  { label: "Does the book contain photographs?:", value: "no", type: "text", name: "containsPhotographs" },
 ];
 
 export const editorialBookDetails44 = [
-  { label: "Author photo received:", value: "" },
-  { label: "Pics for inners:", value: "None" },
-  { label: "Cover idea:", value: "" },
-  { label: "Cover sent to:", value: "--" },
-  { label: "Cover designed by:", value: "" },
-  { label: "Cover proofs sent to author:", value: "--" },
-  { label: "Cover approved:", value: "--" },
-  { label: "Final cover proofs checked:", value: "--" },
-  { label: "Receive proofread/ amended copies of manuscript:", value: "" },
+  { label: "Author photo received:", value: "", type: "dropdown", name: "authorPhotoReceived" },
+  { label: "Pics for inners:", value: "None", type: "dropdown", name: "picsForInners" },
+  { label: "Cover idea:", value: "", type: "dropdown", name: "coverIdea" },
+  { label: "Cover sent to:", value: "--", type: "dropdown", name: "coverSentTo" },
+  { label: "Cover designed by:", value: "", type: "dropdown", name: "coverDesignedBy" },
+  { label: "Cover proofs sent to author:", value: "--", type: "dropdown", name: "coverProofsSentToAuthor" },
+  { label: "Cover approved:", value: "--", type: "date", name: "coverApproved" },
+  { label: "Final cover proofs checked:", value: "--", type: "date", name: "finalCoverProofsChecked" },
+  { label: "Receive proofread/ amended copies of manuscript:", value: "sacas", type: "date", name: "receiveProofreadCopies" },
 ];
 
 export const editorialBookDetails5 = [
-  { label: "To Proof Reader:", value: "27-11-2019" },
-  { label: "1st Proof to Author:", value: "28-11-2019" },
-  { label: "1st Proof Amended:", value: "20-12-2019" },
-  { label: "2nd Proof to Author:", value: "02-01-2020" },
-  { label: "2nd Proof Amended:", value: "05-03-2020" },
-  { label: "3rd Proof to Author:", value: "06-03-2020" },
-  { label: "Final Proof Amended:", value: "--" },
-  { label: "Final Inners Checked:", value: "--" },
-  { label: "Final PDF Created:", value: "30-06-2020" },
+  { label: "To Proof Reader:", name: "toProofReader", value: "27-11-2019", type: 'date' },
+  { label: "1st Proof to Author:", name: "firstProofToAuthor", value: "28-11-2019", type: 'date' },
+  { label: "1st Proof Amended:", name: "firstProofAmended", value: "20-12-2019", type: 'date' },
+  { label: "2nd Proof to Author:", name: "secondProofToAuthor", value: "02-01-2020", type: 'date' },
+  { label: "2nd Proof Amended:", name: "secondProofAmended", value: "05-03-2020", type: 'date' },
+  { label: "3rd Proof to Author:", name: "thirdProofToAuthor", value: "06-03-2020", type: 'date' },
+  { label: "Final Proof Amended:", name: "finalProofAmended", value: "--", type: 'date' },
+  { label: "Final Inners Checked:", name: "finalInnersChecked", value: "--", type: 'date' },
+  { label: "Final PDF Created:", name: "finalPDFCreated", value: "30-06-2020", type: 'date' },
 ];
 
 export const editorialBookDetails55 = [
-  { label: "By:", value: "Daniel Maxwell" },
-  { label: "By:", value: "Daniel Maxwell" },
-  { label: "By:", value: "Daniel Maxwell" },
-  { label: "By:", value: "Daniel Maxwell" },
-  { label: "By:", value: "Daniel Maxwell" },
-  { label: "By:", value: "Daniel Maxwell" },
-  { label: "By:", value: "Daniel Maxwell" },
+  { label: "By:", value: "Daniel Maxwell", type: "dropdown", name: "by1" },
+  { label: "By:", value: "Daniel Maxwell", type: "dropdown", name: "by2" },
+  { label: "By:", value: "Daniel Maxwell", type: "dropdown", name: "by3" },
+  { label: "By:", value: "Daniel Maxwell", type: "dropdown", name: "by4" },
+  { label: "By:", value: "Daniel Maxwell", type: "dropdown", name: "by5" },
+  { label: "By:", value: "Daniel Maxwell", type: "dropdown", name: "by5" },
+  { label: "By:", value: "Daniel Maxwell", type: "dropdown", name: "by5" },
+
 ];
 
 export const editorialBookDetails555 = [
-  { label: "Rcd:", value: "28-11-2019" },
-  { label: "Rcd:", value: "28-11-2019" },
-  { label: "Rcd:", value: "28-11-2019" },
-  { label: "Rcd:", value: "28-11-2019" },
-  { label: "Rcd:", value: "28-11-2019" },
-  { label: "Rcd:", value: "28-11-2019" },
-  { label: "Rcd:", value: "28-11-2019" },
-  { label: "Rcd:", value: "28-11-2019" },
-  { label: "Rcd:", value: "28-11-2019" },
-  { label: "Rcd:", value: "28-11-2019" },
-  { label: "Rcd:", value: "28-11-2019" },
+  { label: "Rcd:", value: "28-11-2019", type: "date", name: "rcd1" },
+  { label: "Rcd:", value: "28-11-2019", type: "date", name: "rcd2" },
+  { label: "Rcd:", value: "28-11-2019", type: "date", name: "rcd3" },
+  { label: "Rcd:", value: "28-11-2019", type: "date", name: "rcd4" },
+  { label: "Rcd:", value: "28-11-2019", type: "date", name: "rcd5" },
+  { label: "Rcd:", value: "28-11-2019", type: "date", name: "rcd6" },
 ];
 
 export const editorialBookDetails6 = [
-  { label: "Copyrights Issues Inners:", value: "" },
-  { label: "Copyrights Credit Covers:", value: "" },
+  { label: "Copyrights Issues Inners:", value: "", type: "text", name: "copyrightsIssuesInners" },
+  { label: "Copyrights Credit Covers:", value: "", type: "text", name: "copyrightsCreditCovers" },
 ];
 
 export const editorialBookDetails66 = [
-  { label: "Copyrights Credit Inners:", value: "" },
-  { label: "Copyrights Credit Covers:", value: "" },
+  { label: "Another Field 1:", value: "", type: "text", name: "anotherField1" },
+  { label: "Another Field 2:", value: "", type: "text", name: "anotherField2" },
 ];
 
 export const editableNotesData = [

@@ -9,6 +9,8 @@ import { bookInfo } from "./utils/utils";
 import Modal from "components/modals/Modal";
 import BookInformationEditable from "./components/BookInformationEditable";
 
+
+
 const Book = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
 
