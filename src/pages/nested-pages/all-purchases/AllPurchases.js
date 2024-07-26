@@ -61,7 +61,6 @@ const AllPurchases = () => {
                 className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
                     }`}
             >
-
                 <div className="mb-4 justify-center flex pt-10">
                     <ul
                         className="flex flex-wrap -mb-px gap-3 text-sm font-medium text-center"
