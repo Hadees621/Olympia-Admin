@@ -1,11 +1,11 @@
-import React, { useState } from "react";
 import { data } from "./utils/utils";
 import Button from "components/Button";
+import React, { useState } from "react";
+import TableRow from "components/TableRow";
 import Modal from "components/modals/Modal";
 import useSidebarStore from "stores/States";
 import SearchField from "../home/components/SearchField";
 import ScrollableTable from "./components/ScrollableTable";
-import EditableTextInput from "components/EditableTextInput";
 
 const Purchases = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -23,15 +23,6 @@ const Purchases = () => {
     { section: "Personal Information:", fields: ["First Name", "Last Name"] },
     { section: "Contact Information:", fields: ["Company Name", "First Address", "2nd Address", "Town/City", "County/State", "Country", "Zipcode", "Telephone", "Mobile", "Email 1", "Email 2", "Email 3", "Website", "Skype", "VAT"] },
   ];
-
-  const TableRow = ({ label }) => (
-    <tr className="">
-      <td className="px- py-2 whitespace-nowrap font-bold text-gray-700 text-lg">{label} :</td>
-      <td className="px-2 py-4 whitespace-nowrap">
-        <SearchField />
-      </td>
-    </tr>
-  );
 
   return (
     <div className="w-full text-start items-center m-4">
@@ -71,12 +62,12 @@ const Purchases = () => {
       {/* Add New Client Modal */}
       <Modal isVisible={isModalVisible} onClose={closeModal} onSave={closeModal} width={"max-w-[70vh]"} title="Add/Update Client" >
         <div className="w-full shadow">
-          <div className="overflow-y-auto max-h-[70vh] custom-scrollbar">
+          <div className="overflow-y-auto max-h-[70vh] custom-scrollbar px-2">
             {tableData.map((section, sectionIndex) => (
               <React.Fragment key={sectionIndex}>
                 <p className="text-xl font-semibold w-full">{section.section}</p>
                 <table className="text-start mx-auto w-full">
-                  <tbody className="px-6">
+                  <tbody className="">
                     {section.fields.map((field, fieldIndex) => (
                       <TableRow key={fieldIndex} label={field} />
                     ))}
