@@ -32,6 +32,7 @@ import AllPurchases from "./pages/nested-pages/all-purchases/AllPurchases";
 import PendingPurchases from "./pages/nested-pages/pending-purchases/PendingPurchases";
 import PendingQuestionaire from "./pages/nested-pages/pending-production-questionaires/PendingQuestionaire";
 import ProductionQuestionnaireForm from "./pages/nested-pages/production-questionnaire/ProductionQuestionnaireForm";
+import PublicityQuestionaires from "./pages/nested-pages/publicity-questionaires/PublicityQuestionaires";
 
 const App = () => (
   <Routes>
@@ -70,6 +71,7 @@ const App = () => (
     <Route path="/pending-purchases" element={<PendingPurchases />} />
     <Route path="/pending-production-questionnaires" element={<PendingQuestionaire />} />
     <Route path="/pending-questionnaires-form" element={<ProductionQuestionnaireForm />} />
+    <Route path="/pending-publicity-questionnaire" element={<PublicityQuestionaires />} />
 
 
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const EditorialNotes = ({ title }) => {
+const EditorialNotes = ({ title, questionnaire, questionnaireType }) => {
   const [activeTab, setActiveTab] = useState("overview");
   const [notes, setNotes] = useState([
     {
@@ -164,9 +164,10 @@ const EditorialNotes = ({ title }) => {
         {renderTabButton("overview", "Overview")}
         {renderTabButton("past-notes", "Past notes")}
         {renderTabButton("editors-correspondence", "Editors Correspondence")}
-        <Link to={"/pending-production-questionnaires"}>
+        <Link to={questionnaire}>
           <button className="ml-auto px-4 py-2 text-sm font-semibold text-white bg-green-500 rounded">
-            Pending production questionnaire
+            {/* Pending production questionnaire */}
+            {questionnaireType}
           </button>
         </Link>
       </div>

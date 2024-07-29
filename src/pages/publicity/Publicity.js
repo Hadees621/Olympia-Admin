@@ -84,7 +84,7 @@ const Publicity = () => {
         </div>
 
         <div className="space-y-5 w-full">
-          <EditorialNotes title={"Marketing/Publicity notes"} />
+          <EditorialNotes title={"Marketing/Publicity notes"} questionnaire={"/pending-publicity-questionnaire"} questionnaireType={"Pending publicity questionnaire"} />
           <EditableForm
             title="About Book"
             fields={bookFormFields}
