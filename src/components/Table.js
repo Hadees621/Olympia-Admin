@@ -6,12 +6,6 @@ const Table = ({ headers, data, rowsPerPage }) => {
       <thead className="bg-gray-50">
         <tr className="text-sm w-full font-bold text-gray-500 uppercase">
           {
-            /* {headers.map((header, index) => (
-            <th key={index} className="p-3">
-              {header}
-            </th>
-          ))} */
-
             <tr className="text-sm w-full font-bold  uppercase">
               <th className="p-3 ">Status</th>
               <th className="p-3">Imprint</th>

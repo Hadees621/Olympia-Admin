@@ -30,6 +30,8 @@ import IsbnSearch from "./pages/nested-pages/isbn-search/IsbnSearch";
 import AddRecord from "./pages/nested-pages/add-record-home/AddRecord";
 import AllPurchases from "./pages/nested-pages/all-purchases/AllPurchases";
 import PendingPurchases from "./pages/nested-pages/pending-purchases/PendingPurchases";
+import PendingQuestionaire from "./pages/nested-pages/pending-production-questionaires/PendingQuestionaire";
+import ProductionQuestionnaireForm from "./pages/nested-pages/production-questionnaire/ProductionQuestionnaireForm";
 
 const App = () => (
   <Routes>
@@ -59,15 +61,16 @@ const App = () => (
     <Route path="/other-clients" element={<OtherClients />} />
     <Route path="/reports" element={<Reports />} />
     <Route path="/published-books" element={<PublishedBooks />} />
-    <Route
-      path="/olympia-websites-portal"
-      element={<OlympiaWebsitesPortal />}
-    />
+    <Route path="/olympia-websites-portal" element={<OlympiaWebsitesPortal />} />
+
     {/* nested pages */}
     <Route path="/isbn-search" element={<IsbnSearch />} />
     <Route path="/add-record-home" element={<AddRecord />} />
     <Route path="/all-purchases" element={<AllPurchases />} />
     <Route path="/pending-purchases" element={<PendingPurchases />} />
+    <Route path="/pending-production-questionnaires" element={<PendingQuestionaire />} />
+    <Route path="/pending-questionnaires-form" element={<ProductionQuestionnaireForm />} />
+
 
 
   </Routes>

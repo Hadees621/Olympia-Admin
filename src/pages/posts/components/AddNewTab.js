@@ -44,7 +44,7 @@ const AddNewTab = () => {
       </div>
 
       <div className="overflow-x-auto mt-5 text-center shadow">
-        <table className="min-w-full table-fixed divide-y divide-gray-200">
+        <table className="min-w-full table-fixed divide-y divide-gray-200 ">
           <thead className="bg-gray-50 sticky top-0 z-10">
             <tr className="text-sm w-full font-medium text-gray-500 uppercase">
               <th className="p-3 w-1/6">Date</th>

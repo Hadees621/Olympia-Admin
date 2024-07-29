@@ -138,25 +138,25 @@ const PendingPurchases = () => {
             <Modal isVisible={isModalVisible} onClose={closeModal} onSave={closeModal} title="Add New Purchase" width="max-w-[70vh]">
                 <p className="font-bold text-xl py-2"> Client Information </p>
                 <div className="space-y-4 pt-5 px-5">
-                    <InputWithLabel label={"First Name:"} />
-                    <InputWithLabel label={"Last Name:"} />
-                    <InputWithLabel label={"Company:"} />
+                    <InputWithLabel label={"First Name:"} flex={true} />
+                    <InputWithLabel label={"Last Name:"} flex={true} />
+                    <InputWithLabel label={"Company:"} flex={true} />
                 </div>
                 <p className="font-bold text-xl py-7"> Purchase </p>
                 <div className="space-y-4 px-5">
-                    <InputWithLabel label={"Reference: "} edit={true} />
-                    <SelectInputWithLabel label={"Reference: "} />
-                    <InputWithLabel label={"Invoice Date: "} />
-                    <InputWithLabel label={"Invoice Number: "} />
-                    <InputWithLabel label={"Due Date: "} />
-                    <InputWithLabel label={"NET: "} />
-                    <InputWithLabel label={"VAT: "} />
-                    <InputWithLabel label={"Total Amount: "} />
-                    <InputWithLabel label={"Amount Paid: "} />
-                    <InputWithLabel label={"Date Paid: "} />
-                    <SelectInputWithLabel label={"Status: "} />
-                    <SelectInputWithLabel label={"Method: "} />
-                    <SelectInputWithLabel label={"Paid By: "} edit={true} />
+                    <InputWithLabel label={"Reference: "} edit={true} flex={true} />
+                    <SelectInputWithLabel label={"Reference: "} flex={true} />
+                    <InputWithLabel label={"Invoice Date: "} flex={true} />
+                    <InputWithLabel label={"Invoice Number: "} flex={true} />
+                    <InputWithLabel label={"Due Date: "} flex={true} />
+                    <InputWithLabel label={"NET: "} flex={true} />
+                    <InputWithLabel label={"VAT: "} flex={true} />
+                    <InputWithLabel label={"Total Amount: "} flex={true} />
+                    <InputWithLabel label={"Amount Paid: "} flex={true} />
+                    <InputWithLabel label={"Date Paid: "} flex={true} />
+                    <SelectInputWithLabel label={"Status: "} flex={true} />
+                    <SelectInputWithLabel label={"Method: "} flex={true} />
+                    <SelectInputWithLabel label={"Paid By: "} edit={true} flex={true} />
                 </div>
             </Modal>
         </div >
