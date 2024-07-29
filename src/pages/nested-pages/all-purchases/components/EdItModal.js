@@ -41,7 +41,7 @@ const EditModal = ({ isOpen, onClose, data, onSave }) => {
                 </button>
                 <h2 className="text-xl font-semibold mb-4">Edit Purchase Details</h2>
                 <form onSubmit={handleSubmit}>
-                    <div className="overflow-y-auto max-h-[70vh]">
+                    <div className="overflow-y-auto max-h-[70vh] custom-scrollbar">
                         <table className="text-start mx-auto w-full">
                             <tbody>
                                 {Object.entries(formData).map(([key, value], index) => (

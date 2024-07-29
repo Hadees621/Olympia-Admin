@@ -1,13 +1,26 @@
 import Button from "components/Button";
 import React, { useState } from "react";
 import useSidebarStore from "stores/States";
+import Modal from "components/modals/Modal";
+import FileUpload from "components/FileUpload";
 import TableButton from "components/TableButton";
 import SelectField from "components/SelectField";
+import InputWithLabel from "components/InputWithLabel";
 import SearchField from "pages/home/components/SearchField";
-import FileUpload from "components/FileUpload";
+import SelectInputWithLabel from "components/SelectInputWithLabel";
 
 const PendingPurchases = () => {
     const { isOpen } = useSidebarStore();
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const openModal = () => {
+        setIsModalVisible(true);
+    };
+
+    const closeModal = () => {
+        setIsModalVisible(false);
+    };
+
     const tableData = [
         {
             client: "Lightning Source U.S.A.",
@@ -72,21 +85,20 @@ const PendingPurchases = () => {
     return (
         <div className="w-full text-start items-center m-4">
             {/* header */}
-            <>
-                <p className="text-3xl font-semibold my-8 ml-8">
-                    Pending Purchases
-                </p>
-                <div className="flex items-center mt-3 gap-3 m-4">
-                    <p className="font-bold text-lg">Upload Invoice:</p>
-                    <FileUpload buttonflag={false} />
-                    <SearchField placeholder="Client Name" />
-                    <p className="font-bold text-lg">Uploaded by:</p>
-                    <SelectField placeholder="Select Client" />
-                    <Button title="Upload" />
-                    <Button title="All Purchases" href="/all-purchases" />
-                    <Button title="ISBN Search" href="/isbn-search" />
-                </div>
-            </>
+            <p className="text-3xl font-semibold my-8 ml-8">
+                Pending Purchases
+            </p>
+            <div className="flex items-center mt-3 gap-3 m-4">
+                <p className="font-bold text-lg">Upload Invoice:</p>
+                <FileUpload buttonflag={false} />
+                <SearchField placeholder="Client Name" />
+                <p className="font-bold text-lg">Uploaded by:</p>
+                <SelectField placeholder="Select Client" />
+                <Button title="Upload" />
+                <Button title="All Purchases" href="/all-purchases" />
+                <Button title="ISBN Search" href="/isbn-search" />
+            </div>
+
             <div
                 className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
                     }`}
@@ -110,7 +122,7 @@ const PendingPurchases = () => {
                             <td className="px-6 py-4  border-gray-300 leading-5">{data.date}</td>
                             <td className="px-6 py-4">
                                 <div className="flex justify-center items-center space-x-2">
-                                    <TableButton title={"Create Purchase"} />
+                                    <TableButton title={"Create Purchase"} onClick={openModal} />
                                     <TableButton
                                         title={"X"}
                                         bg="bg-red-500"
@@ -122,6 +134,31 @@ const PendingPurchases = () => {
                     ))}
                 </table>
             </div>
+
+            <Modal isVisible={isModalVisible} onClose={closeModal} onSave={closeModal} title="Add New Purchase" width="max-w-[70vh]">
+                <p className="font-bold text-xl py-2"> Client Information </p>
+                <div className="space-y-4 pt-5 px-5">
+                    <InputWithLabel label={"First Name:"} />
+                    <InputWithLabel label={"Last Name:"} />
+                    <InputWithLabel label={"Company:"} />
+                </div>
+                <p className="font-bold text-xl py-7"> Purchase </p>
+                <div className="space-y-4 px-5">
+                    <InputWithLabel label={"Reference: "} edit={true} />
+                    <SelectInputWithLabel label={"Reference: "} />
+                    <InputWithLabel label={"Invoice Date: "} />
+                    <InputWithLabel label={"Invoice Number: "} />
+                    <InputWithLabel label={"Due Date: "} />
+                    <InputWithLabel label={"NET: "} />
+                    <InputWithLabel label={"VAT: "} />
+                    <InputWithLabel label={"Total Amount: "} />
+                    <InputWithLabel label={"Amount Paid: "} />
+                    <InputWithLabel label={"Date Paid: "} />
+                    <SelectInputWithLabel label={"Status: "} />
+                    <SelectInputWithLabel label={"Method: "} />
+                    <SelectInputWithLabel label={"Paid By: "} edit={true} />
+                </div>
+            </Modal>
         </div >
     );
 };
