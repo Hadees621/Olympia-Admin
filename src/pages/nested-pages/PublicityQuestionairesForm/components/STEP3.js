@@ -1,4 +1,8 @@
 import React from 'react'
+import Button from 'components/Button'
+import EditableRadio from 'components/EditableRadio'
+import InputWithLabel from 'components/InputWithLabel'
+import EditableTextarea from 'components/EditableTextarea'
 
 const STEP3 = ({ prev }) => {
     return (
@@ -45,9 +49,7 @@ const STEP3 = ({ prev }) => {
                     <div className='space-y-3 mt-3 w-full'>
                         <EditableTextarea label={"Media list**"} text={"Please name any local newspapers, radio stations and magazines you think would be interested in featuring your book?"} rows={8} />
                         <EditableTextarea label={"Who else might be interested in featuring your book?*"} font='mt-2' text={"If applicable, please provide details of any other outlets that may be interested in your book, e.g. organisations/magazines relevant to your book topic, locations where your book is set etc."} rows={8} />
-
                         <EditableRadio label={"Are you willing to do promotional events?*"} text={"For example book signings, radio or newspaper interviews etc. If your answer is no please specify the reason(s)."} />
-
                         <EditableRadio label={"Medical conditions"} text={"Do you have any reasons or concerns that would make events difficult such as physical impairments, difficulty travelling, anxieties etc.? If your answer is yes please provide details below so we can do our best to accommodate them and/or provide additional support."} />
                         <EditableRadio label={"Are you happy to share your contact details?"} text={"Can we pass on your contact details to bookshops and the media? These will not be publicly displayed or uploaded anywhere, and will only be given to individual outlets that have shown an interest in speaking to you."} />
                     </div>
