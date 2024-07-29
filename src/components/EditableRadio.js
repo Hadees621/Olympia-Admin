@@ -1,13 +1,21 @@
 
 import React from 'react';
 
-const EditableRadio = ({ label, name, value, options, onChange }) => {
+const EditableRadio = ({
+    label, name, value, onChange, options = [
+        { value: 'yes', label: 'Yes' },
+        { value: 'no', label: 'No' }
+    ]
+    ,
+    text
+}) => {
     return (
         <div>
-            <label>{label}</label>
+            <label className='text-lg font-semibold '>{label}</label>
+            {text && <p className='italic'> {text}</p>}
             <div className='grid'>
                 {options.map((option) => (
-                    <label key={option.value}>
+                    <label key={option.value} className='flex items-center'>
                         <input
                             type="radio"
                             name={name}

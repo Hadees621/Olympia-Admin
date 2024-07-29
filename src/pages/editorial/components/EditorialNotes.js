@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const EditorialNotes = ({ title }) => {
+const EditorialNotes = ({ title, questionnaire, questionnaireType }) => {
   const [activeTab, setActiveTab] = useState("overview");
   const [notes, setNotes] = useState([
     {
@@ -146,9 +147,8 @@ const EditorialNotes = ({ title }) => {
 
   const renderTabButton = (tabName, label) => (
     <button
-      className={`px-4 py-2 text-sm font-semibold ${
-        activeTab === tabName ? "text-white bg-red-600" : "text-gray-600"
-      }`}
+      className={`px-4 py-2 text-sm font-semibold ${activeTab === tabName ? "text-white bg-red-600" : "text-gray-600"
+        }`}
       onClick={() => setActiveTab(tabName)}
     >
       {label}
@@ -164,9 +164,12 @@ const EditorialNotes = ({ title }) => {
         {renderTabButton("overview", "Overview")}
         {renderTabButton("past-notes", "Past notes")}
         {renderTabButton("editors-correspondence", "Editors Correspondence")}
-        <button className="ml-auto px-4 py-2 text-sm font-semibold text-white bg-green-500 rounded">
-          Pending production questionnaire
-        </button>
+        <Link to={questionnaire}>
+          <button className="ml-auto px-4 py-2 text-sm font-semibold text-white bg-green-500 rounded">
+            {/* Pending production questionnaire */}
+            {questionnaireType}
+          </button>
+        </Link>
       </div>
       <div className="p-">{renderTabContent()}</div>
     </div>

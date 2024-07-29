@@ -29,7 +29,6 @@ const AddRecord = () => {
                 <AuthorModal isOpen={isModalOpen} onClose={handleCloseModal} onSave={handleSaveAuthor} />
             </div>
         </div>
-
     )
 }
 
