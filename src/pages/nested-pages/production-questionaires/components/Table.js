@@ -1,16 +1,11 @@
 import React from 'react'
-import { reminderData } from './utils/utils';
-import TableButton from 'components/TableButton';
+import TableButton from 'components/TableButton'
+import { reminderData } from '../../publicity-questionaires/utils/utils'
 
-const PublicityQuestionaires = () => {
-
+const Table = () => {
     return (
-        <div className="w-full text-start items-center m-4">
-            {/* header */}
-            <p className="text-3xl font-semibold mt-8 ml-8">
-                Pending Publicity questionnaires
-            </p>
-
+        <div>
+            <p className='font-bold text-xl text-end m-5'> Total : 77 </p>
             <div className="overflow-x-auto mt-5 text-center shadow">
                 <div className="max-h-[400px] overflow-y-auto">
                     <table className="min-w-full table-fixed divide-y divide-gray-200">
@@ -34,8 +29,9 @@ const PublicityQuestionaires = () => {
                                     <td className="px-6 py-4 border">{row.bookTitle}</td>
                                     <td className="px-6 py-4 border">{row.reminderDateSent}</td>
                                     <td className="px-6 py-4 flex gap-x-2 justify-center">
-                                        <TableButton title={"Send Reminder to Author"} bg='bg-green-600' text={'text-white'} />
-                                        <TableButton title={"View"} href={"/publicity-questionnaire-form"} />
+                                        <TableButton title={"ReSend Reminder to Author"} />
+                                        <TableButton title={"View"} href={"/pending-questionnaires-form"} />
+                                        <TableButton title={"X"} bg="bg-red-500" text="text-white" />
                                     </td>
                                 </tr>
                             ))}
@@ -43,8 +39,9 @@ const PublicityQuestionaires = () => {
                     </table>
                 </div>
             </div>
+            <p className='font-bold text-xl text-start m-5'> Total Records: {reminderData.length}</p>
         </div>
     )
 }
 
-export default PublicityQuestionaires
+export default Table

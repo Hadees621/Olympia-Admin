@@ -6,11 +6,14 @@ const EditableRadio = ({
         { value: 'yes', label: 'Yes' },
         { value: 'no', label: 'No' }
     ]
+    ,
+    text
 }) => {
     return (
         <div>
             <label className='text-lg font-semibold '>{label}</label>
-            <div cl assName='grid'>
+            {text && <p className='italic'> {text}</p>}
+            <div className='grid'>
                 {options.map((option) => (
                     <label key={option.value} className='flex items-center'>
                         <input
