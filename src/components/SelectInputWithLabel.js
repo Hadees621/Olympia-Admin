@@ -2,7 +2,7 @@ import React from 'react'
 import Button from './Button'
 import SelectField from './SelectField'
 
-const SelectInputWithLabel = ({ placeholder,
+const SelectInputWithLabel = ({ placeholder, onClick,
     background = "bg-[#F7F7F7]",
     name, value, onChange, label, edit = false, flex = false }) => {
     return (
@@ -12,7 +12,7 @@ const SelectInputWithLabel = ({ placeholder,
             </div>
             <SelectField placeholder={placeholder} value={value} onChange={onChange} background={background} name={name} />
             <div className='mt-3'>
-                {edit && <Button title={"Edit"} />
+                {edit && <Button title={"Edit"} onClick={onClick} />
                 }
             </div>
         </div>

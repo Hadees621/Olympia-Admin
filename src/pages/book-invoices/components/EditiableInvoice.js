@@ -7,10 +7,16 @@ import SearchField from 'pages/home/components/SearchField';
 import EditableTextInput from 'components/EditableTextInput';
 import DatePickerWIthLabel from 'components/DatePickerWIthLabel';
 import SelectInputWithLabel from 'components/SelectInputWithLabel';
-
+import EditListModal from 'components/modals/EditListModal';
 const EditableInvoice = ({ initialData, onSave }) => {
     const [invoiceData, setInvoiceData] = useState(initialData);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
+    const [options, setOptions] = useState([
+        'paid by cheque',
+        'paid by credit card',
+        'paid by paypal',
+    ]);
     const handleChange = (e) => {
         const { name, value } = e.target;
         setInvoiceData({
@@ -61,7 +67,7 @@ const EditableInvoice = ({ initialData, onSave }) => {
                     <div className="grid gap-4 pr-4">
                         <InputWithLabel label={"Invoice Number: "} background='bg-white' />
                         <InputWithLabel label={"Reference: "} background='bg-white' />
-                        <SelectInputWithLabel label={"Sale Type:"} background='bg-white' edit={true} />
+                        <SelectInputWithLabel label={"Sale Type:"} background='bg-white' edit={true} onClick={() => setIsModalOpen(true)} />
                     </div>
 
                     {/* Sales and Payment Details */}
@@ -98,7 +104,7 @@ const EditableInvoice = ({ initialData, onSave }) => {
                                 <SelectInputWithLabel label={'Add New'} />
                             </div>
                             <div>
-                                <SelectInputWithLabel label={'Payment Method'} edit={true} />
+                                <SelectInputWithLabel label={'Payment Method'} edit={true} onClick={() => setIsModalOpen(true)} />
                             </div>
                             <div>
                                 <DatePickerWIthLabel label={"Payment Date:"} background='bg-white' />
@@ -116,6 +122,7 @@ const EditableInvoice = ({ initialData, onSave }) => {
                     <div className='space-y-2'>
                         <SelectInputWithLabel label={"Discount:"} display={false} />
                         <SearchField placeholder={"£"} background='bg-white' />
+                        <Button title={"Edit"} onClick={() => setIsModalOpen(true)} width={"mt-2"} />
                     </div>
                     <div>
                         <EditableTextInput label={"Subtotal:"} display={false} />
@@ -129,6 +136,7 @@ const EditableInvoice = ({ initialData, onSave }) => {
                     <div className='space-y-2'>
                         <SelectInputWithLabel label={"VAT:"} display={false} />
                         <SearchField placeholder={"£"} background='bg-white' />
+                        <Button title={"Edit"} onClick={() => setIsModalOpen(true)} width={"mt-2"} />
                     </div>
                     <div>
                         <EditableTextInput label={"Total:"} display={false} placeholder={"£"} />
@@ -169,6 +177,13 @@ const EditableInvoice = ({ initialData, onSave }) => {
 
                 </div>
             </div>
+
+            <EditListModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                options={options}
+                setOptions={setOptions}
+            />
         </div>
     );
 };
