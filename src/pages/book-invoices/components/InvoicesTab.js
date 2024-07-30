@@ -1,16 +1,29 @@
-import React from "react";
 import Button from "components/Button";
-import SelectField from "components/SelectField";
+import React, { useState } from "react";
+import InvoiceModal from "./InvoiceModal";
 import BookInvoicesRow from "./BookInvoicesRow";
+import SelectField from "components/SelectField";
 
 const InvoicesTab = () => {
+  const [isModalVisible, setModalVisible] = useState(false);
+  const [invoiceData, setInvoiceData] = useState({
+    shipTo: 'Some Address',
+    company: 'Some Company',
+    bookTitle: 'The March Men',
+    invoiceNumber: '12345',
+  });
+
+  const handleSave = (data) => {
+    setInvoiceData(data);
+  };
+
   return (
     <div>
-      {" "}
+
       <div className="flex items-center w-[55%] mt-3 gap-3 my-4">
         <SelectField placeholder="Author name" />
         <Button title="Go to these invoices/CN" />
-        <Button title="New Invoices" />
+        <Button title="New Invoices" onClick={() => setModalVisible(true)} />
       </div>
       <div className="overflow-x-auto text-center shadow">
         <table className="min-w-full table-fixed divide-y divide-gray-200">
@@ -45,6 +58,14 @@ const InvoicesTab = () => {
           </tbody>
         </table>
       </div>
+
+      <InvoiceModal
+        isVisible={isModalVisible}
+        onClose={() => setModalVisible(false)}
+        initialData={invoiceData}
+        onSave={handleSave}
+      />
+
     </div>
   );
 };

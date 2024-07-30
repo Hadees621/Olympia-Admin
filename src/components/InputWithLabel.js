@@ -6,7 +6,7 @@ const InputWithLabel = ({ placeholder,
     background = "bg-[#F7F7F7]",
     name, value, onChange, label, edit = false, flex = false }) => {
     return (
-        <div className={` ${flex ? "flex items-center gap-3" : "grid gap-2"}`}>
+        <div className={`w-full ${flex ? "flex items-center gap-3" : "grid gap-2"}`}>
             <div className={`${flex ? "w-[25%]" : "w-full"}`}>
                 <p className="text-lg font-bold ">{label}</p>
             </div>
