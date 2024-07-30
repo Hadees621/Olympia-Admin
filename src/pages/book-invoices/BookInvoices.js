@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import SearchField from "../home/components/SearchField";
-import SelectField from "components/SelectField";
 import Button from "components/Button";
-import Remaindered from "../editorial/components/Remaindered";
+import React, { useState } from "react";
 import StackTab from "./components/StackTab";
+import SelectField from "components/SelectField";
 import InvoicesTab from "./components/InvoicesTab";
+import SearchField from "../home/components/SearchField";
+import Remaindered from "../editorial/components/Remaindered";
 
 const BookInvoices = () => {
-  const [selectedValues, setSelectedValues] = useState(["", ""]);
   const [activeTab, setActiveTab] = useState("profile");
+  const [selectedValues, setSelectedValues] = useState(["", ""]);
 
   const handleSelectChange = (index, e) => {
     const newSelectedValues = [...selectedValues];
@@ -57,11 +57,10 @@ const BookInvoices = () => {
         >
           <li className="me-2" role="presentation">
             <button
-              className={`inline-block p-4 border-b-2 rounded-t-lg text-xl font-bold ${
-                activeTab === "profile"
-                  ? "text-red-600 border-red-600"
-                  : "text-black hover:text-black border-black"
-              }`}
+              className={`inline-block p-4 border-b-2 rounded-t-lg text-xl font-bold ${activeTab === "profile"
+                ? "text-red-600 border-red-600"
+                : "text-black hover:text-black border-black"
+                }`}
               id="profile-styled-tab"
               type="button"
               role="tab"
@@ -74,11 +73,10 @@ const BookInvoices = () => {
           </li>
           <li className="me-2" role="presentation">
             <button
-              className={`inline-block p-4 border-b-2 rounded-t-lg text-xl font-bold ${
-                activeTab === "dashboard"
-                  ? "text-red-600 border-red-600"
-                  : "text-black hover:text-black border-black"
-              }`}
+              className={`inline-block p-4 border-b-2 rounded-t-lg text-xl font-bold ${activeTab === "dashboard"
+                ? "text-red-600 border-red-600"
+                : "text-black hover:text-black border-black"
+                }`}
               id="dashboard-styled-tab"
               type="button"
               role="tab"
@@ -93,9 +91,8 @@ const BookInvoices = () => {
       </div>
       <div id="default-styled-tab-content">
         <div
-          className={`p-4 dark:bg-gray-800 ${
-            activeTab === "profile" ? "block" : "hidden"
-          }`}
+          className={`p-4 dark:bg-gray-800 ${activeTab === "profile" ? "block" : "hidden"
+            }`}
           id="styled-profile"
           role="tabpanel"
           aria-labelledby="profile-tab"
@@ -103,9 +100,8 @@ const BookInvoices = () => {
           <StackTab />
         </div>
         <div
-          className={`p-4 rounded-lg dark:bg-gray-800 ${
-            activeTab === "dashboard" ? "block" : "hidden"
-          }`}
+          className={`p-4 rounded-lg dark:bg-gray-800 ${activeTab === "dashboard" ? "block" : "hidden"
+            }`}
           id="styled-dashboard"
           role="tabpanel"
           aria-labelledby="dashboard-tab"

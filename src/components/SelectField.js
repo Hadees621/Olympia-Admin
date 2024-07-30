@@ -13,6 +13,7 @@ const SelectField = ({
   ],
   width = "w-full",
   name,
+  background,
   ...props
 }) => {
   return (
@@ -20,7 +21,7 @@ const SelectField = ({
       <select
         value={value}
         onChange={onChange}
-        className={` ${width} shadow appearance-none bg-[#F7F7F7] rounded w-full p-2.5 text-gray-400 leading-tight focus:outline-none`}
+        className={` ${width} shadow appearance-none  rounded w-full p-2.5 text-gray-400 leading-tight focus:outline-none`}
         {...props}
       >
         <option value="" disabled>

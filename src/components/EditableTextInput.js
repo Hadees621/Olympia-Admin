@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SearchField from 'pages/home/components/SearchField';
 
-const EditableTextInput = ({ label, name, value, onChange, bg = 'bg-white', display = true }) => {
+const EditableTextInput = ({ label, name, value, onChange, bg = 'bg-white', display = true, placeholder, width = 'w-full' }) => {
     const [editableContent, setEditableContent] = useState(value);
 
     const handleChange = (e) => {
@@ -13,10 +13,11 @@ const EditableTextInput = ({ label, name, value, onChange, bg = 'bg-white', disp
     };
 
     return (
-        <div className={`w-full  ${display && "flex items-center gap-3"}`}>
+        <div className={`${width}  ${display && "flex items-center gap-3"}`}>
             <p className="text-md font-semibold text-gray-600">{label}</p>
             <SearchField
                 background={bg}
+                placeholder={placeholder}
                 value={editableContent}
                 onChange={handleChange}
             />
