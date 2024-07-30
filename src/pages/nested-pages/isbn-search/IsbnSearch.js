@@ -22,7 +22,7 @@ const IsbnSearch = () => {
           <p className="text-md font-semibold text-gray-500">
             Search by ISBN :
           </p>
-          <SearchField placeholder=" 000-0-0000000-00-0" />
+          <SearchField placeholder="000-0-0000000-00-0" />
           <Button title="Search" />
           <Button title="Clear" />
         </div>

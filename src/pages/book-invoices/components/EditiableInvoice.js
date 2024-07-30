@@ -1,4 +1,3 @@
-import Logo from 'components/Logo';
 import Button from 'components/Button';
 import React, { useState } from 'react';
 import DisplayField from 'components/DisplayField';

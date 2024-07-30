@@ -7,8 +7,8 @@ import SearchField from "../home/components/SearchField";
 import Remaindered from "../editorial/components/Remaindered";
 
 const BookInvoices = () => {
-  const [selectedValues, setSelectedValues] = useState(["", ""]);
   const [activeTab, setActiveTab] = useState("profile");
+  const [selectedValues, setSelectedValues] = useState(["", ""]);
 
   const handleSelectChange = (index, e) => {
     const newSelectedValues = [...selectedValues];
@@ -58,8 +58,8 @@ const BookInvoices = () => {
           <li className="me-2" role="presentation">
             <button
               className={`inline-block p-4 border-b-2 rounded-t-lg text-xl font-bold ${activeTab === "profile"
-                  ? "text-red-600 border-red-600"
-                  : "text-black hover:text-black border-black"
+                ? "text-red-600 border-red-600"
+                : "text-black hover:text-black border-black"
                 }`}
               id="profile-styled-tab"
               type="button"
@@ -74,8 +74,8 @@ const BookInvoices = () => {
           <li className="me-2" role="presentation">
             <button
               className={`inline-block p-4 border-b-2 rounded-t-lg text-xl font-bold ${activeTab === "dashboard"
-                  ? "text-red-600 border-red-600"
-                  : "text-black hover:text-black border-black"
+                ? "text-red-600 border-red-600"
+                : "text-black hover:text-black border-black"
                 }`}
               id="dashboard-styled-tab"
               type="button"
@@ -109,9 +109,6 @@ const BookInvoices = () => {
           <InvoicesTab />
         </div>
       </div>
-
-
-      
     </div>
   );
 };

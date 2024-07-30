@@ -19,10 +19,9 @@ const InvoicesTab = () => {
 
   return (
     <div>
-
       <div className="flex items-center w-[55%] mt-3 gap-3 my-4">
         <SelectField placeholder="Author name" />
-        <Button title="Go to these invoices/CN" />
+        <Button title="Go to these invoices/CN" href="/these-invoices-CN" />
         <Button title="New Invoices" onClick={() => setModalVisible(true)} />
       </div>
       <div className="overflow-x-auto text-center shadow">
@@ -58,14 +57,12 @@ const InvoicesTab = () => {
           </tbody>
         </table>
       </div>
-
       <InvoiceModal
         isVisible={isModalVisible}
         onClose={() => setModalVisible(false)}
         initialData={invoiceData}
         onSave={handleSave}
       />
-
     </div>
   );
 };
