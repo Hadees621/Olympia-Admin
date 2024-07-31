@@ -17,7 +17,7 @@ const SelectField = ({
   ...props
 }) => {
   return (
-    <div className="relative flex-grow w-full">
+    <div className="relative flex-grow">
       <select
         value={value}
         onChange={onChange}
