@@ -44,7 +44,7 @@ const InvoicesTab = () => {
             </tr>
           </thead>
           <tbody>
-            <BookInvoicesRow />
+            <BookInvoicesRow onClick={() => setModalVisible(true)} />
             <BookInvoicesRow />
             <BookInvoicesRow />
             <BookInvoicesRow />
