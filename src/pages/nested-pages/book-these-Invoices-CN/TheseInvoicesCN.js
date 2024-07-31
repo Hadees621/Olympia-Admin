@@ -10,7 +10,6 @@ import { invoices } from './utils/utils';
 
 const TheseInvoicesCN = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-
     const [options, setOptions] = useState([
         'paid by cheque',
         'paid by credit card',
@@ -71,7 +70,7 @@ const TheseInvoicesCN = () => {
                                 </td>
                                 <td className="px-6 py-4 border">
                                     <div className='flex gap-3 items-center'>
-                                        <SelectField width='w-[170px]' />
+                                        <SelectField width='w-[180px]' />
                                         <Button title={"Edit List"} onClick={() => setIsModalOpen(true)} />
                                     </div>
                                 </td>
