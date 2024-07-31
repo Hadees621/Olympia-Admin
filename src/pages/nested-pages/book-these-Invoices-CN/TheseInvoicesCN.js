@@ -1,15 +1,26 @@
-import React, { useState } from 'react'
 import Button from 'components/Button';
+import React, { useState } from 'react'
+import { invoices } from './utils/utils';
 import useSidebarStore from 'stores/States';
+import Modal from 'components/modals/Modal';
 import TableButton from 'components/TableButton'
 import SelectField from 'components/SelectField';
+import ViewInvoice from './components/ViewInvoice';
 import EditableTextInput from 'components/EditableTextInput';
 import EditListModal from 'components/modals/EditListModal';
-import { invoices } from './utils/utils';
-
 
 const TheseInvoicesCN = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const openModal = () => {
+        setIsModalVisible(true);
+    };
+
+    const closeModal = () => {
+        setIsModalVisible(false);
+    };
+
     const [options, setOptions] = useState([
         'paid by cheque',
         'paid by credit card',
@@ -52,7 +63,7 @@ const TheseInvoicesCN = () => {
                                 className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap`}
                             >
                                 <td className="px-6 py-4 border">
-                                    <TableButton title={"View"} />
+                                    <TableButton title={"View"} onClick={openModal} />
                                 </td>
                                 <td className="px-6 py-4 border">{row.InvoiceNo}</td>
                                 <td className="px-6 py-4 border">
@@ -86,6 +97,10 @@ const TheseInvoicesCN = () => {
                 options={options}
                 setOptions={setOptions}
             />
+
+            <Modal isVisible={isModalVisible} onClose={closeModal} onSave={closeModal} title="Edit Contract Information">
+                <ViewInvoice />
+            </Modal>
         </div>
     )
 }
