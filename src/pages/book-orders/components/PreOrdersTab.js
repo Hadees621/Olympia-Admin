@@ -15,7 +15,7 @@ const PreOrdersTab = () => {
           <DatePickerField />
           <DatePickerField />
           <Button title="Search Invoices Date Range" />
-          <Button title="All Processing Invoices" />
+          {/* <Button title="All Processing Invoices" /> */}
         </div>
       </div>
 

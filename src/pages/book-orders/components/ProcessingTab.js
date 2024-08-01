@@ -35,7 +35,7 @@ const ProcessingTab = () => {
           <DatePickerField />
           <DatePickerField />
           <Button title="Search Invoices Date Range" />
-          <Button title="All Processing Invoices" />
+          {/* <Button title="All Processing Invoices" /> */}
         </div>
         <div className="flex items-center justify-end mt-3 gap-3 my-4">
           <Button title="Shipped" />
