@@ -3,7 +3,6 @@ import Modal from 'components/modals/Modal';
 import EditableInvoice from './EditiableInvoice';
 
 const InvoiceModal = ({ isVisible, onClose, initialData, onSave }) => {
-
     const handleSave = (data) => {
         onSave(data);
         onClose();
