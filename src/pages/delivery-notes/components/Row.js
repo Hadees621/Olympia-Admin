@@ -10,9 +10,9 @@ const Row = () => {
       <td className="p-3">DN</td>
       <td className="p-3">
         <div className="flex justify-center items-center space-x-2">
-          <TableButton title={"View"} />
-          <TableButton title={"Edit"} bg="bg-green-500" text={"text-white"} />
-          <TableButton title={"Delete"} bg="bg-red-500" text={"text-white"} />
+          <TableButton title={"View"} href={"/view-delivery-note"} />
+          <TableButton title={"Edit"} bg="bg-green-500" hover="hover:bg-green-600" text={"text-white"} />
+          <TableButton title={"Delete"} bg="bg-red-500" hover="hover:bg-red-600" text={"text-white"} />
         </div>
       </td>
     </tr>
