@@ -1,12 +1,12 @@
-import React, { useState } from "react";
 import Button from "components/Button";
+import React, { useState } from "react";
 import useSidebarStore from "stores/States";
+import Pagination from "components/Pagination";
+import SelectField from "components/SelectField";
+import FinalCheckTab from "./components/FinalCheckTab";
 import SearchField from "../home/components/SearchField";
 import BumblebeeTable from "./components/BumblebeeTable";
-import SelectField from "components/SelectField";
 import { data } from "./utils/utils";
-import FinalCheckTab from "./components/FinalCheckTab";
-import Pagination from "components/Pagination";
 
 const tabs = [
   {
@@ -51,9 +51,8 @@ const TabContent = ({ activeTab, isOpen }) => {
       <Pagination num={7} />
 
       <div
-        className={`m-4 transition-all duration-300 ${
-          isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
-        }`}
+        className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
+          }`}
       >
         {React.createElement(tabData.component, { data: tabData.data })}
       </div>
@@ -67,9 +66,8 @@ const Bumblebee = () => {
 
   return (
     <div
-      className={`w-full text-start items-center m-4 ${
-        !isOpen && "max-w-[1250px]"
-      }`}
+      className={`w-full text-start items-center m-4 ${!isOpen && "max-w-[1250px]"
+        }`}
     >
       <p className="text-3xl font-semibold mt-8 ml-8">
         Books ( Imprint: Bumblebee )
@@ -82,11 +80,10 @@ const Bumblebee = () => {
           {tabs.map((tab) => (
             <li key={tab.id} className="me-2" role="presentation">
               <button
-                className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${
-                  activeTab === tab.id
+                className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${activeTab === tab.id
                     ? "text-red-600 border-red-600"
                     : "text-black hover:text-black border-black"
-                }`}
+                  }`}
                 id={tab.id}
                 type="button"
                 role="tab"

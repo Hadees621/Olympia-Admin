@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import EditableField from "./EditableField";
 import TableButton from "components/TableButton";
-import Tick from "./Tick";
 import Calculator from "utils/icons/Calculator";
 import Notepad from "utils/icons/Notepad";
 import Speaker from "utils/icons/Speaker";
 
-const BumblebeeTable = ({ data }) => {
+const BumblebeeTable = ({ data, onSave }) => {
+  const [editingIndex, setEditingIndex] = useState(null);
+  const [editableData, setEditableData] = useState(data);
+
+  const handleEditClick = (index) => {
+    setEditingIndex(index);
+  };
+
+  const handleSaveClick = () => {
+    setEditingIndex(null);
+    if (onSave) onSave(editableData);
+  };
+
   const getStatusClass = (status) => {
     switch (status) {
       case "Pending":
@@ -22,6 +34,20 @@ const BumblebeeTable = ({ data }) => {
         return "status-button";
     }
   };
+
+  const handleCheckboxChange = (rowIndex, field) => {
+    const updatedData = [...editableData];
+    updatedData[rowIndex] = {
+      ...updatedData[rowIndex],
+      [field]: {
+        ...updatedData[rowIndex][field],
+        completed: !updatedData[rowIndex][field].completed,
+        date: !updatedData[rowIndex][field].completed ? new Date().toLocaleDateString() : ""
+      }
+    };
+    setEditableData(updatedData);
+  };
+
   return (
     <div className="overflow-x-auto shadow-md transition-all duration-300">
       <table className="w-full text-sm text-left max-h-[500px]">
@@ -57,149 +83,66 @@ const BumblebeeTable = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {data.map((row, index) => (
+          {editableData.map((row, index) => (
             <tr
               key={index}
               className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap"
             >
-              <td className="px-6 py-4 border font-extrabold text-orange-400">
-                {row.status}
-              </td>
-              <td className="px-6 py-4 border whitespace-nowrap">
-                {row.penName}
-              </td>
-              <td className="px-6 py-4 border whitespace-nowrap">
-                {row.bookTitle}
-              </td>
+              <td className="px-6 py-4 border">{row.status}</td>
+              <td className="px-6 py-4 border">{row.penName}</td>
+              <td className="px-6 py-4 border">{row.bookTitle}</td>
               <td className="px-6 py-4 border">{row.illustratedBy}</td>
               <td className="px-6 py-4 border">{row.contractDate}</td>
               <td className="px-6 py-4 border">
-                <span className="text-red-600">{row.remainingDays}</span>
-                <div>{row.sampleApproved}</div>
+                {row.remainingDays} / {row.remainingDate || "-"}
               </td>
               <td className="px-6 py-4 border">{row.daysActivated}</td>
               <td className="px-6 py-4 border">
                 <div className="flex space-x-2">
                   <div className="p-1.5 rounded-3xl bg-[#C3C4C5] cursor-pointer">
-                    <Calculator
-                      color={row.authorForms.form1 ? "green" : "white"}
-                    />
+                    <Calculator color={row.authorForms.form1 ? "green" : "white"} />
                   </div>
                   <div className="p-1.5 rounded-3xl bg-[#C3C4C5] cursor-pointer">
-                    <Notepad
-                      color={row.authorForms.form2 ? "green" : "white"}
-                    />
+                    <Notepad color={row.authorForms.form2 ? "green" : "white"} />
                   </div>
                   <div className="p-1.5 rounded-3xl bg-[#C3C4C5] cursor-pointer">
-                    <Speaker
-                      color={row.authorForms.form3 ? "green" : "white"}
-                    />
+                    <Speaker color={row.authorForms.form3 ? "green" : "white"} />
                   </div>
                 </div>
               </td>
-              <td className="px-6 py-4 border">
-                <div className="flex flex-col items-center">
-                  <Tick />
-                  {row.jobStarted}
-                </div>
-              </td>
-              <td className="px-6 py-4 border">
-                <div className="flex flex-col items-center">
-                  <Tick />
-                  {row.sampleApproved}
-                </div>
-              </td>
-              <td className="px-6 py-4 border">
-                <div className="flex flex-col items-center">
-                  <Tick />
-                  {row.outlinesApproved}
-                </div>
-              </td>
-              <td className="px-6 py-4 border">
-                <div className="flex flex-col items-center">
-                  <Tick />
-                  {row.colouredApproved}
-                </div>
-              </td>
-              <td className="px-6 py-4 border">
-                <div className="flex flex-col items-center">
-                  <Tick />
-                  {row.coverDesignToAuthor}
-                </div>
-              </td>
-              <td className="px-6 py-4 border">
-                <div className="flex flex-col items-center">
-                  <Tick />
-                  {row.innersToAuthor}
-                </div>
-              </td>
-              <td className="px-6 py-4 border">
-                <div className="flex flex-col items-center">
-                  <Tick />
-                  {row.firstProofsReader}
-                </div>
-              </td>
-              <td className="px-6 py-4 border">
-                <div className="flex flex-col items-center">
-                  <Tick />
-                  {row.firstProofsAuthor}
-                </div>
-              </td>
-              <td className="px-6 py-4 border">
-                <div className="flex flex-col items-center">
-                  <Tick />
-                  {row.firstProofsAmender}
-                </div>
-              </td>
-              <td className="px-6 py-4 border">
-                <div className="flex flex-col items-center">
-                  <Tick />
-                  {row.secondProofsAuthor}
-                </div>
-              </td>
-              <td className="px-6 py-4 border">
-                <div className="flex flex-col items-center">
-                  <Tick />
-                  {row.thirdProofsAuthor}
-                </div>
-              </td>
-              <td className="px-6 py-4 border">
-                <div className="flex flex-col items-center">
-                  <Tick />
-                  {row.coverCertificateReceived}
-                </div>
-              </td>
-              <td className="px-6 py-4 border">
-                <div className="flex flex-col items-center">
-                  <Tick />
-                  {row.proofsCertificateReceived}
-                </div>
-              </td>
-              <td className="px-6 py-4 border">
-                <div className="flex flex-col items-center">
-                  <Tick />
-                  {row.finalisedForPrint}
-                </div>
-              </td>
-              <td className="px-6 py-4 border">
-                <TableButton
-                  title="Send"
-                  bg="bg-green-600"
-                  text={"text-white"}
+              {['jobStarted', 'sampleApproved', 'outlinesApproved', 'colouredApproved', 'coverDesignToAuthor', 'innersToAuthor', 'firstProofsReader', 'firstProofsAuthor', 'firstProofsAmender', 'secondProofsAuthor', 'thirdProofsAuthor', 'coverCertificateReceived', 'proofsCertificateReceived', 'finalisedForPrint'].map((field) => (
+                <EditableField
+                  key={field}
+                  fieldData={row[field]}
+                  isEditing={index === editingIndex}
+                  onCheckboxChange={() => handleCheckboxChange(index, field)}
                 />
+              ))}
+              <td className="px-6 py-4 border">
+                <TableButton title="Send" bg="bg-green-600" text="text-white" />
               </td>
               <td className="px-6 py-4 border">{row.publicationDate}</td>
-              <td className="px-6 py-4 whitespace-nowrap">
-                <span
-                  className={`w-[90px] ${getStatusClass(
-                    row.contractPaymentStatus
-                  )}`}
-                >
+              <td className="px-6 py-4 border whitespace-nowrap">
+                <span className={`w-[90px] ${getStatusClass(row.contractPaymentStatus)}`}>
                   £ {row.contractPaymentStatus}
                 </span>
               </td>
               <td className="px-6 py-4 border">
-                <TableButton title="Edit" />
+                {index === editingIndex ? (
+                  <TableButton
+                    title="Save"
+                    bg="bg-green-600"
+                    text="text-white"
+                    onClick={handleSaveClick}
+                  />
+                ) : (
+                  <TableButton
+                    title="Edit"
+                    bg="bg-blue-600"
+                    text="text-white"
+                    onClick={() => handleEditClick(index)}
+                  />
+                )}
               </td>
               <td className="px-6 py-4 border">
                 <TableButton title="Edit" />
@@ -213,3 +156,4 @@ const BumblebeeTable = ({ data }) => {
 };
 
 export default BumblebeeTable;
+
