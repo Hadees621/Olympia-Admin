@@ -21,6 +21,7 @@ const BookOrders = () => {
   };
 
   const placeholders = ["Please Select Author", "Select Book"];
+
   const tabs = [
     { id: "processing", label: "Processing", component: ProcessingTab },
     { id: "pre-orders", label: "Pre-Orders", component: PreOrdersTab },
@@ -71,8 +72,8 @@ const BookOrders = () => {
             <li key={tab.id} className="me-2" role="presentation">
               <button
                 className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${activeTab === tab.id
-                    ? "text-red-600 border-red-600"
-                    : "text-black hover:text-black border-black"
+                  ? "text-red-600 border-red-600"
+                  : "text-black hover:text-black border-black"
                   }`}
                 id={`${tab.id}-tab`}
                 type="button"

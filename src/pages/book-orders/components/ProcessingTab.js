@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import Button from "components/Button";
+import TotalRevenue from "./TotalRevenue";
 import SelectField from "components/SelectField";
 import Row from "pages/book-orders/components/Row";
 import DatePickerField from "components/DatePickerField";
-import TotalRevenue from "./TotalRevenue";
+import InvoiceModal from "pages/book-invoices/components/InvoiceModal";
+import invoiceData from "pages/nested-pages/all-purchases/utils/utils";
 
 const ProcessingTab = () => {
-  const [selectedRows, setSelectedRows] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
+  const [selectedRows, setSelectedRows] = useState([]);
+  const [isModalVisible, setModalVisible] = useState(false);
 
   const handleSelectAll = () => {
     setSelectAll(!selectAll);
@@ -35,7 +38,6 @@ const ProcessingTab = () => {
           <DatePickerField />
           <DatePickerField />
           <Button title="Search Invoices Date Range" />
-          {/* <Button title="All Processing Invoices" /> */}
         </div>
         <div className="flex items-center justify-end mt-3 gap-3 my-4">
           <Button title="Shipped" />
@@ -74,6 +76,8 @@ const ProcessingTab = () => {
                   id={id}
                   isSelected={selectedRows.includes(id)}
                   handleSelectRow={handleSelectRow}
+                  // setModalVisible(true)}
+                  setModalVisible={setModalVisible}
                 />
               )
             )}
@@ -87,6 +91,12 @@ const ProcessingTab = () => {
           <TotalRevenue />
         </div>
       </div>
+
+      <InvoiceModal
+        isVisible={isModalVisible}
+        onClose={() => setModalVisible(false)}
+        initialData={invoiceData}
+      />
     </div>
   );
 };
