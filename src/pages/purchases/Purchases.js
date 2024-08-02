@@ -40,7 +40,6 @@ const Purchases = () => {
           <Button title="ISBN Search" href="/isbn-search" />
         </div>
         <div className="flex items-center justify-end mt-3 gap-3 my-4">
-          <Button title="Unpaid Invoices" />
           <Button title="Pending purchases" href="/pending-purchases" />
           <Button
             title="Add New Client"

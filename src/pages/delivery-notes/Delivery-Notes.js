@@ -1,10 +1,10 @@
 import React from "react";
+import Row from "./components/Row";
 import Button from "components/Button";
 import SelectField from "components/SelectField";
 import SearchField from "pages/home/components/SearchField";
 import Remaindered from "../editorial/components/Remaindered";
 import DatePickerField from "components/DatePickerField";
-import Row from "./components/Row";
 
 const DeliveryNotes = () => {
   return (
@@ -27,7 +27,7 @@ const DeliveryNotes = () => {
           <SelectField placeholder={"Select Author"} />
           <DatePickerField />
           <SelectField placeholder={"DN"} />
-          <Button title="Add" bg="bg-green-600 text-white" />
+          <Button title="Add" bg="bg-green-500 text-white" hover="hover:bg-green-600" />
         </div>
       </>
 

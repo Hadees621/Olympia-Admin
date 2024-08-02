@@ -35,6 +35,7 @@ import PendingQuestionaire from "./pages/nested-pages/production-questionaires/P
 import PublicityQuestionaires from "./pages/nested-pages/publicity-questionaires/PublicityQuestionaires";
 import PublicityQuestionairesForm from "./pages/nested-pages/PublicityQuestionairesForm/PublicityQuestionairesForm";
 import ProductionQuestionnaireForm from "./pages/nested-pages/production-questionnaire-form/ProductionQuestionnaireForm";
+import ViewDeliveryNote from "./pages/delivery-notes/components/ViewDeliveryNote";
 
 const App = () => (
   <Routes>
@@ -78,6 +79,9 @@ const App = () => (
     <Route path="/pending-publicity-questionnaire" element={<PublicityQuestionaires />} />
     <Route path="/publicity-questionnaire-form" element={<PublicityQuestionairesForm />} />
     <Route path="/these-invoices-CN" element={<TheseInvoicesCN />} />
+
+    <Route path="/view-delivery-note" element={<ViewDeliveryNote />} />
+
 
 
   </Routes>
