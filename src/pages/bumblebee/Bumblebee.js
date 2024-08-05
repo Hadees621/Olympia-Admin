@@ -1,3 +1,4 @@
+import { data } from "./utils/utils";
 import Button from "components/Button";
 import React, { useState } from "react";
 import useSidebarStore from "stores/States";
@@ -6,7 +7,6 @@ import SelectField from "components/SelectField";
 import FinalCheckTab from "./components/FinalCheckTab";
 import SearchField from "../home/components/SearchField";
 import BumblebeeTable from "./components/BumblebeeTable";
-import { data } from "./utils/utils";
 
 const tabs = [
   {
@@ -66,7 +66,7 @@ const Bumblebee = () => {
 
   return (
     <div
-      className={`w-full text-start items-center m-4 ${!isOpen && "max-w-[1250px]"
+      className={`w-full text-start items-center m- ${!isOpen && "max-w-[1250px]"
         }`}
     >
       <p className="text-3xl font-semibold mt-8 ml-8">
@@ -81,8 +81,8 @@ const Bumblebee = () => {
             <li key={tab.id} className="me-2" role="presentation">
               <button
                 className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${activeTab === tab.id
-                    ? "text-red-600 border-red-600"
-                    : "text-black hover:text-black border-black"
+                  ? "text-red-600 border-red-600"
+                  : "text-black hover:text-black border-black"
                   }`}
                 id={tab.id}
                 type="button"
