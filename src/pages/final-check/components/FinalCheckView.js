@@ -1,11 +1,9 @@
-import Button from "components/Button";
 import React, { useState } from "react";
 import EditableField from "./EditableField";
 import FinalCheckHistory from "./FinalCheckHistory";
-import SearchField from "pages/home/components/SearchField";
+import EditableTextarea from "components/EditableTextarea";
 import Remaindered from "pages/editorial/components/Remaindered";
 import SelectInputWithLabel from "components/SelectInputWithLabel";
-import EditableTextarea from "components/EditableTextarea";
 
 const FinalCheckView = () => {
     const [isEditing, setIsEditing] = useState(false);
