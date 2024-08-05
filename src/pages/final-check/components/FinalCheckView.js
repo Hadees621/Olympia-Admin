@@ -4,6 +4,8 @@ import EditableField from "./EditableField";
 import FinalCheckHistory from "./FinalCheckHistory";
 import SearchField from "pages/home/components/SearchField";
 import Remaindered from "pages/editorial/components/Remaindered";
+import SelectInputWithLabel from "components/SelectInputWithLabel";
+import EditableTextarea from "components/EditableTextarea";
 
 const FinalCheckView = () => {
     const [isEditing, setIsEditing] = useState(false);
@@ -81,9 +83,13 @@ const FinalCheckView = () => {
                                 />
                             </tr>
                         ))}
+                        <tr className="w-full border">
+                            <EditableTextarea />
+                        </tr>
                     </tbody>
                 </table>
             </div>
+            <SelectInputWithLabel label={"Checked By*"} width="max-w-md" />
 
             <FinalCheckHistory history={finalCheckHistoryData} />
         </div>

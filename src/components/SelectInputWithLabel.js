@@ -10,11 +10,12 @@ const SelectInputWithLabel = ({
     value,
     onChange,
     label,
+    width = 'w-full',
     edit = false,
     flex = false,
 }) => {
     return (
-        <div className={`w-full ${flex ? "flex items-center gap-3" : ""}`}>
+        <div className={` ${width} ${flex ? "flex items-center gap-3" : ""}`}>
             <div className={`${flex ? "w-[20%]" : ""}`}>
                 <p className="text-lg font-bold text-gray-600">{label}</p>
             </div>
