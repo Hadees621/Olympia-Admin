@@ -36,6 +36,7 @@ import PublicityQuestionaires from "./pages/nested-pages/publicity-questionaires
 import PublicityQuestionairesForm from "./pages/nested-pages/PublicityQuestionairesForm/PublicityQuestionairesForm";
 import ProductionQuestionnaireForm from "./pages/nested-pages/production-questionnaire-form/ProductionQuestionnaireForm";
 import ViewDeliveryNote from "./pages/delivery-notes/components/ViewDeliveryNote";
+import FinalCheckView from "./pages/final-check/components/FinalCheckView";
 
 const App = () => (
   <Routes>
@@ -79,8 +80,9 @@ const App = () => (
     <Route path="/pending-publicity-questionnaire" element={<PublicityQuestionaires />} />
     <Route path="/publicity-questionnaire-form" element={<PublicityQuestionairesForm />} />
     <Route path="/these-invoices-CN" element={<TheseInvoicesCN />} />
-
     <Route path="/view-delivery-note" element={<ViewDeliveryNote />} />
+    <Route path="/view-final-check" element={<FinalCheckView />} />
+
 
 
 
