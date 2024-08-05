@@ -1,55 +1,54 @@
-import React, { useState } from "react";
 import Button from "components/Button";
+import React, { useState } from "react";
+import { booksData } from "./utils/utils";
 import useSidebarStore from "stores/States";
-import SearchField from "../home/components/SearchField";
-import SelectField from "components/SelectField";
-import FinalCheckTab from "../bumblebee/components/FinalCheckTab";
-import { data } from "../bumblebee/utils/utils";
-import FinalCheckTable from "../final-check/components/FinalCheckTable";
 import Pagination from "components/Pagination";
+import SelectField from "components/SelectField";
+import SearchField from "../home/components/SearchField";
+import ProductionTable from "./components/ProductionTable";
 
 const tabs = [
-  { id: "ks-tab", label: "KS", totalRecords: 205 },
-  { id: "ia-tab", label: "IA", totalRecords: 25 },
-  { id: "rr-tab", label: "RR", totalRecords: 2015 },
-  { id: "final-check-tab", label: "Final Check (0)", totalRecords: 205 },
+  {
+    name: "KS",
+    component: ProductionTable,
+    key: "ks",
+    data: booksData,
+  },
+  {
+    name: "IA",
+    component: ProductionTable,
+    key: "ia",
+    data: booksData,
+
+  },
+  {
+    name: "RR",
+    component: ProductionTable,
+    key: "rr",
+    data: booksData,
+  },
+  {
+    name: "Final Check(0)",
+    component: ProductionTable,
+    key: "finalcheck",
+    data: booksData,
+  },
+  {
+    name: "UAE Books",
+    component: ProductionTable,
+    key: "uae",
+    data: booksData,
+  },
 ];
-
-const TabContent = ({ activeTab, isOpen }) => {
-  const tabData = tabs.find((tab) => tab.id === activeTab);
-
-  return (
-    <div className={`p-4 dark:bg-gray-800 ${activeTab ? "block" : "hidden"}`}>
-      <div className="mt-3 w-full mx-4 font-semibold text-lg">
-        <p>Total Records: {tabData.totalRecords}</p>
-      </div>
-
-      <Pagination num={7} />
-
-      <div
-        className={`m-4 transition-all duration-300 ${
-          isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
-        }`}
-      >
-        {activeTab === "final-check-tab" ? (
-          <FinalCheckTab data={data} />
-        ) : (
-          <FinalCheckTable data={data} />
-        )}
-      </div>
-    </div>
-  );
-};
 
 const Production = () => {
   const { isOpen } = useSidebarStore();
-  const [activeTab, setActiveTab] = useState("ks-tab");
+  const [activeTab, setActiveTab] = useState("ks");
 
   return (
     <div
-      className={`w-full text-start items-center m-4 ${
-        !isOpen && "max-w-[1250px]"
-      }`}
+      className={`w-full text-start items-center m-4  ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
+        }`}
     >
       <p className="text-3xl font-semibold mt-8 ml-8">
         Books (Imprint: Olympia/Ebooks)
@@ -61,34 +60,45 @@ const Production = () => {
         <Button title="Clear" />
         <SelectField placeholder="Select Filter" />
       </div>
-      <div className="mb-4 justify-center flex pt-3">
+      <div className="mt-3 w-full mx-4 font-semibold text-lg">
+        <p>Total Records: 2589</p>
+      </div>
+
+      <Pagination num={7} />
+
+      <div className="mb-4 justify-center flex pt-10">
         <ul
           className="flex flex-wrap -mb-px gap-3 text-sm font-medium text-center"
+          id="default-styled-tab"
           role="tablist"
         >
           {tabs.map((tab) => (
-            <li key={tab.id} className="me-2" role="presentation">
+            <li key={tab.key} className="me-2" role="presentation">
               <button
-                className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${
-                  activeTab === tab.id
-                    ? "text-red-600 border-red-600"
-                    : "text-black hover:text-black border-black"
-                }`}
-                id={tab.id}
+                className={`inline-block p-2 border-b-2 rounded-t-lg text-[13px] font-semibold ${activeTab === tab.key
+                  ? "text-red-600 border-red-600"
+                  : "text-black hover:text-black border-black"
+                  }`}
+                id={`${tab.key}-tab`}
                 type="button"
                 role="tab"
-                aria-controls={tab.id}
-                aria-selected={activeTab === tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                aria-controls={tab.key}
+                aria-selected={activeTab === tab.key}
+                onClick={() => setActiveTab(tab.key)}
               >
-                {tab.label}
+                {tab.name}
               </button>
             </li>
           ))}
         </ul>
       </div>
+
       <div id="default-styled-tab-content" className="w-full">
-        <TabContent activeTab={activeTab} isOpen={isOpen} />
+        {tabs.map((tab) => (
+          <div key={tab.key} className={`dark:bg-gray-800 ${activeTab === tab.key ? "block" : "hidden"}`} id={tab.key} role="tabpanel" aria-labelledby={`${tab.key}-tab`}>
+            {React.createElement(tab.component, { data: tab.data })}
+          </div>
+        ))}
       </div>
     </div>
   );
