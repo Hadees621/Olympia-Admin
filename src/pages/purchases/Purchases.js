@@ -2,8 +2,8 @@ import { data } from "./utils/utils";
 import Button from "components/Button";
 import React, { useState } from "react";
 import TableRow from "components/TableRow";
-import Modal from "components/modals/Modal";
 import useSidebarStore from "stores/States";
+import Modal from "components/modals/Modal";
 import SearchField from "../home/components/SearchField";
 import ScrollableTable from "./components/ScrollableTable";
 
