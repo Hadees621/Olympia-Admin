@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import WithoutRTab from "./components/WithoutRTab";
+import MarketingTab from "./components/MarketingTab";
+import RemainderedTab from "./components/RemainderedTab";
 import WithoutUnder20Tab from "./components/WithoutUnder20Tab";
 import RemainderedUnder20Tab from "./components/RemainderedUnder20Tab";
-import RemainderedTab from "./components/RemainderedTab";
-import MarketingTab from "./components/MarketingTab";
 import RemainderedToGenerateTab from "./components/RemainderedToGenerateTab";
 
 const tabs = [
@@ -48,11 +48,10 @@ const Royalties = () => {
           {tabs.map((tab) => (
             <li key={tab.key} className="me-2" role="presentation">
               <button
-                className={`inline-block p-2 border-b-2 rounded-t-lg text-[13px] font-semibold ${
-                  activeTab === tab.key
-                    ? "text-red-600 border-red-600"
-                    : "text-black hover:text-black border-black"
-                }`}
+                className={`inline-block p-2 border-b-2 rounded-t-lg text-[13px] font-semibold ${activeTab === tab.key
+                  ? "text-red-600 border-red-600"
+                  : "text-black hover:text-black border-black"
+                  }`}
                 id={`${tab.key}-tab`}
                 type="button"
                 role="tab"
@@ -70,9 +69,8 @@ const Royalties = () => {
         {tabs.map((tab) => (
           <div
             key={tab.key}
-            className={`dark:bg-gray-800 ${
-              activeTab === tab.key ? "block" : "hidden"
-            }`}
+            className={`dark:bg-gray-800 ${activeTab === tab.key ? "block" : "hidden"
+              }`}
             id={tab.key}
             role="tabpanel"
             aria-labelledby={`${tab.key}-tab`}
