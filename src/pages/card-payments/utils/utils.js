@@ -72,3 +72,32 @@ export const data = [
     Manage: "view | Edit | Delete",
   },
 ];
+
+export const paymentData = [
+  {
+    Date: "14-05-2121",
+    "Invoice Type": "Contract Invoice",
+    "Invoice number / Ref": "no number",
+    "Contact name": "Rebecca Clark",
+    "Card type": "Visa Debit",
+    "Card Number": "4462593563111324",
+    "Card Expiry date (mmyy)": "0721",
+    "CV2 (security code at back)": "872",
+    "Name on the card": "R Clarke",
+    "Total amount": "£190",
+    Notes: "",
+    "First name": "",
+    "Last name": "",
+    "Phone number": "",
+    "Email address": "bettyccboop@gmail.com",
+    "Address line 1": "",
+    "Address line 2": "",
+    Town: "",
+    City: "",
+    "Post code": "N19 3ta",
+    Country: "United Kingdom",
+    "Completed by": "Courtney",
+    Status: "Processing",
+  },
+];
+

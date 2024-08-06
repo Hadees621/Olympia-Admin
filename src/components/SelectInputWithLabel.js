@@ -3,20 +3,21 @@ import Button from './Button';
 import SelectField from './SelectField';
 
 const SelectInputWithLabel = ({
+    background = "bg-[#F7F7F7]",
+    width = 'w-full',
+    labelwidth = "w-[25%]",
+    edit = false,
+    flex = false,
     placeholder,
     onClick,
-    background = "bg-[#F7F7F7]",
     name,
     value,
     onChange,
     label,
-    width = 'w-full',
-    edit = false,
-    flex = false,
 }) => {
     return (
-        <div className={` ${width} ${flex ? "flex items-center gap-3" : ""}`}>
-            <div className={`${flex ? "w-[20%]" : ""}`}>
+        <div className={`w-full ${width} ${flex ? "flex items-center gap-3" : ""}`}>
+            <div className={`${flex ? labelwidth : "w-full"}`}>
                 <p className="text-lg font-bold text-gray-600">{label}</p>
             </div>
             <SelectField

@@ -2,22 +2,14 @@ import { data } from "./utils/utils";
 import Button from "components/Button";
 import React, { useState } from "react";
 import TableRow from "components/TableRow";
-import Modal from "components/modals/Modal";
 import useSidebarStore from "stores/States";
+import Modal from "components/modals/Modal";
 import SearchField from "../home/components/SearchField";
 import ScrollableTable from "./components/ScrollableTable";
 
 const Purchases = () => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
   const { isOpen } = useSidebarStore();
-
-  const openModal = () => {
-    setIsModalVisible(true);
-  };
-
-  const closeModal = () => {
-    setIsModalVisible(false);
-  };
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const tableData = [
     { section: "Personal Information:", fields: ["First Name", "Last Name"] },
@@ -28,7 +20,7 @@ const Purchases = () => {
     <div className="w-full text-start items-center m-4">
       {/* header */}
       <>
-        <p className="text-3xl font-semibold mt-8 ml-8">
+        <p className="text-3xl font-semibold mt-8 ml-4">
           Welcome to Olympia Portal (olympia admin)
         </p>
 
@@ -45,7 +37,7 @@ const Purchases = () => {
             title="Add New Client"
             bg="bg-green-600"
             text={"text-white"}
-            onClick={openModal}
+            onClick={() => setIsModalVisible(true)}
           />
           <Button title="All purchases" href="/all-purchases" />
         </div>
@@ -59,7 +51,7 @@ const Purchases = () => {
       </div>
 
       {/* Add New Client Modal */}
-      <Modal isVisible={isModalVisible} onClose={closeModal} onSave={closeModal} width={"max-w-[70vh]"} title="Add/Update Client" >
+      <Modal isVisible={isModalVisible} onClose={() => setIsModalVisible(false)} onSave={() => setIsModalVisible(false)} width={"max-w-[70vh]"} title="Add/Update Client" >
         <div className="w-full shadow">
           <div className="overflow-y-auto max-h-[70vh] custom-scrollbar px-2">
             {tableData.map((section, sectionIndex) => (
