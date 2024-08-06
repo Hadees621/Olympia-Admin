@@ -26,7 +26,15 @@ const RoyaltiesTable = () => {
   };
 
   const isRowSelected = (index) => selectedRows.includes(index);
-
+  const handleDownload = () => {
+    const blob = new Blob(["File content"], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "filename.txt"; // The name of the file to be downloaded
+    link.click();
+    URL.revokeObjectURL(url);
+  };
   const openNewWindow = (rowData) => {
     const newWindow = window.open("", "_blank", "width=800,height=600");
 
@@ -203,7 +211,13 @@ const RoyaltiesTable = () => {
         </div>
         <div className="w-[50%] gap-5 flex items-center justify-end">
           <p className="text-lg font-semibold"> Total: 410 </p>
-          <Button title="Download" />
+          <Button
+            title="Download"
+            bg="bg-green-600"
+            hover="hover:bg-green-700"
+            text={'text-white'}
+            onClick={handleDownload}
+          />
         </div>
       </div>
       <div className="overflow-x-auto shadow-md transition-all duration-300">
@@ -259,12 +273,12 @@ const RoyaltiesTable = () => {
                 <td className="px-6 py-4 border">{row.broughtforwardAmount}</td>
                 <td className="px-6 py-4 border">{row.totalAmount}</td>
                 <td className="px-6 py-4 border">
-                  <SelectField width="w-[150px]" />
+                  <SelectField width="min-w-[120px]" />
                 </td>
                 <td className="px-6 py-4 border">{row.status}</td>
                 <td className="px-6 py-4 border">{row.paymentDate}</td>
                 <td className="px-6 py-4 border">
-                  <TableButton title="Delete" />
+                  <TableButton title="Delete" bg="bg-red-500" hover="hover:bg-red-600" text={'text-white'} />
                 </td>
               </tr>
             ))}
