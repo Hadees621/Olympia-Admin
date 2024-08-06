@@ -17,11 +17,11 @@ const SelectField = ({
   ...props
 }) => {
   return (
-    <div className="relative flex-grow">
+    <div className={`relative flex-grow`}>
       <select
         value={value}
         onChange={onChange}
-        className={`${width} shadow appearance-none  rounded w-full p-2.5 text-gray-400 leading-tight focus:outline-none`}
+        className={`${background} ${width} shadow appearance-none rounded p-2.5 text-gray-400 leading-tight focus:outline-none`}
         {...props}
       >
         <option value="" disabled>

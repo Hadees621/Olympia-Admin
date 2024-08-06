@@ -12,7 +12,7 @@ const PaymentTable = () => {
     <div>
       <div
         className={`m-4 transition-all duration-300 mt-10 ${
-          isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
+          isOpen ? "max-w-[1050px]" : "max-w-[1300px]"
         }`}
       >
         <div className="flex items-center justify-between mt-10 mb-4 gap-3">
