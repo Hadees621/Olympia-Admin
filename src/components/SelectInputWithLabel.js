@@ -27,9 +27,11 @@ const SelectInputWithLabel = ({
                 background={background}
                 name={name}
             />
-            <div className={`${edit && !flex ? "mt-3" : "mt-0"}`}>
-                {edit && <Button title={"Edit"} onClick={onClick} />}
-            </div>
+            {edit &&
+                <div className={`${edit && !flex ? "mt-3" : "mt-0"}`}>
+                    <Button title={"Edit"} onClick={onClick} />
+                </div>
+            }
         </div>
     );
 };
