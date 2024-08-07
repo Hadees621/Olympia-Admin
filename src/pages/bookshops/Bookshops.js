@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import BookshopsTable from "./components/BookshopsTable";
 import specialistTab from "./components/specialistTab";
+import BookshopsTable from "./components/BookshopsTable";
 
 const tabs = [
   {
@@ -63,7 +63,7 @@ const Bookshops = () => {
   return (
     <div className="w-full text-start items-center m-4">
       {/* header */}
-      <p className="text-3xl font-semibold mt-8 ml-8">Bookshops</p>
+      <p className="text-3xl font-semibold mt-8 ml-4">Bookshops</p>
 
       <div className="mb-4 justify-center flex pt-10">
         <ul
@@ -74,11 +74,10 @@ const Bookshops = () => {
           {tabs.map((tab) => (
             <li key={tab.key} className="me-2" role="presentation">
               <button
-                className={`inline-block p-2 border-b-2 rounded-t-lg text-[11px] font-semibold ${
-                  activeTab === tab.key
-                    ? "text-red-600 border-red-600"
-                    : "text-black hover:text-black border-black"
-                }`}
+                className={`inline-block p-2 border-b-2 rounded-t-lg text-[11px] font-semibold ${activeTab === tab.key
+                  ? "text-red-600 border-red-600"
+                  : "text-black hover:text-black border-black"
+                  }`}
                 id={`${tab.key}-tab`}
                 type="button"
                 role="tab"
@@ -96,9 +95,8 @@ const Bookshops = () => {
         {tabs.map((tab) => (
           <div
             key={tab.key}
-            className={`dark:bg-gray-800 ${
-              activeTab === tab.key ? "block" : "hidden"
-            }`}
+            className={`dark:bg-gray-800 ${activeTab === tab.key ? "block" : "hidden"
+              }`}
             id={tab.key}
             role="tabpanel"
             aria-labelledby={`${tab.key}-tab`}

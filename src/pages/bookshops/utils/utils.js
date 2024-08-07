@@ -16,7 +16,6 @@ export const data = [
     telephone2: "01206 864774",
     email: "johndoe@waterstones.com",
     webAddress: "https://www.waterstones.com",
-    actions: "Edit",
   },
   {
     company: "Waterstone's",
@@ -35,7 +34,6 @@ export const data = [
     telephone2: "01702 437481",
     email: "janesmith@waterstones.com",
     webAddress: "https://www.waterstones.com",
-    actions: "Edit",
   },
   {
     company: "Harts Bookshop",
@@ -54,6 +52,5 @@ export const data = [
     telephone2: "01799 508151",
     email: "michaelbrown@hartsbookshop.com",
     webAddress: "https://www.hartsbookshop.com",
-    actions: "Edit",
   },
 ];

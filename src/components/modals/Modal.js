@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../Button';
 import Cross from 'utils/icons/Cross';
 
-const Modal = ({ isVisible, onClose, children, title, onSave, width = "max-w-[180vh]" }) => {
+const Modal = ({ isVisible, onClose, children, title, onSave, width = "max-w-[180vh]", saveButton = true }) => {
     if (!isVisible) return null;
 
     const handleOverlayClick = (e) => {
@@ -23,9 +23,12 @@ const Modal = ({ isVisible, onClose, children, title, onSave, width = "max-w-[18
                 <div className="overflow-y-auto max-h-[70vh] custom-scrollbar">
                     {children}
                 </div>
-                <div className="flex justify-end mt-4">
-                    <Button title="Save Changes" onClick={onSave} />
-                </div>
+                {saveButton && (
+                    <div className="flex justify-end mt-4">
+                        <Button title="Save Changes" onClick={onSave} />
+                    </div>
+                )
+                }
             </div>
         </div>
     );
