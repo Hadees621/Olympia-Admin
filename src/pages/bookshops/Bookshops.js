@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import specialistTab from "./components/specialistTab";
 import BookshopsTable from "./components/BookshopsTable";
 
@@ -61,7 +60,6 @@ const tabs = [
 const Bookshops = () => {
   const [activeTab, setActiveTab] = useState("bookShops");
 
-
   return (
     <div className="w-full text-start items-center m-4">
       {/* header */}
@@ -107,7 +105,6 @@ const Bookshops = () => {
           </div>
         ))}
       </div>
-
     </div>
   );
 };
