@@ -1,16 +1,21 @@
 import React, { useState } from "react";
-import useSidebarStore from "stores/States";
-import TableButton from "components/TableButton";
-import SelectField from "components/SelectField";
 import Button from "components/Button";
 import { data } from "../home/utils/utils";
-import DatePickerField from "components/DatePickerField";
 import { invoiceData } from "./utils/utils";
+import useSidebarStore from "stores/States";
+import SelectField from "components/SelectField";
+import TableButton from "components/TableButton";
+import { renderToString } from "react-dom/server";
+import DatePickerField from "components/DatePickerField";
 import SearchField from "../home/components/SearchField";
+import PrintButton from "../book-invoices/components/invoice/PrintButton";
+import FinalInvoice from "../book-invoices/components/invoice/FinalInvoice";
+import EditModal from "../bookshops/components/EditModal";
 
 const Printers = () => {
-  const [selectedRows, setSelectedRows] = useState([]);
   const { isOpen } = useSidebarStore();
+  const [selectedRows, setSelectedRows] = useState([]);
+  const [isInfoModalVisible, setIsInfoModalVisible] = useState(false);
 
   const handleSelectAll = () => {
     if (selectedRows.length === data.length) {
@@ -19,6 +24,7 @@ const Printers = () => {
       setSelectedRows(data.map((_, index) => index));
     }
   };
+
   const handleSelectRow = (index) => {
     if (selectedRows.includes(index)) {
       setSelectedRows(selectedRows.filter((i) => i !== index));
@@ -26,12 +32,40 @@ const Printers = () => {
       setSelectedRows([...selectedRows, index]);
     }
   };
+
+  const handleOpenInvoice = (row) => {
+    const invoiceHtml = renderToString(<FinalInvoice invoiceData={row} />);
+    const printButtonHtml = renderToString(<PrintButton />);
+    const newWindow = window.open('', '', 'width=800,height=600');
+    newWindow.document.write(`
+      <html>
+        <head>
+          <title>Invoice</title>
+          <style>
+            /* Include TailwindCSS styles here or link to an external stylesheet */
+            body { font-family: 'Lato', sans-serif; }
+          </style>
+        </head>
+        <body>
+          ${invoiceHtml}
+          ${printButtonHtml}
+          <script>
+            document.getElementById('printBtn').addEventListener('click', function() {
+              window.print();
+            });
+          </script>
+        </body>
+      </html>
+    `);
+    newWindow.document.close();
+  };
+
   const isRowSelected = (index) => selectedRows.includes(index);
 
   return (
-    <div className="m-4">
+    <div className="m-3">
       <>
-        <p className="text-3xl font-semibold mt-8 ml-8">
+        <p className="text-3xl font-semibold mt-8 ml-4">
           Welcome to Olympia Portal (olympia admin)
         </p>
         <div className="flex items-center mt-10 mb-4 gap-5 px-5">
@@ -105,7 +139,7 @@ const Printers = () => {
                   </td>
 
                   <td className="px-6 py-4 border">
-                    <TableButton title={"View"} />
+                    <TableButton title={"View"} onClick={() => handleOpenInvoice(row)} />
                   </td>
                   <td className="px-6 py-4 border">{row.invoiceNo}</td>
                   <td className="px-6 py-4 border">{row.creditNo}</td>
@@ -119,10 +153,12 @@ const Printers = () => {
                   <td className="px-6 py-4 border">{row.datePayment}</td>
                   <td className="px-6 py-4 border">{row.paid}</td>
                   <td className="px-6 py-4 border ">
-                    <SelectField width="w-[160px]" />
+                    <div className="flex gap-3">
+                      <SelectField width="w-[160px]" />
+                      <TableButton title={'Edit List'} onClick={() => setIsInfoModalVisible(true)} />
+                    </div>
                   </td>
                   <td className="px-6 py-4 border">
-                    {" "}
                     <SelectField width="w-[160px]" />
                   </td>
                   <td className="px-6 py-4 border">
@@ -134,6 +170,13 @@ const Printers = () => {
               ))}
             </tbody>
           </table>
+
+          <EditModal
+            isOpen={isInfoModalVisible}
+            onClose={() => setIsInfoModalVisible(false)}
+            title="Edit Payment Detail List"
+            label={"Enter Payment method:"}
+          />
         </div>
       </div>
     </div>
