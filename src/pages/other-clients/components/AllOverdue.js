@@ -9,12 +9,10 @@ const AllOverdue = () => {
 
   return (
     <div
-      className={`m-4 transition-all duration-300 ${
-        isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
-      }`}
+      className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
+        }`}
     >
       <div className="flex items-center mt-8 gap-3 m-4 justify-end">
-      <Button title="ISBN Search" href="/isbn-search" />
         <Button
           title={"Add New Client"}
           bg="bg-green-500"

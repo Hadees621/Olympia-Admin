@@ -1,8 +1,8 @@
-import React, { useState } from "react";
 import Button from "components/Button";
-import SearchField from "../home/components/SearchField";
-import ClientsTable from "./components/ClientsTable";
+import React, { useState } from "react";
 import AllOverdue from "./components/AllOverdue";
+import ClientsTable from "./components/ClientsTable";
+import SearchField from "../home/components/SearchField";
 
 const tabs = [
   {
@@ -47,10 +47,11 @@ const OtherClients = () => {
         Welcome to Olympia Portal (olympia admin)
       </p>
 
-      <div className="flex items-center mt-3 gap-3 px-6 pt-10 w-[45%] mx-auto">
+      <div className="flex items-center mt-3 gap-3 px-6 pt-10 w-[60%] mx-auto">
         <p className="text-lg font-semibold"> Client Name : </p>
         <SearchField />
         <Button title={"Search"} />
+        <Button title="ISBN Search" href="/isbn-search" />
       </div>
 
       <div className="mb-4 justify-center flex pt-10">
@@ -62,11 +63,10 @@ const OtherClients = () => {
           {tabs.map((tab) => (
             <li key={tab.key} className="me-2" role="presentation">
               <button
-                className={`inline-block p-2 border-b-2 rounded-t-lg text-[11px] font-semibold ${
-                  activeTab === tab.key
-                    ? "text-red-600 border-red-600"
-                    : "text-black hover:text-black border-black"
-                }`}
+                className={`inline-block p-2 border-b-2 rounded-t-lg text-[11px] font-semibold ${activeTab === tab.key
+                  ? "text-red-600 border-red-600"
+                  : "text-black hover:text-black border-black"
+                  }`}
                 id={`${tab.key}-tab`}
                 type="button"
                 role="tab"
@@ -84,9 +84,8 @@ const OtherClients = () => {
         {tabs.map((tab) => (
           <div
             key={tab.key}
-            className={`dark:bg-gray-800 ${
-              activeTab === tab.key ? "block" : "hidden"
-            }`}
+            className={`dark:bg-gray-800 ${activeTab === tab.key ? "block" : "hidden"
+              }`}
             id={tab.key}
             role="tabpanel"
             aria-labelledby={`${tab.key}-tab`}

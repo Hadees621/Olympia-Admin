@@ -1,24 +1,22 @@
 import React from "react";
+import Summary from "./Summary";
 import Button from "components/Button";
 import { invoices } from "../utils/utils";
 import useSidebarStore from "stores/States";
 import SearchField from "pages/home/components/SearchField";
-import Summary from "./Summary";
 
 const ClientsTable = () => {
   const { isOpen } = useSidebarStore();
 
   return (
     <div
-      className={`m-4 transition-all duration-300 ${
-        isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
-      }`}
+      className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
+        }`}
     >
       <div className="flex items-center mt-8 gap-3 m-4 w-[80%] mx-auto">
         <SearchField placeholder="Book Title" />
         <SearchField placeholder="Pen name/Author name" />
         <Button title="Search" />
-        <Button title="ISBN Search" href="/isbn-search" />
         <Button title={"New Invoice"} bg="bg-green-500" text={"text-white"} />
       </div>
       <div className="overflow-x-auto shadow-md transition-all duration-300 max-h-[400px]">

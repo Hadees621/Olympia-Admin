@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import useSidebarStore from "stores/States";
-import TableButton from "components/TableButton";
-import SelectField from "components/SelectField";
 import Button from "components/Button";
 import { data } from "../home/utils/utils";
-import DatePickerField from "components/DatePickerField";
 import { invoiceData } from "./utils/utils";
+import useSidebarStore from "stores/States";
+import SelectField from "components/SelectField";
+import TableButton from "components/TableButton";
+import DatePickerField from "components/DatePickerField";
 import SearchField from "../home/components/SearchField";
 
 const Printers = () => {
-  const [selectedRows, setSelectedRows] = useState([]);
   const { isOpen } = useSidebarStore();
+  const [selectedRows, setSelectedRows] = useState([]);
 
   const handleSelectAll = () => {
     if (selectedRows.length === data.length) {
@@ -19,6 +19,7 @@ const Printers = () => {
       setSelectedRows(data.map((_, index) => index));
     }
   };
+
   const handleSelectRow = (index) => {
     if (selectedRows.includes(index)) {
       setSelectedRows(selectedRows.filter((i) => i !== index));
@@ -26,6 +27,7 @@ const Printers = () => {
       setSelectedRows([...selectedRows, index]);
     }
   };
+
   const isRowSelected = (index) => selectedRows.includes(index);
 
   return (
