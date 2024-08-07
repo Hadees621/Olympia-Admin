@@ -8,12 +8,14 @@ import TableButton from "components/TableButton";
 import { renderToString } from "react-dom/server";
 import DatePickerField from "components/DatePickerField";
 import SearchField from "../home/components/SearchField";
-import FinalInvoice from "../book-invoices/components/invoice/FinalInvoice";
 import PrintButton from "../book-invoices/components/invoice/PrintButton";
+import FinalInvoice from "../book-invoices/components/invoice/FinalInvoice";
+import EditModal from "../bookshops/components/EditModal";
 
 const Printers = () => {
   const { isOpen } = useSidebarStore();
   const [selectedRows, setSelectedRows] = useState([]);
+  const [isInfoModalVisible, setIsInfoModalVisible] = useState(false);
 
   const handleSelectAll = () => {
     if (selectedRows.length === data.length) {
@@ -151,10 +153,12 @@ const Printers = () => {
                   <td className="px-6 py-4 border">{row.datePayment}</td>
                   <td className="px-6 py-4 border">{row.paid}</td>
                   <td className="px-6 py-4 border ">
-                    <SelectField width="w-[160px]" />
+                    <div className="flex gap-3">
+                      <SelectField width="w-[160px]" />
+                      <TableButton title={'Edit List'} onClick={() => setIsInfoModalVisible(true)} />
+                    </div>
                   </td>
                   <td className="px-6 py-4 border">
-                    {" "}
                     <SelectField width="w-[160px]" />
                   </td>
                   <td className="px-6 py-4 border">
@@ -166,6 +170,13 @@ const Printers = () => {
               ))}
             </tbody>
           </table>
+
+          <EditModal
+            isOpen={isInfoModalVisible}
+            onClose={() => setIsInfoModalVisible(false)}
+            title="Edit Payment Detail List"
+            label={"Enter Payment method:"}
+          />
         </div>
       </div>
     </div>
