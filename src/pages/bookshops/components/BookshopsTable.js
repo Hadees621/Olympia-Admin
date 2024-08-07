@@ -5,10 +5,12 @@ import AddNewModal from "./AddNewModal";
 import useSidebarStore from "stores/States";
 import TableButton from "components/TableButton";
 import SelectField from "components/SelectField";
+import EditInfoModal from "./EditInfoModal ";
 
 const BookshopsTable = () => {
   const { isOpen } = useSidebarStore();
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isInfoModalVisible, setIsInfoModalVisible] = useState(false);
 
   return (
     <div className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"}`}>
@@ -27,7 +29,6 @@ const BookshopsTable = () => {
           onClick={() => setIsModalVisible(true)}
         />
       </div>
-
       <div className="overflow-x-auto shadow-md transition-all duration-300">
         <table className="w-full text-sm text-left">
           <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
@@ -44,7 +45,7 @@ const BookshopsTable = () => {
                   <td key={idx} className="px-6 py-4 border">{value}</td>
                 ))}
                 <td className="px-6 py-4 border">
-                  <TableButton title="Edit" />
+                  <TableButton title="Edit" onClick={() => setIsInfoModalVisible(true)} />
                 </td>
               </tr>
             ))}
@@ -53,7 +54,7 @@ const BookshopsTable = () => {
       </div>
 
       <AddNewModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} />
-
+      <EditInfoModal isModalVisible={isInfoModalVisible} setIsModalVisible={setIsInfoModalVisible} />
     </div>
   );
 };
