@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import Button from "components/Button";
+import React, { useState } from "react";
 import OutworkersTable from "./components/OutworkersTable";
 
 const tabs = [
@@ -21,11 +21,11 @@ const Outworkers = () => {
   return (
     <div className="w-full text-start items-center m-4">
       {/* header */}
-      <p className="text-3xl font-semibold mt-8 ml-8">
+      <p className="text-3xl font-semibold mt-8 ml-4">
         Welcome to Olympia Portal (Olympia Admin)
       </p>
 
-      <div className="flex items-center justify-end mt-8 gap-3 pr-20">
+      <div className="flex items-center justify-end m-4 gap-3">
         <Button title="Add New Outworker" />
       </div>
 
