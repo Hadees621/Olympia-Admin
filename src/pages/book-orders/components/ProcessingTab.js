@@ -76,7 +76,6 @@ const ProcessingTab = () => {
                   id={id}
                   isSelected={selectedRows.includes(id)}
                   handleSelectRow={handleSelectRow}
-                  // setModalVisible(true)}
                   setModalVisible={setModalVisible}
                 />
               )

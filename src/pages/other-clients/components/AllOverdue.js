@@ -1,22 +1,65 @@
-import React from "react";
+import { data } from "../utils/utils";
+import Button from "components/Button";
+import React, { useState } from "react";
+import Modal from "components/modals/Modal";
 import useSidebarStore from "stores/States";
 import TableButton from "components/TableButton";
-import Button from "components/Button";
-import { data } from "../utils/utils";
+import EditableRadio from "components/EditableRadio";
+import InputWithLabel from "components/InputWithLabel";
+import EditableTextarea from "components/EditableTextarea";
+import SelectInputWithLabel from "components/SelectInputWithLabel";
+import DisplayInfo from "pages/card-payments/components/DisplayInfo";
 
 const AllOverdue = () => {
   const { isOpen } = useSidebarStore();
+  const [selectedRow, setSelectedRow] = useState(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isEditModalVisible, setIsEditModalVisible] = useState(false);
+  const [isAddModalVisible, setIsAddModalVisible] = useState(false);
+
+  const ModalFormSection = ({ title, fields }) => (
+    <div className="space-y-5 p-4">
+      <h1 className="font-bold text-xl py-3">{title}</h1>
+      {fields.map((field, index) => (
+        React.createElement(field.component, {
+          key: index,
+          label: field.label,
+          flex: true,
+          ...field.props
+        })
+      ))}
+    </div>
+  );
+
+  const handleViewClick = (row) => {
+    setSelectedRow(row);
+    setIsModalVisible(true);
+  };
+
+  const handleEditClick = (row) => {
+    setSelectedRow(row);
+    setIsEditModalVisible(true);
+  };
+
+  const handleInputChange = (e, fieldName) => {
+    setSelectedRow({
+      ...selectedRow,
+      [fieldName]: e.target.value,
+    });
+  };
 
   return (
     <div
       className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
         }`}
     >
-      <div className="flex items-center mt-8 gap-3 m-4 justify-end">
+      <div className="flex items-center mt-8 gap-3 my-4 justify-end">
         <Button
           title={"Add New Client"}
           bg="bg-green-500"
+          hover="hover:bg-green-600"
           text={"text-white"}
+          onClick={() => setIsAddModalVisible(true)}
         />
       </div>
       <div className="overflow-x-auto shadow-md transition-all duration-300">
@@ -46,8 +89,8 @@ const AllOverdue = () => {
               >
                 <td className="px-6 py-4 border">
                   <div className="space-x-2">
-                    <TableButton title={"View"} />
-                    <TableButton title={"Edit"} />
+                    <TableButton title={"View"} onClick={() => handleViewClick(row)} />
+                    <TableButton title={"Edit"} onClick={() => handleEditClick(row)} />
                   </div>
                 </td>
                 <td className="px-6 py-4 border">{row.firstName}</td>
@@ -67,6 +110,137 @@ const AllOverdue = () => {
           </tbody>
         </table>
       </div>
+
+      {/* view */}
+      <Modal
+        isVisible={isModalVisible}
+        onClose={() => setIsModalVisible(false)}
+        width="max-w-[70vh]"
+        title="Information"
+      >
+        {selectedRow && (
+          <div className="w-full shadow">
+            <div className="overflow-y-auto max-h-[70vh] custom-scrollbar p-6">
+              <div className="mb-4 space-y-2">
+                {Object.entries(selectedRow).map(([key, value]) => (
+                  <DisplayInfo key={key} label={key} value={value} />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </Modal>
+
+      {/* edit */}
+      <Modal
+        isVisible={isEditModalVisible}
+        onClose={() => setIsEditModalVisible(false)}
+        width="max-w-[70vh]"
+        title="Edit Information"
+      >
+        {selectedRow && (
+          <div className="w-full shadow">
+            <div className="overflow-y-auto max-h-[70vh] custom-scrollbar p-6">
+              <div className="mb-4 space-y-2">
+                {Object.entries(selectedRow).map(([key, value]) => (
+                  <EditableTextarea
+                    key={key}
+                    label={key}
+                    name={key}
+                    value={value}
+                    onChange={(e) => handleInputChange(e, key)}
+                    rows={2}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </Modal>
+
+      <Modal
+        isVisible={isModalVisible}
+        onClose={() => setIsModalVisible(false)}
+        onSave={() => setIsModalVisible(false)}
+        width="max-w-[90vh]"
+        title="Add New Payment"
+      >
+        <div className="w-full shadow">
+          <div className="overflow-y-auto max-h-[70vh] custom-scrollbar px-2">
+            <ModalFormSection
+              title="Telephone Payment Record"
+              fields={[
+                { component: InputWithLabel, label: "Date :", flex: true },
+                { component: EditableRadio, label: "Invoice Type :", flex: true },
+                { component: InputWithLabel, label: "Invoice number / Ref :", flex: true },
+                { component: InputWithLabel, label: "Contact name :", flex: true },
+              ]}
+            />
+            <ModalFormSection
+              title="Payment Information"
+              fields={[
+                { component: SelectInputWithLabel, label: "Date :", flex: true },
+                { component: EditableRadio, label: "Card Number :", flex: true },
+                { component: InputWithLabel, label: "Card Expiry date (mmyy) :", flex: true },
+                { component: InputWithLabel, label: "CV2 (security code at back) :", flex: true },
+                { component: InputWithLabel, label: "Name on the card :", flex: true },
+                { component: InputWithLabel, label: "Total amount (£):", flex: true },
+              ]}
+            />
+            <ModalFormSection
+              title="Billing Information"
+              fields={[
+                { component: InputWithLabel, label: "First Name :", flex: true },
+                { component: InputWithLabel, label: "Second Name :", flex: true },
+                { component: InputWithLabel, label: "Phone number :", flex: true },
+                { component: InputWithLabel, label: "Email address :", flex: true },
+                { component: InputWithLabel, label: "Address line 1 :", flex: true },
+                { component: InputWithLabel, label: "Address line 2 :", flex: true },
+                { component: InputWithLabel, label: "Town :", flex: true },
+                { component: InputWithLabel, label: "City :", flex: true },
+                { component: InputWithLabel, label: "Post code :", flex: true },
+                { component: SelectInputWithLabel, label: "Country :", flex: true, width: "w-[25%]" },
+                { component: SelectInputWithLabel, label: "Completed by: ", flex: true, width: "w-[25%]" },
+                { component: SelectInputWithLabel, label: "Status :", flex: true, width: "w-[25%]" },
+              ]}
+            />
+          </div>
+        </div>
+      </Modal>
+
+      <Modal isVisible={isAddModalVisible} onClose={() => setIsAddModalVisible(false)} onSave={() => setIsAddModalVisible(false)} width={"max-w-[80vh]"} title="Add New Client">
+        <div className="w-full shadow">
+          <div className="overflow-y-auto max-h-[70vh] custom-scrollbar px-2">
+            <ModalFormSection
+              title="Personal Information"
+              fields={[
+                { component: InputWithLabel, label: "First Name :", flex: true },
+                { component: InputWithLabel, label: "Last Name :", flex: true },
+              ]}
+            />
+            <ModalFormSection
+              title="Contact Information"
+              fields={[
+                { component: InputWithLabel, label: "Company Name :", flex: true },
+                { component: InputWithLabel, label: "First Address :", flex: true },
+                { component: InputWithLabel, label: "Phone number :", flex: true },
+                { component: InputWithLabel, label: "Town/City :", flex: true },
+                { component: InputWithLabel, label: "County/State :", flex: true },
+                { component: InputWithLabel, label: "Country :", flex: true },
+                { component: InputWithLabel, label: "Town :", flex: true },
+                { component: InputWithLabel, label: "Mobile :", flex: true },
+                { component: InputWithLabel, label: "Email 1 :", flex: true },
+                { component: InputWithLabel, label: "Email 2 :", flex: true },
+                { component: InputWithLabel, label: "Email 3 :", flex: true },
+                { component: InputWithLabel, label: "Website :", flex: true },
+                { component: InputWithLabel, label: "Skype :", flex: true },
+                { component: InputWithLabel, label: "VAT :", flex: true },
+              ]}
+            />
+          </div>
+        </div>
+      </Modal>
+
     </div>
   );
 };

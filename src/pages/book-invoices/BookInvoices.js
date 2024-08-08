@@ -7,8 +7,6 @@ import SearchField from "../home/components/SearchField";
 import Remaindered from "../editorial/components/Remaindered";
 
 const BookInvoices = () => {
-
-
   const [activeTab, setActiveTab] = useState("profile");
   const [selectedValues, setSelectedValues] = useState(["", ""]);
 

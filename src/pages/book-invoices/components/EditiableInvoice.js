@@ -4,10 +4,11 @@ import DisplayField from 'components/DisplayField';
 import InputWithLabel from 'components/InputWithLabel';
 import EditableTextarea from 'components/EditableTextarea';
 import SearchField from 'pages/home/components/SearchField';
+import EditListModal from 'components/modals/EditListModal';
 import EditableTextInput from 'components/EditableTextInput';
 import DatePickerWIthLabel from 'components/DatePickerWIthLabel';
 import SelectInputWithLabel from 'components/SelectInputWithLabel';
-import EditListModal from 'components/modals/EditListModal';
+
 const EditableInvoice = ({ initialData, onSave }) => {
     const [invoiceData, setInvoiceData] = useState(initialData);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -119,10 +120,12 @@ const EditableInvoice = ({ initialData, onSave }) => {
                     </div>
                 </div>
                 <div className="grid gap-4 pt-4">
-                    <div className='space-y-2'>
+                    <div className='space-y-5'>
                         <SelectInputWithLabel label={"Discount:"} display={false} />
                         <SearchField placeholder={"£"} background='bg-white' />
-                        <Button title={"Edit"} onClick={() => setIsModalOpen(true)} width={"mt-2"} />
+                        <div>
+                            <Button title={"Edit"} onClick={() => setIsModalOpen(true)} width={"mt-12"} />
+                        </div>
                     </div>
                     <div>
                         <EditableTextInput label={"Subtotal:"} display={false} />
@@ -133,10 +136,12 @@ const EditableInvoice = ({ initialData, onSave }) => {
                     <div>
                         <EditableTextInput label={"Net:"} display={false} />
                     </div>
-                    <div className='space-y-2'>
+                    <div className='space-y-5'>
                         <SelectInputWithLabel label={"VAT:"} display={false} />
                         <SearchField placeholder={"£"} background='bg-white' />
-                        <Button title={"Edit"} onClick={() => setIsModalOpen(true)} width={"mt-2"} />
+                        <div>
+                            <Button title={"Edit"} onClick={() => setIsModalOpen(true)} />
+                        </div>
                     </div>
                     <div>
                         <EditableTextInput label={"Total:"} display={false} placeholder={"£"} />
