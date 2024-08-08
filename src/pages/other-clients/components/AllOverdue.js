@@ -158,56 +158,6 @@ const AllOverdue = () => {
         )}
       </Modal>
 
-      <Modal
-        isVisible={isModalVisible}
-        onClose={() => setIsModalVisible(false)}
-        onSave={() => setIsModalVisible(false)}
-        width="max-w-[90vh]"
-        title="Add New Payment"
-      >
-        <div className="w-full shadow">
-          <div className="overflow-y-auto max-h-[70vh] custom-scrollbar px-2">
-            <ModalFormSection
-              title="Telephone Payment Record"
-              fields={[
-                { component: InputWithLabel, label: "Date :", flex: true },
-                { component: EditableRadio, label: "Invoice Type :", flex: true },
-                { component: InputWithLabel, label: "Invoice number / Ref :", flex: true },
-                { component: InputWithLabel, label: "Contact name :", flex: true },
-              ]}
-            />
-            <ModalFormSection
-              title="Payment Information"
-              fields={[
-                { component: SelectInputWithLabel, label: "Date :", flex: true },
-                { component: EditableRadio, label: "Card Number :", flex: true },
-                { component: InputWithLabel, label: "Card Expiry date (mmyy) :", flex: true },
-                { component: InputWithLabel, label: "CV2 (security code at back) :", flex: true },
-                { component: InputWithLabel, label: "Name on the card :", flex: true },
-                { component: InputWithLabel, label: "Total amount (£):", flex: true },
-              ]}
-            />
-            <ModalFormSection
-              title="Billing Information"
-              fields={[
-                { component: InputWithLabel, label: "First Name :", flex: true },
-                { component: InputWithLabel, label: "Second Name :", flex: true },
-                { component: InputWithLabel, label: "Phone number :", flex: true },
-                { component: InputWithLabel, label: "Email address :", flex: true },
-                { component: InputWithLabel, label: "Address line 1 :", flex: true },
-                { component: InputWithLabel, label: "Address line 2 :", flex: true },
-                { component: InputWithLabel, label: "Town :", flex: true },
-                { component: InputWithLabel, label: "City :", flex: true },
-                { component: InputWithLabel, label: "Post code :", flex: true },
-                { component: SelectInputWithLabel, label: "Country :", flex: true, width: "w-[25%]" },
-                { component: SelectInputWithLabel, label: "Completed by: ", flex: true, width: "w-[25%]" },
-                { component: SelectInputWithLabel, label: "Status :", flex: true, width: "w-[25%]" },
-              ]}
-            />
-          </div>
-        </div>
-      </Modal>
-
       <Modal isVisible={isAddModalVisible} onClose={() => setIsAddModalVisible(false)} onSave={() => setIsAddModalVisible(false)} width={"max-w-[80vh]"} title="Add New Client">
         <div className="w-full shadow">
           <div className="overflow-y-auto max-h-[70vh] custom-scrollbar px-2">

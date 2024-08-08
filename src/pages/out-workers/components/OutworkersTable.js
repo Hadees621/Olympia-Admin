@@ -1,19 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "components/modals/Modal";
 import useSidebarStore from "stores/States";
+import { outworkersData } from "../utils/utils";
 import TableButton from "components/TableButton";
 import SelectField from "components/SelectField";
+import InputWithLabel from "components/InputWithLabel";
 import SearchField from "pages/home/components/SearchField";
-import { outworkersData } from "../utils/utils";
+import SelectInputWithLabel from "components/SelectInputWithLabel";
+import DisplayInfo from "pages/card-payments/components/DisplayInfo";
 
 const OutworkersTable = () => {
   const { isOpen } = useSidebarStore();
+  const [selectedRow, setSelectedRow] = useState(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isViewModalVisible, setIsViewModalVisible] = useState(false);
+
+  const handleViewClick = (row) => {
+    setSelectedRow(row);
+    setIsViewModalVisible(true);
+  };
 
   return (
     <div>
       <div
-        className={`m-4 transition-all duration-300 mt-10 ${
-          isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
-        }`}
+        className={`m-4 transition-all duration-300 mt-10 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
+          }`}
       >
         <div className="flex items-center justify-between mt-10 mb-4 gap-3">
           <div className="w-[30%] gap-5 flex items-center">
@@ -49,8 +60,8 @@ const OutworkersTable = () => {
                   <td className="px-6 py-4 border">{row.Grade}</td>
                   <td className="px-6 py-4 border">{row.Status}</td>
                   <td className="px-6 py-4 flex gap-x-2 items-center justify-center">
-                    <TableButton title={"View"} />
-                    <TableButton title={"Edit"} />
+                    <TableButton title={"View"} onClick={() => handleViewClick(row)} />
+                    <TableButton title={"Edit"} onClick={() => setIsModalVisible(true)} />
                     <TableButton title={"Archive It!"} />
                   </td>
                 </tr>
@@ -59,8 +70,42 @@ const OutworkersTable = () => {
           </table>
         </div>
       </div>
+
+      <Modal isVisible={isModalVisible} onClose={() => setIsModalVisible(false)} onSave={() => setIsModalVisible(false)} width={"max-w-[90vh]"} title="Add New Outworker"  >
+        <div className="w-full shadow">
+          <div className="overflow-y-auto max-h-[70vh] custom-scrollbar px-2 space-y-3">
+            <InputWithLabel label={"Name"} />
+            <InputWithLabel label={"Email"} />
+            <InputWithLabel label={"Address"} />
+            <InputWithLabel label={"Tel"} />
+            <InputWithLabel label={"Mobile"} />
+            <SelectInputWithLabel label={"Skill Type"} />
+            <SelectInputWithLabel label={"Grade"} />
+          </div>
+        </div>
+      </Modal>
+
+      <Modal
+        isVisible={isViewModalVisible}
+        onClose={() => setIsViewModalVisible(false)}
+        width="max-w-[70vh]"
+        title="Information"
+      >
+        {selectedRow && (
+          <div className="w-full shadow">
+            <div className="overflow-y-auto max-h-[70vh] custom-scrollbar p-6">
+              <div className="mb-4 space-y-2">
+                {Object.entries(selectedRow).map(([key, value]) => (
+                  <DisplayInfo key={key} label={key} value={value} />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </Modal>
     </div>
   );
 };
 
 export default OutworkersTable;
+

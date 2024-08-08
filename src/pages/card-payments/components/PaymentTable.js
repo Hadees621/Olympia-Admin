@@ -22,7 +22,7 @@ const PaymentTable = () => {
     <div className="space-y-5 p-4">
       <h1 className="font-bold text-xl py-3">{title}</h1>
       {fields.map((field, index) => {
-        const value = data ? data[field.label.replace(/ :$/, '')] : ''; // Extract value based on label
+        const value = data ? data[field.label.replace(/ :$/, '')] : ''; 
         return React.createElement(field.component, {
           key: index,
           label: field.label,
@@ -33,8 +33,6 @@ const PaymentTable = () => {
       })}
     </div>
   );
-
-
 
   return (
     <div>
