@@ -1,12 +1,15 @@
-import React from "react";
 import Summary from "./Summary";
 import Button from "components/Button";
+import React, { useState } from "react";
 import { invoices } from "../utils/utils";
 import useSidebarStore from "stores/States";
+import { invoiceData } from "pages/printers/utils/utils";
 import SearchField from "pages/home/components/SearchField";
+import InvoiceModal from "pages/book-invoices/components/InvoiceModal";
 
 const ClientsTable = () => {
   const { isOpen } = useSidebarStore();
+  const [isModalVisible, setModalVisible] = useState(false);
 
   return (
     <div
@@ -17,7 +20,7 @@ const ClientsTable = () => {
         <SearchField placeholder="Book Title" />
         <SearchField placeholder="Pen name/Author name" />
         <Button title="Search" />
-        <Button title={"New Invoice"} bg="bg-green-500" text={"text-white"} />
+        <Button title={"New Invoice"} bg="bg-green-500" hover="hover:bg-green-600" text={"text-white"} onClick={() => setModalVisible(true)} />
       </div>
       <div className="overflow-x-auto shadow-md transition-all duration-300 max-h-[400px]">
         <table className="w-full text-sm text-left ">
@@ -61,6 +64,13 @@ const ClientsTable = () => {
         </table>
       </div>
       <Summary />
+
+      <InvoiceModal
+        isVisible={isModalVisible}
+        onClose={() => setModalVisible(false)}
+        initialData={invoiceData}
+      />
+
     </div>
   );
 };
