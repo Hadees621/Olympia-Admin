@@ -14,8 +14,8 @@ const AllOverdue = () => {
   const { isOpen } = useSidebarStore();
   const [selectedRow, setSelectedRow] = useState(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [isEditModalVisible, setIsEditModalVisible] = useState(false);
   const [isAddModalVisible, setIsAddModalVisible] = useState(false);
+  const [isEditModalVisible, setIsEditModalVisible] = useState(false);
 
   const ModalFormSection = ({ title, fields }) => (
     <div className="space-y-5 p-4">
