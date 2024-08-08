@@ -1,6 +1,9 @@
 import Button from "components/Button";
 import React, { useState } from "react";
 import OutworkersTable from "./components/OutworkersTable";
+import InputWithLabel from "components/InputWithLabel";
+import SelectInputWithLabel from "components/SelectInputWithLabel";
+import Modal from "components/modals/Modal";
 
 const tabs = [
   {
@@ -17,6 +20,8 @@ const tabs = [
 
 const Outworkers = () => {
   const [activeTab, setActiveTab] = useState("withoutRemaindered");
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
 
   return (
     <div className="w-full text-start items-center m-4">
@@ -26,7 +31,7 @@ const Outworkers = () => {
       </p>
 
       <div className="flex items-center justify-end m-4 gap-3">
-        <Button title="Add New Outworker" />
+        <Button title="Add New Outworker" bg="bg-green-500" hover="hover:bg-green-600" text={'text-white'} onClick={() => setIsModalVisible(true)} />
       </div>
 
       <div className="mb-4 justify-center flex pt-10">
@@ -38,11 +43,10 @@ const Outworkers = () => {
           {tabs.map((tab) => (
             <li key={tab.key} className="me-2" role="presentation">
               <button
-                className={`inline-block p-2 border-b-2 rounded-t-lg text-[13px] font-semibold ${
-                  activeTab === tab.key
-                    ? "text-red-600 border-red-600"
-                    : "text-black hover:text-black border-black"
-                }`}
+                className={`inline-block p-2 border-b-2 rounded-t-lg text-[13px] font-semibold ${activeTab === tab.key
+                  ? "text-red-600 border-red-600"
+                  : "text-black hover:text-black border-black"
+                  }`}
                 id={`${tab.key}-tab`}
                 type="button"
                 role="tab"
@@ -60,9 +64,8 @@ const Outworkers = () => {
         {tabs.map((tab) => (
           <div
             key={tab.key}
-            className={`dark:bg-gray-800 ${
-              activeTab === tab.key ? "block" : "hidden"
-            }`}
+            className={`dark:bg-gray-800 ${activeTab === tab.key ? "block" : "hidden"
+              }`}
             id={tab.key}
             role="tabpanel"
             aria-labelledby={`${tab.key}-tab`}
@@ -71,6 +74,20 @@ const Outworkers = () => {
           </div>
         ))}
       </div>
+
+      <Modal isVisible={isModalVisible} onClose={() => setIsModalVisible(false)} onSave={() => setIsModalVisible(false)} width={"max-w-[90vh]"} title="Add New record">
+        <div className="w-full shadow">
+          <div className="overflow-y-auto max-h-[70vh] custom-scrollbar px-2 space-y-3">
+            <InputWithLabel label={"Name"} />
+            <InputWithLabel label={"Email"} />
+            <InputWithLabel label={"Address"} />
+            <InputWithLabel label={"Tel"} />
+            <InputWithLabel label={"Mobile"} />
+            <SelectInputWithLabel label={"Skill Type"} />
+            <SelectInputWithLabel label={"Grade"} />
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };
