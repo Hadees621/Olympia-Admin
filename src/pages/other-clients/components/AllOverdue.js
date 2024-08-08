@@ -1,11 +1,34 @@
-import React from "react";
+import { data } from "../utils/utils";
+import Button from "components/Button";
+import React, { useState } from "react";
+import Modal from "components/modals/Modal";
 import useSidebarStore from "stores/States";
 import TableButton from "components/TableButton";
-import Button from "components/Button";
-import { data } from "../utils/utils";
+import EditableTextarea from "components/EditableTextarea";
+import DisplayInfo from "pages/card-payments/components/DisplayInfo";
 
 const AllOverdue = () => {
   const { isOpen } = useSidebarStore();
+  const [selectedRow, setSelectedRow] = useState(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isEditModalVisible, setIsEditModalVisible] = useState(false);
+
+  const handleViewClick = (row) => {
+    setSelectedRow(row);
+    setIsModalVisible(true);
+  };
+
+  const handleEditClick = (row) => {
+    setSelectedRow(row);
+    setIsEditModalVisible(true);
+  };
+
+  const handleInputChange = (e, fieldName) => {
+    setSelectedRow({
+      ...selectedRow,
+      [fieldName]: e.target.value,
+    });
+  };
 
   return (
     <div
@@ -46,8 +69,8 @@ const AllOverdue = () => {
               >
                 <td className="px-6 py-4 border">
                   <div className="space-x-2">
-                    <TableButton title={"View"} />
-                    <TableButton title={"Edit"} />
+                    <TableButton title={"View"} onClick={() => handleViewClick(row)} />
+                    <TableButton title={"Edit"} onClick={() => handleEditClick(row)} />
                   </div>
                 </td>
                 <td className="px-6 py-4 border">{row.firstName}</td>
@@ -67,6 +90,53 @@ const AllOverdue = () => {
           </tbody>
         </table>
       </div>
+
+      {/* view */}
+      <Modal
+        isVisible={isModalVisible}
+        onClose={() => setIsModalVisible(false)}
+        width="max-w-[70vh]"
+        title="Information"
+      >
+        {selectedRow && (
+          <div className="w-full shadow">
+            <div className="overflow-y-auto max-h-[70vh] custom-scrollbar p-6">
+              <div className="mb-4 space-y-2">
+                {Object.entries(selectedRow).map(([key, value]) => (
+                  <DisplayInfo key={key} label={key} value={value} />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </Modal>
+
+      {/* edit */}
+      <Modal
+        isVisible={isEditModalVisible}
+        onClose={() => setIsEditModalVisible(false)}
+        width="max-w-[70vh]"
+        title="Edit Information"
+      >
+        {selectedRow && (
+          <div className="w-full shadow">
+            <div className="overflow-y-auto max-h-[70vh] custom-scrollbar p-6">
+              <div className="mb-4 space-y-2">
+                {Object.entries(selectedRow).map(([key, value]) => (
+                  <EditableTextarea
+                    key={key}
+                    label={key}
+                    name={key}
+                    value={value}
+                    onChange={(e) => handleInputChange(e, key)}
+                    rows={2}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </Modal>
     </div>
   );
 };
