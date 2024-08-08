@@ -15,7 +15,7 @@ const FileUploadSection = () => {
         <FileUplaod title={"Upload illustrations (Publisher)"} />
 
         <div className='m-5'>
-          <Button title={"Add Record"} text={"text-white text-[14px]"} bg='bg-green-600 hover:bg-green-700' width={"w-[200px]"} />
+          <Button title={"Add Record"} text={"text-white text-[14px]"} bg="bg-green-500" hover="hover:bg-green-600" width={"w-[200px]"} />
         </div>
       </div>
     </div>

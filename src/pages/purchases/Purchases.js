@@ -35,7 +35,8 @@ const Purchases = () => {
           <Button title="Pending purchases" href="/pending-purchases" />
           <Button
             title="Add New Client"
-            bg="bg-green-600"
+            bg="bg-green-500"
+            hover="hover:bg-green-600"
             text={"text-white"}
             onClick={() => setIsModalVisible(true)}
           />
