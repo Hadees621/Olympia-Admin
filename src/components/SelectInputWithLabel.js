@@ -28,7 +28,7 @@ const SelectInputWithLabel = ({
                 name={name}
             />
             {edit &&
-                <div className={`${edit && !flex ? "mt-3" : "mt-0"}`}>
+                <div className={`${edit && !flex ? "mt-5" : "mt-0"}`}>
                     <Button title={"Edit"} onClick={onClick} />
                 </div>
             }
