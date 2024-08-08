@@ -41,7 +41,8 @@ const FileUpload = ({ title }) => {
                 <Button
                     title="Upload"
                     text="text-white"
-                    bg="bg-green-600"
+                    bg="bg-green-500"
+                    hover="hover:bg-green-600"
                 />
                 <div
                     className={`border-2 border-dotted border-black ${dragging ? 'border-dashed border-blue-500' : 'border-gray-300'} rounded p-8 my-4 flex justify-center items-center cursor-pointer`}
