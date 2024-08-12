@@ -37,6 +37,7 @@ import PublicityQuestionairesForm from "./pages/nested-pages/PublicityQuestionai
 import ProductionQuestionnaireForm from "./pages/nested-pages/production-questionnaire-form/ProductionQuestionnaireForm";
 import ViewDeliveryNote from "./pages/delivery-notes/components/ViewDeliveryNote";
 import FinalCheckView from "./pages/final-check/components/FinalCheckView";
+import ContractAccount from "./pages/nested-pages/contract-accounts/ContractAccount";
 
 const App = () => (
   <Routes>
@@ -82,6 +83,7 @@ const App = () => (
     <Route path="/these-invoices-CN" element={<TheseInvoicesCN />} />
     <Route path="/view-delivery-note" element={<ViewDeliveryNote />} />
     <Route path="/view-final-check" element={<FinalCheckView />} />
+    <Route path="/account-details" element={<ContractAccount />} />
 
 
 

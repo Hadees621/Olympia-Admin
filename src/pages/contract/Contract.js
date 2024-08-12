@@ -1,18 +1,18 @@
-import React, { useState } from "react";
 import Plus from "utils/icons/Plus";
 import Button from "components/Button";
+import ReactDOM from 'react-dom/client';
+import React, { useState } from "react";
 import Modal from "components/modals/Modal";
 import SelectField from "components/SelectField";
 import SearchField from "pages/home/components/SearchField";
 import BookDetailsTable from "./components/BookDetailsTable";
+import { authorInfo, contractInfoLeft, contractInfoRight } from "./utils/utils";
 import ContractInformationDisplay from "./components/ContractInformationDisplay";
 import ContractInformationEditable from "./components/ContractInformationEditable";
-import { authorInfo, contractInfoLeft, contractInfoRight } from "./utils/utils";
-import ReactDOM from 'react-dom/client';
 
 const Contract = () => {
-  const [selectedValues, setSelectedValues] = useState(["", ""]);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedValues, setSelectedValues] = useState(["", ""]);
 
   const openModal = () => {
     setIsModalVisible(true);
@@ -100,7 +100,7 @@ const Contract = () => {
           />
         ))}
         <Button title="Search" />
-        <Button title="Contract Accounts" />
+        <Button title="Contract Accounts" href="/account-details" />
         <Button title="Author Data Sheet" onClick={openWindow} />
 
         <Button title="Edit" onClick={openModal} />
