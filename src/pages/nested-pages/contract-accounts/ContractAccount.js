@@ -117,7 +117,6 @@ const ContractAccount = () => {
                 </div>
             </div>
         </div>
-
     )
 }
 
