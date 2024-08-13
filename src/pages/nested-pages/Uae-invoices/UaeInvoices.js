@@ -10,8 +10,8 @@ const UaeInvoices = () => {
     const [activeTab, setActiveTab] = useState("AllUAEInvoices");
 
     return (
-        <div className="w-full text-start items-center m-3">
-            <p className="text-3xl font-semibold my-8 ml-4">
+        <div className="w-full text-start items-center m-4">
+            <p className="text-3xl font-semibold my-8 ml-">
                 UAE Invoices
             </p>
 
