@@ -1,10 +1,10 @@
 import Button from 'components/Button';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
-import { inputFields } from './utils/utls';
 import useSidebarStore from 'stores/States';
 import TableButton from 'components/TableButton';
 import SelectField from 'components/SelectField';
+import { inputFields, lastTable } from './utils/utls';
 import InputWithLabel from 'components/InputWithLabel';
 import SearchField from 'pages/home/components/SearchField';
 import EditableTextInput from 'components/EditableTextInput';
@@ -48,7 +48,7 @@ const data = [
     },
 ];
 
-const ContractAccount = ({ onSave }) => {
+const ContractAccount = () => {
     const { isOpen } = useSidebarStore();
     const [selectedRows, setSelectedRows] = useState([]);
 
@@ -81,7 +81,7 @@ const ContractAccount = ({ onSave }) => {
             </p>
 
             <div
-                className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"}`}
+                className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"}`}
             >
                 <div className="grid grid-cols-2 gap-4 shadow p-3">
                     <div className="space-y-3">
@@ -241,6 +241,210 @@ const ContractAccount = ({ onSave }) => {
                             ))}
                         </tbody>
                     </table>
+                </div>
+                <div className='mt-4'>
+                    <div className="flex items-center justify-between my-4 gap-3">
+                        <p className="text-2xl font-semibold my-4">
+                            Royalties Information
+                        </p>
+                        <Button title="Royalty Statement for Author" />
+                    </div>
+                    <div className="overflow-x-auto shadow-md transition-all duration-300">
+                        <table className="w-full text-sm text-left max-h-[500px]">
+                            <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
+                                <tr className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap">
+                                    <th className="px-6 py-3 border">View</th>
+                                    <th className="px-6 py-3 border">Email Statement</th>
+                                    <th className="px-6 py-3 border">	Duration</th>
+                                    <th className="px-6 py-3 border">	Issue Date</th>
+                                    <th className="px-6 py-3 border">Royalties Amount</th>
+                                    <th className="px-6 py-3 border">Broughtforward Amount</th>
+                                    <th className="px-6 py-3 border">Total Amount</th>
+                                    <th className="px-6 py-3 border">Issued</th>
+                                    <th className="px-6 py-3 border min-w-[180px]">Status</th>
+                                    <th className="px-6 py-3 border">Payment Date</th>
+                                    <th className="px-6 py-3 border">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {data.map((row, index) => (
+                                    <tr
+                                        key={index}
+                                        className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap ${isRowSelected(index) ? "bg-gray-100" : ""
+                                            }`}
+                                    >
+                                        <td className="px-6 py-4 border">
+                                            <TableButton title={"View"} />
+                                        </td>
+                                        <td className="px-6 py-4 border">
+                                            <TableButton title={"Send Email"} />
+                                        </td>
+                                        <td className="px-6 py-4 border">{row.invoiceNo}</td>
+                                        <td className="px-6 py-4 border">{row.cnNo}</td>
+                                        <td className="px-6 py-4 border">{row.date}</td>
+                                        <td className="px-6 py-4 border">{row.amount}</td>
+                                        <td className="px-6 py-4 border">{row.dueDate}</td>
+                                        <td className="px-6 py-4 border">{row.paymentDate}</td>
+                                        <td className="px-6 py-4 border ">
+                                            <SelectField />
+                                        </td>
+                                        <td className="px-6 py-4 border">{row.paymentMode}</td>
+                                        <td className="px-6 py-4 border">
+                                            <TableButton title="Delete" bg="bg-red-600" hover='hover:bg-red-700' text="text-white" />
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div className='mt-8'>
+                    <p className="text-2xl font-semibold my-4">
+                        Installments Details
+                    </p>
+                    <div className="flex items-center justify-end my-4 gap-3">
+                        <div className='w-[45%] flex gap-3 items-center'>
+                            <p className="text-md font-semibold text-gray-500"> Payment Method : </p>
+                            <SelectField />
+                            <Button title="Add New Installment" />
+                        </div>
+                    </div>
+                    <div className="overflow-x-auto shadow-md transition-all duration-300">
+                        <table className="w-full text-sm text-left max-h-[500px]">
+                            <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
+                                <tr className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap">
+                                    <th className="px-6 py-3 border">Installments</th>
+                                    <th className="px-6 py-3 border">Due Date</th>
+                                    <th className="px-6 py-3 border">Invoice Number</th>
+                                    <th className="px-6 py-3 border">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {data.map((row, index) => (
+                                    <tr
+                                        key={index}
+                                        className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap ${isRowSelected(index) ? "bg-gray-100" : ""
+                                            }`}
+                                    >
+                                        <td className="px-6 py-4 border flex items-center gap-4">
+                                            <span> £ </span>   <SearchField background={"bg-white"} />
+                                        </td>
+                                        <td className="px-6 py-4 border ">
+                                            <SearchField background={"bg-white"} />
+                                        </td>
+                                        <td className="px-6 py-4 border">
+                                            <SearchField background={"bg-white"} />
+                                        </td>
+                                        <td className="px-6 py-4 border">
+                                            <TableButton title="Delete" bg="bg-red-600" hover='hover:bg-red-700' text="text-white" />
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div className='mt-8'>
+                    <div className="overflow-x-auto shadow-md transition-all duration-300">
+                        <table className="w-full text-sm text-left max-h-[500px]">
+                            <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
+                                <tr className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap">
+                                    <th className="px-6 py-3">
+                                    </th>
+                                    <th className="px-6 py-3 border">Invoice No.</th>
+                                    <th className="px-6 py-3 border">Invoice Date</th>
+                                    <th className="px-6 py-3 border">C/N No.</th>
+                                    <th className="px-6 py-3 border">C/N Date</th>
+                                    <th className="px-6 py-3 border">Client</th>
+                                    <th className="px-6 py-3 border">Quantity</th>
+                                    <th className="px-6 py-3 border">NET</th>
+                                    <th className="px-6 py-3 border">VAT</th>
+                                    <th className="px-6 py-3 border">Total Amount</th>
+                                    <th className="px-6 py-3 border">Amount Paid</th>
+                                    <th className="px-6 py-3 border">Date Paid</th>
+                                    <th className="px-6 py-3 border">H/F Sale</th>
+                                    <th className="px-6 py-3 border">Royalty</th>
+                                    <th className="px-6 py-3 border">Sale Type</th>
+                                    <th className="px-6 py-3 border">Royalties</th>
+                                    <th className="px-6 py-3 border">Royalty Amount</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {lastTable.map((row, index) => (
+                                    <tr
+                                        key={index}
+                                        className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap ${isRowSelected(index) ? "bg-gray-100" : ""
+                                            }`}
+                                    >
+                                        <td className="px-6 py-4 border">
+                                            <input
+                                                type="radio"
+                                                name="selectRow"
+                                                onChange={() => handleSelectRow(index)}
+                                                checked={isRowSelected(index)}
+                                            />
+                                        </td>
+                                        <td className="px-6 py-4 border">{row.invoiceNo}</td>
+                                        <td className="px-6 py-4 border">{row.invoiceDate}</td>
+                                        <td className="px-6 py-4 border">{row.cnNo}</td>
+                                        <td className="px-6 py-4 border">{row.cnDate}</td>
+                                        <td className="px-6 py-4 border">{row.client}</td>
+                                        <td className="px-6 py-4 border">{row.quantity}</td>
+                                        <td className="px-6 py-4 border">{row.net}</td>
+                                        <td className="px-6 py-4 border">{row.vat}</td>
+                                        <td className="px-6 py-4 border">{row.totalAmount}</td>
+                                        <td className="px-6 py-4 border">{row.amountPaid}</td>
+                                        <td className="px-6 py-4 border">{row.datePaid}</td>
+                                        <td className="px-6 py-4 border">{row.hfSale}</td>
+                                        <td className="px-6 py-4 border">{row.royalty}</td>
+                                        <td className="px-6 py-4 border">{row.saleType}</td>
+                                        <td className="px-6 py-4 border">{row.royalties}</td>
+                                        <td className="px-6 py-4 border">{row.royaltyAmount}</td>
+                                    </tr>
+                                ))}
+
+
+                                {/* {lastTable.map((row, index) => (
+                                    <tr
+                                        key={index}
+                                        className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap ${isRowSelected(index) ? "bg-gray-100" : ""
+                                            }`}
+                                    >
+                                        <td className="px-6 py-4 border">
+                                            <input
+                                                type="radio"
+                                                name="selectRow"
+                                                onChange={() => handleSelectRow(index)}
+                                                checked={isRowSelected(index)}
+                                            />
+                                        </td>
+
+                                        <td className="px-6 py-4 border">{row.invoiceNo}</td>
+                                        <td className="px-6 py-4 border">{row.cnNo}</td>
+                                        <td className="px-6 py-4 border">{row.cnNo}</td>
+
+                                        <td className="px-6 py-4 border">{row.date}</td>
+                                        <td className="px-6 py-4 border">{row.amount}</td>
+                                        <td className="px-6 py-4 border">{row.total}</td>
+                                        <td className="px-4 py-4 w-[180px]">
+                                            <SearchField background='bg-white' />
+                                        </td>
+                                        <td className="px-4 py-4 flex border-l items-center gap-2 w-[180px]">
+                                            <SearchField background='bg-white' />  <span> AED </span>
+                                        </td>
+                                        <td className="px-6 py-4 border items-center">
+                                            <div className='flex w-[200px] gap-2'>
+                                                <SelectField />
+                                                <TableButton title={"Edit List"} />
+                                            </div>
+                                        </td>
+                                        <td className="px-6 py-4 border">{row.paymentMode}</td>
+                                    </tr>
+                                ))} */}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
