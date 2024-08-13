@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "components/Button";
 import { invoicesData } from "../utils/utils";
+import Pagination from "components/Pagination";
 import SelectField from "components/SelectField";
 import SearchField from "pages/home/components/SearchField";
 
@@ -19,6 +20,7 @@ const AllContractsInvoicesTab = () => {
                 <p>Total Records: 2589</p>
             </div>
 
+            <Pagination num={14} />
             <div className="overflow-x-auto shadow-md transition-all duration-300">
                 <table className="w-full text-sm text-left max-h-[500px]">
                     <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">

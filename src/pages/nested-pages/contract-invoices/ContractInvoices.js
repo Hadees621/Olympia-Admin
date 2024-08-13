@@ -2,14 +2,17 @@ import Xero from "./components/Xero";
 import React, { useState } from "react";
 import useSidebarStore from "stores/States";
 import AllPending from "./components/AllPending";
-import { booksData } from "pages/production/utils/utils";
 import AllContractsTab from "./components/AllContractsTab";
-import ProductionTable from "pages/production/components/ProductionTable";
+import AllPaidInvoices from "./components/AllPaidInvoices";
+import AllUnpaidInvoices from "./components/AllUnpaidInvoices";
+import AllOverdueInvoices from "./components/AllOverdueInvoices";
 import AllContractsInvoicesTab from "./components/AllContractsInvoicesTab";
+import Button from "components/Button";
+import AllInvoices from "./components/AllInvoices";
 
 const tabs = [
     {
-        name: "All Contracts (Not Invoices)",
+        name: "All Contracts (Not Invoiced)",
         component: AllContractsTab,
         key: "AllContracts(NotInvoices)",
     },
@@ -17,43 +20,36 @@ const tabs = [
         name: "All Contracts",
         component: AllContractsInvoicesTab,
         key: "AllContracts",
-
+    },
+    {
+        name: "All Invoices",
+        component: AllInvoices,
+        key: "AllInvoices",
     },
     {
         name: "Xero All Invoices",
         component: Xero,
-        key: "Xero All Invoices",
-        data: booksData,
+        key: "XeroAllInvoices",
     },
     {
         name: "All Pending Invoices",
         component: AllPending,
         key: "AllPendingInvoices",
-        data: booksData,
-    },
-    {
-        name: "All Invoices",
-        component: ProductionTable,
-        key: "All Invoices",
-        data: booksData,
     },
     {
         name: "All Paid Invoices",
-        component: ProductionTable,
+        component: AllPaidInvoices,
         key: "AllPaidInvoices",
-        data: booksData,
     },
     {
         name: "All Unpaid Invoices",
-        component: ProductionTable,
+        component: AllUnpaidInvoices,
         key: "AllUnpaidInvoices",
-        data: booksData,
     },
     {
         name: "All Overdue Invoices",
-        component: ProductionTable,
+        component: AllOverdueInvoices,
         key: "AllOverdueInvoices",
-        data: booksData,
     },
 ];
 
@@ -69,6 +65,9 @@ const ContractInvoices = () => {
             <p className="text-3xl font-semibold mt-8">
                 Contract Invoices
             </p>
+            <div className="flex items-center justify-end my-4 gap-3">
+                <Button title="Create Contract New Invoice" bg="bg-green-600" hover="hover:bg-green-700" text={"text-white"} />
+            </div>
 
             <div className="mb-4 justify-center flex pt-10">
                 <ul

@@ -68,6 +68,11 @@ const AllPending = () => {
     return (
         <div className="w-full text-start items-center">
 
+            <div className="mb-3 w-full mx-2 font-semibold text-lg">
+                <p>Total Records: 2589</p>
+            </div>
+
+
             <div className="flex gap-2 justify-start mt-8 items-center w-full">
                 <SearchField placeholder="Invoice Number" />
                 <Button title="Search" />
@@ -134,7 +139,7 @@ const AllPending = () => {
                                         <SearchField background='bg-white' />
                                     </td>
                                     <td className="px-4 py-4 flex border-l items-center gap-2 w-[180px]">
-                                        <SearchField background='bg-white' />  <span> AED </span>
+                                        <SearchField background='bg-white' />  <span> £ </span>
                                     </td>
                                     <td className="px-6 py-4 border items-center">
                                         <div className='flex w-[200px] gap-2'>

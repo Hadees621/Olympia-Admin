@@ -1,9 +1,10 @@
+import Button from 'components/Button';
 import React, { useState } from 'react'
 import useSidebarStore from 'stores/States';
+import Pagination from 'components/Pagination';
+import TableButton from 'components/TableButton';
 import SelectField from 'components/SelectField';
 import SearchField from 'pages/home/components/SearchField';
-import TableButton from 'components/TableButton';
-import Button from 'components/Button';
 import InvoiceSummary from '../../Uae-invoices/components/InvoiceSummary';
 
 const data = [
@@ -44,7 +45,7 @@ const data = [
     },
 ];
 
-const Xero = () => {
+const AllInvoices = () => {
     const { isOpen } = useSidebarStore();
     const [selectedRows, setSelectedRows] = useState([]);
 
@@ -68,6 +69,11 @@ const Xero = () => {
     return (
         <div className="w-full text-start items-center">
 
+            <div className="mb-3 w-full mx-2 font-semibold text-lg">
+                <p>Total Records: 2589</p>
+            </div>
+
+
             <div className="flex gap-2 justify-start mt-8 items-center w-full">
                 <SearchField placeholder="Invoice Number" />
                 <Button title="Search" />
@@ -78,9 +84,16 @@ const Xero = () => {
                 <Button title="Search" />
                 <Button title="CSV" />
             </div>
+            <div className="flex items-center justify-end mt-4 gap-3 my-3">
+                <Button title="View Invoice" />
+                <Button title="Create C/N" />
+                <Button title="View Invoice" />
+            </div>
             <div className="flex items-center justify-end my-4 gap-3">
                 <Button title="Send Selected Invoices" />
             </div>
+
+            <Pagination num={12} />
             <div
                 className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"}`}
             >
@@ -108,9 +121,6 @@ const Xero = () => {
                                 <th className="px-6 py-3 border">Contract Amount</th>
                                 <th className="px-6 py-3 border"></th>
                                 <th className="px-6 py-3 border">Email</th>
-                                <th className="px-6 py-3 border">Contract Amount</th>
-                                <th className="px-6 py-3 border">Email status</th>
-                                <th className="px-6 py-3 border">Xero paid</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -120,7 +130,6 @@ const Xero = () => {
                                     className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap ${isRowSelected(index) ? "bg-gray-100" : ""
                                         }`}
                                 >
-
                                     <td className="px-6 py-4 border">
                                         <input
                                             type="checkbox"
@@ -131,7 +140,6 @@ const Xero = () => {
                                     <td className="px-6 py-4 border">{row.invoiceNo}</td>
                                     <td className="px-6 py-4 border">{row.cnNo}</td>
                                     <td className="px-6 py-4 border">{row.cnNo}</td>
-
                                     <td className="px-6 py-4 border">{row.date}</td>
                                     <td className="px-6 py-4 border">{row.amount}</td>
                                     <td className="px-6 py-4 border">{row.total}</td>
@@ -147,9 +155,6 @@ const Xero = () => {
                                             <TableButton title={"Edit List"} />
                                         </div>
                                     </td>
-                                    <td className="px-6 py-4 border">{row.paymentMode}</td>
-                                    <td className="px-6 py-4 border">{row.paymentMode}</td>
-                                    <td className="px-6 py-4 border">{row.paymentMode}</td>
                                     <td className="px-6 py-4 border">{row.paymentMode}</td>
                                     <td className="px-6 py-4 border">{row.paymentMode}</td>
                                 </tr>
@@ -168,4 +173,4 @@ const Xero = () => {
     )
 }
 
-export default Xero
+export default AllInvoices
