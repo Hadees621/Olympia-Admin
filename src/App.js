@@ -26,11 +26,14 @@ import DeliveryNotes from "./pages/delivery-notes/Delivery-Notes";
 import IsbnSearch from "./pages/nested-pages/isbn-search/IsbnSearch";
 import PublishedBooks from "./pages/published-books/PublishedBooks";
 import AddRecord from "./pages/nested-pages/add-record-home/AddRecord";
+import NotInvoiced from "./pages/nested-pages/not-invoiced/NotInvoiced";
+import UaeInvoices from "./pages/nested-pages/Uae-invoices/UaeInvoices";
 import FinalCheckView from "./pages/final-check/components/FinalCheckView";
 import AllPurchases from "./pages/nested-pages/all-purchases/AllPurchases";
 import ViewDeliveryNote from "./pages/delivery-notes/components/ViewDeliveryNote";
 import ReadyForPublication from "./pages/ready-for-publication/ReadyForPublication";
 import ContractAccount from "./pages/nested-pages/contract-accounts/ContractAccount";
+import ContractInvoices from "./pages/nested-pages/contract-invoices/ContractInvoices";
 import PendingPurchases from "./pages/nested-pages/pending-purchases/PendingPurchases";
 import OlympiaWebsitesPortal from "./pages/olympia-websites-portal/OlympiaWebsitesPortal";
 import TheseInvoicesCN from "./pages/nested-pages/book-these-Invoices-CN/TheseInvoicesCN";
@@ -84,6 +87,10 @@ const App = () => (
     <Route path="/view-delivery-note" element={<ViewDeliveryNote />} />
     <Route path="/view-final-check" element={<FinalCheckView />} />
     <Route path="/account-details" element={<ContractAccount />} />
+    <Route path="/contract-invoices" element={<ContractInvoices />} />
+    <Route path="/uae-invoices" element={<UaeInvoices />} />
+    <Route path="/not-invoiced" element={<NotInvoiced />} />
+
 
 
 
