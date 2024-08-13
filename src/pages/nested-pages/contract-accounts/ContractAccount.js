@@ -83,7 +83,7 @@ const ContractAccount = ({ onSave }) => {
             <div
                 className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"}`}
             >
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4 shadow p-3">
                     <div className="space-y-3">
                         {inputFields.map((field, index) => (
                             <InputWithLabel
@@ -149,7 +149,7 @@ const ContractAccount = ({ onSave }) => {
                         </div>
                     </div>
                 </div>
-                <div className="grid gap-4">
+                <div className="grid gap-4 mt-4">
                     <h2 className="text-2xl font-bold mb-4">Contract Information</h2>
                     <div className="mb-6 grid grid-cols-2 shadow">
                         <div className="p-4 space-y-4">
