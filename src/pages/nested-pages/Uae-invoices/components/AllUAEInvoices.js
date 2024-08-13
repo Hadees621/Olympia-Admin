@@ -49,14 +49,14 @@ const AllUAEInvoices = () => {
     const [selectedRow, setSelectedRow] = useState(null);
 
     const handleSelectRow = (index) => {
-        setSelectedRow(index); // Only one row can be selected
+        setSelectedRow(index);
     };
 
     const isRowSelected = (index) => selectedRow === index;
     return (
-        <div className="w-full text-start items-center m-">
+        <div className="w-full text-start items-center">
 
-            <div className="flex gap-2 justify-start mt-3 items-center w-full px-4">
+            <div className="flex gap-2 justify-start mt-3 items-center w-full">
                 <SearchField placeholder="Invoice Number" />
                 <Button title="Search" />
                 <p className="text-md font-semibold text-gray-500">From:</p>
@@ -66,7 +66,7 @@ const AllUAEInvoices = () => {
                 <Button title="Search" />
                 <Button title="CSV" />
             </div>
-            <div className="flex items-center mt-8 gap-3 m-4">
+            <div className="flex items-center mt-8 gap-3 my-3">
                 <SearchField placeholder="Book Title" />
                 <SearchField placeholder="Pen name/Author name" />
                 <Button title="View Invoice" />

@@ -66,9 +66,9 @@ const AllUAEPendingInvoices = () => {
 
   const isRowSelected = (index) => selectedRows.includes(index);
   return (
-    <div className="w-full text-start items-center m-">
+    <div className="w-full text-start items-center">
 
-      <div className="flex gap-2 justify-start mt-3 items-center w-full px4">
+      <div className="flex gap-2 justify-start mt-3 items-center w-full">
         <SearchField placeholder="Invoice Number" />
         <Button title="Search" />
         <p className="text-md font-semibold text-gray-500">From:</p>
