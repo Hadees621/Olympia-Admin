@@ -1,9 +1,11 @@
+import Xero from "./components/Xero";
 import React, { useState } from "react";
 import useSidebarStore from "stores/States";
+import AllPending from "./components/AllPending";
 import { booksData } from "pages/production/utils/utils";
+import AllContractsTab from "./components/AllContractsTab";
 import ProductionTable from "pages/production/components/ProductionTable";
 import AllContractsInvoicesTab from "./components/AllContractsInvoicesTab";
-import AllContractsTab from "./components/AllContractsTab";
 
 const tabs = [
     {
@@ -19,13 +21,13 @@ const tabs = [
     },
     {
         name: "Xero All Invoices",
-        component: ProductionTable,
+        component: Xero,
         key: "Xero All Invoices",
         data: booksData,
     },
     {
         name: "All Pending Invoices",
-        component: ProductionTable,
+        component: AllPending,
         key: "AllPendingInvoices",
         data: booksData,
     },
@@ -94,7 +96,6 @@ const ContractInvoices = () => {
                     ))}
                 </ul>
             </div>
-
             <div id="default-styled-tab-content" className="w-full">
                 {tabs.map((tab) => (
                     <div key={tab.key} className={` ${activeTab === tab.key ? "block" : "hidden"}`} id={tab.key} role="tabpanel" aria-labelledby={`${tab.key}-tab`}>
