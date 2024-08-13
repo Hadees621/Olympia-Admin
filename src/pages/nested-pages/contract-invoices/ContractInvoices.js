@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import useSidebarStore from "stores/States";
 import { booksData } from "pages/production/utils/utils";
-import AllContractsTab from "./components/AllContractsTab";
 import ProductionTable from "pages/production/components/ProductionTable";
+import AllContractsInvoicesTab from "./components/AllContractsInvoicesTab";
+import AllContractsTab from "./components/AllContractsTab";
 
 const tabs = [
     {
-        name: "All Contracts(Not Invoices)",
+        name: "All Contracts (Not Invoices)",
         component: AllContractsTab,
         key: "AllContracts(NotInvoices)",
-        data: booksData,
     },
     {
         name: "All Contracts",
-        component: ProductionTable,
+        component: AllContractsInvoicesTab,
         key: "AllContracts",
-        data: booksData,
+
     },
     {
         name: "Xero All Invoices",
@@ -55,7 +55,7 @@ const tabs = [
     },
 ];
 
-const ContractInvoices = ({ data, onSave }) => {
+const ContractInvoices = () => {
     const { isOpen } = useSidebarStore();
     const [activeTab, setActiveTab] = useState("AllContracts(NotInvoices)");
 

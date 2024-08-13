@@ -174,7 +174,8 @@ const ContractAccount = ({ onSave }) => {
                     </div>
                 </div>
                 <div className='my-4 flex gap-1 justify-end mt-10'>
-                    <Button title={"UAE Invoices"}  href='/uae-invoices'/>
+                    <Button title={"Invoices"} href='/contract-invoices' />
+                    <Button title={"UAE Invoices"} href='/uae-invoices' />
                     <Button title={"Create Author Advanced Payment Amount Summary"} />
                     <Button title={"Create Author Contract Payment Summary"} />
                     <Button title={"Create Contract New Invoice"} />
