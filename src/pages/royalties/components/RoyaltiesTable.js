@@ -32,11 +32,11 @@ const RoyaltiesTable = () => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "filename.txt"; 
+    link.download = "filename.txt";
     link.click();
     URL.revokeObjectURL(url);
   };
-  
+
   const openNewWindow = (rowData) => {
     const newWindow = window.open("", "_blank", "width=800,height=600");
 
