@@ -73,7 +73,6 @@ const AllInvoices = () => {
                 <p>Total Records: 2589</p>
             </div>
 
-
             <div className="flex gap-2 justify-start mt-8 items-center w-full">
                 <SearchField placeholder="Invoice Number" />
                 <Button title="Search" />
@@ -88,12 +87,11 @@ const AllInvoices = () => {
                 <Button title="View Invoice" />
                 <Button title="Create C/N" />
                 <Button title="View Invoice" />
-            </div>
-            <div className="flex items-center justify-end my-4 gap-3">
                 <Button title="Send Selected Invoices" />
             </div>
 
             <Pagination num={12} />
+
             <div
                 className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"}`}
             >
@@ -169,6 +167,7 @@ const AllInvoices = () => {
                     totalRemaining="AED 9,465.00"
                 />
             </div>
+
         </div >
     )
 }

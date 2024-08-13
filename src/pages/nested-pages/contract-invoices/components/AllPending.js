@@ -71,8 +71,6 @@ const AllPending = () => {
             <div className="mb-3 w-full mx-2 font-semibold text-lg">
                 <p>Total Records: 2589</p>
             </div>
-
-
             <div className="flex gap-2 justify-start mt-8 items-center w-full">
                 <SearchField placeholder="Invoice Number" />
                 <Button title="Search" />

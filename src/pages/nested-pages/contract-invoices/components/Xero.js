@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
+import Button from 'components/Button';
 import useSidebarStore from 'stores/States';
+import TableButton from 'components/TableButton';
 import SelectField from 'components/SelectField';
 import SearchField from 'pages/home/components/SearchField';
-import TableButton from 'components/TableButton';
-import Button from 'components/Button';
 import InvoiceSummary from '../../Uae-invoices/components/InvoiceSummary';
 
 const data = [
@@ -164,6 +164,7 @@ const Xero = () => {
                     totalRemaining="AED 9,465.00"
                 />
             </div>
+
         </div >
     )
 }
