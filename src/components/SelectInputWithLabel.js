@@ -17,9 +17,11 @@ const SelectInputWithLabel = ({
 }) => {
     return (
         <div className={`w-full ${width} ${flex ? "flex items-center gap-3" : ""}`}>
-            <div className={`${flex ? labelwidth : "w-full"}`}>
-                <p className="text-lg font-bold">{label}</p>
-            </div>
+            {label &&
+                <div className={`${flex ? labelwidth : "w-full"}`}>
+                    <p className="text-lg font-bold">{label}</p>
+                </div>
+            }
             <SelectField
                 placeholder={placeholder}
                 value={value}

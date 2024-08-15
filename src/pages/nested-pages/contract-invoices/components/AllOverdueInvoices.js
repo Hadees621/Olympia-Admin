@@ -1,7 +1,6 @@
 import Button from 'components/Button';
 import React, { useState } from 'react'
 import useSidebarStore from 'stores/States';
-import Pagination from 'components/Pagination';
 import TableButton from 'components/TableButton';
 import SelectField from 'components/SelectField';
 import SearchField from 'pages/home/components/SearchField';

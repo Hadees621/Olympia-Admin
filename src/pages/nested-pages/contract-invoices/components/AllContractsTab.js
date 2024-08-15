@@ -1,29 +1,13 @@
 import Button from "components/Button";
-import React, { useState } from "react";
-import Modal from "components/modals/Modal";
-import SelectField from "components/SelectField";
-import SearchField from "pages/home/components/SearchField";
-import EditorialNotes from "pages/editorial/components/EditorialNotes";
-import { AllContracts } from "../utils/utils";
-import Calculator from "utils/icons/Calculator";
+import React from "react";
 import Notepad from "utils/icons/Notepad";
 import Speaker from "utils/icons/Speaker";
-import TableButton from "components/TableButton";
+import { AllContracts } from "../utils/utils";
+import SelectField from "components/SelectField";
+import Calculator from "utils/icons/Calculator";
+import SearchField from "pages/home/components/SearchField";
 
-const AllContractsTab = ({ data, onSave }) => {
-    const [editingIndex, setEditingIndex] = useState(null);
-    const [editableData, setEditableData] = useState(data);
-    const [isModalVisible, setIsModalVisible] = useState(false);
-
-    const handleEditClick = (index) => {
-        setEditingIndex(index);
-    };
-
-    const handleSaveClick = () => {
-        setEditingIndex(null);
-        if (onSave) onSave(editableData);
-    };
-
+const AllContractsTab = () => {
     const getStatusClass = (status) => {
         switch (status) {
             case "Pending":
@@ -39,19 +23,6 @@ const AllContractsTab = ({ data, onSave }) => {
             default:
                 return "status-button";
         }
-    };
-
-    const handleCheckboxChange = (rowIndex, field) => {
-        const updatedData = [...editableData];
-        updatedData[rowIndex] = {
-            ...updatedData[rowIndex],
-            [field]: {
-                ...updatedData[rowIndex][field],
-                completed: !updatedData[rowIndex][field].completed,
-                date: !updatedData[rowIndex][field].completed ? new Date().toLocaleDateString() : ""
-            }
-        };
-        setEditableData(updatedData);
     };
 
     return (

@@ -11,7 +11,7 @@ const ContractAccount = () => {
     const { isOpen } = useSidebarStore();
     return (
         <div className="w-full text-start items-center m-3">
-            <p className="text-3xl font-semibold my-8 ml-">
+            <p className="text-3xl font-semibold my-8">
                 Contract Account Section
             </p>
 

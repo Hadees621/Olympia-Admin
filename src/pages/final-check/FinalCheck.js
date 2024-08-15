@@ -58,7 +58,7 @@ const FinalCheck = () => {
       className={`w-full text-start items-center ${!isOpen && "max-w-[1250px]"
         }`}
     >
-      <p className="text-3xl font-semibold mt-8 ml-8">Books (Final Check)</p>
+      <p className="text-3xl font-semibold mt-8 ml-4">Books (Final Check)</p>
       <div className="flex items-center mt-3 gap-3 m-4">
         <SearchField placeholder="Book Title" />
         <SearchField placeholder="Pen Name/Author Name" />

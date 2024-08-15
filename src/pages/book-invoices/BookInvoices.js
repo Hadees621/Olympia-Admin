@@ -22,11 +22,11 @@ const BookInvoices = () => {
     <div className="w-full text-start items-center m-4">
       {/* header */}
       <>
-        <p className="text-3xl font-semibold mt-8 ml-8">
+        <p className="text-3xl font-semibold mt-8">
           Welcome to Olympia Portal (olympia admin)
         </p>
 
-        <div className="flex gap-2 justify-start mt-8 items-center w-full px-4">
+        <div className="flex gap-2 justify-start mt-8 items-center w-full px-">
           <p className="text-md font-semibold text-gray-500">Pen Name:</p>
           {placeholders.map((placeholder, index) => (
             <SelectField
@@ -38,7 +38,7 @@ const BookInvoices = () => {
           ))}
           <Button title="Clear" />
         </div>
-        <div className="flex items-center mt-3 gap-3 m-4">
+        <div className="flex items-center mt-3 gap-3">
           <SearchField placeholder="Book Title" />
           <SearchField placeholder="Pen name/Author name" />
           <Button title="Search" />

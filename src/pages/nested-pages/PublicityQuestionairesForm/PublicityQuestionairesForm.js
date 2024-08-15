@@ -11,7 +11,7 @@ const PublicityQuestionnaireForm = () => {
   const handlePreviousStep = () => setCurrentStep(currentStep - 1);
 
   return (
-    <div className='w-full m-5'>
+    <div className='w-full'>
       <p className="text-3xl font-semibold mt-8 text-center">
         Author Questionnaire
       </p>

@@ -13,7 +13,6 @@ import BookInformationEditable from "./components/BookInformationEditable";
 
 const Book = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
-
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const openModal = () => {
@@ -36,7 +35,7 @@ const Book = () => {
     <div className="w-full text-start items-center">
       {/* header */}
       <>
-        <p className="text-3xl font-semibold mt-8 ml-8">
+        <p className="text-3xl font-semibold mt-8 ml-4">
           Welcome to Olympia Portal (olympia admin)
         </p>
         <div className="flex items-center mt-8 gap-3 m-4">

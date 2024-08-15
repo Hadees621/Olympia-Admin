@@ -2,8 +2,8 @@ import { data } from "./utils/utils";
 import Button from "components/Button";
 import React, { useState } from "react";
 import TableRow from "components/TableRow";
-import useSidebarStore from "stores/States";
 import Modal from "components/modals/Modal";
+import useSidebarStore from "stores/States";
 import SearchField from "../home/components/SearchField";
 import ScrollableTable from "./components/ScrollableTable";
 
@@ -17,7 +17,7 @@ const Purchases = () => {
   ];
 
   return (
-    <div className="w-full text-start items-center m-4">
+    <div className="w-full text-start items-center">
       {/* header */}
       <>
         <p className="text-3xl font-semibold mt-8 ml-4">
