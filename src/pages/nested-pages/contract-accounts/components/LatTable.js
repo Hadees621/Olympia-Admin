@@ -11,7 +11,7 @@ const LatTable = ({ data }) => {
     return (
         <div>
             <div className='mt-8'>
-                <div className="overflow-x-auto shadow-md transition-all duration-300">
+                <div className="overflow-x-auto shadow-md transition-all duration-300 custom-scrollbarw">
                     <table className="w-full text-sm text-left max-h-[500px]">
                         <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
                             <tr className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap">
@@ -33,15 +33,13 @@ const LatTable = ({ data }) => {
                                 <th className="px-6 py-3 border">Sale Type</th>
                                 <th className="px-6 py-3 border">Royalties</th>
                                 <th className="px-6 py-3 border">Royalty Amount</th>
-
                             </tr>
                         </thead>
                         <tbody>
-
                             {data.map((row, index) => (
                                 <tr
                                     key={index}
-                                    className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap ${isRowSelected(index) ? "bg-gray-100" : ""
+                                    className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap  ${isRowSelected(index) ? "bg-gray-100" : ""
                                         }`}
                                 >
                                     <td className="px-6 py-4 border">

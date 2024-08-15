@@ -13,7 +13,7 @@ const RoyaltiesInformation = ({ data }) => {
                     </p>
                     <Button title="Royalty Statement for Author" />
                 </div>
-                <div className="overflow-x-auto shadow-md transition-all duration-300">
+                <div className="overflow-x-auto shadow-md transition-all duration-300 custom-scrollbarw">
                     <table className="w-full text-sm text-left max-h-[500px]">
                         <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
                             <tr className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap">

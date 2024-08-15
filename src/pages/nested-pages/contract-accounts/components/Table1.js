@@ -42,8 +42,8 @@ const Table1 = ({ data }) => {
                     onClick={() => setModalIsOpen(true)}
                 />
             </div>
-            <div className="overflow-x-auto shadow-md transition-all duration-300">
-                <table className="w-full text-sm text-left max-h-[500px]">
+            <div className="overflow-x-auto shadow-md transition-all duration-300 custom-scrollbarw">
+                <table className="w-full text-sm text-left max-h-[500px] ">
                     <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
                         <tr className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap">
                             <th className="px-6 py-3 border space-x-4 flex items-center gap-3">
@@ -108,12 +108,9 @@ const Table1 = ({ data }) => {
             <Modal isVisible={isSummaryModalVisible} onClose={() => setIsSummaryModalVisible(false)} onSave={() => setIsSummaryModalVisible(false)} title="Contract Payment Sheet" saveButton={false} width='max-w-[140vh]'>
                 <ContractSummaryModal />
             </Modal>
-
             <Modal isVisible={isPaymentModalVisible} onClose={() => setIsPaymentModalVisible(false)} onSave={() => setIsPaymentModalVisible(false)} title="Author Contract Payment Summary" saveButton={false} width='max-w-[140vh]'>
                 <AuthorPaymentSummary />
             </Modal>
-
-
             <Modal
                 isVisible={modalIsOpen}
                 onClose={() => setModalIsOpen(false)}

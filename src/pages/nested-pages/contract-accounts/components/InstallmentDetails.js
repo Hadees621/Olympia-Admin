@@ -1,12 +1,16 @@
-import React from 'react'
 import Button from 'components/Button'
-import SelectField from 'components/SelectField'
+import React, { useState } from 'react'
+import Modal from 'components/modals/Modal'
 import TableButton from 'components/TableButton'
+import SelectField from 'components/SelectField'
+import InputWithLabel from 'components/InputWithLabel'
 import SearchField from 'pages/home/components/SearchField'
 
 const InstallmentDetails = ({ data }) => {
+    const [modalIsOpen, setModalIsOpen] = useState(false);
     return (
-        <div> <div className='mt-8'>
+
+        <div className='mt-8'>
             <p className="text-2xl font-semibold my-4">
                 Installments Details
             </p>
@@ -14,10 +18,10 @@ const InstallmentDetails = ({ data }) => {
                 <div className='w-[45%] flex gap-3 items-center'>
                     <p className="text-md font-semibold text-gray-500"> Payment Method : </p>
                     <SelectField />
-                    <Button title="Add New Installment" />
+                    <Button title="Add New Installment" onClick={() => setModalIsOpen(true)} />
                 </div>
             </div>
-            <div className="overflow-x-auto shadow-md transition-all duration-300">
+            <div className="overflow-x-auto shadow-md transition-all duration-300 custom-scrollbarw">
                 <table className="w-full text-sm text-left max-h-[500px]">
                     <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
                         <tr className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap">
@@ -50,7 +54,19 @@ const InstallmentDetails = ({ data }) => {
                     </tbody>
                 </table>
             </div>
-        </div></div>
+            <Modal
+                isVisible={modalIsOpen}
+                onClose={() => setModalIsOpen(false)}
+                contentLabel="Create New Invoice"
+                width='max-w-[70vh]'
+                saveButton={false}
+            >
+                <InputWithLabel label={"Number of Installments"} />
+                <div className='flex justify-end gap-4 mt-3'>
+                    <Button title={"Add New Instalment"} />
+                </div>
+            </Modal>
+        </div>
     )
 }
 
