@@ -1,23 +1,26 @@
-import React, { useState } from 'react'
 import Button from 'components/Button'
+import React, { useState } from 'react'
+import Modal from 'components/modals/Modal';
 import TableButton from 'components/TableButton'
-const Table1 = ({ data }) => {
+import ContractSummaryModal from './ContractSummaryModal';
 
+const Table1 = ({ data }) => {
     const [selectedRows, setSelectedRows] = useState([]);
+    const [isSummaryModalVisible, setIsSummaryModalVisible] = useState(false);
 
     const handleSelectAll = () => {
         if (selectedRows.length === data.length) {
-            setSelectedRows([]); // Deselect all if already selected
+            setSelectedRows([]);
         } else {
-            setSelectedRows(data.map((_, index) => index)); // Select all
+            setSelectedRows(data.map((_, index) => index));
         }
     };
 
     const handleSelectRow = (index) => {
         if (selectedRows.includes(index)) {
-            setSelectedRows(selectedRows.filter((i) => i !== index)); // Deselect row
+            setSelectedRows(selectedRows.filter((i) => i !== index));
         } else {
-            setSelectedRows([...selectedRows, index]); // Select row
+            setSelectedRows([...selectedRows, index]);
         }
     };
 
@@ -28,7 +31,7 @@ const Table1 = ({ data }) => {
             <div className='my-4 flex gap-1 justify-end mt-10'>
                 <Button title={"Invoices"} href='/contract-invoices' />
                 <Button title={"UAE Invoices"} href='/uae-invoices' />
-                <Button title={"Create Author Advanced Payment Amount Summary"} />
+                <Button title={"Create Author Advanced Payment Amount Summary"} onClick={() => setIsSummaryModalVisible(true)} />
                 <Button title={"Create Author Contract Payment Summary"} />
                 <Button title={"Create Contract New Invoice"} />
             </div>
@@ -94,6 +97,10 @@ const Table1 = ({ data }) => {
                     </tbody>
                 </table>
             </div>
+
+            <Modal isVisible={isSummaryModalVisible} onClose={() => setIsSummaryModalVisible(false)} onSave={() => setIsSummaryModalVisible(false)} title="Contract Payment Sheet" saveButton={false} width='max-w-[140vh]'>
+                <ContractSummaryModal />
+            </Modal>
         </div>
     )
 }

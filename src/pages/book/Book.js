@@ -13,7 +13,6 @@ import BookInformationEditable from "./components/BookInformationEditable";
 
 const Book = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
-
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const openModal = () => {

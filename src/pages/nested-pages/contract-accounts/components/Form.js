@@ -13,6 +13,7 @@ const Form = () => {
     const handleInputChange = (e) => {
         // Handle input change
     };
+
     return (
         <div>
             <div className="grid grid-cols-2 gap-4 shadow p-3">
@@ -105,7 +106,6 @@ const Form = () => {
                     </div>
                 </div>
             </div>
-            
         </div>
     )
 }
