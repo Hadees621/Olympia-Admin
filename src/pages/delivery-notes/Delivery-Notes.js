@@ -2,16 +2,16 @@ import React from "react";
 import Row from "./components/Row";
 import Button from "components/Button";
 import SelectField from "components/SelectField";
+import DatePickerField from "components/DatePickerField";
 import SearchField from "pages/home/components/SearchField";
 import Remaindered from "../editorial/components/Remaindered";
-import DatePickerField from "components/DatePickerField";
 
 const DeliveryNotes = () => {
   return (
     <div className="w-full text-start items-center m-4">
       {/* header */}
       <>
-        <p className="text-3xl font-semibold mt-8 ml-8">
+        <p className="text-3xl font-semibold mt-8">
           Welcome to Olympia Portal (olympia admin)
         </p>
         <div className="flex items-center mt-8 gap-3">

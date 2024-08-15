@@ -5,7 +5,7 @@ import EditableTextarea from 'components/EditableTextarea'
 
 const STEP2 = ({ next, prev }) => {
     return (
-        <div className='w-full m-5'>
+        <div className='w-full'>
             <div className="p-4 shadow-md w-full">
                 <div className="bg-[#F7F7F7] p-2">
                     <h2 className="text-lg font-bold p-3 mb-2">BOOK INFORMATION</h2>
