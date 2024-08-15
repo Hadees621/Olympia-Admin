@@ -1,12 +1,14 @@
 import Button from 'components/Button'
 import React, { useState } from 'react'
 import Modal from 'components/modals/Modal';
+import InvoiceCreator from './InvoiceCreator';
 import TableButton from 'components/TableButton'
 import AuthorPaymentSummary from './AuthorPaymentSummary';
 import ContractSummaryModal from './ContractSummaryModal';
 
 const Table1 = ({ data }) => {
     const [selectedRows, setSelectedRows] = useState([]);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
     const [isSummaryModalVisible, setIsSummaryModalVisible] = useState(false);
     const [isPaymentModalVisible, setIsPaymentModalVisible] = useState(false);
 
@@ -35,7 +37,10 @@ const Table1 = ({ data }) => {
                 <Button title={"UAE Invoices"} href='/uae-invoices' />
                 <Button title={"Create Author Advanced Payment Amount Summary"} onClick={() => setIsSummaryModalVisible(true)} />
                 <Button title={"Create Author Contract Payment Summary"} onClick={() => setIsPaymentModalVisible(true)} />
-                <Button title={"Create Contract New Invoice"} />
+                <Button
+                    title="Create Contract New Invoice"
+                    onClick={() => setModalIsOpen(true)}
+                />
             </div>
             <div className="overflow-x-auto shadow-md transition-all duration-300">
                 <table className="w-full text-sm text-left max-h-[500px]">
@@ -106,6 +111,16 @@ const Table1 = ({ data }) => {
 
             <Modal isVisible={isPaymentModalVisible} onClose={() => setIsPaymentModalVisible(false)} onSave={() => setIsPaymentModalVisible(false)} title="Author Contract Payment Summary" saveButton={false} width='max-w-[140vh]'>
                 <AuthorPaymentSummary />
+            </Modal>
+
+
+            <Modal
+                isVisible={modalIsOpen}
+                onClose={() => setModalIsOpen(false)}
+                contentLabel="Create New Invoice"
+                saveButton={false}
+            >
+                <InvoiceCreator />
             </Modal>
         </div>
     )
