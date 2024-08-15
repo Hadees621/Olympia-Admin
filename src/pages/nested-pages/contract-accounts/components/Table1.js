@@ -2,11 +2,13 @@ import Button from 'components/Button'
 import React, { useState } from 'react'
 import Modal from 'components/modals/Modal';
 import TableButton from 'components/TableButton'
+import AuthorPaymentSummary from './AuthorPaymentSummary';
 import ContractSummaryModal from './ContractSummaryModal';
 
 const Table1 = ({ data }) => {
     const [selectedRows, setSelectedRows] = useState([]);
     const [isSummaryModalVisible, setIsSummaryModalVisible] = useState(false);
+    const [isPaymentModalVisible, setIsPaymentModalVisible] = useState(false);
 
     const handleSelectAll = () => {
         if (selectedRows.length === data.length) {
@@ -32,7 +34,7 @@ const Table1 = ({ data }) => {
                 <Button title={"Invoices"} href='/contract-invoices' />
                 <Button title={"UAE Invoices"} href='/uae-invoices' />
                 <Button title={"Create Author Advanced Payment Amount Summary"} onClick={() => setIsSummaryModalVisible(true)} />
-                <Button title={"Create Author Contract Payment Summary"} />
+                <Button title={"Create Author Contract Payment Summary"} onClick={() => setIsPaymentModalVisible(true)} />
                 <Button title={"Create Contract New Invoice"} />
             </div>
             <div className="overflow-x-auto shadow-md transition-all duration-300">
@@ -100,6 +102,10 @@ const Table1 = ({ data }) => {
 
             <Modal isVisible={isSummaryModalVisible} onClose={() => setIsSummaryModalVisible(false)} onSave={() => setIsSummaryModalVisible(false)} title="Contract Payment Sheet" saveButton={false} width='max-w-[140vh]'>
                 <ContractSummaryModal />
+            </Modal>
+
+            <Modal isVisible={isPaymentModalVisible} onClose={() => setIsPaymentModalVisible(false)} onSave={() => setIsPaymentModalVisible(false)} title="Author Contract Payment Summary" saveButton={false} width='max-w-[140vh]'>
+                <AuthorPaymentSummary />
             </Modal>
         </div>
     )
