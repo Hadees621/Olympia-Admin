@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import Cross from 'utils/icons/Cross';
+import React, { useState } from 'react';
 
 const EditListModal = ({ isOpen, onClose, options, setOptions }) => {
     const [newOption, setNewOption] = useState('');
@@ -16,10 +16,16 @@ const EditListModal = ({ isOpen, onClose, options, setOptions }) => {
         setOptions(updatedOptions);
     };
 
+    const handleOverlayClick = (e) => {
+        if (e.target === e.currentTarget) {
+            onClose();
+        }
+    };
+
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-50">
+        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-50" onClick={handleOverlayClick}>
             <div className="bg-white rounded-lg p-6 w-full max-w-md ">
                 <h2 className="text-lg font-semibold mb-4">Edit Payment Detail List</h2>
                 <div className='max-h-[220px] overflow-auto px-5 custom-scrollbar'>
