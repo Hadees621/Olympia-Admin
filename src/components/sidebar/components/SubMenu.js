@@ -13,9 +13,8 @@ const SubMenu = ({ items, isOpen }) => {
           <NavLink
             key={index}
             to={item.to}
-            className={`flex items-center cursor-pointer font-semibold text-[14px] p-2.5 hover:text-[#001C4E] hover:bg-[#001C4E1F] ${
-              isActive ? "active-sidebarmenu" : ""
-            }`}
+            className={`flex items-center cursor-pointer font-semibold text-[14px] p-2.5 hover:text-[#001C4E] hover:bg-[#001C4E1F] ${isActive ? "text-[#001C4E] bg-[#001C4E1F]" : ""
+              }`}
           >
             {item.label}
           </NavLink>
@@ -26,3 +25,4 @@ const SubMenu = ({ items, isOpen }) => {
 };
 
 export default SubMenu;
+
