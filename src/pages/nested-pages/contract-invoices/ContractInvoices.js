@@ -1,14 +1,16 @@
 import Xero from "./components/Xero";
+import Button from "components/Button";
 import React, { useState } from "react";
 import useSidebarStore from "stores/States";
+import Modal from "components/modals/Modal";
 import AllPending from "./components/AllPending";
+import AllInvoices from "./components/AllInvoices";
 import AllContractsTab from "./components/AllContractsTab";
 import AllPaidInvoices from "./components/AllPaidInvoices";
 import AllUnpaidInvoices from "./components/AllUnpaidInvoices";
 import AllOverdueInvoices from "./components/AllOverdueInvoices";
 import AllContractsInvoicesTab from "./components/AllContractsInvoicesTab";
-import Button from "components/Button";
-import AllInvoices from "./components/AllInvoices";
+import InvoiceCreator from "../contract-accounts/components/InvoiceCreator";
 
 const tabs = [
     {
@@ -55,6 +57,7 @@ const tabs = [
 
 const ContractInvoices = () => {
     const { isOpen } = useSidebarStore();
+    const [modalIsOpen, setModalIsOpen] = useState(false);
     const [activeTab, setActiveTab] = useState("AllContracts(NotInvoices)");
 
     return (
@@ -66,7 +69,7 @@ const ContractInvoices = () => {
                 Contract Invoices
             </p>
             <div className="flex items-center justify-end my-4 gap-3">
-                <Button title="Create Contract New Invoice" bg="bg-green-600" hover="hover:bg-green-700" text={"text-white"} />
+                <Button title="Create Contract New Invoice" bg="bg-green-600" hover="hover:bg-green-700" text={"text-white"} onClick={() => setModalIsOpen(true)} />
             </div>
 
             <div className="mb-4 justify-center flex pt-10">
@@ -102,6 +105,15 @@ const ContractInvoices = () => {
                     </div>
                 ))}
             </div>
+
+            <Modal
+                isVisible={modalIsOpen}
+                onClose={() => setModalIsOpen(false)}
+                contentLabel="Create New Invoice"
+                saveButton={false}
+            >
+                <InvoiceCreator />
+            </Modal>
         </div>
     );
 };

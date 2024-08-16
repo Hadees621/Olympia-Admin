@@ -1,52 +1,54 @@
+import Button from 'components/Button';
 import React, { useState } from 'react'
 import useSidebarStore from 'stores/States';
-import SelectField from 'components/SelectField';
-import SearchField from 'pages/home/components/SearchField';
-import TableButton from 'components/TableButton';
-import Button from 'components/Button';
 import InvoiceSummary from './InvoiceSummary';
+import TableButton from 'components/TableButton';
+import SelectField from 'components/SelectField';
+import EditListModal from 'components/modals/EditListModal';
+import SearchField from 'pages/home/components/SearchField';
 
 const data = [
   {
     invoiceNo: 'INV001',
     client: 'Client A',
     date: '2024-08-01',
-    amount: '$1000',
+    amount: '1000',
     status: 'Paid',
   },
   {
     invoiceNo: 'INV002',
     client: 'Client B',
     date: '2024-08-02',
-    amount: '$2000',
+    amount: '2000',
     status: 'Pending',
   },
   {
     invoiceNo: 'INV003',
     client: 'Client C',
     date: '2024-08-03',
-    amount: '$1500',
+    amount: '1500',
     status: 'Paid',
   },
   {
     invoiceNo: 'INV004',
     client: 'Client D',
     date: '2024-08-04',
-    amount: '$500',
+    amount: '500',
     status: 'Overdue',
   },
   {
     invoiceNo: 'INV005',
     client: 'Client E',
     date: '2024-08-05',
-    amount: '$750',
+    amount: '750',
     status: 'Paid',
   },
 ];
-
 const AllUAEPendingInvoices = () => {
   const { isOpen } = useSidebarStore();
   const [selectedRows, setSelectedRows] = useState([]);
+  const [IsModalOpen, setIsModalOpen] = useState(false);
+  const [paymentOptions, setPaymentOptions] = useState(['Credit Card', 'Bank Transfer', 'PayPal']);
 
   const handleSelectAll = () => {
     if (selectedRows.length === data.length) {
@@ -127,7 +129,7 @@ const AllUAEPendingInvoices = () => {
                   <td className="px-6 py-4 border">{row.cnNo}</td>
 
                   <td className="px-6 py-4 border">{row.date}</td>
-                  <td className="px-6 py-4 border">{row.amount}</td>
+                  <td className="px-6 py-4 border"><span className='pr-2'>AED</span>{row.amount}</td>
                   <td className="px-6 py-4 border">{row.total}</td>
                   <td className="px-4 py-4 w-[180px]">
                     <SearchField background='bg-white' />
@@ -138,7 +140,7 @@ const AllUAEPendingInvoices = () => {
                   <td className="px-6 py-4 border items-center">
                     <div className='flex w-[200px] gap-2'>
                       <SelectField />
-                      <TableButton title={"Edit List"} />
+                      <TableButton title={"Edit List"} onClick={() => setIsModalOpen(true)} />
                     </div>
                   </td>
                   <td className="px-6 py-4 border">{row.paymentMode}</td>
@@ -157,6 +159,13 @@ const AllUAEPendingInvoices = () => {
           totalRevenue="AED 9,465.00"
           totalPaid="AED 0.00"
           totalRemaining="AED 9,465.00"
+        />
+
+        <EditListModal
+          isOpen={IsModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          options={paymentOptions}
+          setOptions={setPaymentOptions}
         />
       </div >
     </div >

@@ -1,11 +1,14 @@
 import Button from 'components/Button';
 import React, { useState } from 'react'
+import Modal from 'components/modals/Modal';
 import useSidebarStore from 'stores/States';
 import Pagination from 'components/Pagination';
 import TableButton from 'components/TableButton';
 import SelectField from 'components/SelectField';
+import EditListModal from 'components/modals/EditListModal';
 import SearchField from 'pages/home/components/SearchField';
 import InvoiceSummary from '../../Uae-invoices/components/InvoiceSummary';
+import InvoiceCreator from '../../contract-accounts/components/InvoiceCreator';
 
 const data = [
     {
@@ -48,6 +51,9 @@ const data = [
 const AllInvoices = () => {
     const { isOpen } = useSidebarStore();
     const [selectedRows, setSelectedRows] = useState([]);
+    const [IsModalOpen, setIsModalOpen] = useState(false);
+    const [paymentOptions, setPaymentOptions] = useState(['Credit Card', 'Bank Transfer', 'PayPal']);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const handleSelectAll = () => {
         if (selectedRows.length === data.length) {
@@ -66,11 +72,12 @@ const AllInvoices = () => {
     };
 
     const isRowSelected = (index) => selectedRows.includes(index);
+    const showActionButtons = selectedRows.length === 1 || selectedRows.length === data.length;
+
     return (
         <div className="w-full text-start items-center">
-
             <div className="mb-3 w-full mx-2 font-semibold text-lg">
-                <p>Total Records: 2589</p>
+                <p>Total Records: {data.length}</p>
             </div>
 
             <div className="flex gap-2 justify-start mt-8 items-center w-full">
@@ -83,12 +90,15 @@ const AllInvoices = () => {
                 <Button title="Search" />
                 <Button title="CSV" />
             </div>
-            <div className="flex items-center justify-end mt-4 gap-3 my-3">
-                <Button title="View Invoice" />
-                <Button title="Create C/N" />
-                <Button title="View Invoice" />
-                <Button title="Send Selected Invoices" />
-            </div>
+
+            {showActionButtons && (
+                <div className="flex items-center justify-end mt-4 gap-3 my-3">
+                    <Button title="View Invoice" onClick={() => setModalIsOpen(true)} />
+                    <Button title="Create C/N" onClick={() => setModalIsOpen(true)} />
+                    <Button title="View Invoice" onClick={() => setModalIsOpen(true)} />
+                    <Button title="Send Selected Invoices" />
+                </div>
+            )}
 
             <Pagination num={12} />
 
@@ -150,7 +160,7 @@ const AllInvoices = () => {
                                     <td className="px-6 py-4 border items-center">
                                         <div className='flex w-[200px] gap-2'>
                                             <SelectField />
-                                            <TableButton title={"Edit List"} />
+                                            <TableButton title={"Edit List"} onClick={() => setIsModalOpen(true)} />
                                         </div>
                                     </td>
                                     <td className="px-6 py-4 border">{row.paymentMode}</td>
@@ -162,13 +172,28 @@ const AllInvoices = () => {
                 </div>
                 <InvoiceSummary
                     totalInvoices={7}
-                    totalRevenue="AED 9,465.00"
-                    totalPaid="AED 0.00"
-                    totalRemaining="AED 9,465.00"
+                    totalRevenue="£ 9,465.00"
+                    totalPaid="£ 0.00"
+                    totalRemaining="£ 9,465.00"
                 />
             </div>
 
-        </div >
+            <EditListModal
+                isOpen={IsModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                options={paymentOptions}
+                setOptions={setPaymentOptions}
+            />
+
+            <Modal
+                isVisible={modalIsOpen}
+                onClose={() => setModalIsOpen(false)}
+                contentLabel="Create New Invoice"
+                saveButton={false}
+            >
+                <InvoiceCreator />
+            </Modal>
+        </div>
     )
 }
 

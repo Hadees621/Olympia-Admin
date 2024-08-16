@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import useSidebarStore from 'stores/States';
 import TableButton from 'components/TableButton';
 import SelectField from 'components/SelectField';
+import EditListModal from 'components/modals/EditListModal';
 import SearchField from 'pages/home/components/SearchField';
 import InvoiceSummary from '../../Uae-invoices/components/InvoiceSummary';
 
@@ -47,6 +48,8 @@ const data = [
 const AllPending = () => {
     const { isOpen } = useSidebarStore();
     const [selectedRows, setSelectedRows] = useState([]);
+    const [IsModalOpen, setIsModalOpen] = useState(false);
+    const [paymentOptions, setPaymentOptions] = useState(['Credit Card', 'Bank Transfer', 'PayPal']);
 
     const handleSelectAll = () => {
         if (selectedRows.length === data.length) {
@@ -142,7 +145,7 @@ const AllPending = () => {
                                     <td className="px-6 py-4 border items-center">
                                         <div className='flex w-[200px] gap-2'>
                                             <SelectField />
-                                            <TableButton title={"Edit List"} />
+                                            <TableButton title={"Edit List"} onClick={() => setIsModalOpen(true)} />
                                         </div>
                                     </td>
                                     <td className="px-6 py-4 border">{row.paymentMode}</td>
@@ -159,6 +162,13 @@ const AllPending = () => {
                     totalRemaining="AED 9,465.00"
                 />
             </div>
+
+            <EditListModal
+                isOpen={IsModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                options={paymentOptions}
+                setOptions={setPaymentOptions}
+            />
         </div >
     )
 }

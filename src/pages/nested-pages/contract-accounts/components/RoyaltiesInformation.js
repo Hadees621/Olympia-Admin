@@ -1,9 +1,13 @@
-import React from 'react'
 import Button from 'components/Button'
-import TableButton from 'components/TableButton'
+import React, { useState } from 'react'
+import Modal from 'components/modals/Modal'
 import SelectField from 'components/SelectField'
+import TableButton from 'components/TableButton'
+import RoyaltyStatementModal from './RoyaltyStatementModal'
 
 const RoyaltiesInformation = ({ data }) => {
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
     return (
         <div>
             <div className='mt-4'>
@@ -11,7 +15,7 @@ const RoyaltiesInformation = ({ data }) => {
                     <p className="text-2xl font-semibold my-4">
                         Royalties Information
                     </p>
-                    <Button title="Royalty Statement for Author" />
+                    <Button title="Royalty Statement for Author" onClick={() => setModalIsOpen(true)} />
                 </div>
                 <div className="overflow-x-auto shadow-md transition-all duration-300 custom-scrollbarw">
                     <table className="w-full text-sm text-left max-h-[500px]">
@@ -37,7 +41,7 @@ const RoyaltiesInformation = ({ data }) => {
                                     className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap`}
                                 >
                                     <td className="px-6 py-4 border">
-                                        <TableButton title={"View"} />
+                                        <TableButton title={"View"} onClick={() => setModalIsOpen(true)} />
                                     </td>
                                     <td className="px-6 py-4 border">
                                         <TableButton title={"Send Email"} />
@@ -61,6 +65,14 @@ const RoyaltiesInformation = ({ data }) => {
                     </table>
                 </div>
             </div>
+
+            <Modal
+                isVisible={modalIsOpen}
+                onClose={() => setModalIsOpen(false)}
+                saveButton={false}
+            >
+                <RoyaltyStatementModal />
+            </Modal>
         </div>
     )
 }
