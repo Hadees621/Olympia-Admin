@@ -48,6 +48,7 @@ const Table1 = ({ data }) => {
     };
 
     const isRowSelected = (index) => selectedRows.includes(index);
+    const showActionButtons = selectedRows.length === 1 || selectedRows.length === data.length;
 
     return (
         <div>
@@ -61,6 +62,16 @@ const Table1 = ({ data }) => {
                     onClick={() => setModalIsOpen(true)}
                 />
             </div>
+
+            {showActionButtons && (
+                <div className="flex items-center justify-end mt-4 gap-3 my-3">
+                    <Button title="View Invoice" onClick={() => setModalIsOpen(true)} />
+                    <Button title="Create C/N" onClick={() => setModalIsOpen(true)} />
+                    <Button title="View Invoice" onClick={() => setModalIsOpen(true)} />
+                    <Button title="Send Selected Invoices" />
+                </div>
+            )}
+
             <div className="overflow-x-auto shadow-md transition-all duration-300 custom-scrollbarw">
                 <table className="w-full text-sm text-left max-h-[500px]">
                     <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">

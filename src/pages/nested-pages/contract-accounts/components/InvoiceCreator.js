@@ -41,7 +41,7 @@ const InvoiceCreator = () => {
 
     return (
         <div className="p-6 font-sans">
-            <div className='flex justify-between'>
+            {/* <div className='flex justify-between'>
                 <div className="text-center mb-6">
                     <h2 className="text-2xl font-semibold">Invoice</h2>
                 </div>
@@ -62,23 +62,50 @@ const InvoiceCreator = () => {
                         <li><strong>VAT:</strong> 102471656</li>
                     </ul>
                 </div>
-            </div>
+            </div> */}
 
-            <div className="mb-6 flex gap-4">
-                <p className='font-bold'>To: </p>
-                <div>
-                    <p className=''> Mr. Martin Bulger</p>
-                    <p>Test2</p>
-                    <p>TES2</p>
-                    <p>Cambridge12</p>
-                    <p>Cam2</p>
-                    <p>United Kingdom</p>
-                    <p>CB1 4HG</p>
+            <div className='flex justify-between'>
+                <div className=''>
+                    <a href="/">
+                        <img
+                            src="/assets/logo.png"
+                            alt="logo"
+                            className="w-[190px] align-middle py-2"
+                        />
+                    </a>
+                    <h1>Ashwell Publishing LTD</h1>
+                    <p>T/A Olympia Publishers</p>
+                    <address>
+                        Tallis House<br />
+                        2 Tallis Street<br />
+                        London<br />
+                        EC4Y 0AB<br />
+                        UK
+                    </address>
+                    <ul>
+                        <li><strong>Tel:</strong> <a href="tel:+442037553166">0203 755 3166</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:accounts@olympiapublishers.com">accounts@olympiapublishers.com</a></li>
+                        <li><strong>VAT:</strong> 102471656</li>
+                    </ul>
+                </div>
+                <div className="mb-6 grid gap-4 items-center">
+                    <div className=''>
+                        <p className='font-bold'>To: </p>
+                        <p> Mr. Martin Bulger</p>
+                        <p>Test2</p>
+                        <p>TES2</p>
+                        <p>Cambridge12</p>
+                        <p>Cam2</p>
+                        <p>United Kingdom</p>
+                        <p>CB1 4HG</p>
+                    </div>
                 </div>
             </div>
 
+          
+
             {isEditing ? (
-                <div className="mb-6 border p-4">
+                <div className="mb-6 border p-4 mt-10">
                     <div className="grid grid-cols-2 gap-4">
                         <div>
                             <label>Invoice Date:</label>
@@ -167,7 +194,7 @@ const InvoiceCreator = () => {
                     </div>
                 </div>
             ) : (
-                <div className="mb-6 border p-4">
+                <div className="mb-6 border p-4 mt-10">
                     <p><strong>Invoice Date:</strong> {invoiceData.invoiceDate}</p>
                     <p><strong>Terms Days:</strong> {invoiceData.termsDays}</p>
                     <p><strong>Contract Invoice No:</strong> {invoiceData.contractInvoiceNo}</p>
