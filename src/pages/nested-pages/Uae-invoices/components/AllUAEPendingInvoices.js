@@ -12,39 +12,38 @@ const data = [
     invoiceNo: 'INV001',
     client: 'Client A',
     date: '2024-08-01',
-    amount: '$1000',
+    amount: '1000',
     status: 'Paid',
   },
   {
     invoiceNo: 'INV002',
     client: 'Client B',
     date: '2024-08-02',
-    amount: '$2000',
+    amount: '2000',
     status: 'Pending',
   },
   {
     invoiceNo: 'INV003',
     client: 'Client C',
     date: '2024-08-03',
-    amount: '$1500',
+    amount: '1500',
     status: 'Paid',
   },
   {
     invoiceNo: 'INV004',
     client: 'Client D',
     date: '2024-08-04',
-    amount: '$500',
+    amount: '500',
     status: 'Overdue',
   },
   {
     invoiceNo: 'INV005',
     client: 'Client E',
     date: '2024-08-05',
-    amount: '$750',
+    amount: '750',
     status: 'Paid',
   },
 ];
-
 const AllUAEPendingInvoices = () => {
   const { isOpen } = useSidebarStore();
   const [selectedRows, setSelectedRows] = useState([]);
@@ -130,7 +129,7 @@ const AllUAEPendingInvoices = () => {
                   <td className="px-6 py-4 border">{row.cnNo}</td>
 
                   <td className="px-6 py-4 border">{row.date}</td>
-                  <td className="px-6 py-4 border">{row.amount}</td>
+                  <td className="px-6 py-4 border"><span className='pr-2'>AED</span>{row.amount}</td>
                   <td className="px-6 py-4 border">{row.total}</td>
                   <td className="px-4 py-4 w-[180px]">
                     <SearchField background='bg-white' />
