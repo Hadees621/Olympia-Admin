@@ -2,10 +2,10 @@ import React from "react";
 import Home from "./pages/home/Home";
 import Book from "./pages/book/Book";
 import Posts from "./pages/posts/Posts";
+import Login from "./pages/login/Login";
 import Author from "./pages/author/Author";
 import Archive from "./pages/archive/Archive";
 import Reports from "./pages/reports/Reports";
-import { Route, Routes } from "react-router-dom";
 import Graphics from "./pages/graphics/Graphics";
 import Printers from "./pages/printers/Printers";
 import Contract from "./pages/contract/Contract";
@@ -19,6 +19,7 @@ import Production from "./pages/production/Production";
 import FinalCheck from "./pages/final-check/FinalCheck";
 import BookOrders from "./pages/book-orders/BookOrders";
 import Outworkers from "./pages/out-workers/Outworkers";
+import { Route, Routes, useLocation } from "react-router-dom";
 import CardPayments from "./pages/card-payments/CardPayments";
 import BookInvoices from "./pages/book-invoices/BookInvoices";
 import OtherClients from "./pages/other-clients/OtherClients";
@@ -41,59 +42,62 @@ import PublicityQuestionaires from "./pages/nested-pages/publicity-questionaires
 import PublicityQuestionairesForm from "./pages/nested-pages/PublicityQuestionairesForm/PublicityQuestionairesForm";
 import ProductionQuestionnaireForm from "./pages/nested-pages/production-questionnaire-form/ProductionQuestionnaireForm";
 
-const App = () => (
-  <Routes>
-    {/* tabs */}
+const App = () => {
+  const location = useLocation();
+
+  return (
     <>
-      <Route path="/" element={<Home />} />
-      <Route path="/contract" element={<Contract />} />
-      <Route path="/author" element={<Author />} />
-      <Route path="/book" element={<Book />} />
-      <Route path="/editorial" element={<Editorial />} />
-      <Route path="/publicity" element={<Publicity />} />
-      <Route path="/delivery-notes" element={<DeliveryNotes />} />
-      <Route path="/book-invoices" element={<BookInvoices />} />
-      <Route path="/book-orders" element={<BookOrders />} />
-      <Route path="/purchases" element={<Purchases />} />
-      <Route path="/bumblebee" element={<Bumblebee />} />
-      <Route path="/production" element={<Production />} />
-      <Route path="/final-check" element={<FinalCheck />} />
-      <Route path="/archive" element={<Archive />} />
-      <Route path="/royalties" element={<Royalties />} />
-      <Route path="/card-payments" element={<CardPayments />} />
-      <Route path="/outworkers" element={<Outworkers />} />
-      <Route path="/graphics" element={<Graphics />} />
-      <Route path="/bookshops" element={<Bookshops />} />
-      <Route path="/printers" element={<Printers />} />
-      <Route path="/posts" element={<Posts />} />
-      <Route path="/ready-for-publication" element={<ReadyForPublication />} />
-      <Route path="/other-clients" element={<OtherClients />} />
-      <Route path="/reports" element={<Reports />} />
-      <Route path="/published-books" element={<PublishedBooks />} />
-      <Route path="/olympia-websites-portal" element={<OlympiaWebsitesPortal />} />
+      <Routes>
+        {/* tabs */}
+        <>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/contract" element={<Contract />} />
+          <Route path="/author" element={<Author />} />
+          <Route path="/book" element={<Book />} />
+          <Route path="/editorial" element={<Editorial />} />
+          <Route path="/publicity" element={<Publicity />} />
+          <Route path="/delivery-notes" element={<DeliveryNotes />} />
+          <Route path="/book-invoices" element={<BookInvoices />} />
+          <Route path="/book-orders" element={<BookOrders />} />
+          <Route path="/purchases" element={<Purchases />} />
+          <Route path="/bumblebee" element={<Bumblebee />} />
+          <Route path="/production" element={<Production />} />
+          <Route path="/final-check" element={<FinalCheck />} />
+          <Route path="/archive" element={<Archive />} />
+          <Route path="/royalties" element={<Royalties />} />
+          <Route path="/card-payments" element={<CardPayments />} />
+          <Route path="/outworkers" element={<Outworkers />} />
+          <Route path="/graphics" element={<Graphics />} />
+          <Route path="/bookshops" element={<Bookshops />} />
+          <Route path="/printers" element={<Printers />} />
+          <Route path="/posts" element={<Posts />} />
+          <Route path="/ready-for-publication" element={<ReadyForPublication />} />
+          <Route path="/other-clients" element={<OtherClients />} />
+          <Route path="/reports" element={<Reports />} />
+          <Route path="/published-books" element={<PublishedBooks />} />
+          <Route path="/olympia-websites-portal" element={<OlympiaWebsitesPortal />} />
+        </>
+
+        {/* nested pages */}
+        <>
+          <Route path="/isbn-search" element={<IsbnSearch />} />
+          <Route path="/add-new-record" element={<AddRecord />} />
+          <Route path="/all-purchases" element={<AllPurchases />} />
+          <Route path="/pending-purchases" element={<PendingPurchases />} />
+          <Route path="/pending-production-questionnaires" element={<PendingQuestionaire />} />
+          <Route path="/pending-questionnaires-form" element={<ProductionQuestionnaireForm />} />
+          <Route path="/pending-publicity-questionnaire" element={<PublicityQuestionaires />} />
+          <Route path="/publicity-questionnaire-form" element={<PublicityQuestionairesForm />} />
+          <Route path="/these-invoices-CN" element={<TheseInvoicesCN />} />
+          <Route path="/view-delivery-note" element={<ViewDeliveryNote />} />
+          <Route path="/view-final-check" element={<FinalCheckView />} />
+          <Route path="/account-details" element={<ContractAccount />} />
+          <Route path="/contract-invoices" element={<ContractInvoices />} />
+          <Route path="/uae-invoices" element={<UaeInvoices />} />
+        </>
+      </Routes>
     </>
-
-    {/* nested pages */}
-    <Route path="/isbn-search" element={<IsbnSearch />} />
-    <Route path="/add-record-home" element={<AddRecord />} />
-    <Route path="/all-purchases" element={<AllPurchases />} />
-    <Route path="/pending-purchases" element={<PendingPurchases />} />
-    <Route path="/pending-production-questionnaires" element={<PendingQuestionaire />} />
-    <Route path="/pending-questionnaires-form" element={<ProductionQuestionnaireForm />} />
-    <Route path="/pending-publicity-questionnaire" element={<PublicityQuestionaires />} />
-    <Route path="/publicity-questionnaire-form" element={<PublicityQuestionairesForm />} />
-    <Route path="/these-invoices-CN" element={<TheseInvoicesCN />} />
-    <Route path="/view-delivery-note" element={<ViewDeliveryNote />} />
-    <Route path="/view-final-check" element={<FinalCheckView />} />
-    <Route path="/account-details" element={<ContractAccount />} />
-    <Route path="/contract-invoices" element={<ContractInvoices />} />
-    <Route path="/uae-invoices" element={<UaeInvoices />} />
-
-
-
-
-
-  </Routes>
-);
-
+  );
+};
 export default App;
