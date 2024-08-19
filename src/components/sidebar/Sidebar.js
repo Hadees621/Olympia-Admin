@@ -1,44 +1,44 @@
 import React from "react";
-import SidebarMenuItem from "./components/SidebarMenuItem";
-import { menuItems } from "./utils/utils";
 import Logo from "../Logo";
-import LogoutButton from "./components/LogoutButton";
-import Plus from "utils/icons/Plus";
-import Minus from "utils/icons/Minus";
+import { menuItems } from "./utils/utils";
 import useSidebarStore from "stores/States";
+import LogoutButton from "./components/LogoutButton";
+import SidebarMenuItem from "./components/SidebarMenuItem";
+import Hamburger from "utils/icons/Hamburger";
+import CloseCross from "utils/icons/CloseCross";
 
 const Sidebar = () => {
   const { isOpen, toggleSidebar } = useSidebarStore();
 
   return (
     <div
-      className={`transition-all duration-300 ${isOpen ? "w-[22%]" : "w-[4%]"}`}
+      className={`transition-all duration-300 ${isOpen ? "w-[25%]" : "w-[4%]"}`}
     >
       <div
-        className={`bg-[#EEEEEE] shadow text-[11px] rounded-b-2xl grid ${
-          isOpen ? "p-3" : "p-1"
-        } transition-all duration-300`}
+        className={`bg-[#EEEEEE] shadow rounded-b-2xl grid ${isOpen ? "py-1 px-2" : "h-full"
+          } transition-all duration-300`}
       >
-        <div className="flex items-center justify-between">
+        <div className="flex order border-blac">
           {isOpen ? (
             <Logo />
           ) : (
-            <div className="cursor-pointer" onClick={toggleSidebar}>
-              <Plus />
+            <div className="cursor-pointer w-full justify-center flex p-2" onClick={toggleSidebar}>
+              <Hamburger />
             </div>
           )}
-          <button
-            onClick={toggleSidebar}
-            className={`focus:outline-none cursor-pointer ${
-              isOpen ? "" : "hidden"
-            }`}
-          >
-            <Minus />
-          </button>
+          <div className="mt-4">
+            <button
+              onClick={toggleSidebar}
+              className={`focus:outline-none cursor-pointer ${isOpen ? "" : "hidden"
+                }`}
+            >
+              <CloseCross />
+            </button>
+          </div>
         </div>
         {isOpen && (
           <>
-            <div className="mt-5">
+            <div className="px-1">
               {menuItems.map((item, index) => (
                 <SidebarMenuItem
                   key={index}

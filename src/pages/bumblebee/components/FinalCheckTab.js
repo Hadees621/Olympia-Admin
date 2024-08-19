@@ -1,26 +1,11 @@
 import React from "react";
+import { getStatusClass } from "utils/utils";
 import TableButton from "components/TableButton";
 
-const getStatusClass = (status) => {
-  switch (status) {
-    case "Pending":
-      return "status-button status-pending";
-    case "Paid in Full":
-      return "status-button status-paid";
-    case "Hardback":
-      return "status-button status-hardback";
-    case "Traditional":
-      return "status-button status-traditional";
-    case "Paying":
-      return "status-button status-paying";
-    default:
-      return "status-button";
-  }
-};
 
 const FinalCheckTab = ({ data }) => {
   return (
-    <table className="min-w-full divide-y divide-gray-200">
+    <table className="min-w-full divide-y divide-gray-200 border">
       <thead className="bg-gray-50">
         <tr className="text-sm w-full font-medium text-gray-500 uppercase">
           <th className="p-3">Status</th>
@@ -33,11 +18,11 @@ const FinalCheckTab = ({ data }) => {
       </thead>
       <tbody className="bg-white divide-y divide-gray-200">
         {data.map((row, index) => (
-          <tr key={index} className="text-sm text-center font-bold">
+          <tr key={index} className="text-sm text-gray-700 text-center custom-hover-row font-bold whitespace-nowrap border">
             <td className="p-3 text-orange-400">{row.status}</td>
             <td className="p-3">{row.penName}</td>
             <td className="p-3">{row.bookTitle}</td>
-            <td className="p-3">{row.imprint}</td>
+            <td className="p-3">{row.daysActivated}</td>
             <td className="px-6 py-4 whitespace-nowrap">
               <span
                 className={`w-[90px] ${getStatusClass(
@@ -47,7 +32,7 @@ const FinalCheckTab = ({ data }) => {
                 £ {row.contractPaymentStatus}
               </span>
             </td>
-            <td className="px-6 py-4 ">
+            <td className="px-6 py-4">
               <TableButton title="Edit" />
             </td>
           </tr>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SearchField from 'pages/home/components/SearchField';
 import Button from './Button';
 
-const EditableTextInput = ({ label, name, value, onChange, bg = 'bg-white', display = true, placeholder, width = 'w-full', labelwidth = "w-[25%]", saveButton }) => {
+const EditableTextInput = ({ label, name, value, onChange, bg = 'bg-[#F7F7F7]', display = true, placeholder, width = 'w-full', labelwidth = "w-[25%]", saveButton }) => {
     const [editableContent, setEditableContent] = useState(value);
     const handleChange = (e) => {
         const newValue = e.target.value;

@@ -53,29 +53,29 @@ const EditableInvoice = ({ initialData, onSave }) => {
                     </div>
                     <div>
                         <SelectInputWithLabel label={"To:"} />
-                        <textarea className='w-full shadow' rows={4} />
+                        <textarea className='w-full shadow mt-3' rows={4} />
                     </div>
                 </div>
                 <div className='grid grid-cols-3 py-4 my-2'>
                     {/* Book Details */}
                     <div className="grid gap-4 pr-4">
-                        <InputWithLabel label={"Book Title: "} background='bg-white' />
-                        <InputWithLabel label={"Author: "} background='bg-white' value={invoiceData.author} onChange={handleChange} />
-                        <InputWithLabel label={"ISBN: "} background='bg-white' value={invoiceData.author} onChange={handleChange} />
+                        <InputWithLabel label={"Book Title: "} />
+                        <InputWithLabel label={"Author: "} value={invoiceData.author} onChange={handleChange} />
+                        <InputWithLabel label={"ISBN: "} value={invoiceData.author} onChange={handleChange} />
                     </div>
 
                     {/* Additional Details */}
                     <div className="grid gap-4 pr-4">
-                        <InputWithLabel label={"Invoice Number: "} background='bg-white' />
-                        <InputWithLabel label={"Reference: "} background='bg-white' />
-                        <SelectInputWithLabel label={"Sale Type:"} background='bg-white' edit={true} onClick={() => setIsModalOpen(true)} />
+                        <InputWithLabel label={"Invoice Number: "} />
+                        <InputWithLabel label={"Reference: "} />
+                        <SelectInputWithLabel label={"Sale Type:"} edit={true} onClick={() => setIsModalOpen(true)} />
                     </div>
 
                     {/* Sales and Payment Details */}
                     <div className="grid gap-4 items-end">
-                        <DatePickerWIthLabel label={"Invoice date: "} background='bg-white' />
-                        <DatePickerWIthLabel label={"Due date: "} background='bg-white' />
-                        <SelectInputWithLabel label={"H/F:"} background='bg-white' />
+                        <DatePickerWIthLabel label={"Invoice date: "} />
+                        <DatePickerWIthLabel label={"Due date: "} />
+                        <SelectInputWithLabel label={"H/F:"} />
                         <Button title={"Create Royalty Statement"} />
                     </div>
                 </div>
@@ -89,9 +89,9 @@ const EditableInvoice = ({ initialData, onSave }) => {
                         <p> 156X156MM (Square) </p>
                     </div>
                     <div className='flex gap-4 w-full'>
-                        <InputWithLabel label={"Price: "} background='bg-white' placeholder={"£"} />
-                        <InputWithLabel label={"Quantity: "} background='bg-white' />
-                        <InputWithLabel label={"Amount: "} background='bg-white' placeholder={"£"} />
+                        <InputWithLabel label={"Price: "} placeholder={"£"} />
+                        <InputWithLabel label={"Quantity: "} />
+                        <InputWithLabel label={"Amount: "} placeholder={"£"} />
                     </div>
                 </div>
             </div>
@@ -102,19 +102,19 @@ const EditableInvoice = ({ initialData, onSave }) => {
                         <div className="grid gap-4">
                             <div className='flex gap-4'>
                                 <SelectInputWithLabel label={'Days'} />
-                                <SelectInputWithLabel label={'Add New'} />
+                                <SelectInputWithLabel label={'Add New'}/>
                             </div>
                             <div>
                                 <SelectInputWithLabel label={'Payment Method'} edit={true} onClick={() => setIsModalOpen(true)} />
                             </div>
                             <div>
-                                <DatePickerWIthLabel label={"Payment Date:"} background='bg-white' />
+                                <DatePickerWIthLabel label={"Payment Date:"} />
                             </div>
                             <div>
-                                <SelectInputWithLabel label={"Shipped Status:"} background='bg-white' />
+                                <SelectInputWithLabel label={"Shipped Status:"} />
                             </div>
                             <div>
-                                <DatePickerWIthLabel label={"Shipped Date:"} background='bg-white' />
+                                <DatePickerWIthLabel label={"Shipped Date:"} />
                             </div>
                         </div>
                     </div>
@@ -122,7 +122,7 @@ const EditableInvoice = ({ initialData, onSave }) => {
                 <div className="grid gap-4 pt-4">
                     <div className='space-y-5'>
                         <SelectInputWithLabel label={"Discount:"} display={false} />
-                        <SearchField placeholder={"£"} background='bg-white' />
+                        <SearchField placeholder={"£"} />
                         <div>
                             <Button title={"Edit"} onClick={() => setIsModalOpen(true)} width={"mt-12"} />
                         </div>
@@ -138,7 +138,7 @@ const EditableInvoice = ({ initialData, onSave }) => {
                     </div>
                     <div className='space-y-5'>
                         <SelectInputWithLabel label={"VAT:"} display={false} />
-                        <SearchField placeholder={"£"} background='bg-white' />
+                        <SearchField placeholder={"£"} />
                         <div>
                             <Button title={"Edit"} onClick={() => setIsModalOpen(true)} />
                         </div>
@@ -177,7 +177,7 @@ const EditableInvoice = ({ initialData, onSave }) => {
                     <p className='font-bold text-xl mb-4'>Terms</p>
                     <DisplayField label={"ISBN: "} value={"978-1-84897-028-1"} />
                     <DisplayField label={" Invoice number:"} value={"B61225"} />
-                    <InputWithLabel label={"Amount: "} background='bg-white' placeholder={"£"} />
+                    <InputWithLabel label={"Amount: "} placeholder={"£"} />
                     <p className='text-end mt-6 text-red-500 italic'>VAT: 102471656</p>
 
                 </div>

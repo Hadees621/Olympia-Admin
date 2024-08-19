@@ -1,3 +1,4 @@
+import Title from "components/Title";
 import Button from "components/Button";
 import React, { useState } from "react";
 import StackTab from "./components/StackTab";
@@ -6,8 +7,21 @@ import InvoicesTab from "./components/InvoicesTab";
 import SearchField from "../home/components/SearchField";
 import Remaindered from "../editorial/components/Remaindered";
 
+const tabs = [
+  {
+    name: "Stock",
+    component: StackTab,
+    key: "stock",
+  },
+  {
+    name: "Invoices",
+    component: InvoicesTab,
+    key: "invoices",
+  }
+];
+
 const BookInvoices = () => {
-  const [activeTab, setActiveTab] = useState("profile");
+  const [activeTab, setActiveTab] = useState("stock");
   const [selectedValues, setSelectedValues] = useState(["", ""]);
 
   const handleSelectChange = (index, e) => {
@@ -19,96 +33,68 @@ const BookInvoices = () => {
   const placeholders = ["Please Select Author", "Select Book"];
 
   return (
-    <div className="w-full text-start items-center m-4">
-      {/* header */}
-      <>
-        <p className="text-3xl font-semibold mt-8">
-          Welcome to Olympia Portal (olympia admin)
-        </p>
+    <div className="w-full text-start m-4">
 
-        <div className="flex gap-2 justify-start mt-8 items-center w-full px-">
-          <p className="text-md font-semibold text-gray-500">Pen Name:</p>
-          {placeholders.map((placeholder, index) => (
-            <SelectField
-              key={index}
-              placeholder={placeholder}
-              value={selectedValues[index]}
-              onChange={(e) => handleSelectChange(index, e)}
-            />
-          ))}
-          <Button title="Clear" />
-        </div>
-        <div className="flex items-center mt-3 gap-3">
-          <SearchField placeholder="Book Title" />
-          <SearchField placeholder="Pen name/Author name" />
-          <Button title="Search" />
-          <Button title="Clear" />
-          <Button title="ISBN Search" href="/isbn-search" />
-        </div>
-      </>
+      <Title />
+
+      <div className="flex gap-2 justify-start mt-8 items-center w-full">
+        <p className="text-md font-semibold">Pen Name:</p>
+        {placeholders.map((placeholder, index) => (
+          <SelectField
+            key={index}
+            placeholder={placeholder}
+            value={selectedValues[index]}
+            onChange={(e) => handleSelectChange(index, e)}
+          />
+        ))}
+        <Button title="Clear" />
+      </div>
+
+      <div className="flex items-center mt-3 gap-3">
+        <SearchField placeholder="Book Title" />
+        <SearchField placeholder="Pen name/Author name" />
+        <Button title="Search" />
+        <Button title="Clear" />
+        <Button title="ISBN Search" href="/isbn-search" />
+      </div>
 
       <Remaindered />
 
-      <div className="mb-4 justify-center flex pt-3">
+      <div className="mb-6 justify-center flex">
         <ul
-          className="flex flex-wrap -mb-px text-sm font-medium text-center"
+          className="flex flex-wrap -mb-px gap-3 text-sm font-medium text-center"
           id="default-styled-tab"
           role="tablist"
         >
-          <li className="me-2" role="presentation">
-            <button
-              className={`inline-block p-4 border-b-2 rounded-t-lg text-xl font-bold ${activeTab === "profile"
-                ? "text-red-600 border-red-600"
-                : "text-black hover:text-black border-black"
-                }`}
-              id="profile-styled-tab"
-              type="button"
-              role="tab"
-              aria-controls="profile"
-              aria-selected={activeTab === "profile"}
-              onClick={() => setActiveTab("profile")}
-            >
-              Stock
-            </button>
-          </li>
-          <li className="me-2" role="presentation">
-            <button
-              className={`inline-block p-4 border-b-2 rounded-t-lg text-xl font-bold ${activeTab === "dashboard"
-                ? "text-red-600 border-red-600"
-                : "text-black hover:text-black border-black"
-                }`}
-              id="dashboard-styled-tab"
-              type="button"
-              role="tab"
-              aria-controls="dashboard"
-              aria-selected={activeTab === "dashboard"}
-              onClick={() => setActiveTab("dashboard")}
-            >
-              Invoices
-            </button>
-          </li>
+          {tabs.map((tab) => (
+            <li key={tab.key} className="me-2" role="presentation">
+              <button
+                className={`inline-block p-2 border-b-2 rounded-t-lg text-[15px] pb-4 font-semibold ${activeTab === tab.key
+                  ? "text-red-600 border-red-600"
+                  : "text-black hover:text-black border-black"
+                  }`}
+                id={`${tab.key}-tab`}
+                type="button"
+                role="tab"
+                aria-controls={tab.key}
+                aria-selected={activeTab === tab.key}
+                onClick={() => setActiveTab(tab.key)}
+              >
+                {tab.name}
+              </button>
+            </li>
+          ))}
         </ul>
       </div>
-      <div id="default-styled-tab-content">
-        <div
-          className={`p-4 dark:bg-gray-800 ${activeTab === "profile" ? "block" : "hidden"
-            }`}
-          id="styled-profile"
-          role="tabpanel"
-          aria-labelledby="profile-tab"
-        >
-          <StackTab />
-        </div>
-        <div
-          className={`p-4 rounded-lg dark:bg-gray-800 ${activeTab === "dashboard" ? "block" : "hidden"
-            }`}
-          id="styled-dashboard"
-          role="tabpanel"
-          aria-labelledby="dashboard-tab"
-        >
-          <InvoicesTab />
-        </div>
+
+      <div id="default-styled-tab-content" className="w-full">
+        {tabs.map((tab) => (
+          <div key={tab.key} className={`dark:bg-gray-800 ${activeTab === tab.key ? "block" : "hidden"}`} id={tab.key} role="tabpanel" aria-labelledby={`${tab.key}-tab`}>
+            {React.createElement(tab.component, { data: tab.data })}
+          </div>
+        ))}
       </div>
+
     </div>
   );
 };

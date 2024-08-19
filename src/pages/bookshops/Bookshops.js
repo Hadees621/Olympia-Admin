@@ -1,4 +1,6 @@
+import Title from "components/Title";
 import React, { useState } from "react";
+import useSidebarStore from "stores/States";
 import specialistTab from "./components/specialistTab";
 import BookshopsTable from "./components/BookshopsTable";
 
@@ -58,14 +60,15 @@ const tabs = [
 ];
 
 const Bookshops = () => {
+  const { isOpen } = useSidebarStore();
   const [activeTab, setActiveTab] = useState("bookShops");
 
   return (
     <div className="w-full text-start items-center m-4">
-      {/* header */}
-      <p className="text-3xl font-semibold mt-8 ml-4">Bookshops</p>
 
-      <div className="mb-4 justify-center flex pt-10">
+      <Title title="Bookshops" />
+
+      <div className={`mb-4 pt-10 ${isOpen ? "w-full" : "max-w-[80%]"} mx-auto`}>
         <ul
           className="flex flex-wrap -mb-px justify-center gap-3 px-20 text-sm font-medium text-center"
           id="default-styled-tab"
@@ -74,7 +77,7 @@ const Bookshops = () => {
           {tabs.map((tab) => (
             <li key={tab.key} className="me-2" role="presentation">
               <button
-                className={`inline-block p-2 border-b-2 rounded-t-lg text-[11px] font-semibold ${activeTab === tab.key
+                className={`inline-block p-2 border-b-2 rounded-t-lg text-[13px] font-semibold ${activeTab === tab.key
                   ? "text-red-600 border-red-600"
                   : "text-black hover:text-black border-black"
                   }`}
@@ -105,6 +108,7 @@ const Bookshops = () => {
           </div>
         ))}
       </div>
+
     </div>
   );
 };

@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Logo = () => {
   return (
-    <a href="/">
+    <Link to="/">
       <img
         src="/assets/logo.png"
         alt="logo"
-        className="w-[90%] align-middle p-5"
+        className="w-[80%] align-middle p-4"
       />
-    </a>
+    </Link>
   );
 };
 

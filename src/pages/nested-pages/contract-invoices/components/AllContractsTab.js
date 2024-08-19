@@ -1,30 +1,14 @@
-import Button from "components/Button";
 import React from "react";
+import Button from "components/Button";
 import Notepad from "utils/icons/Notepad";
 import Speaker from "utils/icons/Speaker";
+import { getStatusClass } from "utils/utils";
 import { AllContracts } from "../utils/utils";
-import SelectField from "components/SelectField";
 import Calculator from "utils/icons/Calculator";
+import SelectField from "components/SelectField";
 import SearchField from "pages/home/components/SearchField";
 
 const AllContractsTab = () => {
-    const getStatusClass = (status) => {
-        switch (status) {
-            case "Pending":
-                return "status-button status-pending";
-            case "Paid in Full":
-                return "status-button status-paid";
-            case "Hardback":
-                return "status-button status-hardback";
-            case "Traditional":
-                return "status-button status-traditional";
-            case "Paying":
-                return "status-button status-paying";
-            default:
-                return "status-button";
-        }
-    };
-
     return (
         <div>
             <div className="flex items-center my-8 gap-3 m-">

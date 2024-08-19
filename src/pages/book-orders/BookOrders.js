@@ -1,3 +1,4 @@
+import Title from "components/Title";
 import Button from "components/Button";
 import React, { useState } from "react";
 import IngramTab from "./components/IngramTab";
@@ -10,9 +11,18 @@ import ProcessingTab from "./components/ProcessingTab";
 import SearchField from "../home/components/SearchField";
 import Remaindered from "../editorial/components/Remaindered";
 
+const tabs = [
+  { id: "processing", label: "Processing", component: ProcessingTab },
+  { id: "pre-orders", label: "Pre-Orders", component: PreOrdersTab },
+  { id: "shipped", label: "Shipped", component: ShippedTab },
+  { id: "ingram", label: "Ingram", component: IngramTab },
+  { id: "reports", label: "Reports", component: ReportsTab },
+  { id: "archive", label: "Archive", component: ArchiveTab },
+];
+
 const BookOrders = () => {
-  const [selectedValues, setSelectedValues] = useState(["", ""]);
   const [activeTab, setActiveTab] = useState("processing");
+  const [selectedValues, setSelectedValues] = useState(["", ""]);
 
   const handleSelectChange = (index, e) => {
     const newSelectedValues = [...selectedValues];
@@ -22,47 +32,35 @@ const BookOrders = () => {
 
   const placeholders = ["Please Select Author", "Select Book"];
 
-  const tabs = [
-    { id: "processing", label: "Processing", component: ProcessingTab },
-    { id: "pre-orders", label: "Pre-Orders", component: PreOrdersTab },
-    { id: "shipped", label: "Shipped", component: ShippedTab },
-    { id: "ingram", label: "Ingram", component: IngramTab },
-    { id: "reports", label: "Reports", component: ReportsTab },
-    { id: "archive", label: "Archive", component: ArchiveTab },
-  ];
-
   return (
     <div className="w-full text-start items-center m-4">
-      {/* Header */}
-      <>
-        <p className="text-3xl font-semibold mt-8 ml-8">
-          Welcome to Olympia Portal (olympia admin)
-        </p>
 
-        <div className="flex gap-2 justify-start mt-8 items-center w-full px-4">
-          <p className="text-md font-semibold text-gray-500">Pen Name:</p>
-          {placeholders.map((placeholder, index) => (
-            <SelectField
-              key={index}
-              placeholder={placeholder}
-              value={selectedValues[index]}
-              onChange={(e) => handleSelectChange(index, e)}
-            />
-          ))}
-          <Button title="Clear" />
-        </div>
-        <div className="flex items-center mt-3 gap-3 m-4">
-          <SearchField placeholder="Book Title" />
-          <SearchField placeholder="Pen name/Author name" />
-          <Button title="Search" />
-          <Button title="Clear" />
-          <Button title="ISBN Search" href="/isbn-search" />
-        </div>
-      </>
+      <Title />
+
+      <div className="flex gap-2 justify-start mt-8 items-center w-full">
+        <p className="text-md font-semibold text-gray-500">Pen Name:</p>
+        {placeholders.map((placeholder, index) => (
+          <SelectField
+            key={index}
+            placeholder={placeholder}
+            value={selectedValues[index]}
+            onChange={(e) => handleSelectChange(index, e)}
+          />
+        ))}
+        <Button title="Clear" />
+      </div>
+
+      <div className="flex items-center mt-3 gap-3">
+        <SearchField placeholder="Book Title" />
+        <SearchField placeholder="Pen name/Author name" />
+        <Button title="Search" />
+        <Button title="Clear" />
+        <Button title="ISBN Search" href="/isbn-search" />
+      </div>
 
       <Remaindered />
 
-      <div className="mb-4 justify-center flex pt-3">
+      <div className="mb-4 justify-center flex py-3">
         <ul
           className="flex flex-wrap -mb-px gap-3 text-sm font-medium text-center"
           id="default-styled-tab"
@@ -92,7 +90,7 @@ const BookOrders = () => {
         {tabs.map((tab) => (
           <div
             key={tab.id}
-            className={`p-4 dark:bg-gray-800 ${activeTab === tab.id ? "block" : "hidden"
+            className={`dark:bg-gray-800 ${activeTab === tab.id ? "block" : "hidden"
               }`}
             id={tab.id}
             role="tabpanel"
@@ -102,6 +100,7 @@ const BookOrders = () => {
           </div>
         ))}
       </div>
+
     </div>
   );
 };
