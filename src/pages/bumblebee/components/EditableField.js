@@ -3,7 +3,7 @@ import Tick from "./Tick";
 
 const EditableField = ({ fieldData, isEditing, onCheckboxChange }) => {
     return (
-        <td className="px-6 py-4 border">
+        <td className="px-6 py-4 ">
             {isEditing ? (
                 <div className="grid justify-center gap-3">
                     <input

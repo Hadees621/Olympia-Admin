@@ -53,54 +53,54 @@ const BumblebeeTable = ({ data, onSave }) => {
 
   return (
     <>
-      <div className="overflow-x-auto shadow-md transition-all duration-300">
-        <table className="w-full text-sm text-left max-h-[500px]">
-          <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
+      <div className="overflow-x-auto shadow-md transition-all duration-300 custom-scrollbarw max-h-[600px] custom-scrollbar">
+        <table className="w-full">
+          <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10 border">
             <tr className="text-sm font-medium text-gray-500 uppercase text-center">
-              <th className="px-6 py-3 border">Status</th>
-              <th className="px-6 py-3 border">Pen Name</th>
-              <th className="px-6 py-3 border">Book Title</th>
-              <th className="px-6 py-3 border">Illustrated by</th>
-              <th className="px-6 py-3 border">Contract Date</th>
-              <th className="px-6 py-3 border">Remaining Day(s)/Date</th>
-              <th className="px-6 py-3 border">Author Forms</th>
-              <th className="px-6 py-3 border">90 days activated</th>
-              <th className="px-6 py-3 border">Job Started</th>
-              <th className="px-6 py-3 border">Sample approved</th>
-              <th className="px-6 py-3 border">Outlines approved</th>
-              <th className="px-6 py-3 border">Coloured approved</th>
-              <th className="px-6 py-3 border">Cover design to author</th>
-              <th className="px-6 py-3 border">Inners to author</th>
-              <th className="px-6 py-3 border">1st Proofs @reader</th>
-              <th className="px-6 py-3 border">1st Proofs @author</th>
-              <th className="px-6 py-3 border">1st Proofs @amender</th>
-              <th className="px-6 py-3 border">2nd Proofs @author</th>
-              <th className="px-6 py-3 border">3rd proofs @author</th>
-              <th className="px-6 py-3 border">Cover certificate received</th>
-              <th className="px-6 py-3 border">Proofs certificate received</th>
-              <th className="px-6 py-3 border">Finalised for print</th>
-              <th className="px-6 py-3 border">Send for final check</th>
-              <th className="px-6 py-3 border">Publication Date</th>
-              <th className="px-6 py-3 border">Contract payment status</th>
-              <th className="px-6 py-3 border">Edit</th>
-              <th className="px-6 py-3 border">Notes</th>
+              <th className="px-6 py-3 ">Status</th>
+              <th className="px-6 py-3 ">Pen Name</th>
+              <th className="px-6 py-3 ">Book Title</th>
+              <th className="px-6 py-3 ">Illustrated by</th>
+              <th className="px-6 py-3 ">Contract Date</th>
+              <th className="px-6 py-3 ">Remaining Day(s)/Date</th>
+              <th className="px-6 py-3 ">Author Forms</th>
+              <th className="px-6 py-3 ">90 days activated</th>
+              <th className="px-6 py-3 ">Job Started</th>
+              <th className="px-6 py-3 ">Sample approved</th>
+              <th className="px-6 py-3 ">Outlines approved</th>
+              <th className="px-6 py-3 ">Coloured approved</th>
+              <th className="px-6 py-3 ">Cover design to author</th>
+              <th className="px-6 py-3 ">Inners to author</th>
+              <th className="px-6 py-3 ">1st Proofs @reader</th>
+              <th className="px-6 py-3 ">1st Proofs @author</th>
+              <th className="px-6 py-3 ">1st Proofs @amender</th>
+              <th className="px-6 py-3 ">2nd Proofs @author</th>
+              <th className="px-6 py-3 ">3rd proofs @author</th>
+              <th className="px-6 py-3 ">Cover certificate received</th>
+              <th className="px-6 py-3 ">Proofs certificate received</th>
+              <th className="px-6 py-3 ">Finalised for print</th>
+              <th className="px-6 py-3 ">Send for final check</th>
+              <th className="px-6 py-3 ">Publication Date</th>
+              <th className="px-6 py-3 ">Contract payment status</th>
+              <th className="px-6 py-3 ">Edit</th>
+              <th className="px-6 py-3 ">Notes</th>
             </tr>
           </thead>
           <tbody>
             {editableData.map((row, index) => (
               <tr
                 key={index}
-                className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap"
+                className="text-sm text-gray-700 text-center custom-hover-row font-bold whitespace-nowrap border"
               >
-                <td className="px-6 py-4 border">{row.status}</td>
-                <td className="px-6 py-4 border">{row.penName}</td>
-                <td className="px-6 py-4 border">{row.bookTitle}</td>
-                <td className="px-6 py-4 border">{row.illustratedBy}</td>
-                <td className="px-6 py-4 border">{row.contractDate}</td>
-                <td className="px-6 py-4 border">
+                <td className="px-6 py-4 ">{row.status}</td>
+                <td className="px-6 py-4 ">{row.penName}</td>
+                <td className="px-6 py-4 ">{row.bookTitle}</td>
+                <td className="px-6 py-4 ">{row.illustratedBy}</td>
+                <td className="px-6 py-4 ">{row.contractDate}</td>
+                <td className="px-6 py-4 ">
                   {row.remainingDays} / {row.remainingDate || "-"}
                 </td>
-                <td className="px-6 py-4 border">
+                <td className="px-6 py-4 ">
                   <div className="flex space-x-2">
                     <div className="p-1.5 rounded-3xl bg-[#C3C4C5] cursor-pointer">
                       <Calculator color={row.authorForms.form1 ? "green" : "white"} />
@@ -121,16 +121,16 @@ const BumblebeeTable = ({ data, onSave }) => {
                     onCheckboxChange={() => handleCheckboxChange(index, field)}
                   />
                 ))}
-                <td className="px-6 py-4 border">
-                  <TableButton title="Send" bg="bg-green-600" text="text-white" />
+                <td className="px-6 py-4 ">
+                  <TableButton title="Send" bg="bg-green-600" hover="hover:bg-green-700" text="text-white" />
                 </td>
-                <td className="px-6 py-4 border">{row.publicationDate}</td>
-                <td className="px-6 py-4 border whitespace-nowrap">
+                <td className="px-6 py-4 ">{row.publicationDate}</td>
+                <td className="px-6 py-4  whitespace-nowrap">
                   <span className={`w-[90px] ${getStatusClass(row.contractPaymentStatus)}`}>
                     £ {row.contractPaymentStatus}
                   </span>
                 </td>
-                <td className="px-6 py-4 border">
+                <td className="px-6 py-4 ">
                   {index === editingIndex ? (
                     <TableButton
                       title="Save"
@@ -149,7 +149,7 @@ const BumblebeeTable = ({ data, onSave }) => {
                     />
                   )}
                 </td>
-                <td className="px-6 py-4 border">
+                <td className="px-6 py-4 ">
                   <TableButton title="Edit" bg="bg-blue-600" hover="hover:bg-blue-700" text={'text-white'} onClick={() => setIsModalVisible(true)} />
                 </td>
               </tr>

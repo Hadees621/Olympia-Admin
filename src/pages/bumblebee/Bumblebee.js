@@ -1,3 +1,4 @@
+import Title from "components/Title";
 import { data } from "./utils/utils";
 import Button from "components/Button";
 import React, { useState } from "react";
@@ -29,9 +30,9 @@ const TabContent = ({ activeTab, isOpen }) => {
   const tabData = tabs.find((tab) => tab.id === activeTab);
 
   return (
-    <div className={`p-4 dark:bg-gray-800 ${activeTab ? "block" : "hidden"}`}>
+    <div className={` ${activeTab ? "block" : "hidden"}`}>
       {activeTab === "books-tab" && (
-        <div className="flex items-center mt-3 gap-3 m-4">
+        <div className="flex items-center mt-3 gap-3">
           <SearchField placeholder="Book Title" />
           <SearchField placeholder="Pen Name/Author Name" />
           <Button title="Search" />
@@ -40,7 +41,7 @@ const TabContent = ({ activeTab, isOpen }) => {
         </div>
       )}
       {tabData.totalRecords > 0 && (
-        <div className="mt-3 w-full mx-4 font-semibold text-lg">
+        <div className="mt-3 w-full font-semibold text-lg">
           <p>Olympia illustrations: 113</p>
           <p>Author illustrations: 137</p>
           <p>No illustrations: 10</p>
@@ -51,7 +52,7 @@ const TabContent = ({ activeTab, isOpen }) => {
       <Pagination num={7} />
 
       <div
-        className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
+        className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
           }`}
       >
         {React.createElement(tabData.component, { data: tabData.data })}
@@ -66,12 +67,12 @@ const Bumblebee = () => {
 
   return (
     <div
-      className={`w-full text-start items-center m- ${!isOpen && "max-w-[1250px]"
+      className={`w-full text-start items-center m-4 ${!isOpen && "max-w-[1250px]"
         }`}
     >
-      <p className="text-3xl font-semibold mt-8 ml-8">
-        Books ( Imprint: Bumblebee )
-      </p>
+
+      <Title title="Books (Imprint: Bumblebee)" />
+
       <div className="mb-4 justify-center flex pt-3">
         <ul
           className="flex flex-wrap -mb-px gap-3 text-sm font-medium text-center"
