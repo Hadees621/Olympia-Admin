@@ -1,6 +1,5 @@
 import React from "react";
 
-// { bookSales, postage, revenue }
 const TotalRevenue = () => {
   const bookSales = 986.3;
   const postage = 260.5;
