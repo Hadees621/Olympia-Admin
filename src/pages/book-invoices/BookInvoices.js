@@ -38,7 +38,7 @@ const BookInvoices = () => {
       <Title />
 
       <div className="flex gap-2 justify-start mt-8 items-center w-full">
-        <p className="text-md font-semibold text-gray-500">Pen Name:</p>
+        <p className="text-md font-semibold">Pen Name:</p>
         {placeholders.map((placeholder, index) => (
           <SelectField
             key={index}
@@ -69,7 +69,7 @@ const BookInvoices = () => {
           {tabs.map((tab) => (
             <li key={tab.key} className="me-2" role="presentation">
               <button
-                className={`inline-block p-2 border-b-2 rounded-t-lg text-[14px] font-semibold ${activeTab === tab.key
+                className={`inline-block p-2 border-b-2 rounded-t-lg text-[15px] pb-4 font-semibold ${activeTab === tab.key
                   ? "text-red-600 border-red-600"
                   : "text-black hover:text-black border-black"
                   }`}
