@@ -75,7 +75,7 @@ const App = () => (
 
     {/* nested pages */}
     <Route path="/isbn-search" element={<IsbnSearch />} />
-    <Route path="/add-record-home" element={<AddRecord />} />
+    <Route path="/add-new-record" element={<AddRecord />} />
     <Route path="/all-purchases" element={<AllPurchases />} />
     <Route path="/pending-purchases" element={<PendingPurchases />} />
     <Route path="/pending-production-questionnaires" element={<PendingQuestionaire />} />
