@@ -47,7 +47,7 @@ const ProcessingTab = () => {
         </div>
       </div>
 
-      <div className="overflow-x-auto text-center shadow max-h-[600px]">
+      <div className="overflow-x-auto text-center shadow max-h-[600px] custom-scrollbar">
         <table className="min-w-full table-fixed divide-y divide-gray-200">
           <thead className="bg-gray-50 whitespace-nowrap sticky top-0 z-10">
             <tr className="text-[10px] w-full font-medium text-gray-500 uppercase">
