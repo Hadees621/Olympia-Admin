@@ -74,25 +74,22 @@ const App = () => (
     </>
 
     {/* nested pages */}
-    <Route path="/isbn-search" element={<IsbnSearch />} />
-    <Route path="/add-new-record" element={<AddRecord />} />
-    <Route path="/all-purchases" element={<AllPurchases />} />
-    <Route path="/pending-purchases" element={<PendingPurchases />} />
-    <Route path="/pending-production-questionnaires" element={<PendingQuestionaire />} />
-    <Route path="/pending-questionnaires-form" element={<ProductionQuestionnaireForm />} />
-    <Route path="/pending-publicity-questionnaire" element={<PublicityQuestionaires />} />
-    <Route path="/publicity-questionnaire-form" element={<PublicityQuestionairesForm />} />
-    <Route path="/these-invoices-CN" element={<TheseInvoicesCN />} />
-    <Route path="/view-delivery-note" element={<ViewDeliveryNote />} />
-    <Route path="/view-final-check" element={<FinalCheckView />} />
-    <Route path="/account-details" element={<ContractAccount />} />
-    <Route path="/contract-invoices" element={<ContractInvoices />} />
-    <Route path="/uae-invoices" element={<UaeInvoices />} />
-
-
-
-
-
+    <>
+      <Route path="/isbn-search" element={<IsbnSearch />} />
+      <Route path="/add-new-record" element={<AddRecord />} />
+      <Route path="/all-purchases" element={<AllPurchases />} />
+      <Route path="/pending-purchases" element={<PendingPurchases />} />
+      <Route path="/pending-production-questionnaires" element={<PendingQuestionaire />} />
+      <Route path="/pending-questionnaires-form" element={<ProductionQuestionnaireForm />} />
+      <Route path="/pending-publicity-questionnaire" element={<PublicityQuestionaires />} />
+      <Route path="/publicity-questionnaire-form" element={<PublicityQuestionairesForm />} />
+      <Route path="/these-invoices-CN" element={<TheseInvoicesCN />} />
+      <Route path="/view-delivery-note" element={<ViewDeliveryNote />} />
+      <Route path="/view-final-check" element={<FinalCheckView />} />
+      <Route path="/account-details" element={<ContractAccount />} />
+      <Route path="/contract-invoices" element={<ContractInvoices />} />
+      <Route path="/uae-invoices" element={<UaeInvoices />} />
+    </>
   </Routes>
 );
 
