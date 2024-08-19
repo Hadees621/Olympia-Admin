@@ -164,7 +164,7 @@ export const data = [
     finalisedForPrint: { date: "03-05-2023", completed: true },
     sendForFinalCheck: "Send",
     publicationDate: "03-05-2023",
-    contractPaymentStatus: "Hardback",
+    contractPaymentStatus: "Paid in Full",
     notes: "",
   },
   {
@@ -220,7 +220,7 @@ export const data = [
     finalisedForPrint: { date: "03-05-2023", completed: true },
     sendForFinalCheck: "Send",
     publicationDate: "03-05-2023",
-    contractPaymentStatus: "Hardback",
+    contractPaymentStatus: "Paid in Full",
     notes: "",
   },
 

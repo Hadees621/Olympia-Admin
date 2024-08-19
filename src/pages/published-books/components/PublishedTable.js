@@ -3,6 +3,7 @@ import Button from "components/Button";
 import Speaker from "utils/icons/Speaker";
 import Notepad from "utils/icons/Notepad";
 import useSidebarStore from "stores/States";
+import { getStatusClass } from "utils/utils";
 import Pagination from "components/Pagination";
 import Calculator from "utils/icons/Calculator";
 import SelectField from "components/SelectField";
@@ -13,28 +14,10 @@ import { data } from "pages/ready-for-publication/utils/utils";
 const PublishedTable = () => {
   const { isOpen } = useSidebarStore();
 
-  const getStatusClass = (status) => {
-    switch (status) {
-      case "Pending":
-        return "status-button status-pending";
-      case "Paid in Full":
-        return "status-button status-paid";
-      case "Hardback":
-        return "status-button status-hardback";
-      case "Traditional":
-        return "status-button status-traditional";
-      case "Paying":
-        return "status-button status-paying";
-      default:
-        return "status-button";
-    }
-  };
-
   return (
     <div
-      className={`m-4 transition-all duration-300 ${
-        isOpen ? "max-w-[1030px]" : "max-w-[1200px]"
-      }`}
+      className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1030px]" : "max-w-[1200px]"
+        }`}
     >
       <div className="flex justify-between">
         <div className="w-[25%]">

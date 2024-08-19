@@ -4,6 +4,7 @@ import Speaker from "utils/icons/Speaker";
 import Notepad from "utils/icons/Notepad";
 import Calculator from "utils/icons/Calculator";
 import { data } from "../utils/utils";
+import { getStatusClass } from "utils/utils";
 import DatePickerField from "components/DatePickerField";
 import Button from "components/Button";
 import SearchField from "pages/home/components/SearchField";
@@ -11,23 +12,6 @@ import Pagination from "components/Pagination";
 
 const ReadyForPublicationTable = () => {
   const { isOpen } = useSidebarStore();
-
-  const getStatusClass = (status) => {
-    switch (status) {
-      case "Pending":
-        return "status-button status-pending";
-      case "Paid in Full":
-        return "status-button status-paid";
-      case "Hardback":
-        return "status-button status-hardback";
-      case "Traditional":
-        return "status-button status-traditional";
-      case "Paying":
-        return "status-button status-paying";
-      default:
-        return "status-button";
-    }
-  };
 
   return (
     <div

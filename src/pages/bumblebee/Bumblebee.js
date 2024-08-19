@@ -30,7 +30,7 @@ const TabContent = ({ activeTab, isOpen }) => {
   const tabData = tabs.find((tab) => tab.id === activeTab);
 
   return (
-    <div className={` ${activeTab ? "block" : "hidden"}`}>
+    <div className={`${activeTab ? "block" : "hidden"}`}>
       {activeTab === "books-tab" && (
         <div className="flex items-center mt-3 gap-3">
           <SearchField placeholder="Book Title" />

@@ -1,25 +1,10 @@
 import React from "react";
-import Calculator from "utils/icons/Calculator";
 import Notepad from "utils/icons/Notepad";
 import Speaker from "utils/icons/Speaker";
+import { getStatusClass } from "utils/utils";
+import Calculator from "utils/icons/Calculator";
 
 const TableRow = ({ data }) => {
-  const getStatusClass = (status) => {
-    switch (status) {
-      case "Pending":
-        return "status-button status-pending";
-      case "Paid in Full":
-        return "status-button status-paid";
-      case "Hardback":
-        return "status-button status-hardback";
-      case "Traditional":
-        return "status-button status-traditional";
-      case "Paying":
-        return "status-button status-paying";
-      default:
-        return "status-button";
-    }
-  };
 
   return (
     <tr className="text-sm font-medium">
