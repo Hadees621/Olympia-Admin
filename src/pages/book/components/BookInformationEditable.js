@@ -17,10 +17,12 @@ const BookInformationEditable = ({ title, imageUrl }) => (
         <div className="p-5 mx-4 border-b">
             <p className="text-xl font-bold">{title}</p>
         </div>
+
         <div className="flex justify-between p-8">
             <div className="grid my-4 gap-4 w-full">
-                <EditableDatePicker label={"Publishing date:"} />
+                <EditableDatePicker label={"Publishing date:"} background="bg-white" />
                 <EditableDropdown
+                    bg={"bg-white"}
                     label={"Situation:"}
                     options={[
                         { value: "Under Production", label: "Under Production" },
@@ -31,6 +33,7 @@ const BookInformationEditable = ({ title, imageUrl }) => (
                     ]}
                 />
                 <EditableDropdown
+                    bg={"bg-white"}
                     label={"Imprint:"}
                     options={[
                         { value: "Published", label: "Ebooks" },
@@ -55,25 +58,28 @@ const BookInformationEditable = ({ title, imageUrl }) => (
                 <EditableTextInput label={"Price ₹ (INR):"} value={"7.99"} />
             </div>
         </div>
+
         <div className="flex p-6 border-t mx-4 justify-start gap-6">
             <div className="grid gap-4 w-full">
                 {bookTypes.map((book, index) => (
                     <div key={index} className="space-y-4">
                         <EditableDropdown
+                            bg={"bg-white"}
                             label={book.label}
                             options={[
                                 { value: "Yes", label: "Yes" },
                                 { value: "No", label: "No" }
                             ]}
                         />
-                        <EditableTextInput label={"ISBN:"} value={book.isbn} />
+                        <EditableTextInput label={"ISBN:"} value={book.isbn} labelwidth="w-[12%]" />
                     </div>
                 ))}
             </div>
             <div className="grid gap-4 w-full">
-                <EditableTextInput label={"Book No:"} value={1} />
+                <EditableTextInput label={"Book No:"} value={1} labelwidth="w-[15%]" />
                 <div className="grid">
                     <EditableDropdown
+                        bg={"bg-white"}
                         label={"Format:"}
                         options={[
                             { value: "Paperback Edition", label: "Paperback Edition" },
@@ -83,9 +89,9 @@ const BookInformationEditable = ({ title, imageUrl }) => (
                     />
                     <Button title={"Edit"} />
                 </div>
-                <EditableTextInput label={"No of pages:"} value={192} />
+                <EditableTextInput label={"No of pages:"} value={192} labelwidth="w-[15%]" />
                 <div className="grid">
-                    <EditableDropdown label={"Size:"} />
+                    <EditableDropdown label={"Size:"} bg={"bg-white"} />
                     <Button title={"Edit"} />
                 </div>
             </div>

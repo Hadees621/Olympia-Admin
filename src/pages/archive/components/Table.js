@@ -2,7 +2,7 @@ import React from "react";
 
 const Table = () => {
   return (
-    <div className="my-4 gap-3 flex px-6">
+    <div className="my-4 gap-3 flex">
       <div className="max-h-[400px] overflow-y-auto w-full shadow">
         <table className="min-w-full divide-y divide-gray-200 shadow">
           <thead className="bg-gray-50 sticky top-0 z-10">

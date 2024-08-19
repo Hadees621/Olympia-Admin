@@ -2,18 +2,18 @@ import React from "react";
 import Dropdown from "../utils/icons/Dropdown";
 
 const SelectField = ({
-  placeholder,
   value,
+  name,
   onChange,
+  placeholder,
+  width = "w-full",
+  background = "bg-[#F7F7F7]",
   options = [
     { value: "option1", label: "Option 1" },
     { value: "option2", label: "Option 2" },
     { value: "option3", label: "Option 3" },
     { value: "option4", label: "Option 4" },
   ],
-  width = "w-full",
-  name,
-  background,
   ...props
 }) => {
   return (

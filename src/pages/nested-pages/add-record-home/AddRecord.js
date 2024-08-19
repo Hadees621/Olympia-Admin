@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import AuthorSection from './components/AuthorSection'
 import BookSection from './components/BookSection'
-import FileUploadSection from './components/FileUploadSection'
 import AuthorModal from './components/AuthorModal'
+import AuthorSection from './components/AuthorSection'
+import FileUploadSection from './components/FileUploadSection'
 
 const AddRecord = () => {
     const [isModalOpen, setModalOpen] = useState(false);
