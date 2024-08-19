@@ -60,7 +60,7 @@ const BookOrders = () => {
 
       <Remaindered />
 
-      <div className="mb-4 justify-center flex pt-3">
+      <div className="mb-4 justify-center flex py-3">
         <ul
           className="flex flex-wrap -mb-px gap-3 text-sm font-medium text-center"
           id="default-styled-tab"
