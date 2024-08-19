@@ -39,7 +39,7 @@ const BumblebeeTable = ({ data, onSave }) => {
     <>
       <div className="overflow-x-auto shadow-md transition-all duration-300 custom-scrollbarw max-h-[600px] custom-scrollbar">
         <table className="w-full">
-          <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10 border">
+          <thead className="text-sm uppercase bg-gray-50 whitespace-nowrap sticky top-[-10px] z-10 border">
             <tr className="text-sm font-medium text-gray-500 uppercase text-center">
               <th className="px-6 py-3 ">Status</th>
               <th className="px-6 py-3 ">Pen Name</th>

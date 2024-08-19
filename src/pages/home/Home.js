@@ -1,9 +1,13 @@
-import React, { useState } from "react";
-import SearchField from "./components/SearchField";
-import Button from "../../components/Button";
-import SelectField from "../../components/SelectField";
+import Title from "components/Title";
 import Table from "./components/Table";
+import React, { useState } from "react";
+import useSidebarStore from "stores/States";
+import Button from "../../components/Button";
+import SearchField from "./components/SearchField";
+import SelectField from "../../components/SelectField";
+
 const Home = () => {
+  const { isOpen } = useSidebarStore();
   const [selectedValues, setSelectedValues] = useState(["", "", "", ""]);
 
   const handleSelectChange = (index, e) => {
@@ -15,20 +19,19 @@ const Home = () => {
   const placeholders = ["All", "All", "All Countries", "Select Genre"];
 
   return (
-    <div className="w-full text-start items-center">
-      <p className="text-3xl font-semibold mt-8 ml-4">
-        Welcome to Olympia Portal (olympia admin)
-      </p>
+    <div className={`w-full text-start items-center m-4 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"} `}>
+      <Title />
 
-      <div className="flex items-center mt-8 gap-3 ml-5 pr-10">
+      <div className="flex items-center mt-8 gap-3">
         <SearchField placeholder="Book Title" />
         <SearchField placeholder="Pen name/Author name" />
         <Button title="Search" />
         <Button title="Clear" />
-        <Button title="Add New Record" href="/add-record-home" bg="bg-green-500" hover="hover:bg-green-600" text={"text-white"} />
+        <Button title="Add New Record" href="/add-record-home" bg="bg-green-600" hover="hover:bg-green-700" text={"text-white"} />
         <Button title="ISBN Search" href="/isbn-search" />
       </div>
-      <div className="flex gap-2 justify-start mt-3 items-center ml-5 w-full pr-10">
+
+      <div className="flex gap-2 justify-start mt-3 items-center w-full">
         {placeholders.map((placeholder, index) => (
           <SelectField
             key={index}
@@ -40,6 +43,7 @@ const Home = () => {
         <Button title="Filter" />
         <Button title="Clear" />
       </div>
+
       <Table />
     </div>
   );
