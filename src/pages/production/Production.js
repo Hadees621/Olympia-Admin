@@ -1,3 +1,4 @@
+import Title from "components/Title";
 import Button from "components/Button";
 import React, { useState } from "react";
 import { booksData } from "./utils/utils";
@@ -47,12 +48,11 @@ const Production = () => {
 
   return (
     <div
-      className={`w-full text-start items-center m-5  ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
+      className={`w-full text-start items-center m-4 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
         }`}
     >
-      <p className="text-3xl font-semibold mt-8 ml-">
-        Books (Imprint: Olympia/Ebooks)
-      </p>
+      <Title />
+
       <div className="flex items-center mt-3 gap-3">
         <SearchField placeholder="Book Title" />
         <SearchField placeholder="Pen Name/Author Name" />
@@ -60,8 +60,9 @@ const Production = () => {
         <Button title="Clear" />
         <SelectField placeholder="Select Filter" />
       </div>
-      <div className="mt-3 w-full mx-4 font-semibold text-lg">
-        <p>Total Records: 2589</p>
+
+      <div className="mt-5">
+        <p className="font-semibold text-lg">Total Records: 2589</p>
       </div>
 
       <Pagination num={7} />

@@ -1,7 +1,7 @@
 import React from 'react';
+import Button from 'components/Button';
 import Modal from 'components/modals/Modal';
 import InputWithLabel from 'components/InputWithLabel';
-import Button from 'components/Button';
 
 const EditModal = ({ isOpen, onClose, title, label }) => {
     return (
