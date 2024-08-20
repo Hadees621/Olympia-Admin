@@ -1,3 +1,4 @@
+import Title from "components/Title";
 import React, { useState } from "react";
 import ReadyForPublicationTable from "./components/ReadyForPublicationTable";
 
@@ -21,10 +22,8 @@ const ReadyForPublication = () => {
 
   return (
     <div className="w-full text-start items-center m-4">
-      {/* Header */}
-      <p className="text-3xl font-semibold mt-8 ml-8">
-        Ready for Publication Books
-      </p>
+    
+      <Title title="Ready for Publication Books" />
 
       <div className="mb-4 justify-center flex pt-3">
         <ul
@@ -35,11 +34,10 @@ const ReadyForPublication = () => {
           {tabs.map((tab) => (
             <li key={tab.id} className="me-2" role="presentation">
               <button
-                className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${
-                  activeTab === tab.id
-                    ? "text-red-600 border-red-600"
-                    : "text-black hover:text-black border-black"
-                }`}
+                className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${activeTab === tab.id
+                  ? "text-red-600 border-red-600"
+                  : "text-black hover:text-black border-black"
+                  }`}
                 id={`${tab.id}-tab`}
                 type="button"
                 role="tab"
@@ -53,13 +51,13 @@ const ReadyForPublication = () => {
           ))}
         </ul>
       </div>
+
       <div id="default-styled-tab-content" className="w-full">
         {tabs.map((tab) => (
           <div
             key={tab.id}
-            className={`p-4 dark:bg-gray-800 ${
-              activeTab === tab.id ? "block" : "hidden"
-            }`}
+            className={` dark:bg-gray-800 ${activeTab === tab.id ? "block" : "hidden"
+              }`}
             id={tab.id}
             role="tabpanel"
             aria-labelledby={`${tab.id}-tab`}
@@ -68,6 +66,7 @@ const ReadyForPublication = () => {
           </div>
         ))}
       </div>
+
     </div>
   );
 };
