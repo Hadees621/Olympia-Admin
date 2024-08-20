@@ -1,9 +1,11 @@
 import React from "react";
-import useSidebarStore from "stores/States";
 import Button from "components/Button";
+import useSidebarStore from "stores/States";
 import DatePickerField from "components/DatePickerField";
 
 const SentTab = () => {
+  const { isOpen } = useSidebarStore();
+
   const manuscripts = {
     totalUnderProduction: 25,
     total: 25,
@@ -12,13 +14,11 @@ const SentTab = () => {
       { name: "Olympia Publishers", count: 24 },
     ],
   };
-  const { isOpen } = useSidebarStore();
 
   return (
     <div
-      className={`m-4 transition-all duration-300 ${
-        isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
-      }`}
+      className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
+        }`}
     >
       <p className="text-lg font-semibold text-center mt-12 mb-8">
         Show report:(by default current month)

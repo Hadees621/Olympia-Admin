@@ -16,16 +16,16 @@ const PublishedTable = () => {
 
   return (
     <div
-      className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1030px]" : "max-w-[1200px]"
+      className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1300px]"
         }`}
     >
       <div className="flex justify-between">
         <div className="w-[25%]">
           <div className="flex gap-3">
             <p className="text-lg font-bold">Total Records:</p>
-            <p className="text-lg font-bold">1</p>
+            <p className="text-lg font-bold">{data.length}</p>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-2">
             <p className="text-lg font-bold">Month:</p>
             <p className="text-lg font-bold">July</p>
           </div>
@@ -47,37 +47,38 @@ const PublishedTable = () => {
       </div>
 
       <Pagination num={2} />
-      <div className="overflow-x-auto shadow-md transition-all duration-300">
-        <table className="w-full text-sm text-left">
-          <thead className="text-xs text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
-            <tr className="text-xs font-medium text-gray-500 uppercase text-center whitespace-nowrap">
-              <th className="px-6 py-3 border">Status</th>
-              <th className="px-6 py-3 border">Pen Name</th>
-              <th className="px-6 py-3 border">Book Title</th>
-              <th className="px-6 py-3 border">Imprint</th>
-              <th className="px-6 py-3 border">Contract Date</th>
-              <th className="px-6 py-3 border">Publication Date</th>
-              <th className="px-6 py-3 border">Author Forms</th>
-              <th className="px-6 py-3 border">Contract Payment Status</th>
+
+      <div className="overflow-x-auto text-center shadow max-h-[600px] custom-scrollbar custom-scrollbarw">
+        <table className="min-w-full table-fixed divide-y divide-gray-200">
+          <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
+            <tr className="text-sm font-medium text-gray-500 uppercase text-center whitespace-nowrap">
+              <th className="px-6 py-3">Status</th>
+              <th className="px-6 py-3">Pen Name</th>
+              <th className="px-6 py-3">Book Title</th>
+              <th className="px-6 py-3">Imprint</th>
+              <th className="px-6 py-3">Contract Date</th>
+              <th className="px-6 py-3">Publication Date</th>
+              <th className="px-6 py-3">Author Forms</th>
+              <th className="px-6 py-3">Contract Payment Status</th>
             </tr>
           </thead>
           <tbody>
             {data.map((row, index) => (
               <tr
                 key={index}
-                className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap"
+                className="text-sm text-gray-700 text-center font-bold whitespace-nowrap custom-hover-row border"
               >
-                <td className="px-6 py-4 border text-orange-500 font-semibold">
+                <td className="px-6 py-4 text-orange-500 font-semibold">
                   {row.status}
                 </td>
-                <td className="px-6 py-4 border">{row.penName}</td>
-                <td className="px-6 py-4 border">{row.bookTitle}</td>
-                <td className="px-6 py-4 border">{row.imprint}</td>
-                <td className="px-6 py-4 border">{row.contractDate}</td>
-                <td className="px-6 py-4 border">
+                <td className="px-6 py-4">{row.penName}</td>
+                <td className="px-6 py-4">{row.bookTitle}</td>
+                <td className="px-6 py-4">{row.imprint}</td>
+                <td className="px-6 py-4">{row.contractDate}</td>
+                <td className="px-6 py-4">
                   <div className="flex gap-2"></div>
                 </td>
-                <td className="px-6 py-4 border">
+                <td className="px-6 py-4">
                   <div className="flex space-x-2 justify-center">
                     <div className="p-1.5 rounded-3xl bg-[#C3C4C5] cursor-pointer">
                       <Calculator
