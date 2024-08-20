@@ -1,14 +1,14 @@
 import React from "react";
+import Button from "components/Button";
 import SelectField from "components/SelectField";
 import SearchField from "pages/home/components/SearchField";
-import Button from "components/Button";
 
 const AddNewTab = () => {
   return (
     <>
-      <div className="space-y-6">
-        <div className="w-full shadow-md bg-[#F7F7F7]">
-          <div className="p-5 mx-4 border-b">
+      <div className="">
+        <div className="w-full shadow bg-[#F7F7F7]">
+          <div className="p-5 mx- border-b">
             <p className="text-xl font-bold">Log New Items</p>
           </div>
           <div className="p-8 grid mx-auto gap-y-4 w-[]">
@@ -36,7 +36,7 @@ const AddNewTab = () => {
           </div>
         </div>
         <div className="w-full shadow-md bg-[#F7F7F7]">
-          <div className="p-5 mx-4 border-b">
+          <div className="p-5 mx- border-b">
             <p className="text-xl font-bold">Logged items</p>
           </div>
           <div className="p-8 grid w-full gap-y-4"></div>
