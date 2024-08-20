@@ -28,7 +28,7 @@ const Outworkers = () => {
       <Title />
 
       <div className="flex items-center justify-end m- gap-3">
-        <Button title="Add New Outworker" bg="bg-green-500" hover="hover:bg-green-600" text={'text-white'} onClick={() => setIsModalVisible(true)} />
+        <Button title="Add New Outworker" bg="bg-green-600" hover="hover:bg-green-700" text={'text-white'} onClick={() => setIsModalVisible(true)} />
       </div>
 
       <div className="mb-4 justify-center flex pt-10">
@@ -72,7 +72,7 @@ const Outworkers = () => {
         ))}
       </div>
 
-      <Modal isVisible={isModalVisible} onClose={() => setIsModalVisible(false)} onSave={() => setIsModalVisible(false)} width={"max-w-[90vh]"} title="Add New record">
+      <Modal isVisible={isModalVisible} onClose={() => setIsModalVisible(false)} onSave={() => setIsModalVisible(false)} width={"max-w-[90vh]"} title="Add New Outworker">
         <div className="w-full shadow">
           <div className="overflow-y-auto max-h-[70vh] custom-scrollbar px-2 space-y-3">
             <InputWithLabel label={"Name"} />
