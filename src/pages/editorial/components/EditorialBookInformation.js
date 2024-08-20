@@ -72,6 +72,7 @@ const EditorialBookInformation = ({ title, info, bookFlag }) => {
                 value={selectedValues[index]}
                 onChange={(e) => handleSelectChange(index, e)}
                 options={options}
+                background="bg-white"
               />
             ))}
           </div>
