@@ -27,7 +27,7 @@ const Home = () => {
         <SearchField placeholder="Pen name/Author name" />
         <Button title="Search" />
         <Button title="Clear" />
-        <Button title="Add New Record" href="/add-record-home" bg="bg-green-600" hover="hover:bg-green-700" text={"text-white"} />
+        <Button title="Add New Record" href="/add-new-record" bg="bg-green-600" hover="hover:bg-green-700" text={"text-white"} />
         <Button title="ISBN Search" href="/isbn-search" />
       </div>
 

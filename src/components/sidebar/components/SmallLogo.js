@@ -2,7 +2,7 @@ import React from "react";
 
 const SmallLogo = () => {
   return (
-    <a href="/">
+    <a href="/home">
       <img
         src="/assets/logomark.png"
         alt="small logo"

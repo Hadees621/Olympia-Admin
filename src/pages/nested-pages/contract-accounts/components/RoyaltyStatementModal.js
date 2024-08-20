@@ -36,7 +36,7 @@ const RoyaltyStatementModal = () => {
         <div className="px-6 font-sans">
             <div className='flex justify-between'>
                 <div>
-                    <a href="/">
+                    <a href="/home">
                         <img
                             src="/assets/logo.png"
                             alt="logo"
