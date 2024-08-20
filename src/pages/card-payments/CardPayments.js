@@ -1,3 +1,4 @@
+import Title from "components/Title";
 import Button from "components/Button";
 import Modal from "components/modals/Modal";
 import EditableRadio from "components/EditableRadio";
@@ -16,7 +17,7 @@ const tabs = [
 const TabButton = ({ tab, isActive, onClick }) => (
   <li key={tab.key} className="me-2" role="presentation">
     <button
-      className={`inline-block p-2 border-b-2 rounded-t-lg text-[13px] font-semibold ${isActive
+      className={`inline-block p-2 border-b-2 rounded-t-lg text-[14px] font-semibold ${isActive
         ? "text-red-600 border-red-600"
         : "text-black hover:text-black border-black"
         }`}
@@ -68,9 +69,9 @@ const CardPayments = () => {
 
   return (
     <div className="w-full text-start items-center m-4">
-      <p className="text-3xl font-semibold mt-8">Telephone Payment Records</p>
-      <div className="flex items-center justify-end m-4">
-        <Button title="Add New Payment" onClick={() => setIsModalVisible(true)} />
+      <Title title="Telephone Payment Records" />
+      <div className="flex items-center justify-end">
+        <Button title="Add New Payment" bg="bg-green-600" hover="hover:bg-green-700" text={"text-white"} onClick={() => setIsModalVisible(true)} />
       </div>
       <div className="mb-4 justify-center flex pt-10">
         <ul
@@ -105,7 +106,7 @@ const CardPayments = () => {
         title="Add New Payment"
       >
         <div className="w-full shadow">
-          <div className="overflow-y-auto max-h-[70vh] custom-scrollbar px-2">
+          <div className="overflow-y-auto max-h-[70vh] custom-scrollbar px-">
             <ModalFormSection
               title="Telephone Payment Record"
               fields={[
