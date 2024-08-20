@@ -48,7 +48,7 @@ const AllOverdue = () => {
 
   return (
     <div
-      className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
+      className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
         }`}
     >
       <div className="flex items-center mt-8 gap-3 my-4 justify-end">
@@ -60,56 +60,55 @@ const AllOverdue = () => {
           onClick={() => setIsAddModalVisible(true)}
         />
       </div>
-      <div className="overflow-x-auto shadow-md transition-all duration-300">
-        <table className="w-full text-sm text-left">
+      <div className="overflow-x-auto text-center shadow max-h-[600px] custom-scrollbar custom-scrollbarw">
+        <table className="min-w-full table-fixed divide-y divide-gray-200">
           <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
             <tr className="text-sm font-medium text-gray-500 uppercase text-center whitespace-nowrap">
-              <th className="px-6 py-3 border"></th>
-              <th className="px-6 py-3 border">First Name</th>
-              <th className="px-6 py-3 border">Last Name</th>
-              <th className="px-6 py-3 border">Company</th>
-              <th className="px-6 py-3 border">VAT</th>
-              <th className="px-6 py-3 border">Telephone</th>
-              <th className="px-6 py-3 border">Mobile</th>
-              <th className="px-6 py-3 border">Emails</th>
-              <th className="px-6 py-3 border">Skype</th>
-              <th className="px-6 py-3 border">Website</th>
-              <th className="px-6 py-3 border">1st Address</th>
-              <th className="px-6 py-3 border">2und Address</th>
-              <th className="px-6 py-3 border">Signup Date</th>
+              <th className="px-6 py-3 "></th>
+              <th className="px-6 py-3 ">First Name</th>
+              <th className="px-6 py-3 ">Last Name</th>
+              <th className="px-6 py-3 ">Company</th>
+              <th className="px-6 py-3 ">VAT</th>
+              <th className="px-6 py-3 ">Telephone</th>
+              <th className="px-6 py-3 ">Mobile</th>
+              <th className="px-6 py-3 ">Emails</th>
+              <th className="px-6 py-3 ">Skype</th>
+              <th className="px-6 py-3 ">Website</th>
+              <th className="px-6 py-3 ">1st Address</th>
+              <th className="px-6 py-3 ">2und Address</th>
+              <th className="px-6 py-3 ">Signup Date</th>
             </tr>
           </thead>
           <tbody>
             {data.map((row, index) => (
               <tr
                 key={index}
-                className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap"
+                className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap custom-hover-row"
               >
-                <td className="px-6 py-4 border">
+                <td className="px-6 py-4 ">
                   <div className="space-x-2">
                     <TableButton title={"View"} onClick={() => handleViewClick(row)} />
                     <TableButton title={"Edit"} onClick={() => handleEditClick(row)} />
                   </div>
                 </td>
-                <td className="px-6 py-4 border">{row.firstName}</td>
-                <td className="px-6 py-4 border">{row.lastName}</td>
-                <td className="px-6 py-4 border">{row.company}</td>
-                <td className="px-6 py-4 border">{row.vat}</td>
-                <td className="px-6 py-4 border">{row.telephone}</td>
-                <td className="px-6 py-4 border">{row.mobile}</td>
-                <td className="px-6 py-4 border">{row.emails}</td>
-                <td className="px-6 py-4 border">{row.skype}</td>
-                <td className="px-6 py-4 border">{row.website}</td>
-                <td className="px-6 py-4 border">{row.address1}</td>
-                <td className="px-6 py-4 border">{row.address2}</td>
-                <td className="px-6 py-4 border">{row.signupDate}</td>
+                <td className="px-6 py-4 ">{row.firstName}</td>
+                <td className="px-6 py-4 ">{row.lastName}</td>
+                <td className="px-6 py-4 ">{row.company}</td>
+                <td className="px-6 py-4 ">{row.vat}</td>
+                <td className="px-6 py-4 ">{row.telephone}</td>
+                <td className="px-6 py-4 ">{row.mobile}</td>
+                <td className="px-6 py-4 ">{row.emails}</td>
+                <td className="px-6 py-4 ">{row.skype}</td>
+                <td className="px-6 py-4 ">{row.website}</td>
+                <td className="px-6 py-4 ">{row.address1}</td>
+                <td className="px-6 py-4 ">{row.address2}</td>
+                <td className="px-6 py-4 ">{row.signupDate}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
 
-      {/* view */}
       <Modal
         isVisible={isModalVisible}
         onClose={() => setIsModalVisible(false)}

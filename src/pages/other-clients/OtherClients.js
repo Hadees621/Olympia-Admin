@@ -1,3 +1,4 @@
+import Title from "components/Title";
 import Button from "components/Button";
 import React, { useState } from "react";
 import AllOverdue from "./components/AllOverdue";
@@ -41,11 +42,7 @@ const OtherClients = () => {
   const [activeTab, setActiveTab] = useState("Newspapers");
   return (
     <div className="w-full text-start items-center m-4">
-      {/* header */}
-      <p className="text-3xl font-semibold mt-8 ml-8">
-        {" "}
-        Welcome to Olympia Portal (olympia admin)
-      </p>
+      <Title />
 
       <div className="flex items-center mt-3 gap-3 px-6 pt-10 w-[60%] mx-auto">
         <p className="text-lg font-semibold"> Client Name : </p>
@@ -63,7 +60,7 @@ const OtherClients = () => {
           {tabs.map((tab) => (
             <li key={tab.key} className="me-2" role="presentation">
               <button
-                className={`inline-block p-2 border-b-2 rounded-t-lg text-[11px] font-semibold ${activeTab === tab.key
+                className={`inline-block p-2 border-b-2 rounded-t-lg text-[13px] font-semibold ${activeTab === tab.key
                   ? "text-red-600 border-red-600"
                   : "text-black hover:text-black border-black"
                   }`}
@@ -80,6 +77,7 @@ const OtherClients = () => {
           ))}
         </ul>
       </div>
+
       <div id="default-styled-tab-content" className="w-full">
         {tabs.map((tab) => (
           <div
