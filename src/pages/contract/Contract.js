@@ -1,4 +1,5 @@
 import Plus from "utils/icons/Plus";
+import Title from "components/Title";
 import Button from "components/Button";
 import ReactDOM from 'react-dom/client';
 import React, { useState } from "react";
@@ -13,14 +14,6 @@ import ContractInformationEditable from "./components/ContractInformationEditabl
 const Contract = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedValues, setSelectedValues] = useState(["", ""]);
-
-  const openModal = () => {
-    setIsModalVisible(true);
-  };
-
-  const closeModal = () => {
-    setIsModalVisible(false);
-  };
 
   const handleSelectChange = (index, e) => {
     const newSelectedValues = [...selectedValues];
@@ -76,12 +69,10 @@ const Contract = () => {
   };
 
   return (
-    <div className="w-full text-start items-center">
-      <p className="text-3xl font-semibold mt-8 ml-4">
-        Welcome to Olympia Portal (olympia admin)
-      </p>
+    <div className="w-full text-start items-center m-4">
+      <Title />
 
-      <div className="flex items-center mt-8 gap-3 m-4">
+      <div className="flex items-center mt-8 gap-3">
         <SearchField placeholder="Book Title" />
         <SearchField placeholder="Pen name/Author name" />
         <Button title="Search" />
@@ -89,7 +80,7 @@ const Contract = () => {
         <Button title="ISBN Search" href="/isbn-search" />
       </div>
 
-      <div className="flex gap-2 justify-start mt-3 items-center w-full px-4">
+      <div className="flex gap-2 justify-start mt-3 items-center w-full">
         <p className="text-md font-semibold text-gray-500">Pen Name:</p>
         {placeholders.map((placeholder, index) => (
           <SelectField
@@ -103,10 +94,10 @@ const Contract = () => {
         <Button title="Contract Accounts" href="/account-details" />
         <Button title="Author Data Sheet" onClick={openWindow} />
 
-        <Button title="Edit" onClick={openModal} />
+        <Button title="Edit" onClick={() => setIsModalVisible(true)} />
       </div>
 
-      <div className="shadow mt-4 bg-[#F7F7F7] p-3 flex justify-between m-4 items-center">
+      <div className="shadow mt-4 bg-[#F7F7F7] p-3 flex justify-between items-center">
         <p className="text-md font-semibold text-gray-500">
           Aine By Yugtha YJ <span className="text-black"> Book No. </span> 1
         </p>
@@ -116,7 +107,7 @@ const Contract = () => {
         </div>
       </div>
 
-      <div className="m-4 grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-3 my-4">
         <div>
           <InformationSection
             title="Author Information"
@@ -129,7 +120,7 @@ const Contract = () => {
         </div>
       </div>
 
-      <Modal isVisible={isModalVisible} onClose={closeModal} onSave={closeModal} title="Edit Contract Information">
+      <Modal isVisible={isModalVisible} onClose={() => setIsModalVisible(false)} onSave={() => setIsModalVisible(false)} title="Edit Contract Information">
         <ContractInformationEditable
           infoLeft={contractInfoLeft}
           infoRight={contractInfoRight}
