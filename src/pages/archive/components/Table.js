@@ -7,7 +7,7 @@ const Table = () => {
         <table className="min-w-full divide-y divide-gray-200 shadow">
           <thead className="bg-gray-50 sticky top-0 z-10">
             {" "}
-            <tr className="text-sm w-full font-bold uppercase whitespace-nowrap">
+            <tr className="text-sm w-full font-bold uppercase whitespace-nowrap ">
               <th className="p-3">Status</th>
               <th className="p-3">Imprint</th>
               <th className="p-3">Author</th>
