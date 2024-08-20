@@ -17,7 +17,7 @@ const Login = () => {
                 </div>
                 <div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
                     <div className="px-6 py-8 space-y-7">
-                        <p className="text-3xl font-semibold">
+                        <p className="text-3xl font-semibold text-center">
                             Welcome to Olympia Portal
                         </p>
                         <form className="space-y-4 md:space-y-6" action="#">
