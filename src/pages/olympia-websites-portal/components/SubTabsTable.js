@@ -15,7 +15,7 @@ const SubTabsTable = () => {
 
   return (
     <div
-      className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1030px]" : "max-w-[1200px]"
+      className={`transition-all duration-300 ${isOpen ? "max-w-[1030px]" : "max-w-[1200px]"
         }`}
     >
       <div className="w-[30%]">
@@ -24,6 +24,7 @@ const SubTabsTable = () => {
           <p className="text-lg font-bold">1</p>
         </div>
       </div>
+
       <div className="w-[70%] flex items-center justify-center gap-3 mx-auto my-5">
         <SearchField placeholder="Book Title" />
         <SearchField placeholder="Pen name/Author name" />
@@ -33,20 +34,21 @@ const SubTabsTable = () => {
       </div>
 
       <Pagination num={34} />
-      <div className="overflow-x-auto shadow-md transition-all duration-300">
-        <table className="w-full text-sm text-left">
-          <thead className="text-xs text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
-            <tr className="text-xs font-medium text-gray-500 uppercase text-center whitespace-nowrap">
-              <th className="px-6 py-3 border">Status</th>
-              <th className="px-6 py-3 border">Pen Name</th>
-              <th className="px-6 py-3 border">Book Title</th>
-              <th className="px-6 py-3 border">Imprint</th>
-              <th className="px-6 py-3 border">Contract Date</th>
-              <th className="px-6 py-3 border">Publication Date</th>
-              <th className="px-6 py-3 border">Author Forms</th>
-              <th className="px-6 py-3 border">Contract Payment Status</th>
-              <th className="px-6 py-3 border">Olympia Main Website</th>
-              <th className="px-6 py-3 border">Olympia (USA) Website</th>
+
+      <div className="overflow-x-auto text-center shadow max-h-[600px] custom-scrollbar custom-scrollbarw">
+        <table className="min-w-full table-fixed divide-y divide-gray-200">
+          <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
+            <tr className="text-sm font-medium text-gray-500 uppercase text-center whitespace-nowrap">
+              <th className="px-6 py-3 ">Status</th>
+              <th className="px-6 py-3 ">Pen Name</th>
+              <th className="px-6 py-3 ">Book Title</th>
+              <th className="px-6 py-3 ">Imprint</th>
+              <th className="px-6 py-3 ">Contract Date</th>
+              <th className="px-6 py-3 ">Publication Date</th>
+              <th className="px-6 py-3 ">Author Forms</th>
+              <th className="px-6 py-3 ">Contract Payment Status</th>
+              <th className="px-6 py-3 ">Olympia Main Website</th>
+              <th className="px-6 py-3 ">Olympia (USA) Website</th>
             </tr>
           </thead>
           <tbody>
@@ -55,18 +57,18 @@ const SubTabsTable = () => {
                 key={index}
                 className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap"
               >
-                <td className="px-6 py-4 border text-orange-500 font-semibold">
+                <td className="px-6 py-4  text-orange-500 font-semibold">
                   {row.status}
                 </td>
-                <td className="px-6 py-4 border">{row.penName}</td>
-                <td className="px-6 py-4 border">{row.bookTitle}</td>
-                <td className="px-6 py-4 border">{row.imprint}</td>
-                <td className="px-6 py-4 border">{row.contractDate}</td>
-                <td className="px-6 py-4 border">
+                <td className="px-6 py-4 ">{row.penName}</td>
+                <td className="px-6 py-4 ">{row.bookTitle}</td>
+                <td className="px-6 py-4 ">{row.imprint}</td>
+                <td className="px-6 py-4 ">{row.contractDate}</td>
+                <td className="px-6 py-4 ">
                   <div className="flex gap-2"></div>
                 </td>
 
-                <td className="px-6 py-4 border">
+                <td className="px-6 py-4 ">
                   <div className="flex space-x-2 justify-center">
                     <div className="p-1.5 rounded-3xl bg-[#C3C4C5] cursor-pointer">
                       <Calculator
@@ -93,12 +95,12 @@ const SubTabsTable = () => {
                   </span>
                 </td>
 
-                <td className="px-6 py-4 border">
-                  <TableButton title={"Add to Main Website"} bg="bg-green-700" text={"text-white"} />
+                <td className="px-6 py-4 ">
+                  <TableButton title={"Add to Main Website"} bg="bg-green-600" hover="hover:bg-green-700" text={"text-white"} />
                 </td>
 
-                <td className="px-6 py-4 border">
-                  <TableButton title={"Add to USA Website"} bg="bg-green-700" text={"text-white"} />
+                <td className="px-6 py-4 ">
+                  <TableButton title={"Add to USA Website"} bg="bg-green-600" hover="hover:bg-green-700" text={"text-white"} />
                 </td>
               </tr>
             ))}
