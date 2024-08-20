@@ -40,7 +40,7 @@ const Login = () => {
                                 />
                             </div>
                             <div className=''>
-                                <Button title={"Login"} width={"w-full"} bg='bg-green-600' hover='hover:bg-green-700' text={"text-white"} href='/' />
+                                <Button title={"Login"} width={"w-full"} bg='bg-green-600' hover='hover:bg-green-700' text={"text-white"} href='/home' />
                             </div>
                         </form>
                     </div>
