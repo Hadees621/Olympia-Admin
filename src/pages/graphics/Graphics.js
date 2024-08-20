@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import SearchField from "../home/components/SearchField";
+import Box from "./components/Box";
 import Button from "components/Button";
+import React, { useState } from "react";
+import Upload from "./components/Upload";
+import FileUpload from "./components/FileUpload";
 import SelectField from "components/SelectField";
+import SearchField from "../home/components/SearchField";
 import Remaindered from "../editorial/components/Remaindered";
+import EditableForm from "../publicity/components/EditableForm.js/EditableForm";
 import {
   characterDescription,
   characterDescriptionData,
   illustrationsDescription,
   illustrationsDescriptionData,
 } from "./utils/utils";
-import Upload from "./components/Upload";
-import FileUpload from "./components/FileUpload";
-import EditableForm from "../publicity/components/EditableForm.js/EditableForm";
-import Box from "./components/Box";
 
 const Graphics = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
@@ -23,25 +23,26 @@ const Graphics = () => {
     setSelectedValues(newSelectedValues);
   };
 
-  const placeholders = ["Please Select Author", "Select Book"];
   const handleSave = (formData) => {
     console.log("Saved data:", formData);
   };
 
+  const placeholders = ["Please Select Author", "Select Book"];
+
   return (
-    <div className="w-full text-start items-center">
+    <div className="w-full text-start m-4">
       <header>
-        <p className="text-3xl font-semibold mt-8 ml-4">
+        <p className="text-3xl font-semibold mt-8">
           Welcome to Olympia Portal (olympia admin)
         </p>
-        <div className="flex items-center mt-8 gap-3 m-4">
+        <div className="flex items-center mt-8 gap-3">
           <SearchField placeholder="Book Title" />
           <SearchField placeholder="Pen name/Author name" />
           <Button title="Search" />
           <Button title="Clear" />
           <Button title="ISBN Search" href="/isbn-search" />
         </div>
-        <div className="flex gap-2 justify-start mt-3 items-center w-full px-4">
+        <div className="flex gap-2 justify-start mt-3 items-center w-full">
           <p className="text-md font-semibold text-gray-500">Pen Name:</p>
           {placeholders.map((placeholder, index) => (
             <SelectField
@@ -55,11 +56,9 @@ const Graphics = () => {
         </div>
       </header>
 
-      <div className="mt-4 m-4">
-        <Remaindered />
-      </div>
+      <Remaindered />
 
-      <div className="grid grid-cols-2 m-4 gap-4">
+      <div className="grid grid-cols-2 gap-4">
         <div className="w-full space-y-5">
           <Box />
 
@@ -82,7 +81,7 @@ const Graphics = () => {
             textAreaRows={4}
           />
           <section className="w-full shadow-md bg-[#F7F7F7]">
-            <header className="border-b flex items-center mx-4 justify-between">
+            <header className="border-b flex items-center justify-between">
               <h2 className="text-xl font-semibold p-4">
                 Upload illustrations (Only upload approved completed
                 illustrations)
