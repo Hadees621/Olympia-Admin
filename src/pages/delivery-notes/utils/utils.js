@@ -1,0 +1,98 @@
+export const deliveryNotesData = [
+    {
+        date: "2024-07-05",
+        reference: "c7910332",
+        company: "Gardner",
+        dnRn: "DN",
+    },
+    {
+        date: "2024-07-06",
+        reference: "a5123401",
+        company: "Acme Corp",
+        dnRn: "RN",
+    },
+    {
+        date: "2024-07-07",
+        reference: "b7345678",
+        company: "Globex",
+        dnRn: "DN",
+    },
+    {
+        date: "2024-07-08",
+        reference: "d9123456",
+        company: "Initech",
+        dnRn: "RN",
+    },
+    {
+        date: "2024-07-05",
+        reference: "c7910332",
+        company: "Gardner",
+        dnRn: "DN",
+    },
+    {
+        date: "2024-07-06",
+        reference: "a5123401",
+        company: "Acme Corp",
+        dnRn: "RN",
+    },
+    {
+        date: "2024-07-07",
+        reference: "b7345678",
+        company: "Globex",
+        dnRn: "DN",
+    },
+    {
+        date: "2024-07-08",
+        reference: "d9123456",
+        company: "Initech",
+        dnRn: "RN",
+    },
+    {
+        date: "2024-07-05",
+        reference: "c7910332",
+        company: "Gardner",
+        dnRn: "DN",
+    },
+    {
+        date: "2024-07-06",
+        reference: "a5123401",
+        company: "Acme Corp",
+        dnRn: "RN",
+    },
+    {
+        date: "2024-07-07",
+        reference: "b7345678",
+        company: "Globex",
+        dnRn: "DN",
+    },
+    {
+        date: "2024-07-08",
+        reference: "d9123456",
+        company: "Initech",
+        dnRn: "RN",
+    },
+    {
+        date: "2024-07-05",
+        reference: "c7910332",
+        company: "Gardner",
+        dnRn: "DN",
+    },
+    {
+        date: "2024-07-06",
+        reference: "a5123401",
+        company: "Acme Corp",
+        dnRn: "RN",
+    },
+    {
+        date: "2024-07-07",
+        reference: "b7345678",
+        company: "Globex",
+        dnRn: "DN",
+    },
+    {
+        date: "2024-07-08",
+        reference: "d9123456",
+        company: "Initech",
+        dnRn: "RN",
+    },
+];

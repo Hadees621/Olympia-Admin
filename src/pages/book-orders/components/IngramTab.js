@@ -79,8 +79,8 @@ const IngramTab = () => {
                     </button>
                     <TableButton
                       title="Edit"
-                      bg="bg-green-500"
-                      hover="hover:bg-green-600"
+                      bg="bg-green-600"
+                      hover="hover:bg-green-700"
                       text="text-white"
                       onClick={() => setModalVisible(true)}
                     />
