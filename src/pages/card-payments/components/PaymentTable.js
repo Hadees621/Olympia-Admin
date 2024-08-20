@@ -13,8 +13,8 @@ import SelectInputWithLabel from "components/SelectInputWithLabel";
 const PaymentTable = () => {
   const { isOpen } = useSidebarStore();
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [isModalVisible2, setIsModalVisible2] = useState(false);
   const [selectedRowData, setSelectedRowData] = useState(null);
+  const [isModalVisible2, setIsModalVisible2] = useState(false);
 
   const ModalFormSection = ({ title, fields, data }) => (
     <div className="space-y-5 p-4">
@@ -50,7 +50,7 @@ const PaymentTable = () => {
           </div>
         </div>
 
-        <div className="overflow-x-auto text-center shadow max-h-[600px] custom-scrollbar">
+        <div className="overflow-x-auto text-center shadow max-h-[600px] custom-scrollbar custom-scrollbarw">
           <table className="min-w-full table-fixed divide-y divide-gray-200">
             <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
               <tr className="text-sm font-medium text-gray-500 uppercase text-center whitespace-nowrap">
