@@ -1,3 +1,4 @@
+import Title from "components/Title";
 import { data } from "./utils/utils";
 import Button from "components/Button";
 import React, { useState } from "react";
@@ -60,7 +61,8 @@ const FinalCheck = () => {
       className={`m-4 w-full text-start items-center ${!isOpen && "max-w-[1250px]"
         }`}
     >
-      <p className="text-3xl font-semibold mt-8">Books (Final Check)</p>
+      <Title title="Books (Final Check)" />
+
       <div className="flex items-center mt-3 gap-3">
         <SearchField placeholder="Book Title" />
         <SearchField placeholder="Pen Name/Author Name" />
@@ -98,6 +100,7 @@ const FinalCheck = () => {
       <div id="default-styled-tab-content" className="w-full">
         <TabContent activeTab={activeTab} isOpen={isOpen} />
       </div>
+      
     </div>
   );
 };
