@@ -5,10 +5,11 @@ import DatePickerField from "components/DatePickerField";
 
 const TopSold = () => {
   return (
-    <div className={`m-4 transition-all duration-300`}>
+    <div>
       <p className="text-lg font-semibold text-center mt-12 mb-8">
         Show report:(by default current month)
       </p>
+
       <div className="flex items-center gap-3 px-5 w-[60%] mx-auto mb-8">
         <p className="text-lg font-semibold"> From </p>
         <DatePickerField />
@@ -16,6 +17,7 @@ const TopSold = () => {
         <DatePickerField />
         <Button title="Search" />
       </div>
+
       <div className="font-bold shadow text-center">
         <h2 className="text-xl p-3 uppercase bg-[#F7F7F7]">
           Top 20 Books Sold

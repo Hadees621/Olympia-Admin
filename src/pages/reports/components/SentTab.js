@@ -16,8 +16,8 @@ const SentTab = () => {
 
   return (
     <div
-      className={`m-4 transition-all duration-300 ${
-        isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
+      className={`transition-all duration-300 ${
+        isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
       }`}
     >
       <p className="text-lg font-semibold text-center mt-12 mb-8">

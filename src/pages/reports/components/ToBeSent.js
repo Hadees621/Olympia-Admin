@@ -15,9 +15,8 @@ const ToBeSent = () => {
 
   return (
     <div
-      className={`m-4 transition-all duration-300 ${
-        isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
-      }`}
+      className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
+        }`}
     >
       <div className="font-bold shadow text-center mt-10">
         <h2 className="text-xl p-3 uppercase bg-[#F7F7F7]">
