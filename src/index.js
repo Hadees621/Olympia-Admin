@@ -7,7 +7,7 @@ import { BrowserRouter as Router, useLocation } from "react-router-dom";
 
 const AppWithSidebar = () => {
   const location = useLocation();
-  const hideSidebar = location.pathname === "/login";
+  const hideSidebar = location.pathname === "/";
 
   return (
     <div className="flex">

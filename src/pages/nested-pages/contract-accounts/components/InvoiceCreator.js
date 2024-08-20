@@ -41,32 +41,9 @@ const InvoiceCreator = () => {
 
     return (
         <div className="p-6 font-sans">
-            {/* <div className='flex justify-between'>
-                <div className="text-center mb-6">
-                    <h2 className="text-2xl font-semibold">Invoice</h2>
-                </div>
-
-                <div>
-                    <h1>Ashwell Publishing LTD</h1>
-                    <p>T/A Olympia Publishers</p>
-                    <address>
-                        Tallis House<br />
-                        2 Tallis Street<br />
-                        London<br />
-                        EC4Y 0AB<br />
-                        UK
-                    </address>
-                    <ul>
-                        <li><strong>Tel:</strong> <a href="tel:+442037553166">0203 755 3166</a></li>
-                        <li><strong>Email:</strong> <a href="mailto:accounts@olympiapublishers.com">accounts@olympiapublishers.com</a></li>
-                        <li><strong>VAT:</strong> 102471656</li>
-                    </ul>
-                </div>
-            </div> */}
-
             <div className='flex justify-between'>
                 <div className=''>
-                    <a href="/">
+                    <a href="/home">
                         <img
                             src="/assets/logo.png"
                             alt="logo"
@@ -101,8 +78,6 @@ const InvoiceCreator = () => {
                     </div>
                 </div>
             </div>
-
-          
 
             {isEditing ? (
                 <div className="mb-6 border p-4 mt-10">
