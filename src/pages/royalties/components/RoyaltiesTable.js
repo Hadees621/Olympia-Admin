@@ -202,7 +202,7 @@ const RoyaltiesTable = () => {
 
   return (
     <div
-      className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
+      className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
         }`}
     >
       <div className="flex items-center mt-10 mb-4 gap-3">
@@ -222,11 +222,12 @@ const RoyaltiesTable = () => {
           />
         </div>
       </div>
-      <div className="overflow-x-auto shadow-md transition-all duration-300">
-        <table className="w-full text-sm text-left">
-          <thead className="text-xs text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
-            <tr className="text-xs font-medium text-gray-500 uppercase text-center whitespace-nowrap">
-              <th className="px-6 py-3 border space-x-4 flex items-center gap-3">
+
+      <div className="overflow-x-auto text-center shadow max-h-[600px] custom-scrollbar custom-scrollbarw">
+        <table className="min-w-full table-fixed divide-y divide-gray-200">
+          <thead className="text-sm uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
+            <tr className="text-sm font-medium text-gray-500 uppercase text-center whitespace-nowrap">
+              <th className="px-6 py-3 space-x-4 flex items-center gap-3">
                 <input
                   type="checkbox"
                   onChange={handleSelectAll}
@@ -234,52 +235,52 @@ const RoyaltiesTable = () => {
                 />
                 Select All
               </th>
-              <th className="px-6 py-3 border">View</th>
-              <th className="px-6 py-3 border">Email Status</th>
-              <th className="px-6 py-3 border">Book </th>
-              <th className="px-6 py-3 border">Author</th>
-              <th className="px-6 py-3 border"> Duration</th>
-              <th className="px-6 py-3 border">Issue Date</th>
-              <th className="px-6 py-3 border">Royalties Amount</th>
-              <th className="px-6 py-3 border">Broughtforward Amount</th>
-              <th className="px-6 py-3 border">Total Amount</th>
-              <th className="px-6 py-3 border">Issued</th>
-              <th className="px-6 py-3 border">Status</th>
-              <th className="px-6 py-3 border">Payment Date</th>
-              <th className="px-6 py-3 border">Delete</th>
+              <th className="px-6 py-3">View</th>
+              <th className="px-6 py-3">Email Status</th>
+              <th className="px-6 py-3">Book </th>
+              <th className="px-6 py-3">Author</th>
+              <th className="px-6 py-3"> Duration</th>
+              <th className="px-6 py-3">Issue Date</th>
+              <th className="px-6 py-3">Royalties Amount</th>
+              <th className="px-6 py-3">Broughtforward Amount</th>
+              <th className="px-6 py-3">Total Amount</th>
+              <th className="px-6 py-3">Issued</th>
+              <th className="px-6 py-3">Status</th>
+              <th className="px-6 py-3">Payment Date</th>
+              <th className="px-6 py-3">Delete</th>
             </tr>
           </thead>
           <tbody>
             {data.map((row, index) => (
               <tr
                 key={index}
-                className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap ${isRowSelected(index) ? "bg-gray-100" : ""
+                className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap custom-hover-row ${isRowSelected(index) ? "bg-gray-100" : ""
                   }`}
               >
-                <td className="px-6 py-4 border">
+                <td className="px-6 py-4">
                   <input
                     type="checkbox"
                     onChange={() => handleSelectRow(index)}
                     checked={selectedRows.includes(index)}
                   />
                 </td>
-                <td className="px-6 py-4 border">
+                <td className="px-6 py-4">
                   <TableButton title="View" onClick={() => openNewWindow(row)} />
                 </td>
-                <td className="px-6 py-4 border">{row.emailStatus}</td>
-                <td className="px-6 py-4 border">{row.book}</td>
-                <td className="px-6 py-4 border">{row.author}</td>
-                <td className="px-6 py-4 border">{row.duration}</td>
-                <td className="px-6 py-4 border">{row.issueDate}</td>
-                <td className="px-6 py-4 border">{row.royaltiesAmount}</td>
-                <td className="px-6 py-4 border">{row.broughtforwardAmount}</td>
-                <td className="px-6 py-4 border">{row.totalAmount}</td>
-                <td className="px-6 py-4 border">
+                <td className="px-6 py-4">{row.emailStatus}</td>
+                <td className="px-6 py-4">{row.book}</td>
+                <td className="px-6 py-4">{row.author}</td>
+                <td className="px-6 py-4">{row.duration}</td>
+                <td className="px-6 py-4">{row.issueDate}</td>
+                <td className="px-6 py-4">{row.royaltiesAmount}</td>
+                <td className="px-6 py-4">{row.broughtforwardAmount}</td>
+                <td className="px-6 py-4">{row.totalAmount}</td>
+                <td className="px-6 py-4">
                   <SelectField width="min-w-[120px]" />
                 </td>
-                <td className="px-6 py-4 border">{row.status}</td>
-                <td className="px-6 py-4 border">{row.paymentDate}</td>
-                <td className="px-6 py-4 border">
+                <td className="px-6 py-4">{row.status}</td>
+                <td className="px-6 py-4">{row.paymentDate}</td>
+                <td className="px-6 py-4">
                   <TableButton title="Delete" bg="bg-red-500" hover="hover:bg-red-600" text={'text-white'} />
                 </td>
               </tr>

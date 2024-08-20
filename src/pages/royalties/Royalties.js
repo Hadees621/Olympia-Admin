@@ -1,3 +1,4 @@
+import Title from "components/Title";
 import React, { useState } from "react";
 import WithoutRTab from "./components/WithoutRTab";
 import MarketingTab from "./components/MarketingTab";
@@ -35,9 +36,8 @@ const Royalties = () => {
   const [activeTab, setActiveTab] = useState("withoutRemaindered");
 
   return (
-    <div className="w-full text-start items-center m-">
-      {/* header */}
-      <p className="text-3xl font-semibold mt-8 ml-4">Book Invoices</p>
+    <div className="w-full text-start items-center m-4">
+      <Title title="Book Invoices" />
 
       <div className="mb-4 justify-center flex pt-10">
         <ul
@@ -48,7 +48,7 @@ const Royalties = () => {
           {tabs.map((tab) => (
             <li key={tab.key} className="me-2" role="presentation">
               <button
-                className={`inline-block p-2 border-b-2 rounded-t-lg text-[13px] font-semibold ${activeTab === tab.key
+                className={`inline-block p-2 border-b-2 rounded-t-lg text-[14px] font-semibold ${activeTab === tab.key
                   ? "text-red-600 border-red-600"
                   : "text-black hover:text-black border-black"
                   }`}
@@ -69,7 +69,7 @@ const Royalties = () => {
         {tabs.map((tab) => (
           <div
             key={tab.key}
-            className={`dark:bg-gray-800 ${activeTab === tab.key ? "block" : "hidden"
+            className={`${activeTab === tab.key ? "block" : "hidden"
               }`}
             id={tab.key}
             role="tabpanel"
