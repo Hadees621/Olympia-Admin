@@ -3,8 +3,11 @@ import Button from 'components/Button';
 
 const Login = () => {
     return (
-        <section className="bg-gray-50 w-full">
-            <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen">
+        <section
+            className="w-full h-screen bg-no-repeat bg-center bg-cover"
+            style={{ backgroundImage: `url('/assets/images/login2.jpg')` }}
+        >
+            <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-full backdrop-blur-[3px]">
                 <div>
                     <img
                         src="/assets/logo.png"
@@ -39,8 +42,8 @@ const Login = () => {
                                     required
                                 />
                             </div>
-                            <div className=''>
-                                <Button title={"Login"} width={"w-full"} bg='bg-green-600' hover='hover:bg-green-700' text={"text-white"} href='/home' />
+                            <div>
+                                <Button title="Login" width="w-full" bg="bg-green-600" hover="hover:bg-green-700" text="text-white" href="/home" />
                             </div>
                         </form>
                     </div>
@@ -51,4 +54,3 @@ const Login = () => {
 };
 
 export default Login;
-
