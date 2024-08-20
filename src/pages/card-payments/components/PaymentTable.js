@@ -1,28 +1,26 @@
-
-
+import ViewModal from "./ViewModal";
 import React, { useState } from "react";
+import Modal from "components/modals/Modal";
 import useSidebarStore from "stores/States";
 import TableButton from "components/TableButton";
 import SelectField from "components/SelectField";
 import { data, paymentData } from "../utils/utils";
-import SearchField from "pages/home/components/SearchField";
-import ViewModal from "./ViewModal";
-import InputWithLabel from "components/InputWithLabel";
 import EditableRadio from "components/EditableRadio";
+import InputWithLabel from "components/InputWithLabel";
+import SearchField from "pages/home/components/SearchField";
 import SelectInputWithLabel from "components/SelectInputWithLabel";
-import Modal from "components/modals/Modal";
 
 const PaymentTable = () => {
   const { isOpen } = useSidebarStore();
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [isModalVisible2, setIsModalVisible2] = useState(false);
   const [selectedRowData, setSelectedRowData] = useState(null);
+  const [isModalVisible2, setIsModalVisible2] = useState(false);
 
   const ModalFormSection = ({ title, fields, data }) => (
     <div className="space-y-5 p-4">
       <h1 className="font-bold text-xl py-3">{title}</h1>
       {fields.map((field, index) => {
-        const value = data ? data[field.label.replace(/ :$/, '')] : ''; 
+        const value = data ? data[field.label.replace(/ :$/, '')] : '';
         return React.createElement(field.component, {
           key: index,
           label: field.label,
@@ -37,7 +35,7 @@ const PaymentTable = () => {
   return (
     <div>
       <div
-        className={`m-4 transition-all duration-300 mt-10 ${isOpen ? "max-w-[1050px]" : "max-w-[1300px]"
+        className={`transition-all duration-300 mt-10 ${isOpen ? "max-w-[1050px]" : "max-w-[1300px]"
           }`}
       >
         <div className="flex items-center justify-between mt-10 mb-4 gap-3">
@@ -52,59 +50,63 @@ const PaymentTable = () => {
           </div>
         </div>
 
-        <div className="overflow-x-auto shadow-md transition-all duration-300">
-          <table className="w-full text-sm text-left">
+        <div className="overflow-x-auto text-center shadow max-h-[600px] custom-scrollbar custom-scrollbarw">
+          <table className="min-w-full table-fixed divide-y divide-gray-200">
             <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
               <tr className="text-sm font-medium text-gray-500 uppercase text-center whitespace-nowrap">
-                <th className="px-6 py-3 border">Invoice Type</th>
-                <th className="px-6 py-3 border">Date</th>
-                <th className="px-6 py-3 border">Invoice number/Ref</th>
-                <th className="px-6 py-3 border">Contact name</th>
-                <th className="px-6 py-3 border">Card Type</th>
-                <th className="px-6 py-3 border">Total amount </th>
-                <th className="px-6 py-3 border">Billing Name</th>
-                <th className="px-6 py-3 border">Completed by</th>
-                <th className="px-6 py-3 border">Status</th>
-                <th className="px-6 py-3 border">Manage</th>
+                <th className="px-6 py-3 ">Invoice Type</th>
+                <th className="px-6 py-3 ">Date</th>
+                <th className="px-6 py-3 ">Invoice number/Ref</th>
+                <th className="px-6 py-3 ">Contact name</th>
+                <th className="px-6 py-3 ">Card Type</th>
+                <th className="px-6 py-3 ">Total amount </th>
+                <th className="px-6 py-3 ">Billing Name</th>
+                <th className="px-6 py-3 ">Completed by</th>
+                <th className="px-6 py-3 ">Status</th>
+                <th className="px-6 py-3 ">Manage</th>
               </tr>
             </thead>
             <tbody>
               {data.map((row, index) => (
                 <tr
                   key={index}
-                  className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap`}
+                  className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap custom-hover-row"
                 >
-                  <td className="px-6 py-4 border">{row["Invoice Type"]}</td>
-                  <td className="px-6 py-4 border">{row["Date"]}</td>
-                  <td className="px-6 py-4 border">
-                    {row["Invoice number/Ref"]}
-                  </td>
-                  <td className="px-6 py-4 border">{row["Contact name"]}</td>
-                  <td className="px-6 py-4 border">{row["Card type"]}</td>
-                  <td className="px-6 py-4 border">{row["Total amount"]}</td>
-                  <td className="px-6 py-4 border">{row["Billing name"]}</td>
-                  <td className="px-6 py-4 border">{row["Completed by"]}</td>
-                  <td className="px-6 py-4 border text-red-600">
-                    {row["Status"]}
-                  </td>
-                  <td className="px-6 py-4 flex gap-x-2">
-                    <TableButton title={"View"} onClick={() => setIsModalVisible(true)} />
+                  <td className="px-6 py-4 ">{row.invoiceType}</td>
+                  <td className="px-6 py-4 ">{row.date}</td>
+                  <td className="px-6 py-4 ">{row.invoiceNumber}</td>
+                  <td className="px-6 py-4 ">{row.contactName}</td>
+                  <td className="px-6 py-4 ">{row.cardType}</td>
+                  <td className="px-6 py-4 ">{row.totalAmount}</td>
+                  <td className="px-6 py-4 ">{row.billingName}</td>
+                  <td className="px-6 py-4 ">{row.completedBy}</td>
+                  <td className="px-6 py-4  text-red-600">{row.status}</td>
+                  <td className="px-6 py-4 flex justify-center items-center gap-x-2">
                     <TableButton
-                      title={"Edit"}
-                      bg="bg-green-500"
-                      hover="hover:bg-green-600"
-                      text={'text-white'}
+                      title="View"
+                      onClick={() => setIsModalVisible(true)}
+                    />
+                    <TableButton
+                      title="Edit"
+                      bg="bg-green-600"
+                      hover="hover:bg-green-700"
+                      text="text-white"
                       onClick={() => {
                         setSelectedRowData(row);
                         setIsModalVisible2(true);
                       }}
                     />
-
-                    <TableButton title={"Delete"} bg="bg-red-500" hover="hover:bg-red-600" text={'text-white'} />
+                    <TableButton
+                      title="Delete"
+                      bg="bg-red-500"
+                      hover="hover:bg-red-600"
+                      text="text-white"
+                    />
                   </td>
                 </tr>
               ))}
             </tbody>
+
           </table>
         </div>
       </div>

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import Title from "components/Title";
 import Button from "components/Button";
-import AddNewTab from "./components/AddNewTab";
+import React, { useState } from "react";
 import PostLog from "./components/PostLog";
+import AddNewTab from "./components/AddNewTab";
 
 const Posts = () => {
   const [activeTab, setActiveTab] = useState("All");
@@ -17,12 +18,12 @@ const Posts = () => {
 
   return (
     <div className="w-full text-start items-center m-4">
-      {/* Header */}
-      <p className="text-3xl font-semibold mt-8 ml-8">Post</p>
+      <Title title="Post" />
 
-      <div className="my-3 w-full justify-end flex mr-8">
-      <Button title="ISBN Search" href="/isbn-search" />
+      <div className="my-3 w-full justify-end flex">
+        <Button title="ISBN Search" href="/isbn-search" />
       </div>
+
       <div className="mb-4 justify-center flex pt-3">
         <ul
           className="flex flex-wrap -mb-px gap-3 text-sm font-medium text-center"
@@ -32,11 +33,10 @@ const Posts = () => {
           {tabs.map((tab) => (
             <li key={tab.id} className="me-2" role="presentation">
               <button
-                className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${
-                  activeTab === tab.id
-                    ? "text-red-600 border-red-600"
-                    : "text-black hover:text-black border-black"
-                }`}
+                className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${activeTab === tab.id
+                  ? "text-red-600 border-red-600"
+                  : "text-black hover:text-black border-black"
+                  }`}
                 id={`${tab.id}-tab`}
                 type="button"
                 role="tab"
@@ -50,13 +50,13 @@ const Posts = () => {
           ))}
         </ul>
       </div>
+
       <div id="default-styled-tab-content" className="w-full">
         {tabs.map((tab) => (
           <div
             key={tab.id}
-            className={`p-4 dark:bg-gray-800 ${
-              activeTab === tab.id ? "block" : "hidden"
-            }`}
+            className={` dark:bg-gray-800 ${activeTab === tab.id ? "block" : "hidden"
+              }`}
             id={tab.id}
             role="tabpanel"
             aria-labelledby={`${tab.id}-tab`}

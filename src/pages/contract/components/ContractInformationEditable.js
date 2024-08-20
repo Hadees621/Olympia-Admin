@@ -5,7 +5,7 @@ import EditableTextarea from 'components/EditableTextarea';
 import EditableTextInput from 'components/EditableTextInput';
 import EditableDatePicker from 'components/EditableDatePicker';
 
-const ContractInformationEditable = ({ infoLeft, infoRight, onSave }) => {
+const ContractInformationEditable = ({ infoLeft, infoRight }) => {
     const [formState, setFormState] = useState(() => {
         const initialState = {};
         [...infoLeft, ...infoRight].forEach(item => {
@@ -22,11 +22,8 @@ const ContractInformationEditable = ({ infoLeft, infoRight, onSave }) => {
         }));
     };
     return (
-        <div className="w-full shadow-md bg-[#F7F7F7]">
-            <div className="p-5 mx-4 border-b">
-                <p className="text-xl font-bold">Edit Contract Information</p>
-            </div>
-            <div className="flex justify-between gap-14 p-8">
+        <div className="w-full shadow-md bg-[#F7F7F7] p-4">
+            <div className="flex justify-between gap-14 ">
                 <div className="w-full grid gap-4">
                     {infoLeft.map((item, index) => (
                         <div key={index} className='w-full'>
@@ -36,6 +33,7 @@ const ContractInformationEditable = ({ infoLeft, infoRight, onSave }) => {
                                     name={item.name}
                                     value={formState[item.name]}
                                     onChange={handleChange}
+                                    background='bg-white'
                                 />
                             ) : item.type === 'dropdown' ? (
                                 <EditableDropdown
@@ -44,6 +42,8 @@ const ContractInformationEditable = ({ infoLeft, infoRight, onSave }) => {
                                     value={formState[item.name]}
                                     options={item.options}
                                     onChange={handleChange}
+                                    bg='bg-white'
+
                                 />
                             ) : item.type === 'radio' ? (
                                 <EditableRadio
@@ -52,6 +52,8 @@ const ContractInformationEditable = ({ infoLeft, infoRight, onSave }) => {
                                     value={formState[item.name]}
                                     options={item.options}
                                     onChange={handleChange}
+                                    bg='bg-white'
+
                                 />
                             ) : item.type === 'textarea' ? (
                                 <EditableTextarea
@@ -59,6 +61,7 @@ const ContractInformationEditable = ({ infoLeft, infoRight, onSave }) => {
                                     name={item.name}
                                     value={formState[item.name]}
                                     onChange={handleChange}
+                                    background='bg-white'
                                 />
                             ) : (
                                 <EditableTextInput
@@ -67,6 +70,7 @@ const ContractInformationEditable = ({ infoLeft, infoRight, onSave }) => {
                                     value={formState[item.name]}
                                     onChange={handleChange}
                                     isTextarea={item.isTextarea}
+                                    bg='bg-white'
                                 />
                             )}
                         </div>
@@ -81,6 +85,8 @@ const ContractInformationEditable = ({ infoLeft, infoRight, onSave }) => {
                                     name={item.name}
                                     value={formState[item.name]}
                                     onChange={handleChange}
+                                    background='bg-white'
+
                                 />
                             ) : item.type === 'dropdown' ? (
                                 <EditableDropdown
@@ -89,6 +95,7 @@ const ContractInformationEditable = ({ infoLeft, infoRight, onSave }) => {
                                     value={formState[item.name]}
                                     options={item.options}
                                     onChange={handleChange}
+                                    bg='bg-white'
                                 />
                             ) : item.type === 'radio' ? (
                                 <EditableRadio
@@ -104,6 +111,7 @@ const ContractInformationEditable = ({ infoLeft, infoRight, onSave }) => {
                                     name={item.name}
                                     value={formState[item.name]}
                                     onChange={handleChange}
+                                    background='bg-white'
                                 />
                             ) : (
                                 <EditableTextInput
@@ -112,6 +120,7 @@ const ContractInformationEditable = ({ infoLeft, infoRight, onSave }) => {
                                     value={formState[item.name]}
                                     onChange={handleChange}
                                     isTextarea={item.isTextarea}
+                                    bg='bg-white'
 
                                 />
                             )}

@@ -1,7 +1,7 @@
 import React from 'react';
+import Button from 'components/Button';
 import Modal from 'components/modals/Modal';
 import InputWithLabel from 'components/InputWithLabel';
-import Button from 'components/Button';
 
 const EditModal = ({ isOpen, onClose, title, label }) => {
     return (
@@ -9,11 +9,11 @@ const EditModal = ({ isOpen, onClose, title, label }) => {
             isVisible={isOpen}
             onClose={onClose}
             onSave={onClose}
-            width="max-w-[60vh]"
+            width="max-w-[70vh]"
             title={title}
             saveButton={false}
         >
-            <div className="p-4 space-y-4 z-100 ">
+            <div className="p- space-y-4 z-100 whitespace-nowrap">
                 <InputWithLabel label={label} flex={true} labelwidth='w-[35%]' />
                 <div className='flex justify-end'>
                     <Button title="Add" bg="bg-green-500" hover="hover:bg-green-600" text="text-white" onClick={onClose} />

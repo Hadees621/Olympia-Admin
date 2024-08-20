@@ -1,3 +1,4 @@
+import Title from "components/Title";
 import { data } from "./utils/utils";
 import Button from "components/Button";
 import React, { useState } from "react";
@@ -28,15 +29,17 @@ const TabContent = ({ activeTab, isOpen }) => {
   const tabData = tabs.find((tab) => tab.id === activeTab);
 
   return (
-    <div className={`p-4 dark:bg-gray-800 ${activeTab ? "block" : "hidden"}`}>
-      <div className="mt-3 w-full mx-4 font-semibold text-lg">
+    <div className={` ${activeTab ? "block" : "hidden"}`}>
+      <div className="mt-3 w-full font-semibold text-lg">
         {tabData.Olympia !== undefined && <p>Olympia: {tabData.Olympia}</p>}
         <p>Bumblebee: {tabData.Bumblebee}</p>
         <p>Total Records: {tabData.totalRecords}</p>
       </div>
+
       <Pagination num={7} />
+
       <div
-        className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
+        className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
           }`}
       >
         {activeTab === "archive-tab" ? (
@@ -55,11 +58,12 @@ const FinalCheck = () => {
 
   return (
     <div
-      className={`w-full text-start items-center ${!isOpen && "max-w-[1250px]"
+      className={`m-4 w-full text-start items-center ${!isOpen && "max-w-[1250px]"
         }`}
     >
-      <p className="text-3xl font-semibold mt-8 ml-4">Books (Final Check)</p>
-      <div className="flex items-center mt-3 gap-3 m-4">
+      <Title title="Books (Final Check)" />
+
+      <div className="flex items-center mt-3 gap-3">
         <SearchField placeholder="Book Title" />
         <SearchField placeholder="Pen Name/Author Name" />
         <Button title="Search" />
@@ -96,6 +100,7 @@ const FinalCheck = () => {
       <div id="default-styled-tab-content" className="w-full">
         <TabContent activeTab={activeTab} isOpen={isOpen} />
       </div>
+      
     </div>
   );
 };

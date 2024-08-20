@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import EditableTextInput from "components/EditableTextInput";
+import InputWithLabel from "components/InputWithLabel";
 import EditableDropdown from "components/EditableDropdown";
-import EditableDatePicker from "components/EditableDatePicker";
+import EditableTextInput from "components/EditableTextInput";
+import EditableFieldsGroup from "components/EditableFieldsGroup";
+import DatePickerWIthLabel from "components/DatePickerWIthLabel";
+import SelectInputWithLabel from "components/SelectInputWithLabel";
 import {
     editorialBookDetails4,
     editorialBookDetails44,
@@ -10,7 +13,6 @@ import {
     editorialBookDetails555,
     pricing
 } from "../utils/utils";
-import EditableFieldsGroup from "components/EditableFieldsGroup";
 
 const bookTypes = [
     { label: "Paperback:", isbn: "978-1-905513-51-2" },
@@ -45,23 +47,20 @@ const EditorialBookInformationEditable = ({ title, info, bookFlag }) => {
                 <div className="grid gap-4 w-full">
                     {bookTypes.map((book, index) => (
                         <div key={index} className="space-y-4">
-                            <EditableDropdown
+                            <SelectInputWithLabel
                                 label={book.label}
+                                background={'bg-white'}
                                 options={[
                                     { value: "Yes", label: "Yes" },
                                     { value: "No", label: "No" }
                                 ]}
                             />
-                            <EditableTextInput label={"ISBN:"} value={book.isbn} />
+                            <EditableTextInput labelwidth="w-[10%]" label={"ISBN:"} value={book.isbn} bg="bg-white" />
                         </div>
                     ))}
                 </div>
                 <div className="grid gap-3 w-full">
-                    <div>
-                        <p className="text-sm font-semibold text-gray-600">Ready for Publication:</p>
-                        <EditableDatePicker value="27-09-2007" onChange={(date) => {
-                        }} />
-                    </div>
+                    <DatePickerWIthLabel label={'Ready for Publication:'} background="bg-white" />
                     {pricing.map((item, index) => (
                         <div key={index}>
                             <div className="text-left font-medium text-gray-600">
@@ -70,6 +69,8 @@ const EditorialBookInformationEditable = ({ title, info, bookFlag }) => {
                             <EditableTextInput
                                 className="text-left text-black font-semibold"
                                 value={item.value}
+                                bg="bg-white"
+                                labelwidth="w-[15%]"
                                 onChange={(value) => {
                                     const newPricing = [...pricing];
                                     newPricing[index].value = value;
@@ -80,53 +81,41 @@ const EditorialBookInformationEditable = ({ title, info, bookFlag }) => {
                 </div>
             </div>
 
-            <div className="flex p-6 border-t mx-2 justify-between py-7">
-                <div className="grid fle grid-cols-2 gap-4 px-2 w-full">
-                    <div className="text-left font-medium text-gray-600">
-                        Category
+            <div className="flex p-4 border-t mx-2 justify-between py-5">
+                <div className="grid gap-4 px-2 w-full">
+                    <div className="flex gap-2">
+                        <div className="text-left text-lg font-bold">
+                            Category
+                        </div>
+                        <div className="flex w-full gap-2">
+                            <EditableDropdown bg={'bg-white'} />
+                            <EditableDropdown bg={'bg-white'} />
+                            <EditableDropdown bg={'bg-white'} />
+                        </div>
                     </div>
-                    <div className="flex w-full gap-2">
-                        <EditableDropdown />
-                        <EditableDropdown />
-                        <EditableDropdown />
-                    </div>
-                    <div className="text-left font-medium text-gray-600">
-                        Word Count
-                    </div>
-                    <div className="flex w-full">
-                        <EditableTextInput />
-                    </div>
+                    <InputWithLabel label={"Word Count"} background="bg-white" flex={true} labelwidth="w-[15%]" />
                 </div>
-                <div className="grid gap-4 grid-cols-2 px-2 w-full">
-                    <div className="text-left font-medium text-gray-600">
-                        Target audience age:
-                    </div>
-                    <div className="flex w-full">
-                        <EditableTextInput />
-                    </div>
-                    <div className="text-left font-medium text-gray-600">
-                        Age group
-                    </div>
-                    <div className="flex w-full">
-                        <EditableDropdown />
-                    </div>
+                <div className="grid gap- px-2 w-full">
+                    <InputWithLabel flex={true} label={"Target audience age:"} background="bg-white" />
+                    <InputWithLabel flex={true} label={"Age group: "} background="bg-white" />
                 </div>
             </div>
 
             <div className="flex p-4 border-t mx-2 py-7">
                 <div className="grid gap-3 px-2 w-full">
-                    <EditableFieldsGroup fields={editorialBookDetails4} formState={formState} handleChange={handleChange} gap={"gap-2"} />
+                    <EditableFieldsGroup bg={'bg-white'} fields={editorialBookDetails4} formState={formState} handleChange={handleChange} gap={"gap-2"} />
                 </div>
 
                 <div className="grid px-2 w-full">
-                    <EditableFieldsGroup fields={editorialBookDetails44} formState={formState} handleChange={handleChange} gap={"gap-2"} />
+                    <EditableFieldsGroup bg={'bg-white'} fields={editorialBookDetails44} formState={formState} handleChange={handleChange} gap={"gap-2"} />
                 </div>
             </div>
+
             <div className="grid p-2 border-t mx-5 pt-7 py-7">
                 <div className="grid grid-cols-3">
-                    <EditableFieldsGroup fields={editorialBookDetails5} formState={formState} handleChange={handleChange} gap={"gap-3"} />
-                    <EditableFieldsGroup fields={editorialBookDetails55} formState={formState} handleChange={handleChange} gap={"gap-3"} />
-                    <EditableFieldsGroup fields={editorialBookDetails555} formState={formState} handleChange={handleChange} gap={"gap-3"} />
+                    <EditableFieldsGroup bg={'bg-white'} fields={editorialBookDetails5} formState={formState} handleChange={handleChange} gap={"gap-3"} />
+                    <EditableFieldsGroup bg={'bg-white'} fields={editorialBookDetails55} formState={formState} handleChange={handleChange} gap={"gap-3"} />
+                    <EditableFieldsGroup bg={'bg-white'} fields={editorialBookDetails555} formState={formState} handleChange={handleChange} gap={"gap-3"} />
                 </div>
             </div>
         </div>

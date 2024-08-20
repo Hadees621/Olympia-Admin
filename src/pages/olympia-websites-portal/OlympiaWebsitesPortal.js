@@ -1,3 +1,4 @@
+import Title from "components/Title";
 import React, { useState } from "react";
 import SubTabs from "./components/SubTabs";
 
@@ -21,9 +22,7 @@ const OlympiaWebsitesPortal = () => {
 
   return (
     <div className="w-full text-start items-center m-4">
-      <p className="text-3xl font-semibold mt-8 ml-8">
-        Olympia Websites Control Panel (Published Books)
-      </p>
+      <Title title="Olympia Websites Control Panel (Published Books)" />
 
       <div className="mb-4 justify-center flex pt-3">
         <ul
@@ -34,11 +33,10 @@ const OlympiaWebsitesPortal = () => {
           {tabs.map((tab) => (
             <li key={tab.id} className="me-2" role="presentation">
               <button
-                className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${
-                  activeTab === tab.id
-                    ? "text-red-600 border-red-600"
-                    : "text-black hover:text-black border-black"
-                }`}
+                className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${activeTab === tab.id
+                  ? "text-red-600 border-red-600"
+                  : "text-black hover:text-black border-black"
+                  }`}
                 id={`${tab.id}-tab`}
                 type="button"
                 role="tab"
@@ -56,9 +54,8 @@ const OlympiaWebsitesPortal = () => {
         {tabs.map((tab) => (
           <div
             key={tab.id}
-            className={`p-4 dark:bg-gray-800 ${
-              activeTab === tab.id ? "block" : "hidden"
-            }`}
+            className={`p-4 dark:bg-gray-800 ${activeTab === tab.id ? "block" : "hidden"
+              }`}
             id={tab.id}
             role="tabpanel"
             aria-labelledby={`${tab.id}-tab`}
@@ -67,6 +64,7 @@ const OlympiaWebsitesPortal = () => {
           </div>
         ))}
       </div>
+
     </div>
   );
 };

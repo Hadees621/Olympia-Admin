@@ -23,7 +23,7 @@ const OutworkersTable = () => {
   return (
     <div>
       <div
-        className={`m-4 transition-all duration-300 mt-10 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
+        className={`transition-all duration-300 mt-10 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
           }`}
       >
         <div className="flex items-center justify-between mt-10 mb-4 gap-3">
@@ -38,31 +38,33 @@ const OutworkersTable = () => {
           </div>
         </div>
 
-        <div className="overflow-x-auto shadow-md transition-all duration-300">
-          <table className="w-full text-sm text-left">
-            <thead className="text-sm bg-gray-50 whitespace-nowrap sticky top-0 z-10">
+        <div className="overflow-x-auto text-center shadow max-h-[600px] custom-scrollbar custom-scrollbarw">
+          <table className="min-w-full table-fixed divide-y divide-gray-200">
+            <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
               <tr className="text-sm font-medium text-gray-500 uppercase text-center whitespace-nowrap">
-                <th className="px-6 py-3 border">Skill Type</th>
-                <th className="px-6 py-3 border">Name</th>
-                <th className="px-6 py-3 border">Grade</th>
-                <th className="px-6 py-3 border">Status</th>
-                <th className="px-6 py-3 border">Manage</th>
+                <th className="px-6 py-3 ">Skill Type</th>
+                <th className="px-6 py-3 ">Name</th>
+                <th className="px-6 py-3 ">Grade</th>
+                <th className="px-6 py-3 ">Status</th>
+                <th className="px-6 py-3 ">Manage</th>
               </tr>
             </thead>
             <tbody>
               {outworkersData.map((row, index) => (
                 <tr
                   key={index}
-                  className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap`}
+                  className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap custom-hover-row`}
                 >
-                  <td className="px-6 py-4 border">{row["Skill Type"]}</td>
-                  <td className="px-6 py-4 border">{row.Name}</td>
-                  <td className="px-6 py-4 border">{row.Grade}</td>
-                  <td className="px-6 py-4 border">{row.Status}</td>
+                  <td className="px-6 py-4 ">{row["Skill Type"]}</td>
+                  <td className="px-6 py-4 ">{row.Name}</td>
+                  <td className="px-6 py-4 ">{row.Grade}</td>
+                  <td className="px-6 py-4 ">{row.Status}</td>
                   <td className="px-6 py-4 flex gap-x-2 items-center justify-center">
                     <TableButton title={"View"} onClick={() => handleViewClick(row)} />
-                    <TableButton title={"Edit"} onClick={() => setIsModalVisible(true)} />
-                    <TableButton title={"Archive It!"} />
+                    <TableButton title={"Edit"} onClick={() => setIsModalVisible(true)}   bg="bg-green-600"
+                      hover="hover:bg-green-700" text={'text-white'} />
+                    <TableButton title={"Archive It!"}   bg="bg-red-500"
+                      hover="hover:bg-red-600" text={'text-white'}/>
                   </td>
                 </tr>
               ))}

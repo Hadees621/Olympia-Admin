@@ -1,7 +1,7 @@
+import { data } from "../utils/utils";
 import React, { useState } from "react";
 import TableComponent from "./TableComponent";
 import DetailViewComponent from "./DetailViewComponent";
-import { data } from "../utils/utils";
 
 const PostLog = () => {
   const [selectedItem, setSelectedItem] = useState(data[0]);
@@ -20,7 +20,7 @@ const PostLog = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="mx-auto">
       <div className="flex gap-6">
         <div className="w-full">
           <TableComponent data={data} onView={handleView} />

@@ -1,23 +1,58 @@
 export const outworkersData = [
   {
-    "Skill Type": "Proofreader",
+    SkillType: "Proofreader",
     Name: "Sandra Barber",
     Grade: "2",
     Status: "Available",
-    Manage: "view | Edit | Archive It!",
+
   },
   {
-    "Skill Type": "Amender",
+    SkillType: "Amender",
     Name: "Sara Ochieng",
     Grade: "1",
     Status: "Available",
-    Manage: "view | Edit | Archive It!",
+
   },
   {
-    "Skill Type": "Amender",
-    Name: "Megan Whiting",
+    SkillType: "Proofreader",
+    Name: "Sandra Barber",
     Grade: "2",
     Status: "Available",
-    Manage: "view | Edit | Archive It!",
+
+  },
+  {
+    SkillType: "Amender",
+    Name: "Sara Ochieng",
+    Grade: "1",
+    Status: "Available",
+
+  },
+  {
+    SkillType: "Proofreader",
+    Name: "Sandra Barber",
+    Grade: "2",
+    Status: "Available",
+
+  },
+  {
+    SkillType: "Amender",
+    Name: "Sara Ochieng",
+    Grade: "1",
+    Status: "Available",
+
+  },
+  {
+    SkillType: "Proofreader",
+    Name: "Sandra Barber",
+    Grade: "2",
+    Status: "Available",
+
+  },
+  {
+    SkillType: "Amender",
+    Name: "Sara Ochieng",
+    Grade: "1",
+    Status: "Available",
+
   },
 ];

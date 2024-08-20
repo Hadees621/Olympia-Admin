@@ -1,9 +1,10 @@
+import Title from "components/Title";
 import Button from "components/Button";
 import React, { useState } from "react";
-import OutworkersTable from "./components/OutworkersTable";
-import InputWithLabel from "components/InputWithLabel";
-import SelectInputWithLabel from "components/SelectInputWithLabel";
 import Modal from "components/modals/Modal";
+import InputWithLabel from "components/InputWithLabel";
+import OutworkersTable from "./components/OutworkersTable";
+import SelectInputWithLabel from "components/SelectInputWithLabel";
 
 const tabs = [
   {
@@ -19,19 +20,15 @@ const tabs = [
 ];
 
 const Outworkers = () => {
-  const [activeTab, setActiveTab] = useState("withoutRemaindered");
   const [isModalVisible, setIsModalVisible] = useState(false);
-
+  const [activeTab, setActiveTab] = useState("withoutRemaindered");
 
   return (
     <div className="w-full text-start items-center m-4">
-      {/* header */}
-      <p className="text-3xl font-semibold mt-8 ml-4">
-        Welcome to Olympia Portal (Olympia Admin)
-      </p>
+      <Title />
 
-      <div className="flex items-center justify-end m-4 gap-3">
-        <Button title="Add New Outworker" bg="bg-green-500" hover="hover:bg-green-600" text={'text-white'} onClick={() => setIsModalVisible(true)} />
+      <div className="flex items-center justify-end m- gap-3">
+        <Button title="Add New Outworker" bg="bg-green-600" hover="hover:bg-green-700" text={'text-white'} onClick={() => setIsModalVisible(true)} />
       </div>
 
       <div className="mb-4 justify-center flex pt-10">
@@ -75,7 +72,7 @@ const Outworkers = () => {
         ))}
       </div>
 
-      <Modal isVisible={isModalVisible} onClose={() => setIsModalVisible(false)} onSave={() => setIsModalVisible(false)} width={"max-w-[90vh]"} title="Add New record">
+      <Modal isVisible={isModalVisible} onClose={() => setIsModalVisible(false)} onSave={() => setIsModalVisible(false)} width={"max-w-[90vh]"} title="Add New Outworker">
         <div className="w-full shadow">
           <div className="overflow-y-auto max-h-[70vh] custom-scrollbar px-2 space-y-3">
             <InputWithLabel label={"Name"} />
