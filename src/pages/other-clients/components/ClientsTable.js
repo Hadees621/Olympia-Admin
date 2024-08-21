@@ -64,6 +64,7 @@ const ClientsTable = () => {
           </tbody>
         </table>
       </div>
+      
       <Summary />
 
       <InvoiceModal
