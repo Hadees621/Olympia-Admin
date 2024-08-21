@@ -2,10 +2,10 @@ import React from "react";
 import Logo from "../Logo";
 import { menuItems } from "./utils/utils";
 import useSidebarStore from "stores/States";
-import LogoutButton from "./components/LogoutButton";
-import SidebarMenuItem from "./components/SidebarMenuItem";
 import Hamburger from "utils/icons/Hamburger";
 import CloseCross from "utils/icons/CloseCross";
+import LogoutButton from "./components/LogoutButton";
+import SidebarMenuItem from "./components/SidebarMenuItem";
 
 const Sidebar = () => {
   const { isOpen, toggleSidebar } = useSidebarStore();
@@ -18,7 +18,7 @@ const Sidebar = () => {
         className={`bg-[#EEEEEE] shadow rounded-b-2xl grid ${isOpen ? "py-1 px-2" : "h-full"
           } transition-all duration-300`}
       >
-        <div className="flex order border-blac">
+        <div className="flex">
           {isOpen ? (
             <Logo />
           ) : (
