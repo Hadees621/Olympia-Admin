@@ -15,13 +15,13 @@ const SubTabsTable = () => {
 
   return (
     <div
-      className={`transition-all duration-300 ${isOpen ? "max-w-[1030px]" : "max-w-[1200px]"
+      className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1260px]"
         }`}
     >
       <div className="w-[30%]">
         <div className="flex gap-3">
           <p className="text-lg font-bold">Total Records:</p>
-          <p className="text-lg font-bold">1</p>
+          <p className="text-lg font-bold">{data.length}</p>
         </div>
       </div>
 
@@ -55,7 +55,7 @@ const SubTabsTable = () => {
             {data.map((row, index) => (
               <tr
                 key={index}
-                className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap"
+                className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap custom-hover-row"
               >
                 <td className="px-6 py-4  text-orange-500 font-semibold">
                   {row.status}

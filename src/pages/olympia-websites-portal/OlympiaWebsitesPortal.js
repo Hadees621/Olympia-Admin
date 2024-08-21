@@ -50,6 +50,7 @@ const OlympiaWebsitesPortal = () => {
           ))}
         </ul>
       </div>
+
       <div id="default-styled-tab-content" className="w-full">
         {tabs.map((tab) => (
           <div
@@ -64,7 +65,6 @@ const OlympiaWebsitesPortal = () => {
           </div>
         ))}
       </div>
-
     </div>
   );
 };
