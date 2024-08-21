@@ -22,9 +22,10 @@ const ClientsTable = () => {
         <Button title="Search" />
         <Button title={"New Invoice"} bg="bg-green-500" hover="hover:bg-green-600" text={"text-white"} onClick={() => setModalVisible(true)} />
       </div>
-      <div className="overflow-x-auto text-center shadow max-h-[600px] custom-scrollbar">
+
+      <div className="overflow-x-auto text-center shadow max-h-[600px] custom-scrollbar custom-scrollbarw">
         <table className="min-w-full table-fixed divide-y divide-gray-200">
-          <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
+          <thead className="text-white uppercase bg-gray-50 sticky top-0 z-10">
             <tr className="text-sm font-medium text-gray-500 uppercase text-center whitespace-nowrap">
               <th className="px-6 py-3 "> Invoice No</th>
               <th className="px-6 py-3 ">Product 1</th>
@@ -70,7 +71,6 @@ const ClientsTable = () => {
         onClose={() => setModalVisible(false)}
         initialData={invoiceData}
       />
-
     </div>
   );
 };
