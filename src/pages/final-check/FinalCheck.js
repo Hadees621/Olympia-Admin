@@ -100,7 +100,7 @@ const FinalCheck = () => {
       <div id="default-styled-tab-content" className="w-full">
         <TabContent activeTab={activeTab} isOpen={isOpen} />
       </div>
-      
+
     </div>
   );
 };
