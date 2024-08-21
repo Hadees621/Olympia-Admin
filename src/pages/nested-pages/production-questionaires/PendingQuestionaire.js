@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import Title from 'components/Title';
 import Table from './components/Table';
+import React, { useState } from 'react'
 
 const PendingQuestionaire = () => {
     const [activeTab, setActiveTab] = useState("AuthorProduction");
@@ -29,15 +30,11 @@ const PendingQuestionaire = () => {
 
     return (
         <div className="w-full text-start items-center m-4">
-            {/* header */}
-            <>
-                <p className="text-3xl font-semibold mt-8 ml-8">
-                    Pending Production questionnaires
-                </p>
-                <p className="text-2xl font-semibold mt-2 ml-8">
-                    Contract Status Excluded (Released, On Hold, Marketing)
-                </p>
-            </>
+            <Title title='Pending Production questionnaires' />
+
+            <p className="text-xl font-semibold mt-2">
+                Contract Status Excluded (Released, On Hold, Marketing)
+            </p>
 
             <div className="mb-4 justify-center flex pt-10">
                 <ul
@@ -65,6 +62,7 @@ const PendingQuestionaire = () => {
                     ))}
                 </ul>
             </div>
+
             <div id="default-styled-tab-content" className="w-full">
                 {tabs.map((tab) => (
                     <div
