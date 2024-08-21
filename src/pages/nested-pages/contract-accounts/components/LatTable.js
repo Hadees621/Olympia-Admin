@@ -8,41 +8,42 @@ const LatTable = ({ data }) => {
     };
 
     const isRowSelected = (index) => selectedRow === index;
+
     return (
         <div>
             <div className='mt-8'>
-                <div className="overflow-x-auto shadow-md transition-all duration-300 custom-scrollbarw">
-                    <table className="w-full text-sm text-left max-h-[500px]">
-                        <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
-                            <tr className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap">
+                <div className="overflow-x-auto text-center shadow max-h-[600px] custom-scrollbar custom-scrollbarw">
+                    <table className="min-w-full table-fixed divide-y divide-gray-200">
+                        <thead className="uppercase bg-gray-50 sticky top-0 z-10">
+                            <tr className="text-sm font-medium text-gray-500 uppercase text-center whitespace-nowrap">
                                 <th className="px-6 py-3">
                                 </th>
-                                <th className="px-6 py-3 border">Invoice No.</th>
-                                <th className="px-6 py-3 border">Invoice Date</th>
-                                <th className="px-6 py-3 border">C/N No.</th>
-                                <th className="px-6 py-3 border">C/N Date</th>
-                                <th className="px-6 py-3 border">Client</th>
-                                <th className="px-6 py-3 border">Quantity</th>
-                                <th className="px-6 py-3 border">NET</th>
-                                <th className="px-6 py-3 border">VAT</th>
-                                <th className="px-6 py-3 border">Total Amount</th>
-                                <th className="px-6 py-3 border">Amount Paid</th>
-                                <th className="px-6 py-3 border">Date Paid</th>
-                                <th className="px-6 py-3 border">H/F Sale</th>
-                                <th className="px-6 py-3 border">Royalty</th>
-                                <th className="px-6 py-3 border">Sale Type</th>
-                                <th className="px-6 py-3 border">Royalties</th>
-                                <th className="px-6 py-3 border">Royalty Amount</th>
+                                <th className="px-6 py-3">Invoice No.</th>
+                                <th className="px-6 py-3">Invoice Date</th>
+                                <th className="px-6 py-3">C/N No.</th>
+                                <th className="px-6 py-3">C/N Date</th>
+                                <th className="px-6 py-3">Client</th>
+                                <th className="px-6 py-3">Quantity</th>
+                                <th className="px-6 py-3">NET</th>
+                                <th className="px-6 py-3">VAT</th>
+                                <th className="px-6 py-3">Total Amount</th>
+                                <th className="px-6 py-3">Amount Paid</th>
+                                <th className="px-6 py-3">Date Paid</th>
+                                <th className="px-6 py-3">H/F Sale</th>
+                                <th className="px-6 py-3">Royalty</th>
+                                <th className="px-6 py-3">Sale Type</th>
+                                <th className="px-6 py-3">Royalties</th>
+                                <th className="px-6 py-3">Royalty Amount</th>
                             </tr>
                         </thead>
                         <tbody>
                             {data.map((row, index) => (
                                 <tr
                                     key={index}
-                                    className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap  ${isRowSelected(index) ? "bg-gray-100" : ""
+                                    className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap custom-hover-row  ${isRowSelected(index) ? "bg-gray-100" : ""
                                         }`}
                                 >
-                                    <td className="px-6 py-4 border">
+                                    <td className="px-6 py-4">
                                         <input
                                             type="radio"
                                             name="selectRow"
@@ -50,22 +51,22 @@ const LatTable = ({ data }) => {
                                             checked={isRowSelected(index)}
                                         />
                                     </td>
-                                    <td className="px-6 py-4 border">{row.invoiceNo}</td>
-                                    <td className="px-6 py-4 border">{row.invoiceDate}</td>
-                                    <td className="px-6 py-4 border">{row.cnNo}</td>
-                                    <td className="px-6 py-4 border">{row.cnDate}</td>
-                                    <td className="px-6 py-4 border">{row.client}</td>
-                                    <td className="px-6 py-4 border">{row.quantity}</td>
-                                    <td className="px-6 py-4 border">{row.net}</td>
-                                    <td className="px-6 py-4 border">{row.vat}</td>
-                                    <td className="px-6 py-4 border">{row.totalAmount}</td>
-                                    <td className="px-6 py-4 border">{row.amountPaid}</td>
-                                    <td className="px-6 py-4 border">{row.datePaid}</td>
-                                    <td className="px-6 py-4 border">{row.hfSale}</td>
-                                    <td className="px-6 py-4 border">{row.royalty}</td>
-                                    <td className="px-6 py-4 border">{row.saleType}</td>
-                                    <td className="px-6 py-4 border">{row.royalties}</td>
-                                    <td className="px-6 py-4 border">{row.royaltyAmount}</td>
+                                    <td className="px-6 py-4">{row.invoiceNo}</td>
+                                    <td className="px-6 py-4">{row.invoiceDate}</td>
+                                    <td className="px-6 py-4">{row.cnNo}</td>
+                                    <td className="px-6 py-4">{row.cnDate}</td>
+                                    <td className="px-6 py-4">{row.client}</td>
+                                    <td className="px-6 py-4">{row.quantity}</td>
+                                    <td className="px-6 py-4">{row.net}</td>
+                                    <td className="px-6 py-4">{row.vat}</td>
+                                    <td className="px-6 py-4">{row.totalAmount}</td>
+                                    <td className="px-6 py-4">{row.amountPaid}</td>
+                                    <td className="px-6 py-4">{row.datePaid}</td>
+                                    <td className="px-6 py-4">{row.hfSale}</td>
+                                    <td className="px-6 py-4">{row.royalty}</td>
+                                    <td className="px-6 py-4">{row.saleType}</td>
+                                    <td className="px-6 py-4">{row.royalties}</td>
+                                    <td className="px-6 py-4">{row.royaltyAmount}</td>
                                 </tr>
                             ))}
 

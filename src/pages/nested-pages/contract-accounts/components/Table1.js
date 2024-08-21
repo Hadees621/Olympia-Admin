@@ -72,11 +72,11 @@ const Table1 = ({ data }) => {
                 </div>
             )}
 
-            <div className="overflow-x-auto shadow-md transition-all duration-300 custom-scrollbarw">
-                <table className="w-full text-sm text-left max-h-[500px]">
-                    <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
-                        <tr className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap">
-                            <th className="px-6 py-3 border space-x-4 flex items-center gap-3">
+            <div className="overflow-x-auto shadow-md transition-all duration-300">
+                <table className="min-w-full table-fixed divide-y divide-gray-200">
+                    <thead className="text-white uppercase bg-gray-50 sticky top-0 z-10">
+                        <tr className="text-sm font-medium text-gray-500 uppercase text-center whitespace-nowrap">
+                            <th className="px-6 py-3 space-x-4 flex items-center gap-3">
                                 <input
                                     type="checkbox"
                                     onChange={handleSelectAll}
@@ -84,42 +84,42 @@ const Table1 = ({ data }) => {
                                 />
                                 Select All
                             </th>
-                            <th className="px-6 py-3 border">Invoice No.</th>
-                            <th className="px-6 py-3 border">C/N No.</th>
-                            <th className="px-6 py-3 border">Date</th>
-                            <th className="px-6 py-3 border">Amount</th>
-                            <th className="px-6 py-3 border">VAT</th>
-                            <th className="px-6 py-3 border">Total</th>
-                            <th className="px-6 py-3 border">Due Date</th>
-                            <th className="px-6 py-3 border">Date Payment</th>
-                            <th className="px-6 py-3 border">Amount Paid</th>
-                            <th className="px-6 py-3 border">Mode Payment</th>
-                            <th className="px-6 py-3 border">Delete</th>
-                            <th className="px-6 py-3 border">Edit</th>
-                            <th className="px-6 py-3 border">Email</th>
+                            <th className="px-6 py-3">Invoice No.</th>
+                            <th className="px-6 py-3">C/N No.</th>
+                            <th className="px-6 py-3">Date</th>
+                            <th className="px-6 py-3">Amount</th>
+                            <th className="px-6 py-3">VAT</th>
+                            <th className="px-6 py-3">Total</th>
+                            <th className="px-6 py-3">Due Date</th>
+                            <th className="px-6 py-3">Date Payment</th>
+                            <th className="px-6 py-3">Amount Paid</th>
+                            <th className="px-6 py-3">Mode Payment</th>
+                            <th className="px-6 py-3">Delete</th>
+                            <th className="px-6 py-3">Edit</th>
+                            <th className="px-6 py-3">Email</th>
                         </tr>
                     </thead>
                     <tbody>
                         {data.map((row, index) => (
                             <tr
                                 key={index}
-                                className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap ${isRowSelected(index) ? "bg-gray-100" : ""}`}
+                                className={`text-sm text-gray-700 text-center font-bold whitespace-nowrap custom-hover-row border ${isRowSelected(index) ? "bg-gray-100" : ""}`}
                             >
-                                <td className="px-6 py-4 border">
+                                <td className="px-6 py-4">
                                     <input
                                         type="checkbox"
                                         onChange={() => handleSelectRow(index)}
                                         checked={isRowSelected(index)}
                                     />
                                 </td>
-                                <td className="px-6 py-4 border">{row.invoiceNo}</td>
-                                <td className="px-6 py-4 border">{row.cnNo}</td>
-                                <td className="px-6 py-4 border">{row.date}</td>
-                                <td className="px-6 py-4 border">{row.amount}</td>
-                                <td className="px-6 py-4 border">{row.vat}</td>
-                                <td className="px-6 py-4 border">{row.total}</td>
-                                <td className="px-6 py-4 border">{row.dueDate}</td>
-                                <td className="px-6 py-4 border">
+                                <td className="px-6 py-4">{row.invoiceNo}</td>
+                                <td className="px-6 py-4">{row.cnNo}</td>
+                                <td className="px-6 py-4">{row.date}</td>
+                                <td className="px-6 py-4">{row.amount}</td>
+                                <td className="px-6 py-4">{row.vat}</td>
+                                <td className="px-6 py-4">{row.total}</td>
+                                <td className="px-6 py-4">{row.dueDate}</td>
+                                <td className="px-6 py-4">
                                     {editingRowIndex === index ? (
                                         <input
                                             type="date"
@@ -132,7 +132,7 @@ const Table1 = ({ data }) => {
                                         row.paymentDate
                                     )}
                                 </td>
-                                <td className="px-6 py-4 border">
+                                <td className="px-6 py-4">
                                     {editingRowIndex === index ? (
                                         <input
                                             type="text"
@@ -145,7 +145,7 @@ const Table1 = ({ data }) => {
                                         row.amountPaid
                                     )}
                                 </td>
-                                <td className="px-6 py-4 border">
+                                <td className="px-6 py-4">
                                     {editingRowIndex === index ? (
                                         <select
                                             name="paymentMode"
@@ -161,10 +161,10 @@ const Table1 = ({ data }) => {
                                         row.paymentMode
                                     )}
                                 </td>
-                                <td className="px-6 py-4 border">
+                                <td className="px-6 py-4">
                                     <TableButton title="Delete" bg="bg-red-600" hover='hover:bg-red-700' text="text-white" />
                                 </td>
-                                <td className="px-6 py-4 border">
+                                <td className="px-6 py-4">
                                     {editingRowIndex === index ? (
                                         <TableButton
                                             title="Save"
