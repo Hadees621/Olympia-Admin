@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from './components/Form';
+import Title from 'components/Title';
 import Table1 from './components/Table1';
 import useSidebarStore from 'stores/States';
 import LatTable from './components/LatTable';
@@ -11,12 +12,10 @@ const ContractAccount = () => {
     const { isOpen } = useSidebarStore();
     return (
         <div className="w-full text-start items-center m-3">
-            <p className="text-3xl font-semibold my-8">
-                Contract Account Section
-            </p>
+            <Title />
 
             <div
-                className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"}`}
+                className={`mt-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"}`}
             >
                 <Form />
                 <Table1 data={data} />

@@ -56,7 +56,7 @@ const ReadyForPublication = () => {
         {tabs.map((tab) => (
           <div
             key={tab.id}
-            className={` dark:bg-gray-800 ${activeTab === tab.id ? "block" : "hidden"
+            className={` ${activeTab === tab.id ? "block" : "hidden"
               }`}
             id={tab.id}
             role="tabpanel"

@@ -2,7 +2,7 @@ import React from "react";
 
 const SummaryTable = ({ title, data }) => {
   return (
-    <div className="bg-gray-100 p-4 rounded-lg shadow-md w-full ">
+    <div className="bg-gray-100 p-4 rounded-lg shadow-md w-full">
       <h2 className="text-xl font-semibold mb-4">{title}</h2>
       <table className="min-w-full">
         <thead>

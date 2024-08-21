@@ -12,18 +12,16 @@ import PrintButton from 'pages/book-invoices/components/invoice/PrintButton';
 import FinalInvoice from 'pages/book-invoices/components/invoice/FinalInvoice';
 
 const TheseInvoicesCN = () => {
+    const { isOpen } = useSidebarStore();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
 
-    const closeModal = () => {
-        setIsModalVisible(false);
-    };
     const [options, setOptions] = useState([
         'paid by cheque',
         'paid by credit card',
         'paid by paypal',
     ]);
-    const { isOpen } = useSidebarStore();
+
     const invoiceData = {
         shipTo: 'John Doe, 123 Main St, City, Country',
         to: 'ABC Corp',
@@ -51,6 +49,7 @@ const TheseInvoicesCN = () => {
         vat: '10.00',
         total: '60.00',
     };
+
     const handleOpenInvoice = () => {
         const invoiceHtml = renderToString(<FinalInvoice invoiceData={invoiceData} />);
         const printButtonHtml = renderToString(<PrintButton />);
@@ -80,66 +79,68 @@ const TheseInvoicesCN = () => {
 
     return (
         <div
-            className={`m-4 transition-all duration-300 w-full ${isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
+            className={`m-4 transition-all duration-300 w-full ${isOpen ? "max-w-[1050px]" : "max-w-[1270px]"
                 }`}
         >
-            <div className='ml-8 space-y-3'>
+            <div className='space-y-3'>
                 <p className="text-3xl font-semibold mt-8">Invoices</p>
                 <p className="text-xl font-semibold">Author Name:	Ms. Bradford Marie </p>
-                <p className="text-xl font-semibold"> Book Title:	Joe the Elf</p>
+                <p className="text-xl font-semibold">Book Title:	Joe the Elf</p>
             </div>
-            <div className="overflow-x-auto shadow-md transition-all duration-300 mt-10 m-4">
-                <table className="w-full text-sm text-left">
+
+            <div className="overflow-x-auto text-center shadow max-h-[600px] custom-scrollbar custom-scrollbarw mt-10">
+                <table className="min-w-full table-fixed divide-y divide-gray-200">
                     <thead className="text-sm text-white uppercase bg-gray-50 whitespace-nowrap sticky top-0 z-10">
                         <tr className="text-sm font-medium text-gray-500 uppercase text-center whitespace-nowrap">
-                            <th className="px-6 py-3 border"></th>
-                            <th className="px-6 py-3 border">Invoice No.</th>
-                            <th className="px-6 py-3 border">Credit No.</th>
-                            <th className="px-6 py-3 border">Date</th>
-                            <th className="px-6 py-3 border">Due Date</th>
-                            <th className="px-6 py-3 border">Name</th>
-                            <th className="px-6 py-3 border">Total</th>
-                            <th className="px-6 py-3 border">Date Payment</th>
-                            <th className="px-6 py-3 border">Paid</th>
-                            <th className="px-6 py-3 border">Payment Detail</th>
-                            <th className="px-6 py-3 border">Royalties</th>
+                            <th className="px-6 py-3"></th>
+                            <th className="px-6 py-3">Invoice No.</th>
+                            <th className="px-6 py-3">Credit No.</th>
+                            <th className="px-6 py-3">Date</th>
+                            <th className="px-6 py-3">Due Date</th>
+                            <th className="px-6 py-3">Name</th>
+                            <th className="px-6 py-3">Total</th>
+                            <th className="px-6 py-3">Date Payment</th>
+                            <th className="px-6 py-3">Paid</th>
+                            <th className="px-6 py-3">Payment Detail</th>
+                            <th className="px-6 py-3">Royalties</th>
                         </tr>
                     </thead>
                     <tbody>
                         {invoices.map((row, index) => (
                             <tr
                                 key={index}
-                                className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap`}
+                                className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap custom-hover-row`}
                             >
-                                <td className="px-6 py-4 border">
+                                <td className="px-6 py-4">
                                     <button onClick={handleOpenInvoice} className="bg-[#001C4E1F] hover:bg-gray-300 rounded-md text-[#001C4E] font-bold px-2 py-2 text-[10px]">View</button>
                                 </td>
-                                <td className="px-6 py-4 border">{row.InvoiceNo}</td>
-                                <td className="px-6 py-4 border">
+                                <td className="px-6 py-4">{row.InvoiceNo}</td>
+                                <td className="px-6 py-4">
                                     <EditableTextInput value={row.CreditNo} width='w-[100px]' />
                                 </td>
-                                <td className="px-6 py-4 border">{row.Date}</td>
-                                <td className="px-6 py-4 border">{row.DueDate}</td>
-                                <td className="px-6 py-4 border">{row.Name}</td>
-                                <td className="px-6 py-4 border">{row.Total}</td>
-                                <td className="px-6 py-4 border">
+                                <td className="px-6 py-4">{row.Date}</td>
+                                <td className="px-6 py-4">{row.DueDate}</td>
+                                <td className="px-6 py-4">{row.Name}</td>
+                                <td className="px-6 py-4">{row.Total}</td>
+                                <td className="px-6 py-4">
                                     <EditableTextInput value={row.DatePayment} width='w-[100px]' />
                                 </td>
                                 <td className="px-6 py-4 flex items-center whitespace-nowrap">
                                     £ <EditableTextInput value={row.Paid} width='w-[100px]' />
                                 </td>
-                                <td className="px-6 py-4 border">
+                                <td className="px-6 py-4">
                                     <div className='flex gap-3 items-center'>
                                         <SelectField width='w-[180px]' />
                                         <Button title={"Edit List"} onClick={() => setIsModalOpen(true)} />
                                     </div>
                                 </td>
-                                <td className="px-6 py-4 border">{row.Royalties}</td>
+                                <td className="px-6 py-4">{row.Royalties}</td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
+
             <EditListModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
@@ -147,7 +148,7 @@ const TheseInvoicesCN = () => {
                 setOptions={setOptions}
             />
 
-            <Modal isVisible={isModalVisible} onClose={closeModal} onSave={closeModal} title="Edit Contract Information">
+            <Modal isVisible={isModalVisible} onClose={() => setIsModalVisible(false)} onSave={() => setIsModalVisible(false)} title="Edit Contract Information">
                 <ViewInvoice />
             </Modal>
         </div>

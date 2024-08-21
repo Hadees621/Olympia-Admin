@@ -1,3 +1,4 @@
+import Title from "components/Title";
 import Xero from "./components/Xero";
 import Button from "components/Button";
 import React, { useState } from "react";
@@ -62,12 +63,11 @@ const ContractInvoices = () => {
 
     return (
         <div
-            className={`w-full text-start items-center m-4  ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
+            className={`w-full text-start items-center m-4 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
                 }`}
         >
-            <p className="text-3xl font-semibold mt-8">
-                Contract Invoices
-            </p>
+            <Title title="Contract Invoices" />
+
             <div className="flex items-center justify-end my-4 gap-3">
                 <Button title="Create Contract New Invoice" bg="bg-green-600" hover="hover:bg-green-700" text={"text-white"} onClick={() => setModalIsOpen(true)} />
             </div>
@@ -98,6 +98,7 @@ const ContractInvoices = () => {
                     ))}
                 </ul>
             </div>
+
             <div id="default-styled-tab-content" className="w-full">
                 {tabs.map((tab) => (
                     <div key={tab.key} className={` ${activeTab === tab.key ? "block" : "hidden"}`} id={tab.key} role="tabpanel" aria-labelledby={`${tab.key}-tab`}>

@@ -96,7 +96,7 @@ const Production = () => {
 
       <div id="default-styled-tab-content" className="w-full">
         {tabs.map((tab) => (
-          <div key={tab.key} className={`dark:bg-gray-800 ${activeTab === tab.key ? "block" : "hidden"}`} id={tab.key} role="tabpanel" aria-labelledby={`${tab.key}-tab`}>
+          <div key={tab.key} className={`${activeTab === tab.key ? "block" : "hidden"}`} id={tab.key} role="tabpanel" aria-labelledby={`${tab.key}-tab`}>
             {React.createElement(tab.component, { data: tab.data })}
           </div>
         ))}

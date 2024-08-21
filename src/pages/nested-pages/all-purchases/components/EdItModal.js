@@ -25,13 +25,13 @@ const EditModal = ({ isOpen, onClose, data, onSave }) => {
         onClose();
     };
 
-    if (!isOpen || !data) return null;
-
     const handleOverlayClick = (e) => {
         if (e.target === e.currentTarget) {
             onClose();
         }
     };
+
+    if (!isOpen || !data) return null;
 
     return (
         <div onClick={handleOverlayClick} className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
@@ -39,7 +39,7 @@ const EditModal = ({ isOpen, onClose, data, onSave }) => {
                 <button onClick={onClose} className="absolute top-6 right-6 text-red-500 text-2xl">
                     <Cross />
                 </button>
-                <h2 className="text-xl font-semibold mb-4">Edit Purchase Details</h2>
+                <h2 className="text-xl font-bold mb-4 text-start">Edit Purchase Details</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="overflow-y-auto max-h-[70vh] custom-scrollbar">
                         <table className="text-start mx-auto w-full">
@@ -63,7 +63,7 @@ const EditModal = ({ isOpen, onClose, data, onSave }) => {
                     </div>
                     <div className="flex justify-end mt-4 gap-2">
                         <Button title={"Cancel"} onClick={onClose} />
-                        <Button title={"Submit"} onClick={onClose} bg='bg-green-500' text={"text-white"} />
+                        <Button title={"Submit"} onClick={onClose} bg='bg-green-600' hover='hover:bg-green-700' text={"text-white"} />
                     </div>
                 </form>
             </div>

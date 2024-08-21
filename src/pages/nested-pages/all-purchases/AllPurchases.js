@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import Title from "components/Title";
 import Button from "components/Button";
+import React, { useState } from "react";
 import useSidebarStore from "stores/States";
 import SearchField from "pages/home/components/SearchField";
 import AllPurchasesTable from "./components/AllPurchasesTable";
@@ -44,21 +45,18 @@ const AllPurchases = () => {
 
     return (
         <div className="w-full text-start items-center m-4">
-            {/* header */}
-            <>
-                <p className="text-3xl font-semibold my-8 ml-8">
-                    All Purchases
-                </p>
-                <div className="flex items-center mt-3 gap-3 m-4">
-                    <SearchField placeholder="Client Name" />
-                    <Button title="Search" />
-                    <SearchField placeholder="Company Name" />
-                    <Button title="Search" />
-                    <Button title="ISBN Search" href="/isbn-search" />
-                </div>
-            </>
+            <Title />
+            
+            <div className="flex items-center mt-3 gap-3">
+                <SearchField placeholder="Client Name" />
+                <Button title="Search" />
+                <SearchField placeholder="Company Name" />
+                <Button title="Search" />
+                <Button title="ISBN Search" href="/isbn-search" />
+            </div>
+            
             <div
-                className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
+                className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
                     }`}
             >
                 <div className="mb-4 justify-center flex pt-10">
@@ -91,7 +89,7 @@ const AllPurchases = () => {
                     {tabs.map((tab) => (
                         <div
                             key={tab.key}
-                            className={`dark:bg-gray-800 ${activeTab === tab.key ? "block" : "hidden"
+                            className={`${activeTab === tab.key ? "block" : "hidden"
                                 }`}
                             id={tab.key}
                             role="tabpanel"

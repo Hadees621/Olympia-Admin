@@ -82,7 +82,7 @@ const OtherClients = () => {
         {tabs.map((tab) => (
           <div
             key={tab.key}
-            className={`dark:bg-gray-800 ${activeTab === tab.key ? "block" : "hidden"
+            className={`${activeTab === tab.key ? "block" : "hidden"
               }`}
             id={tab.key}
             role="tabpanel"

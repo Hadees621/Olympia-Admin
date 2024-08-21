@@ -6,7 +6,7 @@ const DetailedTable = ({ title, data }) => {
       <h2 className="text-xl font-semibold mb-4">
         {title} : {data.length}
       </h2>
-      <div className="overflow-x-auto max-h-[300px]">
+      <div className="overflow-x-auto max-h-[300px] custom-scrollbar custom-scrollbarw">
         <table className="min-w-full relative">
           <thead className="bg-gray-200 sticky top-0">
             <tr>
@@ -17,7 +17,7 @@ const DetailedTable = ({ title, data }) => {
           </thead>
           <tbody className="overflow-y-auto max-h-[300px]">
             {data.map((row, index) => (
-              <tr key={index} className="border-t">
+              <tr key={index} className="border-t custom-hover-row">
                 <td className="px-4 py-2">{row.isbn}</td>
                 <td className="px-4 py-2">{row.press}</td>
                 <td className="px-4 py-2">{row.status}</td>
