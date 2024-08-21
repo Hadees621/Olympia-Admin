@@ -4,7 +4,7 @@ import { reminderData } from '../../publicity-questionaires/utils/utils'
 
 const Table = () => {
     return (
-        <div>
+        <div className=''>
             <p className='font-bold text-xl text-end m-5'> Total : 77 </p>
 
             <div className="overflow-x-auto text-center shadow max-h-[600px] custom-scrollbar custom-scrollbarw">
