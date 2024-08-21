@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Speaker from "utils/icons/Speaker";
 import Notepad from "utils/icons/Notepad";
+import useSidebarStore from "stores/States";
 import Modal from "components/modals/Modal";
 import EditableField from "./EditableField";
 import { getStatusClass } from "utils/utils";
@@ -9,6 +10,7 @@ import TableButton from "components/TableButton";
 import EditorialNotes from "pages/editorial/components/EditorialNotes";
 
 const BumblebeeTable = ({ data, onSave }) => {
+  const { isOpen } = useSidebarStore();
   const [editingIndex, setEditingIndex] = useState(null);
   const [editableData, setEditableData] = useState(data);
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -36,7 +38,11 @@ const BumblebeeTable = ({ data, onSave }) => {
   };
 
   return (
-    <>
+    <div
+      className={` ${!isOpen ? "max-w-[1300px]" : "max-w-[1050px]"
+        }`}
+    >
+
       <div className="overflow-x-auto shadow-md transition-all duration-300 custom-scrollbarw max-h-[600px] custom-scrollbar">
         <table className="w-full">
           <thead className="text-sm uppercase bg-gray-50 whitespace-nowrap sticky top-[-10px] z-10 border">
@@ -147,7 +153,7 @@ const BumblebeeTable = ({ data, onSave }) => {
           questionnaire={"/pending-production-questionnaires"} questionnaireType={"Pending Production questionnaire"}
         />
       </Modal>
-    </>
+    </div>
   );
 };
 

@@ -66,40 +66,41 @@ const Bumblebee = () => {
   const [activeTab, setActiveTab] = useState("books-tab");
 
   return (
-    <div
-      className={`w-full text-start items-center m-4 ${!isOpen && "max-w-[1250px]"
-        }`}
-    >
-
+    <div className="w-full text-start items-center m-4">
       <Title title="Books (Imprint: Bumblebee)" />
+      <div
+      >
 
-      <div className="mb-4 justify-center flex pt-3">
-        <ul
-          className="flex flex-wrap -mb-px gap-3 text-sm font-medium text-center"
-          role="tablist"
-        >
-          {tabs.map((tab) => (
-            <li key={tab.id} className="me-2" role="presentation">
-              <button
-                className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${activeTab === tab.id
-                  ? "text-red-600 border-red-600"
-                  : "text-black hover:text-black border-black"
-                  }`}
-                id={tab.id}
-                type="button"
-                role="tab"
-                aria-controls={tab.id}
-                aria-selected={activeTab === tab.id}
-                onClick={() => setActiveTab(tab.id)}
-              >
-                {tab.label}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div id="default-styled-tab-content" className="w-full">
-        <TabContent activeTab={activeTab} isOpen={isOpen} />
+
+        <div className="mb-4 justify-center flex pt-3">
+          <ul
+            className="flex flex-wrap -mb-px gap-3 text-sm font-medium text-center"
+            role="tablist"
+          >
+            {tabs.map((tab) => (
+              <li key={tab.id} className="me-2" role="presentation">
+                <button
+                  className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${activeTab === tab.id
+                    ? "text-red-600 border-red-600"
+                    : "text-black hover:text-black border-black"
+                    }`}
+                  id={tab.id}
+                  type="button"
+                  role="tab"
+                  aria-controls={tab.id}
+                  aria-selected={activeTab === tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                >
+                  {tab.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div id="default-styled-tab-content" className="w-full">
+          <TabContent activeTab={activeTab} isOpen={isOpen} />
+        </div>
       </div>
     </div>
   );

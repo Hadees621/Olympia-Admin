@@ -48,7 +48,7 @@ const Production = () => {
 
   return (
     <div
-      className={`w-full text-start items-center m-4 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
+      className={`w-full m-4 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
         }`}
     >
       <Title />
