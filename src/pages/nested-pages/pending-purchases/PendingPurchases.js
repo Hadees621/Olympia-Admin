@@ -1,5 +1,7 @@
+import Title from "components/Title";
 import Button from "components/Button";
 import React, { useState } from "react";
+import { tableData } from "./utils/utils";
 import useSidebarStore from "stores/States";
 import Modal from "components/modals/Modal";
 import FileUpload from "components/FileUpload";
@@ -13,82 +15,11 @@ const PendingPurchases = () => {
     const { isOpen } = useSidebarStore();
     const [isModalVisible, setIsModalVisible] = useState(false);
 
-    const openModal = () => {
-        setIsModalVisible(true);
-    };
-
-    const closeModal = () => {
-        setIsModalVisible(false);
-    };
-
-    const tableData = [
-        {
-            client: "Lightning Source U.S.A.",
-            files: "1721917124(1346720521).pdf",
-            uploadedBy: "Becs",
-            date: "25-07-2024",
-        },
-        {
-            client: "Example Client",
-            files: "examplefile.pdf",
-            uploadedBy: "John Doe",
-            date: "24-07-2024",
-        },
-        {
-            client: "Lightning Source U.S.A.",
-            files: "1721917124(1346720521).pdf",
-            uploadedBy: "Becs",
-            date: "25-07-2024",
-        },
-        {
-            client: "Example Client",
-            files: "examplefile.pdf",
-            uploadedBy: "John Doe",
-            date: "24-07-2024",
-        }, {
-            client: "Lightning Source U.S.A.",
-            files: "1721917124(1346720521).pdf",
-            uploadedBy: "Becs",
-            date: "25-07-2024",
-        },
-        {
-            client: "Example Client",
-            files: "examplefile.pdf",
-            uploadedBy: "John Doe",
-            date: "24-07-2024",
-        }, {
-            client: "Lightning Source U.S.A.",
-            files: "1721917124(1346720521).pdf",
-            uploadedBy: "Becs",
-            date: "25-07-2024",
-        },
-        {
-            client: "Example Client",
-            files: "examplefile.pdf",
-            uploadedBy: "John Doe",
-            date: "24-07-2024",
-        }, {
-            client: "Lightning Source U.S.A.",
-            files: "1721917124(1346720521).pdf",
-            uploadedBy: "Becs",
-            date: "25-07-2024",
-        },
-        {
-            client: "Example Client",
-            files: "examplefile.pdf",
-            uploadedBy: "John Doe",
-            date: "24-07-2024",
-        },
-        // Add more dummy data as needed
-    ];
-
     return (
         <div className="w-full text-start items-center m-4">
-            {/* header */}
-            <p className="text-3xl font-semibold my-8 ml-8">
-                Pending Purchases
-            </p>
-            <div className="flex items-center mt-3 gap-3 m-4">
+            <Title title="Pending Purchases" />
+
+            <div className="flex items-center mt-3 gap-3">
                 <p className="font-bold text-lg">Upload Invoice:</p>
                 <FileUpload buttonflag={false} />
                 <SearchField placeholder="Client Name" />
@@ -100,13 +31,12 @@ const PendingPurchases = () => {
             </div>
 
             <div
-                className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
+                className={`mt-3 overflow-x-auto text-center shadow max-h-[600px] custom-scrollbar custom-scrollbarw ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
                     }`}
             >
-
-                <table className="min-w-full table-fixed divide-y divide-gray-200 border">
-                    <thead className="bg-gray-50 sticky top-0 z-10">
-                        <tr className="text-[11px] w-full font-medium text-gray-500 uppercase">
+                <table className="min-w-full table-fixed divide-y divide-gray-200">
+                    <thead className="uppercase bg-gray-50 sticky top-0 z-10">
+                        <tr className="text-sm font-medium text-gray-500 uppercase text-center whitespace-nowrap">
                             <th className="p-3 w-1/6">Client</th>
                             <th className="p-3 w-1/6">Files</th>
                             <th className="p-3 w-1/6">Uploaded By</th>
@@ -115,17 +45,18 @@ const PendingPurchases = () => {
                         </tr>
                     </thead>
                     {tableData.map((data, index) => (
-                        <tr key={index} className="text-center text-sm ">
-                            <td className="px-6 py-4  border-gray-300 leading-5">{data.client}</td>
-                            <td className="px-6 py-4  border-gray-300 leading-5">{data.files}</td>
+                        <tr key={index} className="text-sm text-gray-700 text-center border font-bold whitespace-nowrap custom-hover-row">
+                            <td className="px-6 py-4 leading-5">{data.client}</td>
+                            <td className="px-6 py-4 leading-5">{data.files}</td>
                             <td className="px-6 py-4 border-gray-300 leading-5">{data.uploadedBy}</td>
-                            <td className="px-6 py-4  border-gray-300 leading-5">{data.date}</td>
+                            <td className="px-6 py-4 leading-5">{data.date}</td>
                             <td className="px-6 py-4">
                                 <div className="flex justify-center items-center space-x-2">
-                                    <TableButton title={"Create Purchase"} onClick={openModal} />
+                                    <TableButton title={"Create Purchase"} onClick={() => setIsModalVisible(true)} />
                                     <TableButton
                                         title={"X"}
                                         bg="bg-red-500"
+                                        hover="bg-red-600"
                                         text={"text-white"}
                                     />
                                 </div>
@@ -135,7 +66,7 @@ const PendingPurchases = () => {
                 </table>
             </div>
 
-            <Modal isVisible={isModalVisible} onClose={closeModal} onSave={closeModal} title="Add New Purchase" width="max-w-[70vh]">
+            <Modal isVisible={isModalVisible} onClose={() => setIsModalVisible(false)} onSave={() => setIsModalVisible(false)} title="Add New Purchase" width="max-w-[70vh]">
                 <p className="font-bold text-xl py-2"> Client Information </p>
                 <div className="space-y-4 pt-5 px-5">
                     <InputWithLabel label={"First Name:"} flex={true} />
