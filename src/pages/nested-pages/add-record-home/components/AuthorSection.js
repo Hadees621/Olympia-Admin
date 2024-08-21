@@ -4,7 +4,7 @@ import Button from 'components/Button';
 
 const AuthorSection = ({ onButtonClick }) => {
     return (
-        <div className="p-4 shadow-md">
+        <div className="p-4 shadow">
             <div className=" bg-[#F7F7F7] p-2">
                 <h2 className="text-lg font-bold p-3 mb-2">STEP 1 - ABOUT AUTHOR</h2>
             </div>
@@ -25,7 +25,6 @@ const AuthorSection = ({ onButtonClick }) => {
                     <li>Qaswar </li>
                 </ul>
             </div>
-
         </div>
     );
 };

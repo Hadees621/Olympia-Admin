@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
 import Button from 'components/Button';
+import React, { useRef, useState } from 'react';
 
 const FileUpload = ({ title }) => {
     const fileInputRef = useRef(null);
@@ -29,20 +29,21 @@ const FileUpload = ({ title }) => {
     };
 
     return (
-        <div className='shadow-lg p-4'>
+        <div className='shadow p-4'>
             <label className="block font-bold text-lg mb-1">{title}</label>
             <div className="w-full p-2 rounded mb-4 space-x-3">
                 <Button
                     title="Select Files"
                     text="text-white"
                     bg="bg-orange-500"
+                    hover='hover:bg-orange-600'
                     onclick={handleSelectFiles}
                 />
                 <Button
                     title="Upload"
                     text="text-white"
-                    bg="bg-green-500"
-                    hover="hover:bg-green-600"
+                    bg="bg-green-600"
+                    hover="hover:bg-green-700"
                 />
                 <div
                     className={`border-2 border-dotted border-black ${dragging ? 'border-dashed border-blue-500' : 'border-gray-300'} rounded p-8 my-4 flex justify-center items-center cursor-pointer`}

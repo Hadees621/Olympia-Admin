@@ -1,3 +1,4 @@
+import Title from 'components/Title'
 import React, { useState } from 'react'
 import BookSection from './components/BookSection'
 import AuthorModal from './components/AuthorModal'
@@ -7,26 +8,14 @@ import FileUploadSection from './components/FileUploadSection'
 const AddRecord = () => {
     const [isModalOpen, setModalOpen] = useState(false);
 
-    const handleAddAuthorClick = () => {
-        setModalOpen(true);
-    };
-    const handleCloseModal = () => {
-        setModalOpen(false);
-    };
-    const handleSaveAuthor = () => {
-        setModalOpen(false);
-    };
     return (
-
-        <div className="w-full">
-            <p className="text-3xl font-semibold mt-8 ml-6">
-                Add New Record
-            </p>
-            <div className="p-4 w-full space-y-6">
-                <AuthorSection onButtonClick={handleAddAuthorClick} />
+        <div className="w-full m-4">
+            <Title title=' Add New Record' />
+            <div className="w-full space-y-6 mt-3">
+                <AuthorSection onButtonClick={() => setModalOpen(true)} />
                 <BookSection />
                 <FileUploadSection />
-                <AuthorModal isOpen={isModalOpen} onClose={handleCloseModal} onSave={handleSaveAuthor} />
+                <AuthorModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} onSave={() => setModalOpen(false)} />
             </div>
         </div>
     )

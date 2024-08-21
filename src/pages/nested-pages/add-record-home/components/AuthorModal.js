@@ -70,7 +70,7 @@ const AuthorModal = ({ isOpen, onClose, onSave }) => {
                 </div>
                 <div className="flex justify-end space-x-2 mt-6">
                     <Button title={"Cancel"} onClick={onClose} bg='bg-gray-300 hover:bg-gray-400 ' text={"text-gray-700"} />
-                    <Button title={"Save Author"} onClick={handleSave} bg='bg-green-500 hover:bg-green-600' text={"text-white"} />
+                    <Button title={"Save Author"} onClick={handleSave} bg='bg-green-600 hover:bg-green-700' text={"text-white"} />
                 </div>
             </div>
         </div>

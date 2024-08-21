@@ -7,7 +7,7 @@ import { Field } from './Field';
 
 const BookSection = () => {
     return (
-        <div className="p-4 shadow-md">
+        <div className="p-4 shadow">
             <div className="bg-[#F7F7F7] p-2 mb-6">
                 <h2 className="text-lg font-bold p-3 mb-2">STEP 2 - ABOUT BOOK</h2>
             </div>
