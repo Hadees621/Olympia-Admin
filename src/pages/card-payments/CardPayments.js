@@ -36,7 +36,7 @@ const TabButton = ({ tab, isActive, onClick }) => (
 const TabContent = ({ tab, isActive }) => (
   <div
     key={tab.key}
-    className={`dark:bg-gray-800 ${isActive ? "block" : "hidden"}`}
+    className={`${isActive ? "block" : "hidden"}`}
     id={tab.key}
     role="tabpanel"
     aria-labelledby={`${tab.key}-tab`}

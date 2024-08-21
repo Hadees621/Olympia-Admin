@@ -54,7 +54,7 @@ const OlympiaWebsitesPortal = () => {
         {tabs.map((tab) => (
           <div
             key={tab.id}
-            className={`p-4 dark:bg-gray-800 ${activeTab === tab.id ? "block" : "hidden"
+            className={`${activeTab === tab.id ? "block" : "hidden"
               }`}
             id={tab.id}
             role="tabpanel"

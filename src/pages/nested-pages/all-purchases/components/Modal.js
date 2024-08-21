@@ -15,7 +15,7 @@ const Modal = ({ isOpen, onClose, data }) => {
                 <button onClick={onClose} className="absolute top-6 right-6 text-red-500 text-2xl">
                     <Cross />
                 </button>
-                <h2 className="text-xl font-semibold mb-4">Purchase Details</h2>
+                <h2 className="text-xl font-bold mb-4 text-start">Purchase Details</h2>
                 <div className="overflow-y-auto max-h-[70vh] custom-scrollbar">
                     <table className="text-start mx-auto w-full">
                         <tbody className=''>

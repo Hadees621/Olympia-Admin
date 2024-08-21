@@ -52,7 +52,7 @@ const SubTabs = () => {
         {tabs.map((tab) => (
           <div
             key={tab.id}
-            className={`  dark:bg-gray-800 ${
+            className={`${
               activeTab === tab.id ? "block" : "hidden"
             }`}
             id={tab.id}
