@@ -6,7 +6,7 @@ const Table = () => {
 
   return (
     <div
-      className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
+      className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1260px]"
         }`}
     >
       <div className="my-4 gap-3 flex">
@@ -15,17 +15,17 @@ const Table = () => {
             <thead className="text-white uppercase bg-gray-50 sticky top-0 z-10">
               {" "}
               <tr className="text-sm font-medium text-gray-500 uppercase text-center whitespace-nowrap">
-                <th className="p-3">Status</th>
-                <th className="p-3">Imprint</th>
-                <th className="p-3">Author</th>
-                <th className="p-3">Pen Name</th>
-                <th className="p-3">Book Title</th>
-                <th className="p-3 whitespace-nowrap">ISBN</th>
-                <th className="p-3">Date Contract</th>
-                <th className="p-3 whitespace-nowrap">Date Publication</th>
-                <th className="p-3 whitespace-nowrap">Date Remaindered</th>
-                <th className="p-3">Price</th>
-                <th className="p-3">Stock</th>
+                <th className="px-6 py-3">Status</th>
+                <th className="px-6 py-3">Imprint</th>
+                <th className="px-6 py-3">Author</th>
+                <th className="px-6 py-3">Pen Name</th>
+                <th className="px-6 py-3">Book Title</th>
+                <th className="px-6 py-3 whitespace-nowrap">ISBN</th>
+                <th className="px-6 py-3">Date Contract</th>
+                <th className="px-6 py-3 whitespace-nowrap">Date Publication</th>
+                <th className="px-6 py-3 whitespace-nowrap">Date Remaindered</th>
+                <th className="px-6 py-3">Price</th>
+                <th className="px-6 py-3">Stock</th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
@@ -45,17 +45,17 @@ const Table = () => {
                 })
                 .map((row, index) => (
                   <tr key={index} className="ext-sm text-gray-700 text-center border font-bold whitespace-nowrap custom-hover-row">
-                    <td className="p-3 text-blue-600">{row.status}</td>
-                    <td className="p-3">{row.imprint}</td>
-                    <td className="p-3">{row.author}</td>
-                    <td className="p-3">{row.penName}</td>
-                    <td className="p-3">{row.bookTitle}</td>
-                    <td className="p-3 whitespace-nowrap">{row.isbn}</td>
-                    <td className="p-3">{row.dateContract}</td>
-                    <td className="p-3">{row.datePublication}</td>
-                    <td className="p-3">{row.dateRemaindered}</td>
-                    <td className="p-3">{row.price}</td>
-                    <td className="p-3">{row.stock}</td>
+                    <td className="px-6 py-3 text-blue-600">{row.status}</td>
+                    <td className="px-6 py-3">{row.imprint}</td>
+                    <td className="px-6 py-3">{row.author}</td>
+                    <td className="px-6 py-3">{row.penName}</td>
+                    <td className="px-6 py-3">{row.bookTitle}</td>
+                    <td className="px-6 py-3 whitespace-nowrap">{row.isbn}</td>
+                    <td className="px-6 py-3">{row.dateContract}</td>
+                    <td className="px-6 py-3">{row.datePublication}</td>
+                    <td className="px-6 py-3">{row.dateRemaindered}</td>
+                    <td className="px-6 py-3">{row.price}</td>
+                    <td className="px-6 py-3">{row.stock}</td>
                   </tr>
                 ))}
             </tbody>
