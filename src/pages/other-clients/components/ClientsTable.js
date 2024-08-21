@@ -13,7 +13,7 @@ const ClientsTable = () => {
 
   return (
     <div
-      className={`m-4 transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
+      className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
         }`}
     >
       <div className="flex items-center mt-8 gap-3 m-4 w-[80%] mx-auto">
