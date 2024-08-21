@@ -1,3 +1,4 @@
+import Title from 'components/Title';
 import React, { useState } from 'react'
 import AllUAEInvoices from './components/AllUAEInvoices';
 import AllUAEPendingInvoices from './components/AllUAEPendingInvoices';
@@ -6,16 +7,15 @@ const tabs = [
     { id: "AllUAEInvoices", label: "All UAE Invoices", component: AllUAEInvoices },
     { id: "AllUAEPendingInvoices", label: "All UAE Pending Invoices", component: AllUAEPendingInvoices },
 ];
+
 const UaeInvoices = () => {
     const [activeTab, setActiveTab] = useState("AllUAEInvoices");
 
     return (
         <div className="w-full text-start items-center m-4">
-            <p className="text-3xl font-semibold my-8 ml-">
-                UAE Invoices
-            </p>
+            <Title />
 
-            <div className="mb-4 justify-center flex pt-3">
+            <div className="my-4 justify-center flex pt-3">
                 <ul
                     className="flex flex-wrap -mb-px gap-3 text-sm font-medium text-center"
                     id="default-styled-tab"
@@ -24,7 +24,7 @@ const UaeInvoices = () => {
                     {tabs.map((tab) => (
                         <li key={tab.id} className="me-2" role="presentation">
                             <button
-                                className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${activeTab === tab.id
+                                className={`inline-block pb-4 border-b-2 rounded-t-lg text-lg font-bold ${activeTab === tab.id
                                     ? "text-red-600 border-red-600"
                                     : "text-black hover:text-black border-black"
                                     }`}
@@ -41,7 +41,8 @@ const UaeInvoices = () => {
                     ))}
                 </ul>
             </div>
-            <div id="default-styled-tab-content" className="w-full">
+
+            <div id="default-styled-tab-content" className="w-full my-3">
                 {tabs.map((tab) => (
                     <div
                         key={tab.id}
@@ -55,7 +56,6 @@ const UaeInvoices = () => {
                     </div>
                 ))}
             </div>
-
         </div>
     )
 }
