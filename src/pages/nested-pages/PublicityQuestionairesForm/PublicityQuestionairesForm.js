@@ -1,3 +1,4 @@
+import Title from 'components/Title';
 import STEP1 from './components/STEP1';
 import STEP2 from './components/STEP2';
 import STEP3 from './components/STEP3';
@@ -11,20 +12,20 @@ const PublicityQuestionnaireForm = () => {
   const handlePreviousStep = () => setCurrentStep(currentStep - 1);
 
   return (
-    <div className='w-full'>
-      <p className="text-3xl font-semibold mt-8 text-center">
-        Author Questionnaire
-      </p>
-      <p className="text-lg font-normal mt-2 text-center">
+    <div className='w-full m-4'>
+
+      <Title title=' Author Questionnaire' />
+
+      <p className="text-lg font-normal my-2 text-center">
         Please complete the form to provide us with the information required. <br />
         We cannot start work on your book until this form is completed and submitted to us.
       </p>
 
-      <p className="text-lg font-normal mt-2 text-center">
+      <p className="text-lg font-normal text-center">
         The information you give us on this form will be strictly confidential.
       </p>
 
-      <p className="text-lg font-normal mt-2 text-center">
+      <p className="text-lg font-normal my-2 text-center">
         However, we believe that this questionnaire will assist us in providing a better service to our authors and help us in making decisions <br />
         about the publication of your work. This does not constitute a contractual obligation and copyright of all material submitted to us remains <br />
         with the author.
