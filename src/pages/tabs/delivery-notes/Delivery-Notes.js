@@ -6,7 +6,7 @@ import SelectField from "components/SelectField";
 import { deliveryNotesData } from "./utils/utils";
 import DatePickerField from "components/DatePickerField";
 import SearchField from "pages/home/components/SearchField";
-import Remaindered from "../editorial/components/Remaindered";
+import Remaindered from "pages/editorial/components/Remaindered";
 
 const DeliveryNotes = () => {
   return (
@@ -26,7 +26,11 @@ const DeliveryNotes = () => {
         <SelectField placeholder={"Select Author"} />
         <DatePickerField />
         <SelectField placeholder={"DN"} />
-        <Button title="Add" bg="bg-green-600 text-white" hover="hover:bg-green-700" />
+        <Button
+          title="Add"
+          bg="bg-green-600 text-white"
+          hover="hover:bg-green-700"
+        />
       </div>
 
       <Remaindered />
@@ -44,7 +48,10 @@ const DeliveryNotes = () => {
           </thead>
           <tbody>
             {deliveryNotesData.map((row, index) => (
-              <tr key={index} className="text-sm border-b text-center  custom-hover-row">
+              <tr
+                key={index}
+                className="text-sm border-b text-center  custom-hover-row"
+              >
                 <td className="p-3">{row.date}</td>
                 <td className="p-3">{row.reference}</td>
                 <td className="p-3">{row.company}</td>
