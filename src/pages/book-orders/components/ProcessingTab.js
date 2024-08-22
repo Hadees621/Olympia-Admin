@@ -7,9 +7,9 @@ import SelectField from "components/SelectField";
 import { renderToString } from "react-dom/server";
 import DatePickerField from "components/DatePickerField";
 import invoiceData from "pages/nested-pages/all-purchases/utils/utils";
-import InvoiceModal from "pages/book-invoices/components/InvoiceModal";
-import PrintButton from "pages/book-invoices/components/invoice/PrintButton";
-import FinalInvoice from "pages/book-invoices/components/invoice/FinalInvoice";
+import InvoiceModal from "pages/tabs/book-invoices/components/InvoiceModal";
+import PrintButton from "pages/tabs/book-invoices/components/invoice/PrintButton";
+import FinalInvoice from "pages/tabs/book-invoices/components/invoice/FinalInvoice";
 
 const ProcessingTab = () => {
   const [selectAll, setSelectAll] = useState(false);

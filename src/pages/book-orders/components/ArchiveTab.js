@@ -3,19 +3,21 @@ import TotalRevenue from "./TotalRevenue";
 import { tableData } from "../utils/utils";
 import TableButton from "components/TableButton";
 import { renderToString } from "react-dom/server";
-import InvoiceModal from "pages/book-invoices/components/InvoiceModal";
 import invoiceData from "pages/nested-pages/all-purchases/utils/utils";
-import PrintButton from "pages/book-invoices/components/invoice/PrintButton";
-import FinalInvoice from "pages/book-invoices/components/invoice/FinalInvoice";
+import InvoiceModal from "pages/tabs/book-invoices/components/InvoiceModal";
+import PrintButton from "pages/tabs/book-invoices/components/invoice/PrintButton";
+import FinalInvoice from "pages/tabs/book-invoices/components/invoice/FinalInvoice";
 
 const ArchiveTab = () => {
   const [isModalVisible, setModalVisible] = useState(false);
 
   const handleOpenInvoice = (invoiceData) => {
-    const invoiceHtml = renderToString(<FinalInvoice invoiceData={invoiceData} />);
+    const invoiceHtml = renderToString(
+      <FinalInvoice invoiceData={invoiceData} />
+    );
     const printButtonHtml = renderToString(<PrintButton />);
 
-    const newWindow = window.open('', '', 'width=800,height=600');
+    const newWindow = window.open("", "", "width=800,height=600");
     newWindow.document.write(`
       <html>
         <head>

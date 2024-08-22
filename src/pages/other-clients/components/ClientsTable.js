@@ -5,7 +5,7 @@ import { invoices } from "../utils/utils";
 import useSidebarStore from "stores/States";
 import { invoiceData } from "pages/printers/utils/utils";
 import SearchField from "pages/home/components/SearchField";
-import InvoiceModal from "pages/book-invoices/components/InvoiceModal";
+import InvoiceModal from "pages/tabs/book-invoices/components/InvoiceModal";
 
 const ClientsTable = () => {
   const { isOpen } = useSidebarStore();

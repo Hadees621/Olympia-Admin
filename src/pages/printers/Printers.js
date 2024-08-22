@@ -10,8 +10,8 @@ import { renderToString } from "react-dom/server";
 import DatePickerField from "components/DatePickerField";
 import SearchField from "../home/components/SearchField";
 import EditModal from "../bookshops/components/EditModal";
-import PrintButton from "../book-invoices/components/invoice/PrintButton";
-import FinalInvoice from "../book-invoices/components/invoice/FinalInvoice";
+import PrintButton from "../tabs/book-invoices/components/invoice/PrintButton";
+import FinalInvoice from "../tabs/book-invoices/components/invoice/FinalInvoice";
 
 const Printers = () => {
   const { isOpen } = useSidebarStore();

@@ -6,7 +6,7 @@ import SelectField from 'components/SelectField'
 import { renderToString } from 'react-dom/server'
 import { invoiceData } from 'pages/printers/utils/utils'
 import SearchField from 'pages/home/components/SearchField'
-import PrintButton from 'pages/book-invoices/components/invoice/PrintButton'
+import PrintButton from 'pages/tabs/book-invoices/components/invoice/PrintButton'
 
 const ViewDeliveryNote = () => {
 

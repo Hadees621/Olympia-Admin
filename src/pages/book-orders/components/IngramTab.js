@@ -4,10 +4,10 @@ import TotalRevenue from "./TotalRevenue";
 import { tableData } from "../utils/utils";
 import TableButton from "components/TableButton";
 import { renderToString } from "react-dom/server";
-import InvoiceModal from "pages/book-invoices/components/InvoiceModal";
 import invoiceData from "pages/nested-pages/all-purchases/utils/utils";
-import PrintButton from "pages/book-invoices/components/invoice/PrintButton";
-import FinalInvoice from "pages/book-invoices/components/invoice/FinalInvoice";
+import InvoiceModal from "pages/tabs/book-invoices/components/InvoiceModal";
+import PrintButton from "pages/tabs/book-invoices/components/invoice/PrintButton";
+import FinalInvoice from "pages/tabs/book-invoices/components/invoice/FinalInvoice";
 
 const IngramTab = () => {
   const [isModalVisible, setModalVisible] = useState(false);

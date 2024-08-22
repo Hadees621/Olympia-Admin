@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import StackTab from "./components/StackTab";
 import SelectField from "components/SelectField";
 import InvoicesTab from "./components/InvoicesTab";
-import SearchField from "../home/components/SearchField";
-import Remaindered from "../editorial/components/Remaindered";
+import SearchField from "pages/home/components/SearchField";
+import Remaindered from "pages/editorial/components/Remaindered";
 
 const tabs = [
   {
@@ -17,7 +17,7 @@ const tabs = [
     name: "Invoices",
     component: InvoicesTab,
     key: "invoices",
-  }
+  },
 ];
 
 const BookInvoices = () => {
@@ -34,7 +34,6 @@ const BookInvoices = () => {
 
   return (
     <div className="w-full text-start m-4">
-
       <Title />
 
       <div className="flex gap-2 justify-start mt-8 items-center w-full">
@@ -69,10 +68,11 @@ const BookInvoices = () => {
           {tabs.map((tab) => (
             <li key={tab.key} className="me-2" role="presentation">
               <button
-                className={`inline-block p-2 border-b-2 rounded-t-lg text-[15px] pb-4 font-semibold ${activeTab === tab.key
-                  ? "text-red-600 border-red-600"
-                  : "text-black hover:text-black border-black"
-                  }`}
+                className={`inline-block p-2 border-b-2 rounded-t-lg text-[15px] pb-4 font-semibold ${
+                  activeTab === tab.key
+                    ? "text-red-600 border-red-600"
+                    : "text-black hover:text-black border-black"
+                }`}
                 id={`${tab.key}-tab`}
                 type="button"
                 role="tab"
@@ -89,12 +89,17 @@ const BookInvoices = () => {
 
       <div id="default-styled-tab-content" className="w-full">
         {tabs.map((tab) => (
-          <div key={tab.key} className={`${activeTab === tab.key ? "block" : "hidden"}`} id={tab.key} role="tabpanel" aria-labelledby={`${tab.key}-tab`}>
+          <div
+            key={tab.key}
+            className={`${activeTab === tab.key ? "block" : "hidden"}`}
+            id={tab.key}
+            role="tabpanel"
+            aria-labelledby={`${tab.key}-tab`}
+          >
             {React.createElement(tab.component, { data: tab.data })}
           </div>
         ))}
       </div>
-
     </div>
   );
 };

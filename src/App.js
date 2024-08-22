@@ -21,7 +21,7 @@ import BookOrders from "./pages/book-orders/BookOrders";
 import Outworkers from "./pages/out-workers/Outworkers";
 import { Route, Routes, useLocation } from "react-router-dom";
 import CardPayments from "./pages/card-payments/CardPayments";
-import BookInvoices from "./pages/book-invoices/BookInvoices";
+import BookInvoices from "./pages/tabs/book-invoices/BookInvoices";
 import OtherClients from "./pages/other-clients/OtherClients";
 import DeliveryNotes from "./pages/delivery-notes/Delivery-Notes";
 import IsbnSearch from "./pages/nested-pages/isbn-search/IsbnSearch";
