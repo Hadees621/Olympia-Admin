@@ -8,7 +8,7 @@ import FileUpload from "components/FileUpload";
 import TableButton from "components/TableButton";
 import SelectField from "components/SelectField";
 import InputWithLabel from "components/InputWithLabel";
-import SearchField from "pages/home/components/SearchField";
+import SearchField from "components/SearchField";
 import SelectInputWithLabel from "components/SelectInputWithLabel";
 
 const PendingPurchases = () => {

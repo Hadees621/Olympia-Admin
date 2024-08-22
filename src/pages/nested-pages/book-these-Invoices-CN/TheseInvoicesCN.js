@@ -8,8 +8,8 @@ import { renderToString } from 'react-dom/server';
 import ViewInvoice from './components/ViewInvoice';
 import EditListModal from 'components/modals/EditListModal';
 import EditableTextInput from 'components/EditableTextInput';
-import PrintButton from 'pages/book-invoices/components/invoice/PrintButton';
-import FinalInvoice from 'pages/book-invoices/components/invoice/FinalInvoice';
+import PrintButton from 'pages/tabs/book-invoices/components/invoice/PrintButton';
+import FinalInvoice from 'pages/tabs/book-invoices/components/invoice/FinalInvoice';
 
 const TheseInvoicesCN = () => {
     const { isOpen } = useSidebarStore();

@@ -1,50 +1,48 @@
 import React from "react";
 import Home from "./pages/home/Home";
-import Book from "./pages/book/Book";
-import Posts from "./pages/posts/Posts";
 import Login from "./pages/login/Login";
-import Author from "./pages/author/Author";
-import Archive from "./pages/archive/Archive";
-import Reports from "./pages/reports/Reports";
-import Graphics from "./pages/graphics/Graphics";
-import Printers from "./pages/printers/Printers";
-import Contract from "./pages/contract/Contract";
-import Editorial from "./pages/editorial/Editorial";
-import Publicity from "./pages/publicity/Publicity";
-import Purchases from "./pages/purchases/Purchases";
-import Bumblebee from "./pages/bumblebee/Bumblebee";
-import Royalties from "./pages/royalties/Royalties";
-import Bookshops from "./pages/bookshops/Bookshops";
-import Production from "./pages/production/Production";
-import FinalCheck from "./pages/final-check/FinalCheck";
-import BookOrders from "./pages/book-orders/BookOrders";
-import Outworkers from "./pages/out-workers/Outworkers";
-import { Route, Routes, useLocation } from "react-router-dom";
-import CardPayments from "./pages/card-payments/CardPayments";
-import BookInvoices from "./pages/book-invoices/BookInvoices";
-import OtherClients from "./pages/other-clients/OtherClients";
-import DeliveryNotes from "./pages/delivery-notes/Delivery-Notes";
+import Book from "./pages/tabs/book/Book";
+import Posts from "./pages/tabs/posts/Posts";
+import Author from "./pages/tabs/author/Author";
+import { Route, Routes } from "react-router-dom";
+import Reports from "./pages/tabs/reports/Reports";
+import Archive from "./pages/tabs/archive/Archive";
+import Printers from "./pages/tabs/printers/Printers";
+import Graphics from "./pages/tabs/graphics/Graphics";
+import Contract from "./pages/tabs/contract/Contract";
+import Royalties from "./pages/tabs/royalties/Royalties";
+import Purchases from "./pages/tabs/purchases/Purchases";
+import Publicity from "./pages/tabs/publicity/Publicity";
+import Editorial from "./pages/tabs/editorial/Editorial";
+import Bumblebee from "./pages/tabs/bumblebee/Bumblebee";
+import Bookshops from "./pages/tabs/bookshops/Bookshops";
+import Production from "./pages/tabs/production/Production";
+import Outworkers from "./pages/tabs/out-workers/Outworkers";
+import FinalCheck from "./pages/tabs/final-check/FinalCheck";
+import BookOrders from "./pages/tabs/book-orders/BookOrders";
+import OtherClients from "./pages/tabs/other-clients/OtherClients";
+import CardPayments from "./pages/tabs/card-payments/CardPayments";
+import BookInvoices from "./pages/tabs/book-invoices/BookInvoices";
 import IsbnSearch from "./pages/nested-pages/isbn-search/IsbnSearch";
-import PublishedBooks from "./pages/published-books/PublishedBooks";
 import AddRecord from "./pages/nested-pages/add-record-home/AddRecord";
 import UaeInvoices from "./pages/nested-pages/Uae-invoices/UaeInvoices";
-import FinalCheckView from "./pages/final-check/components/FinalCheckView";
+import DeliveryNotes from "./pages/tabs//delivery-notes/Delivery-Notes";
+import PublishedBooks from "./pages/tabs/published-books/PublishedBooks";
 import AllPurchases from "./pages/nested-pages/all-purchases/AllPurchases";
-import ViewDeliveryNote from "./pages/delivery-notes/components/ViewDeliveryNote";
-import ReadyForPublication from "./pages/ready-for-publication/ReadyForPublication";
+import FinalCheckView from "./pages/tabs/final-check/components/FinalCheckView";
 import ContractAccount from "./pages/nested-pages/contract-accounts/ContractAccount";
+import ViewDeliveryNote from "./pages/tabs/delivery-notes/components/ViewDeliveryNote";
 import ContractInvoices from "./pages/nested-pages/contract-invoices/ContractInvoices";
 import PendingPurchases from "./pages/nested-pages/pending-purchases/PendingPurchases";
-import OlympiaWebsitesPortal from "./pages/olympia-websites-portal/OlympiaWebsitesPortal";
+import ReadyForPublication from "./pages/tabs/ready-for-publication/ReadyForPublication";
 import TheseInvoicesCN from "./pages/nested-pages/book-these-Invoices-CN/TheseInvoicesCN";
+import OlympiaWebsitesPortal from "./pages/tabs/olympia-websites-portal/OlympiaWebsitesPortal";
 import PendingQuestionaire from "./pages/nested-pages/production-questionaires/PendingQuestionaire";
 import PublicityQuestionaires from "./pages/nested-pages/publicity-questionaires/PublicityQuestionaires";
 import PublicityQuestionairesForm from "./pages/nested-pages/PublicityQuestionairesForm/PublicityQuestionairesForm";
 import ProductionQuestionnaireForm from "./pages/nested-pages/production-questionnaire-form/ProductionQuestionnaireForm";
 
 const App = () => {
-  const location = useLocation();
-
   return (
     <>
       <Routes>
@@ -72,11 +70,17 @@ const App = () => {
           <Route path="/bookshops" element={<Bookshops />} />
           <Route path="/printers" element={<Printers />} />
           <Route path="/posts" element={<Posts />} />
-          <Route path="/ready-for-publication" element={<ReadyForPublication />} />
+          <Route
+            path="/ready-for-publication"
+            element={<ReadyForPublication />}
+          />
           <Route path="/other-clients" element={<OtherClients />} />
           <Route path="/reports" element={<Reports />} />
           <Route path="/published-books" element={<PublishedBooks />} />
-          <Route path="/olympia-websites-portal" element={<OlympiaWebsitesPortal />} />
+          <Route
+            path="/olympia-websites-portal"
+            element={<OlympiaWebsitesPortal />}
+          />
         </>
 
         {/* nested pages */}
@@ -85,10 +89,22 @@ const App = () => {
           <Route path="/add-new-record" element={<AddRecord />} />
           <Route path="/all-purchases" element={<AllPurchases />} />
           <Route path="/pending-purchases" element={<PendingPurchases />} />
-          <Route path="/pending-production-questionnaires" element={<PendingQuestionaire />} />
-          <Route path="/pending-questionnaires-form" element={<ProductionQuestionnaireForm />} />
-          <Route path="/pending-publicity-questionnaire" element={<PublicityQuestionaires />} />
-          <Route path="/publicity-questionnaire-form" element={<PublicityQuestionairesForm />} />
+          <Route
+            path="/pending-production-questionnaires"
+            element={<PendingQuestionaire />}
+          />
+          <Route
+            path="/pending-questionnaires-form"
+            element={<ProductionQuestionnaireForm />}
+          />
+          <Route
+            path="/pending-publicity-questionnaire"
+            element={<PublicityQuestionaires />}
+          />
+          <Route
+            path="/publicity-questionnaire-form"
+            element={<PublicityQuestionairesForm />}
+          />
           <Route path="/these-invoices-CN" element={<TheseInvoicesCN />} />
           <Route path="/view-delivery-note" element={<ViewDeliveryNote />} />
           <Route path="/view-final-check" element={<FinalCheckView />} />

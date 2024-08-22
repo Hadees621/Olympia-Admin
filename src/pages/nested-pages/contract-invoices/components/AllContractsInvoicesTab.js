@@ -3,7 +3,7 @@ import Button from "components/Button";
 import { invoicesData } from "../utils/utils";
 import Pagination from "components/Pagination";
 import SelectField from "components/SelectField";
-import SearchField from "pages/home/components/SearchField";
+import SearchField from "components/SearchField";
 
 const AllContractsInvoicesTab = () => {
     return (
