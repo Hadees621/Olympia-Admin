@@ -6,13 +6,13 @@ import FileUpload from "./components/FileUpload";
 import SelectField from "components/SelectField";
 import Remaindered from "components/Remaindered";
 import SearchField from "components/SearchField";
-import EditableForm from "../publicity/components/EditableForm.js/EditableForm";
 import {
   characterDescription,
   characterDescriptionData,
   illustrationsDescription,
   illustrationsDescriptionData,
 } from "./utils/utils";
+import EditableForm from "pages/publicity/components/EditableForm.js/EditableForm";
 
 const Graphics = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);

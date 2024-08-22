@@ -6,7 +6,7 @@ import Book from "./pages/tabs/book/Book";
 import Author from "./pages/tabs/author/Author";
 import Archive from "./pages/tabs/archive/Archive";
 import Reports from "./pages/reports/Reports";
-import Graphics from "./pages/graphics/Graphics";
+import Graphics from "./pages/tabs/graphics/Graphics";
 import Printers from "./pages/printers/Printers";
 import Contract from "./pages/tabs/contract/Contract";
 import Editorial from "./pages/tabs/editorial/Editorial";
