@@ -14,7 +14,7 @@ import Publicity from "./pages/publicity/Publicity";
 import Purchases from "./pages/purchases/Purchases";
 import Bumblebee from "./pages/bumblebee/Bumblebee";
 import Royalties from "./pages/royalties/Royalties";
-import Bookshops from "./pages/bookshops/Bookshops";
+import Bookshops from "./pages/tabs/bookshops/Bookshops";
 import Production from "./pages/production/Production";
 import FinalCheck from "./pages/final-check/FinalCheck";
 import BookOrders from "./pages/tabs/book-orders/BookOrders";

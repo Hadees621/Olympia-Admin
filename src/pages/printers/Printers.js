@@ -9,7 +9,7 @@ import TableButton from "components/TableButton";
 import { renderToString } from "react-dom/server";
 import DatePickerField from "components/DatePickerField";
 import SearchField from "../home/components/SearchField";
-import EditModal from "../bookshops/components/EditModal";
+import EditModal from "../tabs/bookshops/components/EditModal";
 import PrintButton from "../tabs/book-invoices/components/invoice/PrintButton";
 import FinalInvoice from "../tabs/book-invoices/components/invoice/FinalInvoice";
 
@@ -37,7 +37,7 @@ const Printers = () => {
   const handleOpenInvoice = (row) => {
     const invoiceHtml = renderToString(<FinalInvoice invoiceData={row} />);
     const printButtonHtml = renderToString(<PrintButton />);
-    const newWindow = window.open('', '', 'width=800,height=600');
+    const newWindow = window.open("", "", "width=800,height=600");
     newWindow.document.write(`
       <html>
         <head>
@@ -86,8 +86,9 @@ const Printers = () => {
       </div>
 
       <div
-        className={` transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
-          }`}
+        className={` transition-all duration-300 ${
+          isOpen ? "max-w-[1050px]" : "max-w-[1200px]"
+        }`}
       >
         <div className="flex items-center justify-end my-4">
           <Button title={"Send Via Email"} />
@@ -127,8 +128,9 @@ const Printers = () => {
               {invoiceData.map((row, index) => (
                 <tr
                   key={index}
-                  className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap custom-hover-row ${isRowSelected(index) ? "bg-gray-100" : ""
-                    }`}
+                  className={`text-sm text-gray-700 text-center border font-bold whitespace-nowrap custom-hover-row ${
+                    isRowSelected(index) ? "bg-gray-100" : ""
+                  }`}
                 >
                   <td className="px-6 py-4 ">
                     <input
@@ -139,7 +141,10 @@ const Printers = () => {
                   </td>
 
                   <td className="px-6 py-4 ">
-                    <TableButton title={"View"} onClick={() => handleOpenInvoice(row)} />
+                    <TableButton
+                      title={"View"}
+                      onClick={() => handleOpenInvoice(row)}
+                    />
                   </td>
                   <td className="px-6 py-4 ">{row.invoiceNo}</td>
                   <td className="px-6 py-4 ">{row.creditNo}</td>
@@ -155,7 +160,10 @@ const Printers = () => {
                   <td className="px-6 py-4  ">
                     <div className="flex gap-3">
                       <SelectField width="w-[160px]" />
-                      <TableButton title={'Edit List'} onClick={() => setIsInfoModalVisible(true)} />
+                      <TableButton
+                        title={"Edit List"}
+                        onClick={() => setIsInfoModalVisible(true)}
+                      />
                     </div>
                   </td>
                   <td className="px-6 py-4 ">
