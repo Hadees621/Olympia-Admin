@@ -1,12 +1,12 @@
-import React, { useState } from "react";
 import Title from "components/Title";
 import Button from "components/Button";
 import Table from "./components/Table";
+import React, { useState } from "react";
 import Modal from "components/modals/Modal";
 import Pagination from "components/Pagination";
 import SelectField from "components/SelectField";
 import InputWithLabel from "components/InputWithLabel";
-import SearchField from "../home/components/SearchField";
+import SearchField from "pages/home/components/SearchField";
 import SelectInputWithLabel from "components/SelectInputWithLabel";
 
 const Archive = () => {
@@ -25,6 +25,7 @@ const Archive = () => {
   return (
     <div className="w-full m-4">
       <Title />
+
       <div className="mt-3 w-full font-semibold text-lg">
         <p>Total Records Found: 0</p>
         <p className="text-green-600">Fully Paid: 113</p>
@@ -88,7 +89,8 @@ const Archive = () => {
                 <InputWithLabel label="Surname" />
                 <InputWithLabel label="First Name" />
                 <p className="text-md italic pt-4 font-bold">
-                  Please check if the author already exists before adding a new one.
+                  Please check if the author already exists before adding a new
+                  one.
                 </p>
               </div>
             )}
@@ -96,7 +98,9 @@ const Archive = () => {
               <InputWithLabel label="Pen Name" />
               <InputWithLabel label="Book Title" />
               <div>
-                <label className="w-[30%] font-bold text-lg">Contract Date:</label>
+                <label className="w-[30%] font-bold text-lg">
+                  Contract Date:
+                </label>
                 <div className="flex w-full gap-3 my-1">
                   <SelectInputWithLabel />
                   <SelectInputWithLabel />

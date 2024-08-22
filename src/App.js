@@ -4,7 +4,7 @@ import Book from "./pages/book/Book";
 import Posts from "./pages/posts/Posts";
 import Login from "./pages/login/Login";
 import Author from "./pages/author/Author";
-import Archive from "./pages/archive/Archive";
+import Archive from "./pages/tabs/archive/Archive";
 import Reports from "./pages/reports/Reports";
 import Graphics from "./pages/graphics/Graphics";
 import Printers from "./pages/printers/Printers";
@@ -72,11 +72,17 @@ const App = () => {
           <Route path="/bookshops" element={<Bookshops />} />
           <Route path="/printers" element={<Printers />} />
           <Route path="/posts" element={<Posts />} />
-          <Route path="/ready-for-publication" element={<ReadyForPublication />} />
+          <Route
+            path="/ready-for-publication"
+            element={<ReadyForPublication />}
+          />
           <Route path="/other-clients" element={<OtherClients />} />
           <Route path="/reports" element={<Reports />} />
           <Route path="/published-books" element={<PublishedBooks />} />
-          <Route path="/olympia-websites-portal" element={<OlympiaWebsitesPortal />} />
+          <Route
+            path="/olympia-websites-portal"
+            element={<OlympiaWebsitesPortal />}
+          />
         </>
 
         {/* nested pages */}
@@ -85,10 +91,22 @@ const App = () => {
           <Route path="/add-new-record" element={<AddRecord />} />
           <Route path="/all-purchases" element={<AllPurchases />} />
           <Route path="/pending-purchases" element={<PendingPurchases />} />
-          <Route path="/pending-production-questionnaires" element={<PendingQuestionaire />} />
-          <Route path="/pending-questionnaires-form" element={<ProductionQuestionnaireForm />} />
-          <Route path="/pending-publicity-questionnaire" element={<PublicityQuestionaires />} />
-          <Route path="/publicity-questionnaire-form" element={<PublicityQuestionairesForm />} />
+          <Route
+            path="/pending-production-questionnaires"
+            element={<PendingQuestionaire />}
+          />
+          <Route
+            path="/pending-questionnaires-form"
+            element={<ProductionQuestionnaireForm />}
+          />
+          <Route
+            path="/pending-publicity-questionnaire"
+            element={<PublicityQuestionaires />}
+          />
+          <Route
+            path="/publicity-questionnaire-form"
+            element={<PublicityQuestionairesForm />}
+          />
           <Route path="/these-invoices-CN" element={<TheseInvoicesCN />} />
           <Route path="/view-delivery-note" element={<ViewDeliveryNote />} />
           <Route path="/view-final-check" element={<FinalCheckView />} />
