@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { invoices } from "../utils/utils";
 import useSidebarStore from "stores/States";
 import SearchField from "components/SearchField";
-import { invoiceData } from "pages/printers/utils/utils";
+import { invoiceData } from "pages/tabs/printers/utils/utils";
 import InvoiceModal from "pages/tabs/book-invoices/components/InvoiceModal";
 
 const ClientsTable = () => {

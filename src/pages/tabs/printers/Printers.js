@@ -1,17 +1,17 @@
 import Title from "components/Title";
 import React, { useState } from "react";
 import Button from "components/Button";
-import { data } from "../home/utils/utils";
 import { invoiceData } from "./utils/utils";
 import useSidebarStore from "stores/States";
+import { data } from "pages/home/utils/utils";
 import SelectField from "components/SelectField";
 import TableButton from "components/TableButton";
 import SearchField from "components/SearchField";
 import { renderToString } from "react-dom/server";
 import DatePickerField from "components/DatePickerField";
-import EditModal from "../tabs/bookshops/components/EditModal";
-import PrintButton from "../tabs/book-invoices/components/invoice/PrintButton";
-import FinalInvoice from "../tabs/book-invoices/components/invoice/FinalInvoice";
+import EditModal from "../bookshops/components/EditModal";
+import PrintButton from "../book-invoices/components/invoice/PrintButton";
+import FinalInvoice from "../book-invoices/components/invoice/FinalInvoice";
 
 const Printers = () => {
   const { isOpen } = useSidebarStore();
