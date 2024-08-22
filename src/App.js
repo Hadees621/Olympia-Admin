@@ -3,13 +3,14 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Book from "./pages/tabs/book/Book";
 import Posts from "./pages/tabs/posts/Posts";
-import Reports from "./pages/reports/Reports";
 import Author from "./pages/tabs/author/Author";
+import { Route, Routes } from "react-router-dom";
+import Reports from "./pages/tabs/reports/Reports";
 import Archive from "./pages/tabs/archive/Archive";
-import Royalties from "./pages/royalties/Royalties";
 import Printers from "./pages/tabs/printers/Printers";
 import Graphics from "./pages/tabs/graphics/Graphics";
 import Contract from "./pages/tabs/contract/Contract";
+import Royalties from "./pages/tabs/royalties/Royalties";
 import Purchases from "./pages/tabs/purchases/Purchases";
 import Publicity from "./pages/tabs/publicity/Publicity";
 import Editorial from "./pages/tabs/editorial/Editorial";
@@ -19,7 +20,6 @@ import Production from "./pages/tabs/production/Production";
 import Outworkers from "./pages/tabs/out-workers/Outworkers";
 import FinalCheck from "./pages/tabs/final-check/FinalCheck";
 import BookOrders from "./pages/tabs/book-orders/BookOrders";
-import { Route, Routes, useLocation } from "react-router-dom";
 import OtherClients from "./pages/tabs/other-clients/OtherClients";
 import CardPayments from "./pages/tabs/card-payments/CardPayments";
 import BookInvoices from "./pages/tabs/book-invoices/BookInvoices";
@@ -43,8 +43,6 @@ import PublicityQuestionairesForm from "./pages/nested-pages/PublicityQuestionai
 import ProductionQuestionnaireForm from "./pages/nested-pages/production-questionnaire-form/ProductionQuestionnaireForm";
 
 const App = () => {
-  const location = useLocation();
-
   return (
     <>
       <Routes>
