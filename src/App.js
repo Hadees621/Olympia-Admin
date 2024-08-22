@@ -35,8 +35,8 @@ import ContractAccount from "./pages/nested-pages/contract-accounts/ContractAcco
 import ViewDeliveryNote from "./pages/tabs/delivery-notes/components/ViewDeliveryNote";
 import ContractInvoices from "./pages/nested-pages/contract-invoices/ContractInvoices";
 import PendingPurchases from "./pages/nested-pages/pending-purchases/PendingPurchases";
-import OlympiaWebsitesPortal from "./pages/olympia-websites-portal/OlympiaWebsitesPortal";
 import TheseInvoicesCN from "./pages/nested-pages/book-these-Invoices-CN/TheseInvoicesCN";
+import OlympiaWebsitesPortal from "./pages/tabs/olympia-websites-portal/OlympiaWebsitesPortal";
 import PendingQuestionaire from "./pages/nested-pages/production-questionaires/PendingQuestionaire";
 import PublicityQuestionaires from "./pages/nested-pages/publicity-questionaires/PublicityQuestionaires";
 import PublicityQuestionairesForm from "./pages/nested-pages/PublicityQuestionairesForm/PublicityQuestionairesForm";
