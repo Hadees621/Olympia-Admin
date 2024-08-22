@@ -8,7 +8,7 @@ import Archive from "./pages/tabs/archive/Archive";
 import Reports from "./pages/reports/Reports";
 import Graphics from "./pages/graphics/Graphics";
 import Printers from "./pages/printers/Printers";
-import Contract from "./pages/contract/Contract";
+import Contract from "./pages/tabs/contract/Contract";
 import Editorial from "./pages/editorial/Editorial";
 import Publicity from "./pages/publicity/Publicity";
 import Purchases from "./pages/purchases/Purchases";
