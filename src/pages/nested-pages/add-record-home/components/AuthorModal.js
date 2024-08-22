@@ -2,8 +2,8 @@ import React from 'react';
 import { Field } from './Field';
 import Button from 'components/Button';
 import SelectField from 'components/SelectField';
+import SearchField from 'components/SearchField';
 import DatePickerField from 'components/DatePickerField';
-import SearchField from 'pages/home/components/SearchField';
 
 const AuthorModal = ({ isOpen, onClose, onSave }) => {
     if (!isOpen) return null;

@@ -7,7 +7,7 @@ import { getStatusClass } from "utils/utils";
 import Pagination from "components/Pagination";
 import Calculator from "utils/icons/Calculator";
 import TableButton from "components/TableButton";
-import SearchField from "pages/home/components/SearchField";
+import SearchField from "components/SearchField";
 import { data } from "pages/ready-for-publication/utils/utils";
 
 const SubTabsTable = () => {

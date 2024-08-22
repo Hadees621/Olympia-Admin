@@ -2,7 +2,7 @@ import Title from "components/Title";
 import Button from "components/Button";
 import React, { useState } from "react";
 import useSidebarStore from "stores/States";
-import SearchField from "pages/home/components/SearchField";
+import SearchField from "components/SearchField";
 import AllPurchasesTable from "./components/AllPurchasesTable";
 
 const AllPurchases = () => {

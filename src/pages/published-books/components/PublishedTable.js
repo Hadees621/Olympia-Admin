@@ -6,9 +6,9 @@ import useSidebarStore from "stores/States";
 import { getStatusClass } from "utils/utils";
 import Pagination from "components/Pagination";
 import Calculator from "utils/icons/Calculator";
+import SearchField from "components/SearchField";
 import SelectField from "components/SelectField";
 import DatePickerField from "components/DatePickerField";
-import SearchField from "pages/home/components/SearchField";
 import { data } from "pages/ready-for-publication/utils/utils";
 
 const PublishedTable = () => {

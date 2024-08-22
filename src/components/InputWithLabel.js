@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from './Button'
-import SearchField from 'pages/home/components/SearchField'
+import SearchField from './SearchField'
 
 const InputWithLabel = ({ placeholder,
     background = "bg-[#F7F7F7]",

@@ -1,5 +1,5 @@
-import { PenIcon } from "utils/icons/PenIcon";
 import React, { useState } from "react";
+import { PenIcon } from "utils/icons/PenIcon";
 
 const EditableNoteCard = ({ title, initialContent }) => {
   const [isEditing, setIsEditing] = useState(false);

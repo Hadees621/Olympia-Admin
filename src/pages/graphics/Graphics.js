@@ -5,7 +5,7 @@ import Upload from "./components/Upload";
 import FileUpload from "./components/FileUpload";
 import SelectField from "components/SelectField";
 import Remaindered from "components/Remaindered";
-import SearchField from "../home/components/SearchField";
+import SearchField from "components/SearchField";
 import EditableForm from "../publicity/components/EditableForm.js/EditableForm";
 import {
   characterDescription,

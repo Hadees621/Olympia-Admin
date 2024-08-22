@@ -7,8 +7,8 @@ import useSidebarStore from "stores/States";
 import { getStatusClass } from "utils/utils";
 import Pagination from "components/Pagination";
 import Calculator from "utils/icons/Calculator";
+import SearchField from "components/SearchField";
 import DatePickerField from "components/DatePickerField";
-import SearchField from "pages/home/components/SearchField";
 
 const ReadyForPublicationTable = () => {
   const { isOpen } = useSidebarStore();

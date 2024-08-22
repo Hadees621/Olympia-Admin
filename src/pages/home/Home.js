@@ -1,10 +1,10 @@
 import Title from "components/Title";
+import Button from "components/Button";
 import Table from "./components/Table";
 import React, { useState } from "react";
 import useSidebarStore from "stores/States";
-import Button from "../../components/Button";
-import SearchField from "./components/SearchField";
-import SelectField from "../../components/SelectField";
+import SearchField from "components/SearchField";
+import SelectField from "components/SelectField";
 
 const Home = () => {
   const { isOpen } = useSidebarStore();
@@ -19,7 +19,11 @@ const Home = () => {
   const placeholders = ["All", "All", "All Countries", "Select Genre"];
 
   return (
-    <div className={`w-full text-start items-center m-4 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"} `}>
+    <div
+      className={`w-full text-start items-center m-4 ${
+        isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
+      } `}
+    >
       <Title />
 
       <div className="flex items-center mt-8 gap-3">
@@ -27,7 +31,13 @@ const Home = () => {
         <SearchField placeholder="Pen name/Author name" />
         <Button title="Search" />
         <Button title="Clear" />
-        <Button title="Add New Record" href="/add-new-record" bg="bg-green-600" hover="hover:bg-green-700" text={"text-white"} />
+        <Button
+          title="Add New Record"
+          href="/add-new-record"
+          bg="bg-green-600"
+          hover="hover:bg-green-700"
+          text={"text-white"}
+        />
         <Button title="ISBN Search" href="/isbn-search" />
       </div>
 

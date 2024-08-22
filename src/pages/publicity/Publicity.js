@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import SelectField from "components/SelectField";
 import Remaindered from "components/Remaindered";
 import EditorialNotes from "components/EditorialNotes";
-import SearchField from "pages/home/components/SearchField";
+import SearchField from "components/SearchField";
 import EditableForm from "./components/EditableForm.js/EditableForm";
 import {
   authorFormData,

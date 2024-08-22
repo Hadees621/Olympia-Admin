@@ -5,8 +5,8 @@ import useSidebarStore from 'stores/States';
 import InvoiceSummary from './InvoiceSummary';
 import TableButton from 'components/TableButton';
 import SelectField from 'components/SelectField';
+import SearchField from 'components/SearchField';
 import EditListModal from 'components/modals/EditListModal';
-import SearchField from 'pages/home/components/SearchField';
 
 const AllUAEPendingInvoices = () => {
   const { isOpen } = useSidebarStore();

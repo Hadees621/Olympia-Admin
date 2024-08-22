@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import { bookInfo } from "./utils/utils";
 import Modal from "components/modals/Modal";
 import Remaindered from "components/Remaindered";
+import SearchField from "components/SearchField";
 import SelectField from "components/SelectField";
 import NoteCard from "../author/components/NoteCard";
 import BookInformation from "components/BookInformation";
-import SearchField from "pages/home/components/SearchField";
 import BookInformationEditable from "./components/BookInformationEditable";
 
 const Book = () => {

@@ -5,7 +5,7 @@ import { booksData } from "./utils/utils";
 import useSidebarStore from "stores/States";
 import Pagination from "components/Pagination";
 import SelectField from "components/SelectField";
-import SearchField from "../home/components/SearchField";
+import SearchField from "components/SearchField";
 import ProductionTable from "./components/ProductionTable";
 
 const tabs = [

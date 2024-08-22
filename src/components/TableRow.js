@@ -1,4 +1,4 @@
-import SearchField from "pages/home/components/SearchField";
+import SearchField from "./SearchField";
 
 const TableRow = ({ label }) => (
     <tr className="">

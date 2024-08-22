@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Modal from "components/modals/Modal";
 import useSidebarStore from "stores/States";
 import { outworkersData } from "../utils/utils";
+import SearchField from "components/SearchField";
 import TableButton from "components/TableButton";
 import SelectField from "components/SelectField";
 import InputWithLabel from "components/InputWithLabel";
-import SearchField from "pages/home/components/SearchField";
 import SelectInputWithLabel from "components/SelectInputWithLabel";
 import DisplayInfo from "pages/tabs/card-payments/components/DisplayInfo";
 

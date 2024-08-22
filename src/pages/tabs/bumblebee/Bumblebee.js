@@ -4,10 +4,10 @@ import Button from "components/Button";
 import React, { useState } from "react";
 import useSidebarStore from "stores/States";
 import Pagination from "components/Pagination";
+import SearchField from "components/SearchField";
 import SelectField from "components/SelectField";
 import FinalCheckTab from "./components/FinalCheckTab";
 import BumblebeeTable from "./components/BumblebeeTable";
-import SearchField from "pages/home/components/SearchField";
 
 const tabs = [
   {

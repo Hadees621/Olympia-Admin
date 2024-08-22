@@ -6,7 +6,7 @@ import { getStatusClass } from "utils/utils";
 import { AllContracts } from "../utils/utils";
 import Calculator from "utils/icons/Calculator";
 import SelectField from "components/SelectField";
-import SearchField from "pages/home/components/SearchField";
+import SearchField from "components/SearchField";
 
 const AllContractsTab = () => {
     return (

@@ -6,10 +6,10 @@ import ShippedTab from "./components/ShipedTab";
 import Remaindered from "components/Remaindered";
 import ReportsTab from "./components/ReportsTab";
 import ArchiveTab from "./components/ArchiveTab";
+import SearchField from "components/SearchField";
 import SelectField from "components/SelectField";
 import PreOrdersTab from "./components/PreOrdersTab";
 import ProcessingTab from "./components/ProcessingTab";
-import SearchField from "pages/home/components/SearchField";
 
 const tabs = [
   { id: "processing", label: "Processing", component: ProcessingTab },

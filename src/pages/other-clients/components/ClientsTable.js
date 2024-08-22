@@ -3,8 +3,8 @@ import Button from "components/Button";
 import React, { useState } from "react";
 import { invoices } from "../utils/utils";
 import useSidebarStore from "stores/States";
+import SearchField from "components/SearchField";
 import { invoiceData } from "pages/printers/utils/utils";
-import SearchField from "pages/home/components/SearchField";
 import InvoiceModal from "pages/tabs/book-invoices/components/InvoiceModal";
 
 const ClientsTable = () => {

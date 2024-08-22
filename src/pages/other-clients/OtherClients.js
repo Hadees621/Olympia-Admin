@@ -1,9 +1,9 @@
 import Title from "components/Title";
 import Button from "components/Button";
 import React, { useState } from "react";
+import SearchField from "components/SearchField";
 import AllOverdue from "./components/AllOverdue";
 import ClientsTable from "./components/ClientsTable";
-import SearchField from "../home/components/SearchField";
 
 const tabs = [
   {

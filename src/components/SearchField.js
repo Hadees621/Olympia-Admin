@@ -3,7 +3,9 @@ import React from "react";
 const SearchField = ({
   placeholder,
   background = "bg-[#F7F7F7]",
-  name, value, onChange,
+  name,
+  value,
+  onChange,
   ...props
 }) => {
   return (

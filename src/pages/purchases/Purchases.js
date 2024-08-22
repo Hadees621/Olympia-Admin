@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import TableRow from "components/TableRow";
 import Modal from "components/modals/Modal";
 import useSidebarStore from "stores/States";
-import SearchField from "../home/components/SearchField";
+import SearchField from "components/SearchField";
 import ScrollableTable from "./components/ScrollableTable";
 
 const Purchases = () => {
@@ -14,7 +14,26 @@ const Purchases = () => {
 
   const tableData = [
     { section: "Personal Information:", fields: ["First Name", "Last Name"] },
-    { section: "Contact Information:", fields: ["Company Name", "First Address", "2nd Address", "Town/City", "County/State", "Country", "Zipcode", "Telephone", "Mobile", "Email 1", "Email 2", "Email 3", "Website", "Skype", "VAT"] },
+    {
+      section: "Contact Information:",
+      fields: [
+        "Company Name",
+        "First Address",
+        "2nd Address",
+        "Town/City",
+        "County/State",
+        "Country",
+        "Zipcode",
+        "Telephone",
+        "Mobile",
+        "Email 1",
+        "Email 2",
+        "Email 3",
+        "Website",
+        "Skype",
+        "VAT",
+      ],
+    },
   ];
 
   return (
@@ -42,19 +61,28 @@ const Purchases = () => {
       </div>
 
       <div
-        className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
-          }`}
+        className={`transition-all duration-300 ${
+          isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
+        }`}
       >
         <ScrollableTable data={data} />
       </div>
 
       {/* Add New Client Modal */}
-      <Modal isVisible={isModalVisible} onClose={() => setIsModalVisible(false)} onSave={() => setIsModalVisible(false)} width={"max-w-[70vh]"} title="Add/Update Client" >
+      <Modal
+        isVisible={isModalVisible}
+        onClose={() => setIsModalVisible(false)}
+        onSave={() => setIsModalVisible(false)}
+        width={"max-w-[70vh]"}
+        title="Add/Update Client"
+      >
         <div className="w-full shadow">
           <div className="overflow-y-auto max-h-[70vh] custom-scrollbar px-2">
             {tableData.map((section, sectionIndex) => (
               <React.Fragment key={sectionIndex}>
-                <p className="text-xl font-semibold w-full">{section.section}</p>
+                <p className="text-xl font-semibold w-full">
+                  {section.section}
+                </p>
                 <table className="text-start mx-auto w-full">
                   <tbody className="">
                     {section.fields.map((field, fieldIndex) => (

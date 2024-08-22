@@ -1,10 +1,10 @@
 import Button from 'components/Button'
 import React, { useState } from 'react'
 import Modal from 'components/modals/Modal'
+import SearchField from 'components/SearchField'
 import TableButton from 'components/TableButton'
 import SelectField from 'components/SelectField'
 import InputWithLabel from 'components/InputWithLabel'
-import SearchField from 'pages/home/components/SearchField'
 
 const InstallmentDetails = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);

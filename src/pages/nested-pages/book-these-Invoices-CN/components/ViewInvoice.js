@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import SearchField from 'components/SearchField';
 import InputWithLabel from 'components/InputWithLabel';
 import EditableTextarea from 'components/EditableTextarea';
 import EditListModal from 'components/modals/EditListModal';
-import SearchField from 'pages/home/components/SearchField';
 import DatePickerWIthLabel from 'components/DatePickerWIthLabel';
 import SelectInputWithLabel from 'components/SelectInputWithLabel';
 

@@ -1,20 +1,21 @@
-import React from 'react'
-import Button from 'components/Button'
-import DeliveryContent from './DeliveryContent'
-import TableButton from 'components/TableButton'
-import SelectField from 'components/SelectField'
-import { renderToString } from 'react-dom/server'
-import { invoiceData } from 'pages/printers/utils/utils'
-import SearchField from 'pages/home/components/SearchField'
-import PrintButton from 'pages/tabs/book-invoices/components/invoice/PrintButton'
+import React from "react";
+import Button from "components/Button";
+import DeliveryContent from "./DeliveryContent";
+import TableButton from "components/TableButton";
+import SelectField from "components/SelectField";
+import SearchField from "components/SearchField";
+import { renderToString } from "react-dom/server";
+import { invoiceData } from "pages/printers/utils/utils";
+import PrintButton from "pages/tabs/book-invoices/components/invoice/PrintButton";
 
 const ViewDeliveryNote = () => {
-
   const handleOpenInvoice = () => {
-    const invoiceHtml = renderToString(<DeliveryContent invoiceData={invoiceData} />);
+    const invoiceHtml = renderToString(
+      <DeliveryContent invoiceData={invoiceData} />
+    );
     const printButtonHtml = renderToString(<PrintButton />);
 
-    const newWindow = window.open('', '', 'width=800,height=600');
+    const newWindow = window.open("", "", "width=800,height=600");
     newWindow.document.write(`
       <html>
         <head>
@@ -43,32 +44,40 @@ const ViewDeliveryNote = () => {
       </p>
 
       <div className="grid items-center mt-3 gap-3 m-8">
-        <div className='flex items-center gap-3'>
+        <div className="flex items-center gap-3">
           <p className="text-xl font-bold ">Reference: </p>
           <p className="text-lg font-semibold text-black"> c7923459</p>
         </div>
 
-        <div className='flex items-center gap-3'>
+        <div className="flex items-center gap-3">
           <p className="text-xl font-bold">Company: </p>
           <p className="text-lg font-semibold text-black">Gardner</p>
         </div>
 
-        <div className='flex items-center gap-3'>
+        <div className="flex items-center gap-3">
           <p className="text-xl font-bold ">Date: </p>
           <p className="text-lg font-semibold text-black"> 2024-07-30</p>
         </div>
-
       </div>
 
       <div className="flex items-center mt-3 gap-3">
         <SelectField placeholder={"Select Author"} />
         <SelectField placeholder={"Select Book"} />
         <SearchField bg={"bg-white"} />
-        <Button title="Add" bg="bg-green-500 text-white" hover="hover:bg-green-600" />
+        <Button
+          title="Add"
+          bg="bg-green-500 text-white"
+          hover="hover:bg-green-600"
+        />
       </div>
 
       <div className="flex items-center justify-end mt-3 gap-3">
-        <button onClick={handleOpenInvoice} className="bg-[#001C4E1F] hover:bg-gray-300 rounded-md text-[#001C4E] font-bold px-8 py-2 text-[12px]">Print</button>
+        <button
+          onClick={handleOpenInvoice}
+          className="bg-[#001C4E1F] hover:bg-gray-300 rounded-md text-[#001C4E] font-bold px-8 py-2 text-[12px]"
+        >
+          Print
+        </button>
       </div>
 
       <div className="overflow-x-auto mt-5 text-center shadow">
@@ -90,7 +99,12 @@ const ViewDeliveryNote = () => {
               <td className="p-3">5</td>
               <td className="p-3">
                 <div className="flex justify-center items-center space-x-2">
-                  <TableButton title={"Delete"} bg="bg-red-500" hover='hover:bg-red-600' text={"text-white"} />
+                  <TableButton
+                    title={"Delete"}
+                    bg="bg-red-500"
+                    hover="hover:bg-red-600"
+                    text={"text-white"}
+                  />
                 </div>
               </td>
             </tr>
@@ -98,7 +112,7 @@ const ViewDeliveryNote = () => {
         </table>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ViewDeliveryNote
+export default ViewDeliveryNote;

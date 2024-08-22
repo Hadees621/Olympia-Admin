@@ -5,8 +5,8 @@ import useSidebarStore from 'stores/States';
 import Modal from 'components/modals/Modal';
 import InvoiceSummary from './InvoiceSummary';
 import TableButton from 'components/TableButton';
+import SearchField from 'components/SearchField';
 import SelectField from 'components/SelectField';
-import SearchField from 'pages/home/components/SearchField';
 import EditListModal from 'components/modals/EditListModal';
 import InvoiceCreator from '../../contract-accounts/components/InvoiceCreator';
 

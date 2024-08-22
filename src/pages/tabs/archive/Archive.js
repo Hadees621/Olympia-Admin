@@ -4,9 +4,9 @@ import Table from "./components/Table";
 import React, { useState } from "react";
 import Modal from "components/modals/Modal";
 import Pagination from "components/Pagination";
+import SearchField from "components/SearchField";
 import SelectField from "components/SelectField";
 import InputWithLabel from "components/InputWithLabel";
-import SearchField from "pages/home/components/SearchField";
 import SelectInputWithLabel from "components/SelectInputWithLabel";
 
 const Archive = () => {

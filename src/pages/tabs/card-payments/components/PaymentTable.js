@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import Modal from "components/modals/Modal";
 import useSidebarStore from "stores/States";
 import TableButton from "components/TableButton";
+import SearchField from "components/SearchField";
 import SelectField from "components/SelectField";
 import { data, paymentData } from "../utils/utils";
 import EditableRadio from "components/EditableRadio";
 import InputWithLabel from "components/InputWithLabel";
-import SearchField from "pages/home/components/SearchField";
 import SelectInputWithLabel from "components/SelectInputWithLabel";
 
 const PaymentTable = () => {

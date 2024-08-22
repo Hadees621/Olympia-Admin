@@ -6,7 +6,7 @@ import ToDoTab from "./components/ToDoTab";
 import useSidebarStore from "stores/States";
 import Pagination from "components/Pagination";
 import SelectField from "components/SelectField";
-import SearchField from "../home/components/SearchField";
+import SearchField from "components/SearchField";
 
 const tabs = [
   {
