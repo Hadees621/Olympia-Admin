@@ -65,10 +65,11 @@ const Bookshops = () => {
 
   return (
     <div className="w-full text-start items-center m-4">
-
       <Title title="Bookshops" />
 
-      <div className={`mb-4 pt-10 ${isOpen ? "w-full" : "max-w-[80%]"} mx-auto`}>
+      <div
+        className={`mb-4 pt-10 ${isOpen ? "w-full" : "max-w-[80%]"} mx-auto`}
+      >
         <ul
           className="flex flex-wrap -mb-px justify-center gap-3 px-20 text-sm font-medium text-center"
           id="default-styled-tab"
@@ -77,10 +78,11 @@ const Bookshops = () => {
           {tabs.map((tab) => (
             <li key={tab.key} className="me-2" role="presentation">
               <button
-                className={`inline-block p-2 border-b-2 rounded-t-lg text-[13px] font-semibold ${activeTab === tab.key
-                  ? "text-red-600 border-red-600"
-                  : "text-black hover:text-black border-black"
-                  }`}
+                className={`inline-block p-2 border-b-2 rounded-t-lg text-[13px] font-semibold ${
+                  activeTab === tab.key
+                    ? "text-red-600 border-red-600"
+                    : "text-black hover:text-black border-black"
+                }`}
                 id={`${tab.key}-tab`}
                 type="button"
                 role="tab"
@@ -98,8 +100,7 @@ const Bookshops = () => {
         {tabs.map((tab) => (
           <div
             key={tab.key}
-            className={` ${activeTab === tab.key ? "block" : "hidden"
-              }`}
+            className={` ${activeTab === tab.key ? "block" : "hidden"}`}
             id={tab.key}
             role="tabpanel"
             aria-labelledby={`${tab.key}-tab`}
@@ -108,7 +109,6 @@ const Bookshops = () => {
           </div>
         ))}
       </div>
-
     </div>
   );
 };

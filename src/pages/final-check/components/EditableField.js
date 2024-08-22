@@ -1,5 +1,5 @@
 import React from "react";
-import Tick from "pages/bumblebee/components/Tick";
+import Tick from "utils/icons/Tick";
 
 const EditableField = ({ fieldData, isEditing, onCheckboxChange }) => {
     return (

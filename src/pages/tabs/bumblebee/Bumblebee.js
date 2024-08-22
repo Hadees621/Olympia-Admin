@@ -6,8 +6,8 @@ import useSidebarStore from "stores/States";
 import Pagination from "components/Pagination";
 import SelectField from "components/SelectField";
 import FinalCheckTab from "./components/FinalCheckTab";
-import SearchField from "../home/components/SearchField";
 import BumblebeeTable from "./components/BumblebeeTable";
+import SearchField from "pages/home/components/SearchField";
 
 const tabs = [
   {
@@ -52,8 +52,9 @@ const TabContent = ({ activeTab, isOpen }) => {
       <Pagination num={7} />
 
       <div
-        className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
-          }`}
+        className={`transition-all duration-300 ${
+          isOpen ? "max-w-[1050px]" : "max-w-[1250px]"
+        }`}
       >
         {React.createElement(tabData.component, { data: tabData.data })}
       </div>
@@ -68,10 +69,7 @@ const Bumblebee = () => {
   return (
     <div className="w-full text-start items-center m-4">
       <Title title="Books (Imprint: Bumblebee)" />
-      <div
-      >
-
-
+      <div>
         <div className="mb-4 justify-center flex pt-3">
           <ul
             className="flex flex-wrap -mb-px gap-3 text-sm font-medium text-center"
@@ -80,10 +78,11 @@ const Bumblebee = () => {
             {tabs.map((tab) => (
               <li key={tab.id} className="me-2" role="presentation">
                 <button
-                  className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${activeTab === tab.id
-                    ? "text-red-600 border-red-600"
-                    : "text-black hover:text-black border-black"
-                    }`}
+                  className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${
+                    activeTab === tab.id
+                      ? "text-red-600 border-red-600"
+                      : "text-black hover:text-black border-black"
+                  }`}
                   id={tab.id}
                   type="button"
                   role="tab"
