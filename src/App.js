@@ -3,7 +3,7 @@ import Home from "./pages/home/Home";
 import Book from "./pages/book/Book";
 import Posts from "./pages/posts/Posts";
 import Login from "./pages/login/Login";
-import Author from "./pages/author/Author";
+import Author from "./pages/tabs/author/Author";
 import Archive from "./pages/tabs/archive/Archive";
 import Reports from "./pages/reports/Reports";
 import Graphics from "./pages/graphics/Graphics";

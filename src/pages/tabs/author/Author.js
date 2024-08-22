@@ -5,9 +5,9 @@ import Modal from "components/modals/Modal";
 import NoteCard from "./components/NoteCard";
 import { contactDetails } from "./utils/utils";
 import SelectField from "components/SelectField";
-import { authorInfo } from "../contract/utils/utils";
+import { authorInfo } from "pages/contract/utils/utils";
 import SearchField from "pages/home/components/SearchField";
-import Remaindered from "../editorial/components/Remaindered";
+import Remaindered from "pages/editorial/components/Remaindered";
 import { InformationSection } from "components/InformationSection";
 import { ContactInformation } from "components/ContactInformation.";
 
@@ -24,11 +24,11 @@ const Author = () => {
 
   const handleSaveChanges = () => {
     setIsEditMode(false);
-    setIsModalVisible(false)
+    setIsModalVisible(false);
   };
 
   const placeholders = ["Please Select Author", "Select Book"];
-  
+
   return (
     <div className="w-full text-start items-center m-4">
       <Title />
@@ -66,15 +66,27 @@ const Author = () => {
             bookFlag={false}
             isEditable={isEditMode}
           />
-          <NoteCard title="Important note" content="Wants it ready for the London marathon - early April" isEditable={isEditMode} />
+          <NoteCard
+            title="Important note"
+            content="Wants it ready for the London marathon - early April"
+            isEditable={isEditMode}
+          />
         </div>
         <div className="space-y-4">
-          <ContactInformation contactDetails={contactDetails} isEditable={isEditMode} />
+          <ContactInformation
+            contactDetails={contactDetails}
+            isEditable={isEditMode}
+          />
           <NoteCard title="Author notes" content="NA" isEditable={isEditMode} />
         </div>
       </div>
 
-      <Modal isVisible={isModalVisible} onClose={() => setIsModalVisible(false)} onSave={handleSaveChanges} title="Edit Author Information">
+      <Modal
+        isVisible={isModalVisible}
+        onClose={() => setIsModalVisible(false)}
+        onSave={handleSaveChanges}
+        title="Edit Author Information"
+      >
         <div className="m-4 gap-3 grid grid-cols-2">
           <div className="space-y-4">
             <InformationSection
@@ -84,10 +96,17 @@ const Author = () => {
               bookFlag={false}
               isEditable={true}
             />
-            <NoteCard title="Important note" content="Wants it ready for the London marathon - early April" isEditable={true} />
+            <NoteCard
+              title="Important note"
+              content="Wants it ready for the London marathon - early April"
+              isEditable={true}
+            />
           </div>
           <div className="space-y-4">
-            <ContactInformation contactDetails={contactDetails} isEditable={true} />
+            <ContactInformation
+              contactDetails={contactDetails}
+              isEditable={true}
+            />
             <NoteCard title="Author notes" content="NA" isEditable={true} />
           </div>
         </div>

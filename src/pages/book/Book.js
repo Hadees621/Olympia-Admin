@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import Title from "components/Title";
 import Button from "components/Button";
-import { bookInfo } from "./utils/utils";
+// import { bookInfo } from "./utils/utils";
 import Modal from "components/modals/Modal";
 import SelectField from "components/SelectField";
-import NoteCard from "../author/components/NoteCard";
 import BookInformation from "components/BookInformation";
 import SearchField from "pages/home/components/SearchField";
 import Remaindered from "../editorial/components/Remaindered";
 import BookInformationEditable from "./components/BookInformationEditable";
+import NoteCard from "../tabs/author/components/NoteCard";
+import { bookInfo } from "./utils/utils";
 
 const Book = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
