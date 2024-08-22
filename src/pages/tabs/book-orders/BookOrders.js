@@ -8,8 +8,8 @@ import ArchiveTab from "./components/ArchiveTab";
 import SelectField from "components/SelectField";
 import PreOrdersTab from "./components/PreOrdersTab";
 import ProcessingTab from "./components/ProcessingTab";
-import SearchField from "../home/components/SearchField";
-import Remaindered from "../editorial/components/Remaindered";
+import SearchField from "pages/home/components/SearchField";
+import Remaindered from "pages/editorial/components/Remaindered";
 
 const tabs = [
   { id: "processing", label: "Processing", component: ProcessingTab },
@@ -34,7 +34,6 @@ const BookOrders = () => {
 
   return (
     <div className="w-full text-start items-center m-4">
-
       <Title />
 
       <div className="flex gap-2 justify-start mt-8 items-center w-full">
@@ -69,10 +68,11 @@ const BookOrders = () => {
           {tabs.map((tab) => (
             <li key={tab.id} className="me-2" role="presentation">
               <button
-                className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${activeTab === tab.id
-                  ? "text-red-600 border-red-600"
-                  : "text-black hover:text-black border-black"
-                  }`}
+                className={`inline-block p-4 border-b-2 rounded-t-lg text-lg font-bold ${
+                  activeTab === tab.id
+                    ? "text-red-600 border-red-600"
+                    : "text-black hover:text-black border-black"
+                }`}
                 id={`${tab.id}-tab`}
                 type="button"
                 role="tab"
@@ -90,8 +90,7 @@ const BookOrders = () => {
         {tabs.map((tab) => (
           <div
             key={tab.id}
-            className={` ${activeTab === tab.id ? "block" : "hidden"
-              }`}
+            className={` ${activeTab === tab.id ? "block" : "hidden"}`}
             id={tab.id}
             role="tabpanel"
             aria-labelledby={`${tab.id}-tab`}
@@ -100,7 +99,6 @@ const BookOrders = () => {
           </div>
         ))}
       </div>
-
     </div>
   );
 };

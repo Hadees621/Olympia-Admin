@@ -17,7 +17,7 @@ import Royalties from "./pages/royalties/Royalties";
 import Bookshops from "./pages/bookshops/Bookshops";
 import Production from "./pages/production/Production";
 import FinalCheck from "./pages/final-check/FinalCheck";
-import BookOrders from "./pages/book-orders/BookOrders";
+import BookOrders from "./pages/tabs/book-orders/BookOrders";
 import Outworkers from "./pages/out-workers/Outworkers";
 import { Route, Routes, useLocation } from "react-router-dom";
 import CardPayments from "./pages/card-payments/CardPayments";
