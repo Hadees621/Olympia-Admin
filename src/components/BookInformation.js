@@ -1,6 +1,6 @@
 
 
-import { bookDetails, bookDetails2, bookDetails3 } from "pages/book/utils/utils";
+import { bookDetails, bookDetails2, bookDetails3 } from "pages/tabs/book/utils/utils";
 import React from "react";
 
 const BookInformation = ({ title, info, imageUrl, bookFlag, isEditable }) => (
