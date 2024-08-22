@@ -2,10 +2,10 @@ import Title from "components/Title";
 import Button from "components/Button";
 import React, { useState } from "react";
 import StackTab from "./components/StackTab";
+import Remaindered from "components/Remaindered";
 import SelectField from "components/SelectField";
 import InvoicesTab from "./components/InvoicesTab";
 import SearchField from "pages/home/components/SearchField";
-import Remaindered from "pages/editorial/components/Remaindered";
 
 const tabs = [
   {

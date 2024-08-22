@@ -3,11 +3,11 @@ import Button from "components/Button";
 import React, { useState } from "react";
 import { bookInfo } from "./utils/utils";
 import Modal from "components/modals/Modal";
+import Remaindered from "components/Remaindered";
 import SelectField from "components/SelectField";
 import NoteCard from "../author/components/NoteCard";
 import BookInformation from "components/BookInformation";
 import SearchField from "pages/home/components/SearchField";
-import Remaindered from "pages/editorial/components/Remaindered";
 import BookInformationEditable from "./components/BookInformationEditable";
 
 const Book = () => {

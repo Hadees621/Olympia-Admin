@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import Modal from "components/modals/Modal";
 import NoteCard from "./components/NoteCard";
 import { contactDetails } from "./utils/utils";
+import Remaindered from "components/Remaindered";
 import SelectField from "components/SelectField";
 import { authorInfo } from "../contract/utils/utils";
 import SearchField from "pages/home/components/SearchField";
-import Remaindered from "pages/editorial/components/Remaindered";
 import { InformationSection } from "components/InformationSection";
 import { ContactInformation } from "components/ContactInformation.";
 

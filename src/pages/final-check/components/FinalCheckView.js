@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import EditableField from "./EditableField";
+import Remaindered from "components/Remaindered";
 import FinalCheckHistory from "./FinalCheckHistory";
 import EditableTextarea from "components/EditableTextarea";
-import Remaindered from "pages/editorial/components/Remaindered";
 import SelectInputWithLabel from "components/SelectInputWithLabel";
 
 const FinalCheckView = () => {

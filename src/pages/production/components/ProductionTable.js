@@ -5,7 +5,7 @@ import Modal from "components/modals/Modal";
 import { getStatusClass } from "utils/utils";
 import Calculator from "utils/icons/Calculator";
 import TableButton from "components/TableButton";
-import EditorialNotes from "pages/editorial/components/EditorialNotes";
+import EditorialNotes from "components/EditorialNotes";
 import EditableField from "pages/tabs/bumblebee/components/EditableField";
 
 const ProductionTable = ({ data, onSave }) => {

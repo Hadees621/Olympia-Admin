@@ -2,9 +2,9 @@ import Title from "components/Title";
 import Button from "components/Button";
 import React, { useState } from "react";
 import SelectField from "components/SelectField";
+import Remaindered from "components/Remaindered";
+import EditorialNotes from "components/EditorialNotes";
 import SearchField from "pages/home/components/SearchField";
-import Remaindered from "../editorial/components/Remaindered";
-import EditorialNotes from "../editorial/components/EditorialNotes";
 import EditableForm from "./components/EditableForm.js/EditableForm";
 import {
   authorFormData,
@@ -34,7 +34,6 @@ const Publicity = () => {
 
   return (
     <div className="w-full text-start items-center m-4">
-
       <Title />
 
       <div className="flex items-center mt-8 gap-3">
@@ -83,7 +82,11 @@ const Publicity = () => {
         </div>
 
         <div className="space-y-5 w-full">
-          <EditorialNotes title={"Marketing/Publicity notes"} questionnaire={"/pending-publicity-questionnaire"} questionnaireType={"Pending publicity questionnaire"} />
+          <EditorialNotes
+            title={"Marketing/Publicity notes"}
+            questionnaire={"/pending-publicity-questionnaire"}
+            questionnaireType={"Pending publicity questionnaire"}
+          />
           <EditableForm
             title="About Book"
             fields={bookFormFields}

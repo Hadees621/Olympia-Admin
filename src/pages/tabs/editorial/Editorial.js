@@ -3,10 +3,10 @@ import Button from "components/Button";
 import React, { useState } from "react";
 import Modal from "components/modals/Modal";
 import SelectField from "components/SelectField";
-import Remaindered from "./components/Remaindered";
+import Remaindered from "components/Remaindered";
+import NoteCard from "../author/components/NoteCard";
+import EditorialNotes from "components/EditorialNotes";
 import UploadedFiles from "./components/UploadedFiles";
-import EditorialNotes from "./components/EditorialNotes";
-import NoteCard from "../tabs/author/components/NoteCard";
 import EditableNoteCard from "components/EditableNoteCard";
 import SearchField from "pages/home/components/SearchField";
 import { bookInfo, editableNotesData, noteCardsData } from "./utils/utils";
@@ -48,7 +48,10 @@ const Editorial = () => {
           />
         ))}
         <Button title="Clear" />
-        <Button title="Edit Information" onClick={() => setIsModalVisible(true)} />
+        <Button
+          title="Edit Information"
+          onClick={() => setIsModalVisible(true)}
+        />
       </div>
 
       <Remaindered status={"£ Paid in full"} />
@@ -57,8 +60,10 @@ const Editorial = () => {
         <EditorialBookInformation title="About book" info={bookInfo} />
 
         <div className="space-y-5">
-          <EditorialNotes title={"Editorial notes"}
-            questionnaire={"/pending-production-questionnaires"} questionnaireType={"Pending Production questionnaire"}
+          <EditorialNotes
+            title={"Editorial notes"}
+            questionnaire={"/pending-production-questionnaires"}
+            questionnaireType={"Pending Production questionnaire"}
           />
           <UploadedFiles />
         </div>
@@ -81,11 +86,20 @@ const Editorial = () => {
         </div>
       </div>
 
-      <Modal isVisible={isModalVisible} onClose={() => setIsModalVisible(false)} onSave={() => setIsModalVisible(false)} title="Edit Contract Information">
+      <Modal
+        isVisible={isModalVisible}
+        onClose={() => setIsModalVisible(false)}
+        onSave={() => setIsModalVisible(false)}
+        title="Edit Contract Information"
+      >
         <EditorialBookInformationEditable title="About book" info={bookInfo} />
         <div className="grid space-y-4 mt-5">
           <NoteCard title={"Poster quotes"} isEditable={true} />
-          <NoteCard title={"Book notes"} content={"Here are some notes and thing's Hello"} isEditable={true} />
+          <NoteCard
+            title={"Book notes"}
+            content={"Here are some notes and thing's Hello"}
+            isEditable={true}
+          />
           <NoteCard title={"Cover blurb"} isEditable={true} />
           <NoteCard title={"Author blurb"} isEditable={true} />
           <NoteCard title={"Copyrights Issues Inners:"} isEditable={true} />
