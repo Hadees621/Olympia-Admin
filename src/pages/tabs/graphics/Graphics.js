@@ -12,7 +12,7 @@ import {
   illustrationsDescription,
   illustrationsDescriptionData,
 } from "./utils/utils";
-import EditableForm from "pages/publicity/components/EditableForm.js/EditableForm";
+import EditableForm from "../publicity/components/EditableForm.js/EditableForm";
 
 const Graphics = () => {
   const [selectedValues, setSelectedValues] = useState(["", ""]);
