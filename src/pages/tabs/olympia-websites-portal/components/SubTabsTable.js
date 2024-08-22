@@ -8,15 +8,16 @@ import Pagination from "components/Pagination";
 import Calculator from "utils/icons/Calculator";
 import TableButton from "components/TableButton";
 import SearchField from "components/SearchField";
-import { data } from "pages/ready-for-publication/utils/utils";
+import { data } from "../../ready-for-publication/utils/utils";
 
 const SubTabsTable = () => {
   const { isOpen } = useSidebarStore();
 
   return (
     <div
-      className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1260px]"
-        }`}
+      className={`transition-all duration-300 ${
+        isOpen ? "max-w-[1050px]" : "max-w-[1260px]"
+      }`}
     >
       <div className="w-[30%]">
         <div className="flex gap-3">
@@ -96,11 +97,21 @@ const SubTabsTable = () => {
                 </td>
 
                 <td className="px-6 py-4 ">
-                  <TableButton title={"Add to Main Website"} bg="bg-green-600" hover="hover:bg-green-700" text={"text-white"} />
+                  <TableButton
+                    title={"Add to Main Website"}
+                    bg="bg-green-600"
+                    hover="hover:bg-green-700"
+                    text={"text-white"}
+                  />
                 </td>
 
                 <td className="px-6 py-4 ">
-                  <TableButton title={"Add to USA Website"} bg="bg-green-600" hover="hover:bg-green-700" text={"text-white"} />
+                  <TableButton
+                    title={"Add to USA Website"}
+                    bg="bg-green-600"
+                    hover="hover:bg-green-700"
+                    text={"text-white"}
+                  />
                 </td>
               </tr>
             ))}

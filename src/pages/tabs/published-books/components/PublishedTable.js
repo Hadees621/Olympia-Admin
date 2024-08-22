@@ -9,15 +9,16 @@ import Calculator from "utils/icons/Calculator";
 import SearchField from "components/SearchField";
 import SelectField from "components/SelectField";
 import DatePickerField from "components/DatePickerField";
-import { data } from "pages/ready-for-publication/utils/utils";
+import { data } from "../../ready-for-publication/utils/utils";
 
 const PublishedTable = () => {
   const { isOpen } = useSidebarStore();
 
   return (
     <div
-      className={`transition-all duration-300 ${isOpen ? "max-w-[1050px]" : "max-w-[1300px]"
-        }`}
+      className={`transition-all duration-300 ${
+        isOpen ? "max-w-[1050px]" : "max-w-[1300px]"
+      }`}
     >
       <div className="flex justify-between">
         <div className="w-[25%]">
