@@ -6,7 +6,7 @@ import useSidebarStore from "stores/States";
 import TableButton from "components/TableButton";
 import InputWithLabel from "components/InputWithLabel";
 import EditableTextarea from "components/EditableTextarea";
-import DisplayInfo from "pages/card-payments/components/DisplayInfo";
+import DisplayInfo from "pages/tabs/card-payments/components/DisplayInfo";
 
 const AllOverdue = () => {
   const { isOpen } = useSidebarStore();

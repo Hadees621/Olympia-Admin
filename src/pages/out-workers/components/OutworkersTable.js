@@ -7,7 +7,7 @@ import SelectField from "components/SelectField";
 import InputWithLabel from "components/InputWithLabel";
 import SearchField from "pages/home/components/SearchField";
 import SelectInputWithLabel from "components/SelectInputWithLabel";
-import DisplayInfo from "pages/card-payments/components/DisplayInfo";
+import DisplayInfo from "pages/tabs/card-payments/components/DisplayInfo";
 
 const OutworkersTable = () => {
   const { isOpen } = useSidebarStore();
