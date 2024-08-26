@@ -1,7 +1,5 @@
-
-
-import { bookDetails, bookDetails2, bookDetails3 } from "pages/tabs/book/utils/utils";
 import React from "react";
+import { bookDetails, bookDetails2, bookDetails3 } from "pages/tabs/book/utils/utils";
 
 const BookInformation = ({ title, info, imageUrl, bookFlag, isEditable }) => (
   <div className="w-full shadow-md bg-[#F7F7F7]">
